@@ -50,69 +50,73 @@ const faqJsonLd = JSON.stringify({
 >
   <script type="application/ld+json" set:html={faqJsonLd} />
 
-  <!-- HERO (testi integrali dall'originale) -->
-  <section class="max-w-6xl mx-auto px-4 pt-16 pb-10" data-reveal-stagger>
-    <div class="max-w-3xl">
+  <!-- HERO scura con pattern e bagliore, testi integrali centrati come l'originale -->
+  <section class="relative pattern-hero overflow-hidden">
+    <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
+    <div class="relative max-w-3xl mx-auto px-4 pt-20 pb-24 text-center" data-reveal-stagger>
       <h1 data-reveal class="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
-        Pellicole opache e satinate per la <span class="text-brand">privacy in Ticino</span>
+        Pellicole opache e satinate per la privacy in Ticino
       </h1>
-      <p data-reveal class="mt-6 text-ink/70 leading-relaxed">
+      <p data-reveal class="mt-8 text-carta/80 leading-relaxed">
         Vuoi più privacy in ufficio, a casa o nel tuo negozio senza tende o muri? Le pellicole satinate
-        trasformano vetri e vetrate in superfici eleganti che proteggono dagli sguardi indiscreti, senza
+        trasformano vetri e vetrate in superfici eleganti e riservate, lasciando entrare la luce naturale
+        e valorizzando lo stile dei tuoi ambienti.
+      </p>
+      <p data-reveal class="mt-5 text-carta/80 leading-relaxed">
+        In tutto il Ticino, da Bellinzona a Locarno, Lugano e Biasca, offriamo <strong class="text-carta">pellicole
+        opache per vetri</strong> ideali per chi desidera proteggere i propri spazi da sguardi indiscreti senza
         rinunciare alla luminosità.
       </p>
-      <p data-reveal class="mt-4 text-ink/70 leading-relaxed">
-        In tutto il Ticino, da Bellinzona a Locarno, Lugano e Biasca, offriamo <strong>pellicole opache per
-        vetri</strong> ideali per chi desidera proteggere i propri spazi da sguardi indiscreti senza rinunciare
-        alla luminosità. Perfette per <strong>uffici, studi professionali, negozi e abitazioni private</strong>,
+      <p data-reveal class="mt-5 text-carta/80 leading-relaxed">
+        Perfette per <strong class="text-carta">uffici, studi professionali, negozi e abitazioni private</strong>,
         creano ambienti moderni e sicuri con un risultato raffinato e duraturo.
       </p>
-      <p data-reveal class="mt-4 text-ink/70 leading-relaxed">
-        Installazione rapida, con possibilità di personalizzare i vetri con <strong>loghi, scritte o pattern decorativi</strong>.
+      <p data-reveal class="mt-8 font-display text-xl md:text-2xl font-bold text-brand leading-snug">
+        Installazione rapida, con possibilità di personalizzare i vetri con loghi, scritte o pattern decorativi.
       </p>
-      <div data-reveal class="mt-8 flex flex-wrap gap-3">
-        <a href="#contattaci" class="btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-white hover:bg-brand-dark">
+      <div data-reveal class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="#contattaci" class="btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">
           Richiedi il tuo preventivo gratuito
         </a>
         <a
           href="https://wa.me/41765889497?text=Ciao%20VAM%20Deco%2C%20vorrei%20un%20preventivo%20per%20pellicola%20satinata%20%2F%20privacy."
           target="_blank" rel="noopener"
-          class="btn-anim rounded-full border-2 border-ink/15 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand"
+          class="btn-anim rounded-full border-2 border-white/20 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand"
         >Scrivici su WhatsApp</a>
       </div>
-      <p data-reveal class="mt-4 text-sm text-ink/50">Richiedi il tuo preventivo gratuito in 24/48h · Ti rispondiamo velocemente su WhatsApp o via mail</p>
+      <p data-reveal class="mt-4 text-sm text-carta/60">Richiedi il tuo preventivo gratuito in 24/48h · Ti rispondiamo velocemente su WhatsApp o via mail</p>
     </div>
   </section>
 
-  <!-- GALLERIA LAVORI SCORREVOLE (come l'originale) -->
-  <div class="marquee py-6" aria-label="Galleria dei nostri lavori con pellicole satinate">
+  <!-- GALLERIA LAVORI SCORREVOLE -->
+  <div class="marquee py-8" aria-label="Galleria dei nostri lavori con pellicole satinate">
     <div class="marquee-track" style="animation-duration: 60s;">
       {[...galleria, ...galleria].map((img) => (
         <img
           src={`/img/pellicole/${img}`}
           alt="Lavoro di applicazione pellicola satinata privacy realizzato da VAM Deco in Ticino"
-          class="h-52 md:h-64 w-auto rounded-xl object-cover shadow-md"
+          class="h-52 md:h-64 w-auto rounded-xl object-cover shadow-lg shadow-black/40"
           loading="lazy"
         />
       ))}
     </div>
   </div>
 
-  <!-- BENEFICI (testi integrali, numerati come l'originale) -->
-  <section class="bg-white border-y border-black/5 py-16">
+  <!-- BENEFICI -->
+  <section class="border-y border-white/5 bg-white/[0.02] py-16">
     <div class="max-w-6xl mx-auto px-4">
       <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Benefici</div>
       <h2 data-reveal class="text-2xl md:text-3xl font-bold mb-4">Hai bisogno di privacy, comfort e sicurezza nei tuoi spazi in Ticino?</h2>
-      <p data-reveal class="max-w-3xl text-ink/70 mb-10">
-        Con le nostre <strong>pellicole satinate e opache per vetri</strong> ottieni subito privacy ed eleganza,
+      <p data-reveal class="max-w-3xl text-carta/70 mb-10">
+        Con le nostre <strong class="text-carta">pellicole satinate e opache per vetri</strong> ottieni subito privacy ed eleganza,
         senza perdere luce naturale. Una soluzione semplice, veloce e duratura, ideale per uffici, studi, aziende e abitazioni.
       </p>
       <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
         {benefici.map((b) => (
-          <div data-reveal class="card-anim rounded-2xl bg-paper border border-black/5 p-6">
+          <div data-reveal class="card-scura card-anim rounded-2xl p-6">
             <div class="font-display text-2xl font-bold text-brand">{b.n}</div>
             <div class="mt-2 font-semibold">{b.titolo}</div>
-            {b.testo && <p class="mt-2 text-sm text-ink/70 leading-relaxed">{b.testo}</p>}
+            {b.testo && <p class="mt-2 text-sm text-carta/65 leading-relaxed">{b.testo}</p>}
           </div>
         ))}
       </div>
@@ -125,40 +129,40 @@ const faqJsonLd = JSON.stringify({
     <h2 data-reveal class="text-2xl md:text-3xl font-bold mb-10">Il nostro Processo in 4 Fasi</h2>
     <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4" data-reveal-stagger>
       {fasi.map((f, i) => (
-        <div data-reveal class="card-anim rounded-2xl bg-white border border-black/5 p-6 shadow-sm">
-          <div class="text-xs font-bold tracking-widest text-ink/40 uppercase">Step 0{i + 1}</div>
+        <div data-reveal class="card-scura card-anim rounded-2xl p-6">
+          <div class="text-xs font-bold tracking-widest text-carta/40 uppercase">Step 0{i + 1}</div>
           <div class="mt-3 font-semibold">{f.t}</div>
-          <p class="mt-2 text-sm text-ink/70 leading-relaxed">{f.d}</p>
+          <p class="mt-2 text-sm text-carta/65 leading-relaxed">{f.d}</p>
         </div>
       ))}
     </div>
   </section>
 
   <!-- PERCHÉ NOI -->
-  <section class="bg-white border-y border-black/5 py-16">
+  <section class="border-y border-white/5 bg-white/[0.02] py-16">
     <div class="max-w-6xl mx-auto px-4">
       <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Perchè scegliere VAM Deco</div>
       <h2 data-reveal class="text-2xl md:text-3xl font-bold mb-10">Semplice, veloce, su misura. Ecco perché ci scelgono</h2>
       <div class="grid gap-5 md:grid-cols-2" data-reveal-stagger>
         {perche.map((p) => (
-          <div data-reveal class="card-anim rounded-2xl bg-paper border border-black/5 p-6">
+          <div data-reveal class="card-scura card-anim rounded-2xl p-6">
             <div class="font-semibold">{p.t}</div>
-            <p class="mt-2 text-sm text-ink/70 leading-relaxed">{p.d}</p>
+            <p class="mt-2 text-sm text-carta/65 leading-relaxed">{p.d}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIANZE (con avatar originali) -->
+  <!-- TESTIMONIANZE -->
   <section class="max-w-6xl mx-auto px-4 py-16">
     <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Testimonianze</div>
     <h2 data-reveal class="text-2xl md:text-3xl font-bold mb-10">Cosa dicono i nostri clienti</h2>
     <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
       {testimonianze.map((t) => (
-        <figure data-reveal class="card-anim rounded-2xl bg-white border border-black/5 p-6 shadow-sm">
+        <figure data-reveal class="card-scura card-anim rounded-2xl p-6">
           <div class="text-brand text-sm tracking-widest" aria-label="5 stelle su 5">★★★★★</div>
-          <blockquote class="mt-3 text-sm text-ink/80 leading-relaxed">"{t.testo}"</blockquote>
+          <blockquote class="mt-3 text-sm text-carta/80 leading-relaxed">"{t.testo}"</blockquote>
           <figcaption class="mt-4 flex items-center gap-3">
             <img src={`/img/pellicole/${t.avatar}`} alt={`Foto profilo della recensione di ${t.nome}`} class="w-9 h-9 rounded-full object-cover" loading="lazy" />
             <span class="text-sm font-semibold">{t.nome}</span>
@@ -169,21 +173,21 @@ const faqJsonLd = JSON.stringify({
     <a data-reveal href="/recensioni" class="mt-8 inline-block font-semibold text-brand hover:underline">Vedi le recensioni →</a>
   </section>
 
-  <!-- FAQ (risposte integrali recuperate dall'originale) -->
-  <section class="bg-white border-y border-black/5 py-16">
+  <!-- FAQ -->
+  <section class="border-y border-white/5 bg-white/[0.02] py-16">
     <div class="max-w-3xl mx-auto px-4">
       <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Domande frequenti</div>
       <h2 data-reveal class="text-2xl md:text-3xl font-bold mb-8">Hai Domande? Ecco le nostre Risposte!</h2>
       <div data-reveal-stagger>
         {dati.faq.map((f) => (
-          <details data-reveal class="faq-item group border-b border-black/10 py-1">
+          <details data-reveal class="faq-item group border-b border-white/10 py-1">
             <summary class="flex items-center justify-between gap-4 cursor-pointer list-none py-4 font-semibold text-sm md:text-base">
               {f.domanda}
               <span class="faq-chevron text-brand text-xl leading-none shrink-0">+</span>
             </summary>
             <div class="faq-risposta">
               <div>
-                <p class="pb-5 text-sm text-ink/70 leading-relaxed">{f.risposta}</p>
+                <p class="pb-5 text-sm text-carta/70 leading-relaxed">{f.risposta}</p>
               </div>
             </div>
           </details>
@@ -193,58 +197,61 @@ const faqJsonLd = JSON.stringify({
   </section>
 
   <!-- FORM CONTATTI (come l'originale; invio da collegare al backend al go-live) -->
-  <section id="contattaci" class="max-w-6xl mx-auto px-4 py-20">
-    <div class="grid gap-10 md:grid-cols-2 items-start">
-      <div data-reveal-stagger>
-        <h2 data-reveal class="text-4xl md:text-6xl font-bold leading-tight">Parliamo<span class="text-brand">!</span></h2>
-        <p data-reveal class="mt-6 text-ink/70 leading-relaxed">
-          Compila il modulo e ricevi la tua offerta entro 24h. Oppure scrivici direttamente su WhatsApp.
-        </p>
-        <ul data-reveal class="mt-6 space-y-2.5 text-sm text-ink/80">
-          <li><a href="tel:+41765889497" class="hover:text-brand font-semibold">+41 76 588 94 97</a></li>
-          <li><a href="mailto:info@vamdeco.ch" class="hover:text-brand font-semibold">info@vamdeco.ch</a></li>
-          <li>Via Pobbia 4d, 6514 Sementina, Ticino</li>
-        </ul>
+  <section id="contattaci" class="relative overflow-hidden">
+    <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto px-4 py-20">
+      <div class="grid gap-10 md:grid-cols-2 items-start">
+        <div data-reveal-stagger>
+          <h2 data-reveal class="text-4xl md:text-6xl font-bold leading-tight">Parliamo<span class="text-brand">!</span></h2>
+          <p data-reveal class="mt-6 text-carta/70 leading-relaxed">
+            Compila il modulo e ricevi la tua offerta entro 24h. Oppure scrivici direttamente su WhatsApp.
+          </p>
+          <ul data-reveal class="mt-6 space-y-2.5 text-sm text-carta/80">
+            <li><a href="tel:+41765889497" class="hover:text-brand font-semibold">+41 76 588 94 97</a></li>
+            <li><a href="mailto:info@vamdeco.ch" class="hover:text-brand font-semibold">info@vamdeco.ch</a></li>
+            <li>Via Pobbia 4d, 6514 Sementina, Ticino</li>
+          </ul>
+        </div>
+        <form data-reveal class="card-scura rounded-2xl p-6 grid gap-4" id="form-contatti">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <label class="grid gap-1.5 text-xs font-semibold">Nome*
+              <input required name="nome" type="text" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
+            </label>
+            <label class="grid gap-1.5 text-xs font-semibold">Cognome*
+              <input required name="cognome" type="text" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
+            </label>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <label class="grid gap-1.5 text-xs font-semibold">Azienda
+              <input name="azienda" type="text" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
+            </label>
+            <label class="grid gap-1.5 text-xs font-semibold">Email*
+              <input required name="email" type="email" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
+            </label>
+          </div>
+          <label class="grid gap-1.5 text-xs font-semibold">Numero di telefono
+            <input name="telefono" type="tel" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
+          </label>
+          <label class="grid gap-1.5 text-xs font-semibold">Messaggio*
+            <textarea required name="messaggio" rows="4" placeholder="Fornisci più informazioni possibili per ricevere l'offerta entro 24h" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta placeholder:text-carta/40 focus:border-brand outline-none resize-y"></textarea>
+          </label>
+          <label class="grid gap-1.5 text-xs font-semibold">Come ci hai conosciuti?
+            <select name="fonte" class="rounded-lg bg-superficie border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none">
+              <option>Google</option><option>Passaparola</option><option>Instagram</option><option>Facebook</option><option>Altri Social</option><option>Altro</option>
+            </select>
+          </label>
+          <button type="submit" class="btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">Invia</button>
+          <p class="text-xs text-carta/50">*Campi obbligatori</p>
+        </form>
       </div>
-      <form data-reveal class="rounded-2xl bg-white border border-black/5 p-6 shadow-sm grid gap-4" id="form-contatti">
-        <div class="grid gap-4 sm:grid-cols-2">
-          <label class="grid gap-1.5 text-xs font-semibold">Nome*
-            <input required name="nome" type="text" class="rounded-lg border border-black/10 px-3.5 py-2.5 text-sm font-normal focus:border-brand outline-none" />
-          </label>
-          <label class="grid gap-1.5 text-xs font-semibold">Cognome*
-            <input required name="cognome" type="text" class="rounded-lg border border-black/10 px-3.5 py-2.5 text-sm font-normal focus:border-brand outline-none" />
-          </label>
-        </div>
-        <div class="grid gap-4 sm:grid-cols-2">
-          <label class="grid gap-1.5 text-xs font-semibold">Azienda
-            <input name="azienda" type="text" class="rounded-lg border border-black/10 px-3.5 py-2.5 text-sm font-normal focus:border-brand outline-none" />
-          </label>
-          <label class="grid gap-1.5 text-xs font-semibold">Email*
-            <input required name="email" type="email" class="rounded-lg border border-black/10 px-3.5 py-2.5 text-sm font-normal focus:border-brand outline-none" />
-          </label>
-        </div>
-        <label class="grid gap-1.5 text-xs font-semibold">Numero di telefono
-          <input name="telefono" type="tel" class="rounded-lg border border-black/10 px-3.5 py-2.5 text-sm font-normal focus:border-brand outline-none" />
-        </label>
-        <label class="grid gap-1.5 text-xs font-semibold">Messaggio*
-          <textarea required name="messaggio" rows="4" placeholder="Fornisci più informazioni possibili per ricevere l'offerta entro 24h" class="rounded-lg border border-black/10 px-3.5 py-2.5 text-sm font-normal focus:border-brand outline-none resize-y"></textarea>
-        </label>
-        <label class="grid gap-1.5 text-xs font-semibold">Come ci hai conosciuti?
-          <select name="fonte" class="rounded-lg border border-black/10 px-3.5 py-2.5 text-sm font-normal focus:border-brand outline-none bg-white">
-            <option>Google</option><option>Passaparola</option><option>Instagram</option><option>Facebook</option><option>Altri Social</option><option>Altro</option>
-          </select>
-        </label>
-        <button type="submit" class="btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-white hover:bg-brand-dark">Invia</button>
-        <p class="text-xs text-ink/50">*Campi obbligatori</p>
-      </form>
     </div>
   </section>
 
-  <!-- WHATSAPP FLUTTUANTE (numero corretto, a differenza del popup originale) -->
+  <!-- WHATSAPP FLUTTUANTE (numero corretto) -->
   <a
     href="https://wa.me/41765889497?text=Ciao%20VAM%20Deco%2C%20vorrei%20un%20preventivo%20per%20pellicola%20satinata%20%2F%20privacy."
     target="_blank" rel="noopener"
-    class="btn-anim fixed bottom-5 right-5 z-40 rounded-full bg-[#25D366] text-white px-5 py-3.5 text-sm font-semibold shadow-xl"
+    class="btn-anim fixed bottom-5 right-5 z-40 rounded-full bg-[#25D366] text-white px-5 py-3.5 text-sm font-semibold shadow-xl shadow-black/50"
     aria-label="Scrivici su WhatsApp per un preventivo"
   >Chat su WhatsApp</a>
 

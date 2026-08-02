@@ -7,30 +7,30 @@ const voci = [
   { testo: 'Blog', href: '/articoli' },
 ];
 ---
-<header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-black/5">
+<header class="sticky top-0 z-50 bg-ink/85 backdrop-blur border-b border-white/10">
   <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
     <a href="/" class="flex items-center gap-2 shrink-0" aria-label="VAM Deco, torna alla home">
       <img src="/logo-vamdeco.png" alt="Logo VAM Deco" class="h-8 w-auto" />
     </a>
-    <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+    <nav class="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] px-2 py-1.5 text-sm font-medium">
       {voci.map((v) => (
-        <a href={v.href} class="hover:text-brand transition-colors">{v.testo}</a>
+        <a href={v.href} class="px-3.5 py-1.5 rounded-full hover:bg-white/10 hover:text-brand transition-colors">{v.testo}</a>
       ))}
     </nav>
     <div class="flex items-center gap-3">
       <a
         href="/contattaci"
-        class="inline-flex items-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark transition-colors"
+        class="btn-anim inline-flex items-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-ink hover:bg-brand-dark"
       >Contattaci</a>
       <details class="md:hidden relative">
         <summary class="list-none cursor-pointer p-2 -mr-2" aria-label="Apri il menu">
-          <span class="block w-6 h-0.5 bg-ink mb-1.5"></span>
-          <span class="block w-6 h-0.5 bg-ink mb-1.5"></span>
-          <span class="block w-6 h-0.5 bg-ink"></span>
+          <span class="block w-6 h-0.5 bg-carta mb-1.5"></span>
+          <span class="block w-6 h-0.5 bg-carta mb-1.5"></span>
+          <span class="block w-6 h-0.5 bg-carta"></span>
         </summary>
-        <nav class="absolute right-0 top-full mt-3 w-56 rounded-2xl bg-white shadow-xl border border-black/5 p-3 flex flex-col">
+        <nav class="absolute right-0 top-full mt-3 w-56 rounded-2xl bg-superficie shadow-xl border border-white/10 p-3 flex flex-col">
           {voci.map((v) => (
-            <a href={v.href} class="px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-paper">{v.testo}</a>
+            <a href={v.href} class="px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-white/10">{v.testo}</a>
           ))}
         </nav>
       </details>

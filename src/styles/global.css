@@ -10,11 +10,13 @@
 @font-face { font-family: "Unbounded"; font-style: normal; font-weight: 800; font-display: swap; src: url("/fonts/unbounded-800.woff2") format("woff2"); }
 @font-face { font-family: "Unbounded"; font-style: normal; font-weight: 900; font-display: swap; src: url("/fonts/unbounded-900.woff2") format("woff2"); }
 
+/* TEMA SCURO fedele all'originale vamdeco.ch: sfondo #0a0a0a, testo bianco, accenti #F58327 */
 @theme {
   --color-brand: #F58327;
   --color-brand-dark: #d96f15;
-  --color-ink: #0d0d0d;
-  --color-paper: #fafaf8;
+  --color-ink: #0a0a0a;
+  --color-carta: #fafaf8;
+  --color-superficie: #141414;
   --font-display: "Unbounded", sans-serif;
   --font-sans: "Unbounded", sans-serif;
 }
@@ -23,11 +25,22 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Font brand: Unbounded ovunque, come da indicazione di Michele (02.08.2026) */
 body {
   font-family: var(--font-sans);
-  color: var(--color-ink);
-  background: var(--color-paper);
+  color: var(--color-carta);
+  background: var(--color-ink);
+}
+
+/* Pattern decorativo hero: pillole verticali scure su scuro, come l'originale */
+.pattern-hero {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='260'%3E%3Crect x='12' y='12' width='54' height='236' rx='27' fill='%23111111'/%3E%3Crect x='84' y='48' width='54' height='200' rx='27' fill='%230f0f0f'/%3E%3C/svg%3E");
+  background-size: 150px 260px;
+}
+
+/* Bagliore arancione dal basso, come la hero originale */
+.glow-arancio {
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 108%, rgba(245, 131, 39, 0.55), rgba(245, 131, 39, 0.18) 55%, transparent 78%);
 }
 
 /* ---------- Animazioni ---------- */
@@ -68,7 +81,7 @@ html.js [data-reveal].is-visible {
 }
 .testo-contorno {
   color: transparent;
-  -webkit-text-stroke: 2px rgba(13, 13, 13, 0.25);
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.28);
 }
 
 /* Bottoni: micro-interazione */
@@ -77,19 +90,26 @@ html.js [data-reveal].is-visible {
 }
 .btn-anim:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px -12px rgba(245, 131, 39, 0.55);
+  box-shadow: 0 10px 28px -10px rgba(245, 131, 39, 0.6);
 }
 .btn-anim:active {
   transform: translateY(0);
 }
 
-/* Card: sollevamento su hover */
+/* Card scure: sollevamento su hover */
 .card-anim {
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s, border-color 0.35s;
 }
 .card-anim:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px -18px rgba(13, 13, 13, 0.25);
+  border-color: rgba(245, 131, 39, 0.45);
+  box-shadow: 0 18px 44px -18px rgba(245, 131, 39, 0.28);
+}
+
+/* Superficie card standard del tema scuro */
+.card-scura {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Accordion FAQ animato */

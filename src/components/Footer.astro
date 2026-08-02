@@ -13,11 +13,11 @@ const servizi = [
   { testo: 'Packaging', href: '/packaging' },
 ];
 ---
-<footer class="bg-ink text-white mt-24">
+<footer class="border-t border-white/10 bg-black/40 mt-24">
   <div class="max-w-6xl mx-auto px-4 py-14 grid gap-10 md:grid-cols-3">
     <div>
-      <img src="/logo-vamdeco-bianco.png" alt="Logo VAM Deco" class="h-9 w-auto mb-5" onerror="this.src='/logo-vamdeco.png'" />
-      <ul class="space-y-2.5 text-sm text-white/80">
+      <img src="/logo-vamdeco.png" alt="Logo VAM Deco" class="h-9 w-auto mb-5" />
+      <ul class="space-y-2.5 text-sm text-carta/75">
         <li><a href="tel:+41765889497" class="hover:text-brand">+41 76 588 94 97</a></li>
         <li><a href="mailto:info@vamdeco.ch" class="hover:text-brand">info@vamdeco.ch</a></li>
         <li>
@@ -26,22 +26,22 @@ const servizi = [
           </a>
         </li>
       </ul>
-      <div class="mt-5 text-sm text-white/60 leading-relaxed">
+      <div class="mt-5 text-sm text-carta/50 leading-relaxed">
         Lunedì - Venerdì: 08:30 - 12:00 / 13:30 - 18:00<br />
         Sabato: 09:30 - 12:00 · Domenica: chiuso
       </div>
     </div>
     <div>
-      <div class="font-display text-sm tracking-wide mb-4">I nostri servizi</div>
-      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-white/80">
+      <div class="font-display text-sm tracking-wide mb-4 text-brand">I nostri servizi</div>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-carta/75">
         {servizi.map((s) => (
           <li><a href={s.href} class="hover:text-brand">{s.testo}</a></li>
         ))}
       </ul>
     </div>
     <div>
-      <div class="font-display text-sm tracking-wide mb-4">Seguici</div>
-      <ul class="space-y-2.5 text-sm text-white/80">
+      <div class="font-display text-sm tracking-wide mb-4 text-brand">Seguici</div>
+      <ul class="space-y-2.5 text-sm text-carta/75">
         <li><a href="https://instagram.com/vamdeco.ch" target="_blank" rel="noopener" class="hover:text-brand">Instagram</a></li>
         <li><a href="https://facebook.com/vamdeco.ch" target="_blank" rel="noopener" class="hover:text-brand">Facebook</a></li>
         <li><a href="https://www.tiktok.com/@vamdeco.ch" target="_blank" rel="noopener" class="hover:text-brand">TikTok</a></li>
@@ -50,7 +50,7 @@ const servizi = [
     </div>
   </div>
   <div class="border-t border-white/10">
-    <div class="max-w-6xl mx-auto px-4 py-5 flex flex-wrap items-center justify-between gap-3 text-xs text-white/50">
+    <div class="max-w-6xl mx-auto px-4 py-5 flex flex-wrap items-center justify-between gap-3 text-xs text-carta/40">
       <span>© VAM Deco Sagl · Sementina, Ticino</span>
       <a href="/norme-sulla-privacy" class="hover:text-brand">Norme sulla privacy</a>
     </div>
