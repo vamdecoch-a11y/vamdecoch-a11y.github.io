@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Marquee from '../components/Marquee.astro';
+import ParoleScroll from '../components/ParoleScroll.astro';
 
 const servizi = [
   { titolo: 'Decorazione veicoli', href: '/decorazione-veicoli-ticino', descr: 'Trasforma la tua auto, furgone o camion in una pubblicità in movimento con grafiche resistenti e personalizzate.' },
@@ -102,6 +103,12 @@ const specialita = [
       ))}
     </div>
   </section>
+
+  <!-- PAROLE CHE SI ACCENDONO ALLO SCROLL -->
+  <ParoleScroll
+    prefisso="Diamo vita a"
+    parole={['i tuoi veicoli.', 'le tue vetrine.', 'il tuo abbigliamento.', 'i tuoi vetri.', 'le tue insegne.', 'i tuoi eventi.', 'le tue idee.']}
+  />
 
   <!-- SPECIALITÀ -->
   <section class="max-w-6xl mx-auto px-4 py-16">

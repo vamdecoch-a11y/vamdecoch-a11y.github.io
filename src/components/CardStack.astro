@@ -1,0 +1,89 @@
+---
+interface Props {
+  immagini: string[];
+  alt: string;
+}
+const { immagini, alt } = Astro.props;
+---
+<div class="card-stack relative mx-auto max-w-2xl px-4" data-reveal>
+  <div class="stack-scena relative aspect-video">
+    {immagini.map((img, i) => (
+      <div class="stack-carta" data-indice={i}>
+        <img src={img} alt={`${alt} (foto ${i + 1})`} loading={i < 3 ? 'eager' : 'lazy'} draggable="false" />
+      </div>
+    ))}
+  </div>
+  <div class="mt-5 flex items-center justify-center gap-3">
+    <button type="button" class="stack-prev pillola-vetro rounded-full w-10 h-10 grid place-items-center text-carta cursor-pointer" aria-label="Foto precedente">←</button>
+    <div class="stack-punti flex items-center gap-1.5"></div>
+    <button type="button" class="stack-next pillola-vetro rounded-full w-10 h-10 grid place-items-center text-carta cursor-pointer" aria-label="Foto successiva">→</button>
+  </div>
+</div>
+
+<script>
+  // Pila di card trascinabili: trascina la prima foto (o usa le frecce) per scorrere la galleria
+  document.querySelectorAll<HTMLElement>('.card-stack').forEach((radice) => {
+    const scena = radice.querySelector<HTMLElement>('.stack-scena')!;
+    const carte = Array.from(radice.querySelectorAll<HTMLElement>('.stack-carta'));
+    const contenitorePunti = radice.querySelector<HTMLElement>('.stack-punti')!;
+    let ordine = carte.map((_, i) => i);
+    let inAnimazione = false;
+
+    const punti = carte.map((_, i) => {
+      const p = document.createElement('span');
+      p.className = 'stack-punto';
+      contenitorePunti.appendChild(p);
+      return p;
+    });
+
+    function disegna() {
+      ordine.forEach((idx, pos) => {
+        const c = carte[idx];
+        c.style.zIndex = String(carte.length - pos);
+        if (pos > 3) {
+          c.style.opacity = '0';
+          c.style.transform = 'translateY(-12%) scale(0.8)';
+        } else {
+          c.style.opacity = '1';
+          c.style.transform = `translateY(${pos * -4}%) scale(${1 - pos * 0.05})`;
+          c.style.filter = `brightness(${1 - pos * 0.22})`;
+        }
+      });
+      punti.forEach((p, i) => p.classList.toggle('attivo', i === ordine[0]));
+    }
+
+    function avanza(direzione: number) {
+      if (inAnimazione) return;
+      inAnimazione = true;
+      const fronte = carte[ordine[0]];
+      fronte.classList.add('esce');
+      fronte.style.transform = `translateX(${direzione * 120}%) rotate(${direzione * 7}deg)`;
+      setTimeout(() => {
+        fronte.classList.remove('esce');
+        ordine = [...ordine.slice(1), ordine[0]];
+        disegna();
+        inAnimazione = false;
+      }, 270);
+    }
+
+    radice.querySelector('.stack-next')?.addEventListener('click', () => avanza(1));
+    radice.querySelector('.stack-prev')?.addEventListener('click', () => avanza(-1));
+
+    // Trascinamento della carta in cima (mouse e touch)
+    let inizioX: number | null = null;
+    scena.addEventListener('pointerdown', (e) => { inizioX = e.clientX; });
+    window.addEventListener('pointerup', (e) => {
+      if (inizioX === null) return;
+      const dx = e.clientX - inizioX;
+      inizioX = null;
+      if (Math.abs(dx) > 50) avanza(dx > 0 ? 1 : -1);
+    });
+
+    // Avanzamento automatico lento, in pausa quando il mouse è sopra
+    let timer = setInterval(() => avanza(1), 5000);
+    scena.addEventListener('pointerenter', () => clearInterval(timer));
+    scena.addEventListener('pointerleave', () => { timer = setInterval(() => avanza(1), 5000); });
+
+    disegna();
+  });
+</script>

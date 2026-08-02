@@ -1,0 +1,46 @@
+---
+interface Props {
+  prefisso: string;
+  parole: string[];
+}
+const { prefisso, parole } = Astro.props;
+---
+<!-- Effetto cinematografico: scorrendo, le parole si accendono d'arancione una alla volta -->
+<section class="parole-sezione relative" style={`height: ${parole.length * 60 + 100}vh;`}>
+  <div class="sticky top-0 h-screen flex items-center overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 w-full grid gap-6 md:grid-cols-2 items-center">
+      <h2 class="font-display text-3xl md:text-5xl font-bold leading-tight">
+        {prefisso}
+      </h2>
+      <div class="parole-lista font-display text-4xl md:text-6xl font-bold leading-[1.35]">
+        {parole.map((p) => (
+          <div class="parola-scroll">{p}</div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Mappa lo scroll della sezione sull'accensione progressiva delle parole
+  const sezioni = document.querySelectorAll<HTMLElement>('.parole-sezione');
+  function aggiorna() {
+    sezioni.forEach((sez) => {
+      const parole = sez.querySelectorAll<HTMLElement>('.parola-scroll');
+      const r = sez.getBoundingClientRect();
+      const corsa = r.height - window.innerHeight;
+      const progresso = Math.min(1, Math.max(0, -r.top / corsa));
+      const attiva = Math.min(parole.length - 1, Math.floor(progresso * parole.length));
+      const lista = sez.querySelector<HTMLElement>('.parole-lista')!;
+      const passo = parole[0]?.offsetHeight || 0;
+      lista.style.transform = `translateY(${(parole.length - 1) / 2 * passo - attiva * passo}px)`;
+      lista.style.transition = 'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)';
+      parole.forEach((p, i) => p.classList.toggle('accesa', i === attiva));
+    });
+  }
+  if (sezioni.length) {
+    window.addEventListener('scroll', aggiorna, { passive: true });
+    window.addEventListener('resize', aggiorna);
+    aggiorna();
+  }
+</script>

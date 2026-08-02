@@ -37,10 +37,10 @@ body {
   background-size: 150px 260px;
 }
 
-/* Bagliore arancione dal basso, come la hero originale */
+/* Bagliore arancione dal basso, come la hero originale (dimezzato su richiesta di Michele, 03.08) */
 .glow-arancio {
   background:
-    radial-gradient(ellipse 90% 70% at 50% 108%, rgba(245, 131, 39, 0.55), rgba(245, 131, 39, 0.18) 55%, transparent 78%);
+    radial-gradient(ellipse 90% 70% at 50% 108%, rgba(245, 131, 39, 0.28), rgba(245, 131, 39, 0.09) 55%, transparent 78%);
 }
 
 /* ---------- Animazioni ---------- */
@@ -132,10 +132,175 @@ html.js [data-reveal].is-visible {
   transform: rotate(45deg);
 }
 
+/* ---------- Galleria a pila di card trascinabili ---------- */
+.stack-scena {
+  perspective: 1200px;
+  touch-action: pan-y;
+}
+.stack-carta {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.7);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s, opacity 0.3s;
+  will-change: transform;
+  user-select: none;
+}
+.stack-carta img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.stack-carta.esce {
+  transition: transform 0.28s ease-in, opacity 0.28s ease-in;
+  opacity: 0;
+}
+.stack-punto {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  transition: all 0.3s;
+}
+.stack-punto.attivo {
+  background: var(--color-brand);
+  width: 22px;
+}
+
+/* ---------- Numeri del processo che si accendono allo scroll ---------- */
+.numero-fase {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(4rem, 9vw, 7.5rem);
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.08);
+  transition: color 0.5s, text-shadow 0.5s;
+}
+.fase-riga.accesa .numero-fase {
+  color: var(--color-brand);
+  text-shadow: 0 0 34px rgba(245, 131, 39, 0.55);
+}
+
+/* ---------- Parola gigante dietro le sezioni (es. TESTIMONIANZE) ---------- */
+.parola-gigante {
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3.5rem, 12vw, 11rem);
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ---------- Effetto macchina da scrivere ---------- */
+.typewriter .cursore {
+  display: inline-block;
+  width: 0.08em;
+  margin-left: 0.06em;
+  background: var(--color-brand);
+  animation: lampeggia 1s steps(1) infinite;
+}
+@keyframes lampeggia {
+  50% { opacity: 0; }
+}
+
+/* ---------- Parole che si accendono allo scroll (home) ---------- */
+.parola-scroll {
+  transition: color 0.35s, text-shadow 0.35s, opacity 0.35s;
+  color: rgba(255, 255, 255, 0.14);
+}
+.parola-scroll.accesa {
+  color: var(--color-brand);
+  text-shadow: 0 0 30px rgba(245, 131, 39, 0.45);
+}
+
+/* ---------- Footer cinematografico a tendina ---------- */
+@media (min-width: 768px) {
+  .reveal-wrap {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .cine-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .cine-footer .act {
+    pointer-events: auto;
+  }
+}
+.footer-aurora {
+  position: absolute;
+  width: 55vw;
+  height: 55vw;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(245, 131, 39, 0.35), transparent 65%);
+  filter: blur(80px);
+  pointer-events: none;
+  animation: respira 7s ease-in-out infinite;
+}
+@keyframes respira {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+  50% { transform: translate(-50%, -50%) scale(1.12); opacity: 1; }
+}
+.footer-griglia {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px) 0 0 / 60px 60px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px) 0 0 / 60px 60px;
+  mask-image: linear-gradient(to bottom, transparent, #000 28%, #000 72%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 28%, #000 72%, transparent);
+  pointer-events: none;
+}
+.footer-titano {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  background: linear-gradient(120deg, #fff, var(--color-brand));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 22px rgba(245, 131, 39, 0.45));
+}
+.pillola-vetro {
+  backdrop-filter: blur(16px);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), inset 0 -8px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease-out, border-color 0.3s;
+}
+.pillola-vetro:hover {
+  border-color: rgba(245, 131, 39, 0.6);
+}
+.footer-nastro {
+  transform: rotate(-1deg);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+}
+
 /* Accessibilità: chi preferisce meno movimento vede tutto fermo */
 @media (prefers-reduced-motion: reduce) {
   html.js [data-reveal] { opacity: 1; transform: none; transition: none; }
   .marquee-track { animation: none; }
   .btn-anim, .card-anim { transition: none; }
+  .footer-aurora { animation: none; }
   html { scroll-behavior: auto; }
 }
