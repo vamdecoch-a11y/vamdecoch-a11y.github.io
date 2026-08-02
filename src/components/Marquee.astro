@@ -1,0 +1,17 @@
+---
+interface Props {
+  testo: string;
+}
+const { testo } = Astro.props;
+const voci = Array(6).fill(testo);
+---
+<div class="marquee py-10 select-none" aria-hidden="true">
+  <div class="marquee-track">
+    {voci.map((t, i) => (
+      <span class={`font-display text-5xl md:text-7xl font-bold ${i % 2 ? 'testo-contorno' : 'text-ink'}`}>{t}</span>
+    ))}
+    {voci.map((t, i) => (
+      <span class={`font-display text-5xl md:text-7xl font-bold ${i % 2 ? 'testo-contorno' : 'text-ink'}`}>{t}</span>
+    ))}
+  </div>
+</div>

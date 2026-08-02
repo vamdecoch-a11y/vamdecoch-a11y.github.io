@@ -1,24 +1,121 @@
 @import "tailwindcss";
 
+/* Unbounded self-hosted (tutta la famiglia 200-900), nessuna dipendenza da Google Fonts */
+@font-face { font-family: "Unbounded"; font-style: normal; font-weight: 200; font-display: swap; src: url("/fonts/unbounded-200.woff2") format("woff2"); }
+@font-face { font-family: "Unbounded"; font-style: normal; font-weight: 300; font-display: swap; src: url("/fonts/unbounded-300.woff2") format("woff2"); }
+@font-face { font-family: "Unbounded"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/unbounded-400.woff2") format("woff2"); }
+@font-face { font-family: "Unbounded"; font-style: normal; font-weight: 500; font-display: swap; src: url("/fonts/unbounded-500.woff2") format("woff2"); }
+@font-face { font-family: "Unbounded"; font-style: normal; font-weight: 600; font-display: swap; src: url("/fonts/unbounded-600.woff2") format("woff2"); }
+@font-face { font-family: "Unbounded"; font-style: normal; font-weight: 700; font-display: swap; src: url("/fonts/unbounded-700.woff2") format("woff2"); }
+@font-face { font-family: "Unbounded"; font-style: normal; font-weight: 800; font-display: swap; src: url("/fonts/unbounded-800.woff2") format("woff2"); }
+@font-face { font-family: "Unbounded"; font-style: normal; font-weight: 900; font-display: swap; src: url("/fonts/unbounded-900.woff2") format("woff2"); }
+
 @theme {
   --color-brand: #F58327;
   --color-brand-dark: #d96f15;
   --color-ink: #0d0d0d;
   --color-paper: #fafaf8;
   --font-display: "Unbounded", sans-serif;
-  --font-sans: "Inter", sans-serif;
+  --font-sans: "Unbounded", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* Font brand: Unbounded ovunque, come da indicazione di Michele (02.08.2026) */
 body {
   font-family: var(--font-sans);
   color: var(--color-ink);
   background: var(--color-paper);
 }
 
-h1, h2, h3, .display {
-  font-family: var(--font-display);
+/* ---------- Animazioni ---------- */
+
+/* Comparsa allo scroll: elementi con data-reveal partono invisibili e salgono.
+   Attivo SOLO con JavaScript (html.js): senza JS tutto resta visibile. */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+html.js [data-reveal="left"] { transform: translateX(-32px); }
+html.js [data-reveal="right"] { transform: translateX(32px); }
+html.js [data-reveal="zoom"] { transform: scale(0.94); }
+html.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Nastro scorrevole (marquee) come sul sito originale */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 3rem;
+  width: max-content;
+  animation: marquee 26s linear infinite;
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.testo-contorno {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(13, 13, 13, 0.25);
+}
+
+/* Bottoni: micro-interazione */
+.btn-anim {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.25s, color 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+.btn-anim:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -12px rgba(245, 131, 39, 0.55);
+}
+.btn-anim:active {
+  transform: translateY(0);
+}
+
+/* Card: sollevamento su hover */
+.card-anim {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s;
+}
+.card-anim:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px -18px rgba(13, 13, 13, 0.25);
+}
+
+/* Accordion FAQ animato */
+.faq-item .faq-risposta {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.faq-item[open] .faq-risposta,
+.faq-item.aperta .faq-risposta {
+  grid-template-rows: 1fr;
+}
+.faq-risposta > div {
+  overflow: hidden;
+}
+.faq-chevron {
+  transition: transform 0.35s;
+}
+.faq-item[open] .faq-chevron {
+  transform: rotate(45deg);
+}
+
+/* Accessibilità: chi preferisce meno movimento vede tutto fermo */
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .marquee-track { animation: none; }
+  .btn-anim, .card-anim { transition: none; }
+  html { scroll-behavior: auto; }
 }

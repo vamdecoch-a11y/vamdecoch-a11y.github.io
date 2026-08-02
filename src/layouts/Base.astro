@@ -12,6 +12,7 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="it-CH">
   <head>
+    <script>document.documentElement.classList.add('js');</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
@@ -19,19 +20,66 @@ const { title, description } = Astro.props;
     <!-- ANTEPRIMA: rimuovere il noindex al go-live -->
     <meta name="robots" content="noindex, nofollow" />
     <link rel="icon" href="/favicon.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Unbounded self-hosted: precarico i pesi principali -->
+    <link rel="preload" href="/fonts/unbounded-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/unbounded-700.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body class="min-h-screen antialiased">
-    <div class="bg-ink text-white text-center text-xs py-1.5 px-4 font-medium tracking-wide">
+    <div class="bg-ink text-white text-center text-[11px] py-1.5 px-4 font-medium tracking-wide">
       ANTEPRIMA DI LAVORO DEL NUOVO SITO · non pubblica, non definitiva
     </div>
     <Header />
     <slot />
     <Footer />
+    <script>
+      // Comparsa allo scroll degli elementi [data-reveal]
+      const osservatore = new IntersectionObserver(
+        (voci) => {
+          for (const voce of voci) {
+            if (voce.isIntersecting) {
+              voce.target.classList.add('is-visible');
+              osservatore.unobserve(voce.target);
+            }
+          }
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+      );
+      document.querySelectorAll('[data-reveal]').forEach((el) => {
+        osservatore.observe(el);
+      });
+
+      // Ritardo a cascata per i figli di [data-reveal-stagger]
+      document.querySelectorAll('[data-reveal-stagger]').forEach((gruppo) => {
+        gruppo.querySelectorAll('[data-reveal]').forEach((el, i) => {
+          (el as HTMLElement).style.setProperty('--reveal-delay', `${i * 0.09}s`);
+        });
+      });
+
+      // Contatori animati: <span data-count="500" data-suffix="+">
+      const animaContatore = (el: HTMLElement) => {
+        const fine = parseFloat(el.dataset.count || '0');
+        const suffisso = el.dataset.suffix || '';
+        const durata = 1400;
+        const inizio = performance.now();
+        const passo = (ora: number) => {
+          const t = Math.min((ora - inizio) / durata, 1);
+          const eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = `${Math.round(fine * eased)}${suffisso}`;
+          if (t < 1) requestAnimationFrame(passo);
+        };
+        requestAnimationFrame(passo);
+      };
+      const osservaContatori = new IntersectionObserver((voci) => {
+        for (const voce of voci) {
+          if (voce.isIntersecting) {
+            animaContatore(voce.target as HTMLElement);
+            osservaContatori.unobserve(voce.target);
+          }
+        }
+      }, { threshold: 0.5 });
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => osservaContatori.observe(el));
+      }
+    </script>
   </body>
 </html>
