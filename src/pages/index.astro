@@ -1,0 +1,138 @@
+---
+import Base from '../layouts/Base.astro';
+
+const servizi = [
+  { titolo: 'Decorazione veicoli', href: '/decorazione-veicoli-ticino', descr: 'Trasforma la tua auto, furgone o camion in una pubblicità in movimento con grafiche resistenti e personalizzate.' },
+  { titolo: 'Decorazione vetrine', href: '/decorazione-vetrine-ticino', descr: 'Attira clienti e valorizza il tuo brand con vetrine creative e su misura.' },
+  { titolo: 'Abbigliamento personalizzato', href: '/abbigliamento-personalizzato-ticino', descr: 'Magliette, felpe e divise personalizzate per aziende, eventi e privati.' },
+  { titolo: 'Pellicole satinate privacy', href: '/pellicole-satinate-ticino', descr: 'Pellicole satinate per privacy e design eleganti, ideali per uffici, bagni e negozi.' },
+  { titolo: 'Oscuramento vetrate UV', href: '/oscuramento-vetrate-uv', descr: 'Pellicole che riducono calore, abbagliamento e raggi UV, migliorando comfort e protezione degli ambienti.' },
+  { titolo: 'Oscuramento vetri auto', href: '/oscuramento-vetri-auto-ticino', descr: 'Pellicole oscuranti per comfort, protezione UV e look moderno del tuo veicolo.' },
+  { titolo: 'Adesivi e etichette', href: '/adesivi-e-etichette', descr: 'Adesivi ed etichette personalizzate per prodotti, vetrine e veicoli: resistenti, precise e di qualità professionale.' },
+  { titolo: 'Cartellonistica', href: '/cartellonistica', descr: 'Insegne e pannelli su misura per dare visibilità e forza al tuo business.' },
+  { titolo: 'Stampa su carta', href: '/stampa-su-carta', descr: 'Biglietti da visita, volantini, cataloghi e molto altro stampati con qualità professionale.' },
+  { titolo: 'Siti web', href: '/siti-web', descr: 'Siti web moderni, ottimizzati SEO e mobile-friendly per far crescere la tua attività online.' },
+  { titolo: 'Packaging', href: '/packaging', descr: 'Soluzioni di packaging personalizzate per rendere unico e riconoscibile il tuo prodotto.' },
+];
+
+const numeri = [
+  { n: '8+', l: 'Anni di esperienza' },
+  { n: '500+', l: 'Progetti di successo' },
+  { n: '300+', l: 'Clienti soddisfatti' },
+  { n: '78', l: 'Recensioni a 5 stelle' },
+];
+
+const testimonianze = [
+  { testo: 'Ho collaborato con diverse aziende di decorazione veicoli, ma VAM Deco e Michele hanno superato ogni aspettativa. Risposte rapide, lavoro impeccabile.', nome: 'N. Di Lorenzi' },
+  { testo: 'Affidarci a VAM Deco per la decorazione delle nostre vetrine è stata una delle migliori decisioni per la nostra attività.', nome: 'M. Pestoni' },
+  { testo: 'Michele ha trasformato la nostra flotta aziendale con un design accattivante e professionale.', nome: 'A. Rossi' },
+  { testo: 'La qualità delle stampe e degli adesivi di VAM Deco è eccezionale. Non solo hanno rispettato le scadenze, ma hanno anche fornito un supporto costante.', nome: 'M. Ferraro' },
+  { testo: 'Siamo stati aiutati a migliorare la privacy e l’estetica della nostra casa con pellicole oscuranti di altissima qualità.', nome: 'E. Ricchino' },
+];
+
+const specialita = [
+  { n: '400+', t: 'Progetti realizzati con successo', d: 'Abbiamo completato più di 400 progetti per aziende in tutta la Svizzera, garantendo risultati eccellenti e una personalizzazione curata.' },
+  { n: '150%', t: 'Aumento medio della visibilità del brand', d: 'Le nostre decorazioni e personalizzazioni hanno portato a un incremento medio del 150% nella visibilità dei brand dei nostri clienti.' },
+  { n: '80%', t: 'Maggiore visibilità del brand', d: 'Grazie alle nostre soluzioni di decorazione e personalizzazione, i clienti hanno sperimentato un aumento dell’80% nella visibilità.' },
+];
+---
+<Base
+  title="VAM Deco | Decorazione Veicoli e Vetrine in Ticino"
+  description="Decorazione veicoli, vetrine, abbigliamento personalizzato e pellicole oscuranti in Ticino. Richiedi subito un preventivo gratuito per la tua azienda."
+>
+  <!-- HERO -->
+  <section class="max-w-6xl mx-auto px-4 pt-16 pb-20 text-center">
+    <div class="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-brand-dark mb-6">
+      #1 · Agenzia di decorazione e personalizzazione in Ticino
+    </div>
+    <h1 class="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
+      Diamo <span class="text-brand">vita</span><br /> alle tue idee
+    </h1>
+    <p class="max-w-2xl mx-auto mt-6 text-lg text-ink/70">
+      Da oltre 7 anni siamo il punto di riferimento in Ticino per la decorazione di veicoli, vetrine,
+      cartellonistica e stampa, con abbigliamento personalizzato per aziende, eventi e privati.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="#servizi" class="rounded-full bg-brand px-7 py-3.5 font-semibold text-white hover:bg-brand-dark transition-colors">
+        Scopri i nostri servizi
+      </a>
+      <a
+        href="https://wa.me/41765889497?text=Ciao%20VAM%20Deco%2C%20vorrei%20un%20preventivo"
+        target="_blank" rel="noopener"
+        class="rounded-full border-2 border-ink/15 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand transition-colors"
+      >Preventivo su WhatsApp</a>
+    </div>
+    <p class="mt-4 text-sm text-ink/50">Richiedi il tuo preventivo gratuito in 24/48h</p>
+  </section>
+
+  <!-- SERVIZI -->
+  <section id="servizi" class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-4xl font-bold mb-10">I nostri servizi</h2>
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {servizi.map((s) => (
+        <a href={s.href} class="group rounded-2xl bg-white border border-black/5 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+          <h3 class="font-display text-sm font-semibold tracking-wide uppercase group-hover:text-brand transition-colors">{s.titolo}</h3>
+          <p class="mt-3 text-sm text-ink/70 leading-relaxed">{s.descr}</p>
+          <span class="mt-4 inline-block text-xs font-bold tracking-widest text-brand">SCOPRI DI PIÙ →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- NUMERI -->
+  <section class="bg-ink text-white py-14">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      {numeri.map((x) => (
+        <div>
+          <div class="font-display text-3xl md:text-4xl font-bold text-brand">{x.n}</div>
+          <div class="mt-2 text-sm text-white/70">{x.l}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- SPECIALITÀ -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-4xl font-bold mb-4">Le nostre specialità</h2>
+    <p class="max-w-2xl text-ink/70 mb-10">
+      VAM Deco è leader nella decorazione veicoli, vetrine e abbigliamento personalizzato e non solo.
+      Forniamo soluzioni su misura che danno visibilità al tuo brand.
+    </p>
+    <div class="grid gap-5 md:grid-cols-3">
+      {specialita.map((s) => (
+        <div class="rounded-2xl bg-white border border-black/5 p-6 shadow-sm">
+          <div class="font-display text-3xl font-bold text-brand">{s.n}</div>
+          <div class="mt-2 font-semibold">{s.t}</div>
+          <p class="mt-2 text-sm text-ink/70 leading-relaxed">{s.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- TESTIMONIANZE -->
+  <section class="bg-white border-y border-black/5 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-4xl font-bold mb-10">Cosa dicono i nostri clienti</h2>
+      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {testimonianze.map((t) => (
+          <figure class="rounded-2xl bg-paper border border-black/5 p-6">
+            <div class="text-brand text-sm tracking-widest" aria-label="5 stelle su 5">★★★★★</div>
+            <blockquote class="mt-3 text-sm text-ink/80 leading-relaxed">"{t.testo}"</blockquote>
+            <figcaption class="mt-4 text-sm font-semibold">{t.nome}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <a href="/recensioni" class="mt-8 inline-block font-semibold text-brand hover:underline">Vedi tutte le recensioni →</a>
+    </div>
+  </section>
+
+  <!-- CTA FINALE -->
+  <section class="max-w-6xl mx-auto px-4 py-20 text-center">
+    <h2 class="text-2xl md:text-4xl font-bold">Hai un progetto in mente?</h2>
+    <p class="mt-4 text-ink/70">Ti rispondiamo velocemente su WhatsApp o via mail. Preventivo gratuito in 24/48h.</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="/contattaci" class="rounded-full bg-brand px-7 py-3.5 font-semibold text-white hover:bg-brand-dark transition-colors">Contattaci ora</a>
+      <a href="tel:+41765889497" class="rounded-full border-2 border-ink/15 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand transition-colors">+41 76 588 94 97</a>
+    </div>
+  </section>
+</Base>

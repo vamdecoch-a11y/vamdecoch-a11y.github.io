@@ -1,0 +1,113 @@
+---
+import Base from '../layouts/Base.astro';
+
+const vantaggi = [
+  'Privacy immediata ed elegante',
+  'Luce naturale sempre presente',
+  'Nessuna tenda, solo luce naturale',
+  'Personalizzazione su misura',
+  'Nessun intervento strutturale',
+  'Eleganza su ogni vetro',
+];
+
+const fasi = [
+  { t: 'Analisi delle tue esigenze', d: 'Capiremo insieme dove vuoi maggiore privacy (ufficio, bagno, vetrina...) e ti consiglieremo la soluzione più adatta.' },
+  { t: 'Proposta su misura', d: 'Prepariamo un preventivo gratuito e ti mostriamo esempi e pellicole disponibili, anche con opzioni personalizzate.' },
+  { t: 'Applicazione veloce e pulita', d: 'In pochi minuti la pellicola viene applicata senza polvere, rumori o lavori invasivi. Può essere rimossa in futuro senza danni.' },
+  { t: 'Risultato immediato', d: 'Subito dopo l’applicazione avrai vetri opachi, eleganti e riservati. Più luce naturale, meno occhi indiscreti.' },
+];
+
+const perche = [
+  { t: 'Esperienza consolidata', d: 'Con anni di esperienza e numerosi progetti realizzati, siamo un partner di fiducia per la decorazione e la personalizzazione in Ticino.' },
+  { t: 'Soluzioni su misura', d: 'Ogni progetto è unico. Offriamo soluzioni personalizzate che rispondono alle esigenze di ogni cliente, garantendo sempre il miglior risultato.' },
+  { t: 'Focalizzazione sul cliente', d: 'La soddisfazione del cliente è al centro di tutto ciò che facciamo. Lavoriamo a stretto contatto con te per realizzare esattamente ciò che desideri.' },
+  { t: 'Comunicazione trasparente', d: 'Manteniamo una comunicazione costante e chiara in ogni fase del progetto.' },
+];
+---
+<Base
+  title="Pellicole satinate privacy in Ticino | VAM Deco"
+  description="Pellicole satinate e opache per vetri in Ticino: privacy immediata senza perdere luce naturale, per uffici, negozi e case. Preventivo gratuito in 24/48h."
+>
+  <!-- HERO -->
+  <section class="max-w-6xl mx-auto px-4 pt-16 pb-14">
+    <div class="max-w-3xl">
+      <h1 class="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
+        Pellicole satinate privacy <span class="text-brand">in Ticino</span>
+      </h1>
+      <p class="mt-6 text-lg text-ink/70 leading-relaxed">
+        Vuoi più privacy in ufficio, a casa o nel tuo negozio senza tende o muri? Le pellicole satinate
+        trasformano vetri e vetrate in superfici eleganti che proteggono dagli sguardi indiscreti,
+        senza rinunciare alla luminosità. Installazione rapida in tutto il Ticino, da Bellinzona a
+        Locarno, Lugano e Biasca, con possibilità di personalizzare i vetri con loghi, scritte o pattern decorativi.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/contattaci" class="rounded-full bg-brand px-7 py-3.5 font-semibold text-white hover:bg-brand-dark transition-colors">
+          Richiedi il tuo preventivo gratuito
+        </a>
+        <a
+          href="https://wa.me/41765889497?text=Ciao%20VAM%20Deco%2C%20vorrei%20un%20preventivo%20per%20le%20pellicole%20satinate"
+          target="_blank" rel="noopener"
+          class="rounded-full border-2 border-ink/15 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand transition-colors"
+        >Chat su WhatsApp</a>
+      </div>
+      <p class="mt-4 text-sm text-ink/50">Preventivo gratuito in 24/48h · Ti rispondiamo su WhatsApp o via mail</p>
+    </div>
+  </section>
+
+  <!-- VANTAGGI -->
+  <section class="bg-white border-y border-black/5 py-14">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8">Hai bisogno di privacy, comfort e sicurezza nei tuoi spazi?</h2>
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {vantaggi.map((v) => (
+          <div class="flex items-center gap-3 rounded-xl bg-paper border border-black/5 px-4 py-3.5">
+            <span class="text-brand font-bold">✓</span>
+            <span class="text-sm font-medium">{v}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="text-xs font-bold tracking-widest text-brand mb-2">COME FUNZIONA</div>
+    <h2 class="text-2xl md:text-3xl font-bold mb-10">Il nostro processo in 4 fasi</h2>
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+      {fasi.map((f, i) => (
+        <div class="rounded-2xl bg-white border border-black/5 p-6 shadow-sm">
+          <div class="font-display text-2xl font-bold text-brand">0{i + 1}</div>
+          <div class="mt-3 font-semibold">{f.t}</div>
+          <p class="mt-2 text-sm text-ink/70 leading-relaxed">{f.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- PERCHÉ NOI -->
+  <section class="bg-white border-y border-black/5 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold mb-10">Semplice, veloce, su misura. Ecco perché ci scelgono</h2>
+      <div class="grid gap-5 md:grid-cols-2">
+        {perche.map((p) => (
+          <div class="rounded-2xl bg-paper border border-black/5 p-6">
+            <div class="font-semibold">{p.t}</div>
+            <p class="mt-2 text-sm text-ink/70 leading-relaxed">{p.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ: le risposte verranno recuperate dal sito attuale (estrazione in corso) -->
+
+  <!-- CTA FINALE -->
+  <section class="max-w-6xl mx-auto px-4 py-20 text-center">
+    <h2 class="text-2xl md:text-4xl font-bold">Richiedi il tuo preventivo gratuito in 24/48h</h2>
+    <p class="mt-4 text-ink/70">Sopralluogo e consiglio sulla soluzione più adatta, senza impegno.</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="/contattaci" class="rounded-full bg-brand px-7 py-3.5 font-semibold text-white hover:bg-brand-dark transition-colors">Contattaci ora</a>
+      <a href="tel:+41765889497" class="rounded-full border-2 border-ink/15 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand transition-colors">+41 76 588 94 97</a>
+    </div>
+  </section>
+</Base>

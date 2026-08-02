@@ -1,0 +1,58 @@
+---
+const servizi = [
+  { testo: 'Decorazione veicoli', href: '/decorazione-veicoli-ticino' },
+  { testo: 'Decorazione vetrine', href: '/decorazione-vetrine-ticino' },
+  { testo: 'Abbigliamento personalizzato', href: '/abbigliamento-personalizzato-ticino' },
+  { testo: 'Cartellonistica', href: '/cartellonistica' },
+  { testo: 'Adesivi e etichette', href: '/adesivi-e-etichette' },
+  { testo: 'Pellicole satinate privacy', href: '/pellicole-satinate-ticino' },
+  { testo: 'Oscuramento vetrate UV', href: '/oscuramento-vetrate-uv' },
+  { testo: 'Oscuramento vetri auto', href: '/oscuramento-vetri-auto-ticino' },
+  { testo: 'Stampa su carta', href: '/stampa-su-carta' },
+  { testo: 'Siti web', href: '/siti-web' },
+  { testo: 'Packaging', href: '/packaging' },
+];
+---
+<footer class="bg-ink text-white mt-24">
+  <div class="max-w-6xl mx-auto px-4 py-14 grid gap-10 md:grid-cols-3">
+    <div>
+      <img src="/logo-vamdeco-bianco.png" alt="Logo VAM Deco" class="h-9 w-auto mb-5" onerror="this.src='/logo-vamdeco.png'" />
+      <ul class="space-y-2.5 text-sm text-white/80">
+        <li><a href="tel:+41765889497" class="hover:text-brand">+41 76 588 94 97</a></li>
+        <li><a href="mailto:info@vamdeco.ch" class="hover:text-brand">info@vamdeco.ch</a></li>
+        <li>
+          <a href="https://maps.app.goo.gl/zq6THCbbrv1LWDPY6" target="_blank" rel="noopener" class="hover:text-brand">
+            Via Pobbia 4d, 6514 Sementina, Ticino
+          </a>
+        </li>
+      </ul>
+      <div class="mt-5 text-sm text-white/60 leading-relaxed">
+        Lunedì - Venerdì: 08:30 - 12:00 / 13:30 - 18:00<br />
+        Sabato: 09:30 - 12:00 · Domenica: chiuso
+      </div>
+    </div>
+    <div>
+      <div class="font-display text-sm tracking-wide mb-4">I nostri servizi</div>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-white/80">
+        {servizi.map((s) => (
+          <li><a href={s.href} class="hover:text-brand">{s.testo}</a></li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <div class="font-display text-sm tracking-wide mb-4">Seguici</div>
+      <ul class="space-y-2.5 text-sm text-white/80">
+        <li><a href="https://instagram.com/vamdeco.ch" target="_blank" rel="noopener" class="hover:text-brand">Instagram</a></li>
+        <li><a href="https://facebook.com/vamdeco.ch" target="_blank" rel="noopener" class="hover:text-brand">Facebook</a></li>
+        <li><a href="https://www.tiktok.com/@vamdeco.ch" target="_blank" rel="noopener" class="hover:text-brand">TikTok</a></li>
+        <li><a href="https://wa.me/41765889497" target="_blank" rel="noopener" class="hover:text-brand">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-5 flex flex-wrap items-center justify-between gap-3 text-xs text-white/50">
+      <span>© VAM Deco Sagl · Sementina, Ticino</span>
+      <a href="/norme-sulla-privacy" class="hover:text-brand">Norme sulla privacy</a>
+    </div>
+  </div>
+</footer>

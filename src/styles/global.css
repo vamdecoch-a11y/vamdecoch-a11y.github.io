@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #F58327;
+  --color-brand-dark: #d96f15;
+  --color-ink: #0d0d0d;
+  --color-paper: #fafaf8;
+  --font-display: "Unbounded", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-paper);
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+}
