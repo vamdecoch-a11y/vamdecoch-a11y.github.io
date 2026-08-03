@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import GalleriaOrizzontale from '../components/GalleriaOrizzontale.astro';
 import FormContatti from '../components/FormContatti.astro';
 import Testimonianze from '../components/Testimonianze.astro';
+import WhatsAppTondo from '../components/WhatsAppTondo.astro';
 import dati from '../dati/pellicole-satinate-ticino.json';
 
 // Benefici: nelle liste estratte come "01. Titolo: descrizione"
@@ -179,10 +180,10 @@ const faqJsonLd = JSON.stringify({
     </div>
   </section>
 
-  <!-- TESTIMONIANZE: scritta a tutta larghezza, sottile, con le recensioni che le scorrono sopra -->
+  <!-- TESTIMONIANZE: scritta adattiva dietro, recensioni sotto (come l'originale) -->
   <section class="relative py-16 overflow-hidden">
     <div class="parola-gigante">TESTIMONIANZE</div>
-    <div class="relative max-w-5xl mx-auto px-4 pt-[3vw]">
+    <div class="relative max-w-5xl mx-auto px-4 pt-28 md:pt-[10vw]">
       <Testimonianze testimonianze={testimonianze.map((t) => ({ ...t, avatar: `/img/pellicole/${t.avatar}` }))} />
       <div class="text-center mt-10">
         <a data-reveal href="/recensioni" class="btn-anim inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-ink hover:bg-brand-dark">Vedi le recensioni</a>
@@ -217,31 +218,38 @@ const faqJsonLd = JSON.stringify({
   <section id="contattaci" class="relative overflow-hidden">
     <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
     <div class="relative max-w-6xl mx-auto px-4 py-20">
-      <div class="grid gap-10 md:grid-cols-2 items-center">
-        <div data-reveal class="w-full">
-          <h2 class="font-display font-light leading-[0.88] text-[26vw] md:text-[11.5vw]">Parli<br /><span class="text-brand font-medium">amo!</span></h2>
+      <div class="grid gap-6 md:grid-cols-2 md:gap-4 items-center">
+        <div data-reveal class="w-full text-center md:text-left">
+          <!-- Su mobile una riga sola "Parliamo!", su desktop due righe sovrapposte col ! che sale -->
+          <h2 class="font-display font-light leading-none md:leading-[0.72] text-[13.5vw] md:text-[11.5vw]">Parli<br class="hidden md:block" /><span class="text-brand font-medium">amo!</span></h2>
         </div>
-        <div data-reveal class="md:max-w-md md:justify-self-end w-full">
+        <div data-reveal class="md:max-w-md w-full">
           <FormContatti oggetto="Richiesta preventivo pellicole satinate" compatto />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHATSAPP FLUTTUANTE (numero corretto) -->
-  <a
-    href="https://wa.me/41765889497?text=Ciao%20VAM%20Deco%2C%20vorrei%20un%20preventivo%20per%20pellicola%20satinata%20%2F%20privacy."
-    target="_blank" rel="noopener"
-    class="btn-anim fixed bottom-24 right-5 z-40 rounded-full bg-[#25D366] text-white px-5 py-3.5 text-sm font-semibold shadow-xl shadow-black/50"
-    aria-label="Scrivici su WhatsApp per un preventivo"
-  >Chat su WhatsApp</a>
+  <!-- WHATSAPP FLUTTUANTE: cerchio chiudibile come shop.vamdeco -->
+  <WhatsAppTondo testo="Ciao VAM Deco, vorrei un preventivo per pellicola satinata / privacy." />
 
   <script>
-    // Numeroni del processo: si accendono d'arancione quando entrano nella fascia centrale dello schermo
-    const osservaFasi = new IntersectionObserver((voci) => {
-      voci.forEach((v) => v.target.classList.toggle('accesa', v.isIntersecting));
-    }, { rootMargin: '-35% 0px -35% 0px' });
-    document.querySelectorAll('.fase-riga').forEach((r) => osservaFasi.observe(r));
+    // Numeroni del processo: si accende (numero + linea) la fase più vicina al centro dello schermo.
+    // Calcolo diretto sullo scroll: affidabile anche su mobile.
+    const righeFasi = Array.from(document.querySelectorAll<HTMLElement>('.fase-riga'));
+    const aggiornaFasi = () => {
+      const centro = window.innerHeight / 2;
+      righeFasi.forEach((r) => {
+        const box = r.getBoundingClientRect();
+        const centroRiga = box.top + box.height / 2;
+        r.classList.toggle('accesa', Math.abs(centroRiga - centro) < window.innerHeight * 0.3);
+      });
+    };
+    if (righeFasi.length) {
+      window.addEventListener('scroll', aggiornaFasi, { passive: true });
+      window.addEventListener('resize', aggiornaFasi);
+      aggiornaFasi();
+    }
 
     // Macchina da scrivere in loop: scrive una frase, la cancella, scrive la successiva
     const tw = document.querySelector<HTMLElement>('.tw-testo');

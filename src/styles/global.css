@@ -190,23 +190,33 @@ html.js [data-reveal].is-visible {
   text-shadow: 0 0 34px rgba(245, 131, 39, 0.55);
 }
 
-/* ---------- Parola gigante a TUTTA larghezza schermo, sottile (es. TESTIMONIANZE) ---------- */
+/* ---------- Parola gigante dietro le sezioni, sottile, adattiva (es. TESTIMONIANZE) ---------- */
 .parola-gigante {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw;
   text-align: center;
   font-family: var(--font-display);
   font-weight: 300;
-  font-size: 9.2vw;
+  font-size: clamp(2.6rem, 8.8vw, 9.5rem);
   line-height: 1;
   letter-spacing: -0.01em;
   color: rgba(255, 255, 255, 0.09);
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
+}
+/* Su mobile: stirata in orizzontale (richiesta esplicita di Michele: sproporzionata ~300%) */
+@media (max-width: 767px) {
+  .parola-gigante {
+    transform: translateX(-50%) scaleX(3);
+  }
+}
+
+/* Niente sbordi orizzontali su tutto il sito */
+html, body {
+  overflow-x: clip;
 }
 
 /* ---------- Linea di collegamento tra i numeri del processo ---------- */
@@ -312,7 +322,6 @@ html.js [data-reveal].is-visible {
     left: 0;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
     pointer-events: none;
   }
   .cine-footer .act {
@@ -374,6 +383,9 @@ html.js [data-reveal].is-visible {
 }
 .pillola-vetro:hover {
   border-color: rgba(245, 131, 39, 0.6);
+}
+.cine-footer {
+  overflow: hidden;
 }
 .footer-nastro {
   transform: rotate(-1deg);

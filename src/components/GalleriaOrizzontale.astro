@@ -25,7 +25,7 @@ const { immagini, alt } = Astro.props;
 </div>
 
 <script>
-  // Scorrimento continuo con velocità che si adatta dolcemente all'hover (mai fermo)
+  // Scorrimento continuo + trascinamento manuale (mouse e dito): trascini, e al rilascio riparte da solo
   document.querySelectorAll<HTMLElement>('.galleria-auto').forEach((cont) => {
     const binario = cont.querySelector<HTMLElement>('.galleria-binario')!;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -36,13 +36,41 @@ const { immagini, alt } = Astro.props;
     let velocita = base;
     let obiettivo = base;
     let x = 0;
-    cont.addEventListener('pointerenter', () => { obiettivo = base * 0.2; });
-    cont.addEventListener('pointerleave', () => { obiettivo = base; });
+    let trascinando = false;
+    let ultimoX = 0;
+
+    cont.addEventListener('pointerenter', () => { if (!trascinando) obiettivo = base * 0.2; });
+    cont.addEventListener('pointerleave', () => { if (!trascinando) obiettivo = base; });
+
+    cont.style.touchAction = 'pan-y';
+    cont.style.cursor = 'grab';
+    cont.addEventListener('pointerdown', (e) => {
+      trascinando = true;
+      ultimoX = e.clientX;
+      obiettivo = 0;
+      cont.style.cursor = 'grabbing';
+      cont.setPointerCapture(e.pointerId);
+    });
+    cont.addEventListener('pointermove', (e) => {
+      if (!trascinando) return;
+      x -= e.clientX - ultimoX;
+      ultimoX = e.clientX;
+    });
+    const fine = () => {
+      if (!trascinando) return;
+      trascinando = false;
+      cont.style.cursor = 'grab';
+      obiettivo = base;
+    };
+    cont.addEventListener('pointerup', fine);
+    cont.addEventListener('pointercancel', fine);
+
     const passo = () => {
       velocita += (obiettivo - velocita) * 0.05;
-      x += velocita;
+      if (!trascinando) x += velocita;
       const meta = binario.scrollWidth / 2;
       if (x >= meta) x -= meta;
+      if (x < 0) x += meta;
       binario.style.transform = `translateX(${-x}px)`;
       requestAnimationFrame(passo);
     };
