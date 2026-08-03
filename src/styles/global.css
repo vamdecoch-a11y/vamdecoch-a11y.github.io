@@ -154,6 +154,11 @@ html.js [data-reveal].is-visible {
   object-fit: cover;
   pointer-events: none;
 }
+/* Foto verticali: niente ritaglio brutale, si adattano su sfondo scuro */
+.stack-carta img.verticale {
+  object-fit: contain;
+  background: #0d0d0d;
+}
 .stack-carta.esce {
   transition: transform 0.28s ease-in, opacity 0.28s ease-in;
   opacity: 0;
@@ -174,8 +179,9 @@ html.js [data-reveal].is-visible {
 .numero-fase {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(4rem, 9vw, 7.5rem);
+  font-size: clamp(3.4rem, 8vw, 6.5rem);
   line-height: 1;
+  font-variant-numeric: tabular-nums;
   color: rgba(255, 255, 255, 0.08);
   transition: color 0.5s, text-shadow 0.5s;
 }
@@ -319,8 +325,8 @@ html.js [data-reveal].is-visible {
   top: 0;
   left: 0;
   right: 0;
-  height: 30vh;
-  background: linear-gradient(180deg, rgba(245, 131, 39, 0.14), transparent);
+  height: 55vh;
+  background: radial-gradient(ellipse 90% 65% at 50% -10%, rgba(245, 131, 39, 0.30), rgba(245, 131, 39, 0.10) 55%, transparent 80%);
   pointer-events: none;
 }
 .footer-aurora {

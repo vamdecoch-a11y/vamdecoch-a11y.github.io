@@ -26,6 +26,13 @@ const { immagini, alt, larghezza = 'max-w-2xl' } = Astro.props;
   document.querySelectorAll<HTMLElement>('.card-stack').forEach((radice) => {
     const scena = radice.querySelector<HTMLElement>('.stack-scena')!;
     const carte = Array.from(radice.querySelectorAll<HTMLElement>('.stack-carta'));
+
+    // Foto verticali: adattale invece di ritagliarle
+    carte.forEach((c) => {
+      const img = c.querySelector('img')!;
+      const controlla = () => { if (img.naturalHeight > img.naturalWidth) img.classList.add('verticale'); };
+      img.complete ? controlla() : img.addEventListener('load', controlla);
+    });
     const contenitorePunti = radice.querySelector<HTMLElement>('.stack-punti')!;
     let ordine = carte.map((_, i) => i);
     let inAnimazione = false;

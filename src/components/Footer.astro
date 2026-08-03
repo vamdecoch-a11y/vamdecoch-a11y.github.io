@@ -16,29 +16,29 @@ const nastro = 'Decorazione veicoli · Vetrine · Abbigliamento · Pellicole · 
 ---
 <!-- Footer cinematografico a tendina: su desktop resta fermo dietro la pagina e si svela allo scroll -->
 <div class="reveal-wrap">
-  <footer class="cine-footer bg-black flex flex-col justify-between md:justify-center">
+  <footer class="cine-footer bg-ink flex flex-col">
     <div class="footer-sfumatura-alto"></div>
     <div class="footer-aurora"></div>
     <div class="footer-griglia"></div>
 
-    <!-- Nastro a tutta larghezza: primo elemento, segna l'ingresso del footer -->
-    <div class="footer-nastro marquee absolute top-0 left-0 w-full py-3 bg-black/40" aria-hidden="true">
+    <!-- Nastro a tutta larghezza: prima riga del footer -->
+    <div class="footer-nastro marquee relative w-full py-3 bg-black/30" aria-hidden="true">
       <div class="marquee-track" style="animation-duration: 40s;">
         <span class="font-display text-sm tracking-widest uppercase text-carta/50">{nastro}{nastro}</span>
         <span class="font-display text-sm tracking-widest uppercase text-carta/50">{nastro}{nastro}</span>
       </div>
     </div>
 
-    <div class="relative w-full px-5 md:px-10 pt-20 pb-8 md:py-6">
+    <div class="relative w-full px-5 md:px-10 py-10 md:py-0 md:my-auto">
       <div class="text-center">
         <h2 class="footer-titano">Diamo vita alle tue idee</h2>
-        <div class="mt-7 flex flex-wrap justify-center gap-3">
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
           <a href="/contattaci" class="act magnetico btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">Richiedi un preventivo</a>
           <a href="https://wa.me/41765889497?text=Ciao%20VAM%20Deco%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener" class="act magnetico pillola-vetro rounded-full px-7 py-3.5 font-semibold text-carta">Scrivici su WhatsApp</a>
         </div>
       </div>
 
-      <div class="mt-10 grid gap-8 md:grid-cols-3 text-sm">
+      <div class="mt-8 grid gap-8 md:grid-cols-3 text-sm">
         <div>
           <img src="/logo-vamdeco.png" alt="Logo VAM Deco" class="h-8 w-auto mb-4" />
           <ul class="space-y-2 text-carta/70">
@@ -69,7 +69,10 @@ const nastro = 'Decorazione veicoli · Vetrine · Abbigliamento · Pellicole · 
         </div>
       </div>
 
-      <div class="mt-10 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-carta/55">
+    </div>
+
+    <div class="relative w-full px-5 md:px-10 pb-5">
+      <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-carta/55">
         <span>© VAM Deco Sagl · Sementina, Ticino</span>
         <div class="flex items-center gap-5">
           <a href="/norme-sulla-privacy" class="act hover:text-brand">Norme sulla privacy</a>

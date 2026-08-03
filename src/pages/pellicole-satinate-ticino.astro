@@ -132,9 +132,9 @@ const faqJsonLd = JSON.stringify({
     </div>
     <div>
       {fasi.map((f, i) => (
-        <div class="fase-riga grid grid-cols-[auto_1fr] gap-6 md:gap-10 items-stretch">
+        <div class="fase-riga grid grid-cols-[5.5rem_1fr] md:grid-cols-[9.5rem_1fr] gap-5 md:gap-10 items-stretch">
           <div class="fase-colonna">
-            <div class="numero-fase">0{i + 1}</div>
+            <div class="numero-fase w-full text-center">0{i + 1}</div>
             {i < fasi.length - 1 && <div class="fase-linea"></div>}
           </div>
           <div data-reveal class="card-scura rounded-2xl p-6 md:p-7 mb-10 self-start">
