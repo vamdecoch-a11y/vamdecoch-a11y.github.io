@@ -275,8 +275,8 @@ const faqJsonLd = JSON.stringify({
           setTimeout(passo, attesa);
         };
         passo();
-      }, { threshold: 0.5 });
-      osservaTw.observe(tw.closest('section')!);
+      }, { threshold: 0.15 });
+      osservaTw.observe(tw.closest('h2')!);
     } else if (tw) {
       tw.textContent = 'Parliamone.';
     }
