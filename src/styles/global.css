@@ -382,6 +382,46 @@ html.js [data-reveal].is-visible {
   backdrop-filter: blur(4px);
 }
 
+/* Icone social animate: si ingrandiscono e l'arancione riempie il riquadro dal basso */
+.social-tile {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: var(--color-carta);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s, color 0.3s;
+}
+.social-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(245, 131, 39, 0.35), var(--color-brand));
+  transform: translateY(101%);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.social-tile:hover,
+.social-tile:focus-visible,
+.social-tile:active {
+  transform: scale(1.15);
+  border-color: rgba(245, 131, 39, 0.7);
+  color: var(--color-ink);
+}
+.social-tile:hover::before,
+.social-tile:focus-visible::before,
+.social-tile:active::before {
+  transform: translateY(0);
+}
+.social-tile svg {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
 /* Accessibilità: chi preferisce meno movimento vede tutto fermo */
 @media (prefers-reduced-motion: reduce) {
   html.js [data-reveal] { opacity: 1; transform: none; transition: none; }

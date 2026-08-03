@@ -1,4 +1,5 @@
 ---
+import { readdirSync } from 'node:fs';
 import Base from '../layouts/Base.astro';
 import GalleriaOrizzontale from '../components/GalleriaOrizzontale.astro';
 import FormContatti from '../components/FormContatti.astro';
@@ -26,7 +27,11 @@ const perche = [
   { t: 'Comunicazione Trasparente', d: 'Crediamo nell’importanza della trasparenza. Manteniamo una comunicazione costante e chiara in ogni fase del progetto.' },
 ];
 
-const galleria = dati.immagini.filter((i) => (i.contesto || '').includes('alleria')).map((i) => i.srcArchivio);
+// Galleria = TUTTE le foto nella cartella: basta aggiungerne una lì e alla prossima
+// pubblicazione compare (pipeline pensata per il futuro caricamento via Telegram)
+const galleria = readdirSync('public/img/pellicole/galleria')
+  .filter((f) => /\.(jpe?g|png|webp)$/i.test(f))
+  .sort();
 
 const testimonianze = [
   { testo: 'Michele ha trasformato la nostra flotta aziendale con un design accattivante e professionale. La sua attenzione ai dettagli e il servizio personalizzato sono stati eccezionali.', nome: 'A. Rossi', avatar: 'G1bC6MQnKLl8c7ZyjwpJlVGuw.jpg' },
@@ -96,7 +101,7 @@ const faqJsonLd = JSON.stringify({
 
   <!-- GALLERIA ORIZZONTALE: scendendo, le foto scorrono di lato -->
   <GalleriaOrizzontale
-    immagini={galleria.map((img) => `/img/pellicole/${img}`)}
+    immagini={galleria.map((img) => `/img/pellicole/galleria/${img}`)}
     alt="Lavoro di applicazione pellicola satinata privacy realizzato da VAM Deco in Ticino"
   />
 
