@@ -282,9 +282,9 @@ html, body {
   overflow: hidden;
   position: relative;
   z-index: 10; /* card in PRIMO PIANO sopra la scritta */
-  /* le card si dissolvono ATTRAVERSANDO la scritta (zona alta) e sfumano anche in basso */
-  mask-image: linear-gradient(transparent 0, rgba(0, 0, 0, 0.35) 12%, #000 26%, #000 86%, transparent);
-  -webkit-mask-image: linear-gradient(transparent 0, rgba(0, 0, 0, 0.35) 12%, #000 26%, #000 86%, transparent);
+  /* le card si dissolvono ATTRAVERSANDO la scritta: dissolvenza corta, sovrapposizione piena */
+  mask-image: linear-gradient(transparent 0, #000 14%, #000 86%, transparent);
+  -webkit-mask-image: linear-gradient(transparent 0, #000 14%, #000 86%, transparent);
 }
 .testi-colonna {
   will-change: transform;
