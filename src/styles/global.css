@@ -313,16 +313,11 @@ html, body {
 
 /* ---------- Parole che si accendono allo scroll (home): versione WOW ---------- */
 .parola-scroll {
-  transition: filter 0.45s, opacity 0.45s, transform 0.45s;
-  color: rgba(255, 255, 255, 0.14);
-  filter: blur(3px);
-  opacity: 0.55;
-  transform: scale(0.96);
+  /* filtro/opacità/scala pilotati dal JS in continuo: niente transition che combatte il movimento */
+  color: rgba(255, 255, 255, 0.16);
+  will-change: opacity, filter, transform;
 }
 .parola-scroll.accesa {
-  filter: blur(0) drop-shadow(0 0 26px rgba(245, 131, 39, 0.4));
-  opacity: 1;
-  transform: scale(1);
   background: linear-gradient(100deg, #fff 15%, var(--color-brand) 45%, #ffd7b0 60%, var(--color-brand) 75%);
   background-size: 220% 100%;
   -webkit-background-clip: text;

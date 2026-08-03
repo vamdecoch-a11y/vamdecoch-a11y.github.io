@@ -23,25 +23,34 @@ const { prefisso, parole } = Astro.props;
 </section>
 
 <script>
-  // Mappa lo scroll della sezione sull'accensione progressiva delle parole
-  const sezioni = document.querySelectorAll<HTMLElement>('.parole-sezione');
-  function aggiorna() {
-    sezioni.forEach((sez) => {
-      const parole = sez.querySelectorAll<HTMLElement>('.parola-scroll');
+  // Movimento FLUIDO: la posizione segue lo scroll in continuo (interpolazione morbida),
+  // e sfocatura/opacità/scala di ogni parola sfumano in base alla distanza dal centro.
+  document.querySelectorAll<HTMLElement>('.parole-sezione').forEach((sez) => {
+    const parole = Array.from(sez.querySelectorAll<HTMLElement>('.parola-scroll'));
+    const lista = sez.querySelector<HTMLElement>('.parole-lista')!;
+    if (!parole.length) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      parole.forEach((p) => p.classList.add('accesa'));
+      return;
+    }
+    let liscio = 0;
+    const tick = () => {
       const r = sez.getBoundingClientRect();
       const corsa = r.height - window.innerHeight;
       const progresso = Math.min(1, Math.max(0, -r.top / corsa));
-      const attiva = Math.min(parole.length - 1, Math.floor(progresso * parole.length));
-      const lista = sez.querySelector<HTMLElement>('.parole-lista')!;
-      const passo = parole[0]?.offsetHeight || 0;
-      lista.style.transform = `translateY(${(parole.length - 1) / 2 * passo - attiva * passo}px)`;
-      lista.style.transition = 'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)';
-      parole.forEach((p, i) => p.classList.toggle('accesa', i === attiva));
-    });
-  }
-  if (sezioni.length) {
-    window.addEventListener('scroll', aggiorna, { passive: true });
-    window.addEventListener('resize', aggiorna);
-    aggiorna();
-  }
+      const bersaglio = progresso * (parole.length - 1);
+      liscio += (bersaglio - liscio) * 0.09;
+      const passo = parole[0].offsetHeight || 0;
+      lista.style.transform = `translateY(${((parole.length - 1) / 2 - liscio) * passo}px)`;
+      parole.forEach((p, i) => {
+        const d = Math.abs(i - liscio);
+        p.style.opacity = String(Math.max(0.22, 1 - d * 0.42));
+        p.style.filter = d < 0.45 ? 'none' : `blur(${Math.min(4, d * 2.1)}px)`;
+        p.style.transform = `scale(${Math.max(0.9, 1 - d * 0.045)})`;
+        p.classList.toggle('accesa', d < 0.5);
+      });
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
 </script>
