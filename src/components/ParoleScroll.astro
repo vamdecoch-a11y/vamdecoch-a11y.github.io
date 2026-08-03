@@ -8,9 +8,10 @@ const { prefisso, parole } = Astro.props;
 <!-- Effetto cinematografico: scorrendo, le parole si accendono d'arancione una alla volta -->
 <section class="parole-sezione relative" style={`height: ${parole.length * 60 + 100}vh;`}>
   <div class="sticky top-0 h-screen flex items-center overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 w-full grid gap-6 md:grid-cols-2 items-center">
+    <div class="absolute inset-0 glow-arancio pointer-events-none opacity-60"></div>
+    <div class="relative max-w-6xl mx-auto px-4 w-full grid gap-6 md:grid-cols-2 items-center">
       <h2 class="font-display text-3xl md:text-5xl font-bold leading-tight">
-        {prefisso}
+        {prefisso}<span class="text-brand">...</span>
       </h2>
       <div class="parole-lista font-display text-4xl md:text-6xl font-bold leading-[1.35]">
         {parole.map((p) => (

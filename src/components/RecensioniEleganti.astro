@@ -1,0 +1,117 @@
+---
+// Recensioni in stile elegante (adattamento vanilla del componente 21st.dev scelto da Michele):
+// numero gigante sfumato con parallasse, etichetta verticale con barra di avanzamento,
+// citazione che si compone parola per parola, frecce, avanzamento automatico ogni 6s.
+interface Recensione {
+  testo: string;
+  nome: string;
+  avatar?: string;
+}
+interface Props {
+  recensioni: Recensione[];
+}
+const { recensioni } = Astro.props;
+const nomi = recensioni.map((r) => r.nome).join(' • ');
+---
+<section class="recensioni-eleganti relative max-w-6xl mx-auto px-4 py-24 overflow-hidden" data-recensioni={JSON.stringify(recensioni)}>
+  <!-- Numero gigante di sfondo -->
+  <div class="rec-numero" aria-hidden="true">01</div>
+
+  <div class="relative flex gap-8 md:gap-14">
+    <!-- Colonna sinistra: etichetta verticale + avanzamento -->
+    <div class="hidden md:flex flex-col items-center gap-8 pr-10 border-r border-white/10">
+      <span class="rec-verticale font-display text-xs tracking-[0.35em] uppercase text-carta/50">Recensioni</span>
+      <div class="rec-progresso"><div class="rec-progresso-riempi"></div></div>
+    </div>
+
+    <!-- Contenuto -->
+    <div class="flex-1 py-4">
+      <div data-reveal class="inline-flex items-center gap-2 text-xs border border-white/15 rounded-full px-3.5 py-1.5 text-carta/60 mb-8">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand"></span>
+        Recensione verificata
+      </div>
+      <div class="text-brand tracking-widest text-sm mb-5" aria-label="5 stelle su 5">★★★★★</div>
+      <blockquote class="rec-citazione font-display font-light text-2xl md:text-4xl leading-[1.2] tracking-tight min-h-[9rem] md:min-h-[11rem]"></blockquote>
+
+      <div class="flex items-end justify-between mt-10 gap-6">
+        <div class="flex items-center gap-4">
+          <div class="rec-linea"></div>
+          <img class="rec-avatar w-11 h-11 rounded-full object-cover" src="" alt="" />
+          <div>
+            <p class="rec-nome font-semibold"></p>
+            <p class="text-sm text-carta/50">Cliente VAM Deco</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <button type="button" class="rec-prev rec-freccia" aria-label="Recensione precedente">←</button>
+          <button type="button" class="rec-next rec-freccia" aria-label="Recensione successiva">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nastro basso coi nomi -->
+  <div class="marquee absolute -bottom-2 left-0 right-0 opacity-[0.07] pointer-events-none" aria-hidden="true">
+    <div class="marquee-track" style="animation-duration: 30s;">
+      <span class="font-display text-5xl font-bold whitespace-nowrap">{nomi} • {nomi} • </span>
+      <span class="font-display text-5xl font-bold whitespace-nowrap">{nomi} • {nomi} • </span>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.recensioni-eleganti').forEach((sez) => {
+    const dati = JSON.parse(sez.dataset.recensioni || '[]') as { testo: string; nome: string; avatar?: string }[];
+    if (!dati.length) return;
+    const citazione = sez.querySelector<HTMLElement>('.rec-citazione')!;
+    const nome = sez.querySelector<HTMLElement>('.rec-nome')!;
+    const avatar = sez.querySelector<HTMLImageElement>('.rec-avatar')!;
+    const numero = sez.querySelector<HTMLElement>('.rec-numero')!;
+    const riempi = sez.querySelector<HTMLElement>('.rec-progresso-riempi');
+    let indice = 0;
+    let timer: ReturnType<typeof setInterval>;
+    const ridotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const mostra = (i: number) => {
+      indice = (i + dati.length) % dati.length;
+      const r = dati[indice];
+      citazione.innerHTML = '';
+      r.testo.split(' ').forEach((parola, j) => {
+        const s = document.createElement('span');
+        s.className = 'rec-parola';
+        s.textContent = parola;
+        if (!ridotto) s.style.transitionDelay = `${j * 45}ms`;
+        citazione.appendChild(s);
+        citazione.appendChild(document.createTextNode(' '));
+      });
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        citazione.querySelectorAll('.rec-parola').forEach((s) => s.classList.add('visibile'));
+      }));
+      nome.textContent = r.nome;
+      if (r.avatar) { avatar.src = r.avatar; avatar.alt = `Foto profilo della recensione di ${r.nome}`; avatar.style.display = ''; }
+      else avatar.style.display = 'none';
+      numero.classList.remove('cambia');
+      void numero.offsetWidth;
+      numero.textContent = String(indice + 1).padStart(2, '0');
+      numero.classList.add('cambia');
+      if (riempi) riempi.style.height = `${((indice + 1) / dati.length) * 100}%`;
+    };
+
+    const riparti = () => { clearInterval(timer); timer = setInterval(() => mostra(indice + 1), 6000); };
+    sez.querySelector('.rec-next')?.addEventListener('click', () => { mostra(indice + 1); riparti(); });
+    sez.querySelector('.rec-prev')?.addEventListener('click', () => { mostra(indice - 1); riparti(); });
+
+    // Parallasse leggera del numero (solo con mouse)
+    if (window.matchMedia('(hover: hover)').matches && !ridotto) {
+      sez.addEventListener('mousemove', (e) => {
+        const r = sez.getBoundingClientRect();
+        const dx = (e.clientX - r.left - r.width / 2) / r.width;
+        const dy = (e.clientY - r.top - r.height / 2) / r.height;
+        numero.style.translate = `${dx * 26}px ${dy * 14}px`;
+      });
+    }
+
+    mostra(0);
+    riparti();
+  });
+</script>

@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Marquee from '../components/Marquee.astro';
 import ParoleScroll from '../components/ParoleScroll.astro';
-import Testimonianze from '../components/Testimonianze.astro';
+import RecensioniEleganti from '../components/RecensioniEleganti.astro';
 
 const servizi = [
   { titolo: 'Decorazione veicoli', href: '/decorazione-veicoli-ticino', descr: 'Trasforma la tua auto, furgone o camion in una pubblicità in movimento con grafiche resistenti e personalizzate.' },
@@ -129,14 +129,11 @@ const specialita = [
     </div>
   </section>
 
-  <!-- TESTIMONIANZE: scritta gigante a tutta larghezza + recensioni che scorrono -->
-  <section class="relative pt-3 pb-16 overflow-hidden border-y border-white/5 bg-white/[0.02]">
-    <div class="parola-gigante">TESTIMONIANZE</div>
-    <div class="relative max-w-5xl mx-auto px-4">
-      <Testimonianze testimonianze={testimonianze} />
-      <div class="text-center mt-10">
-        <a data-reveal href="/recensioni" class="btn-anim inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-ink hover:bg-brand-dark">Vedi tutte le recensioni</a>
-      </div>
+  <!-- RECENSIONI: stile elegante con numero gigante e citazione che si compone -->
+  <section class="border-y border-white/5 bg-white/[0.02]">
+    <RecensioniEleganti recensioni={testimonianze} />
+    <div class="text-center pb-14">
+      <a data-reveal href="/recensioni" class="btn-anim inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-ink hover:bg-brand-dark">Vedi tutte le recensioni</a>
     </div>
   </section>
 

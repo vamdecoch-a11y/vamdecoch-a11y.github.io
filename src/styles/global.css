@@ -311,14 +311,113 @@ html, body {
   50% { opacity: 0; }
 }
 
-/* ---------- Parole che si accendono allo scroll (home) ---------- */
+/* ---------- Parole che si accendono allo scroll (home): versione WOW ---------- */
 .parola-scroll {
-  transition: color 0.35s, text-shadow 0.35s, opacity 0.35s;
+  transition: filter 0.45s, opacity 0.45s, transform 0.45s;
   color: rgba(255, 255, 255, 0.14);
+  filter: blur(3px);
+  opacity: 0.55;
+  transform: scale(0.96);
 }
 .parola-scroll.accesa {
-  color: var(--color-brand);
-  text-shadow: 0 0 30px rgba(245, 131, 39, 0.45);
+  filter: blur(0) drop-shadow(0 0 26px rgba(245, 131, 39, 0.4));
+  opacity: 1;
+  transform: scale(1);
+  background: linear-gradient(100deg, #fff 15%, var(--color-brand) 45%, #ffd7b0 60%, var(--color-brand) 75%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: luccica 2.4s linear infinite;
+}
+@keyframes luccica {
+  to { background-position: -220% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .parola-scroll { filter: none; transform: none; }
+  .parola-scroll.accesa { animation: none; color: var(--color-brand); background: none; }
+}
+
+/* ---------- Recensioni eleganti ---------- */
+.rec-numero {
+  position: absolute;
+  left: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(11rem, 24vw, 24rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: rgba(255, 255, 255, 0.035);
+  pointer-events: none;
+  user-select: none;
+  will-change: translate;
+}
+.rec-numero.cambia {
+  animation: rec-appare 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes rec-appare {
+  from { opacity: 0; filter: blur(10px); scale: 0.85; }
+  to { opacity: 1; filter: blur(0); scale: 1; }
+}
+.rec-verticale {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+.rec-progresso {
+  position: relative;
+  width: 2px;
+  height: 8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.rec-progresso-riempi {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--color-brand);
+  box-shadow: 0 0 14px rgba(245, 131, 39, 0.5);
+  transition: height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.rec-parola {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(16px) rotateX(80deg);
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.rec-parola.visibile {
+  opacity: 1;
+  transform: none;
+}
+.rec-linea {
+  width: 2rem;
+  height: 1px;
+  background: var(--color-brand);
+}
+.rec-freccia {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: grid;
+  place-items: center;
+  color: var(--color-carta);
+  cursor: pointer;
+  transition: transform 0.25s, border-color 0.3s, background 0.3s, color 0.3s;
+}
+.rec-freccia:hover {
+  border-color: var(--color-brand);
+  background: var(--color-brand);
+  color: var(--color-ink);
+  transform: scale(1.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .rec-parola { opacity: 1; transform: none; transition: none; }
+  .rec-numero.cambia { animation: none; }
 }
 
 /* ---------- Footer cinematografico a tendina ---------- */
