@@ -2,10 +2,11 @@
 interface Props {
   immagini: string[];
   alt: string;
+  larghezza?: string;
 }
-const { immagini, alt } = Astro.props;
+const { immagini, alt, larghezza = 'max-w-2xl' } = Astro.props;
 ---
-<div class="card-stack relative mx-auto max-w-2xl px-4" data-reveal>
+<div class={`card-stack relative mx-auto ${larghezza} px-4`} data-reveal>
   <div class="stack-scena relative aspect-video">
     {immagini.map((img, i) => (
       <div class="stack-carta" data-indice={i}>

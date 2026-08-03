@@ -1,0 +1,57 @@
+---
+// Recensioni che scorrono in verticale in automatico; all'hover rallentano senza fermarsi.
+// Effetto standard del sito, da riusare ovunque servano le testimonianze.
+interface Testimonianza {
+  testo: string;
+  nome: string;
+  avatar?: string;
+}
+interface Props {
+  testimonianze: Testimonianza[];
+  altezza?: string;
+}
+const { testimonianze, altezza = '540px' } = Astro.props;
+const meta = Math.ceil(testimonianze.length / 2);
+const colonne = [testimonianze.slice(0, meta), testimonianze.slice(meta)];
+---
+<div class="testi-scroller grid gap-5 md:grid-cols-2" style={`height: ${altezza};`}>
+  {colonne.map((col, ci) => (
+    <div class="testi-colonna space-y-5" data-velocita={ci % 2 ? '0.35' : '0.5'}>
+      {[...col, ...col].map((t) => (
+        <figure class="card-scura rounded-2xl p-6">
+          <div class="font-display text-4xl leading-none text-brand/60 select-none">"</div>
+          <div class="text-brand text-sm tracking-widest mt-1" aria-label="5 stelle su 5">★★★★★</div>
+          <blockquote class="mt-3 text-sm text-carta/80 leading-relaxed">{t.testo}</blockquote>
+          <figcaption class="mt-4 flex items-center gap-3 border-t border-white/10 pt-4">
+            {t.avatar && <img src={t.avatar} alt={`Foto profilo della recensione di ${t.nome}`} class="w-9 h-9 rounded-full object-cover" loading="lazy" />}
+            <span class="text-sm font-semibold">{t.nome}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  ))}
+</div>
+
+<script>
+  // Scorrimento verticale continuo con velocità che si adatta dolcemente all'hover
+  document.querySelectorAll<HTMLElement>('.testi-colonna').forEach((col) => {
+    const base = parseFloat(col.dataset.velocita || '0.5');
+    let velocita = base;
+    let obiettivo = base;
+    let y = 0;
+    const contenitore = col.parentElement!;
+    contenitore.addEventListener('pointerenter', () => { obiettivo = base * 0.25; });
+    contenitore.addEventListener('pointerleave', () => { obiettivo = base; });
+    const passo = () => {
+      velocita += (obiettivo - velocita) * 0.05;
+      y += velocita;
+      const meta = col.scrollHeight / 2;
+      if (y >= meta) y -= meta;
+      col.style.transform = `translateY(${-y}px)`;
+      requestAnimationFrame(passo);
+    };
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      requestAnimationFrame(passo);
+    }
+  });
+</script>

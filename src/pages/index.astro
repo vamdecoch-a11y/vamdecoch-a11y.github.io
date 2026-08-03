@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Marquee from '../components/Marquee.astro';
 import ParoleScroll from '../components/ParoleScroll.astro';
+import Testimonianze from '../components/Testimonianze.astro';
 
 const servizi = [
   { titolo: 'Decorazione veicoli', href: '/decorazione-veicoli-ticino', descr: 'Trasforma la tua auto, furgone o camion in una pubblicità in movimento con grafiche resistenti e personalizzate.' },
@@ -25,11 +26,11 @@ const numeri = [
 ];
 
 const testimonianze = [
-  { testo: 'Ho collaborato con diverse aziende di decorazione veicoli, ma VAM Deco e Michele hanno superato ogni aspettativa. Risposte rapide, lavoro impeccabile.', nome: 'N. Di Lorenzi' },
-  { testo: 'Affidarci a VAM Deco per la decorazione delle nostre vetrine è stata una delle migliori decisioni per la nostra attività.', nome: 'M. Pestoni' },
-  { testo: 'Michele ha trasformato la nostra flotta aziendale con un design accattivante e professionale.', nome: 'A. Rossi' },
-  { testo: 'La qualità delle stampe e degli adesivi di VAM Deco è eccezionale. Non solo hanno rispettato le scadenze, ma hanno anche fornito un supporto costante.', nome: 'M. Ferraro' },
-  { testo: 'Siamo stati aiutati a migliorare la privacy e l’estetica della nostra casa con pellicole oscuranti di altissima qualità.', nome: 'E. Ricchino' },
+  { testo: 'Ho collaborato con diverse aziende di decorazione veicoli, ma VAM Deco e Michele hanno superato ogni aspettativa. Risposte rapide, lavoro impeccabile.', nome: 'N. Di Lorenzi', avatar: '/img/pellicole/YfirIiUhVQXLMtaAlNTGBf13chY.png' },
+  { testo: 'Affidarci a VAM Deco per la decorazione delle nostre vetrine è stata una delle migliori decisioni per la nostra attività.', nome: 'M. Pestoni', avatar: '/img/pellicole/vE17bXTh6LumndyjLk4ly8AzJY.png' },
+  { testo: 'Michele ha trasformato la nostra flotta aziendale con un design accattivante e professionale.', nome: 'A. Rossi', avatar: '/img/pellicole/G1bC6MQnKLl8c7ZyjwpJlVGuw.jpg' },
+  { testo: 'La qualità delle stampe e degli adesivi di VAM Deco è eccezionale. Non solo hanno rispettato le scadenze, ma hanno anche fornito un supporto costante.', nome: 'M. Ferraro', avatar: '/img/pellicole/rM9PIBsqZjq8bCq7vWVwGPT2CI.jpg' },
+  { testo: 'Siamo stati aiutati a migliorare la privacy e l’estetica della nostra casa con pellicole oscuranti di altissima qualità.', nome: 'E. Ricchino', avatar: '/img/pellicole/rlizSNVuxrrqd6I5hGaSxwqn0Os.png' },
 ];
 
 const specialita = [
@@ -128,20 +129,14 @@ const specialita = [
     </div>
   </section>
 
-  <!-- TESTIMONIANZE -->
-  <section class="border-y border-white/5 bg-white/[0.02] py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 data-reveal class="text-2xl md:text-4xl font-bold mb-10">Cosa dicono i nostri clienti</h2>
-      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
-        {testimonianze.map((t) => (
-          <figure data-reveal class="card-scura card-anim rounded-2xl p-6">
-            <div class="text-brand text-sm tracking-widest" aria-label="5 stelle su 5">★★★★★</div>
-            <blockquote class="mt-3 text-sm text-carta/80 leading-relaxed">"{t.testo}"</blockquote>
-            <figcaption class="mt-4 text-sm font-semibold">{t.nome}</figcaption>
-          </figure>
-        ))}
+  <!-- TESTIMONIANZE: scritta gigante a tutta larghezza + recensioni che scorrono -->
+  <section class="relative py-20 overflow-hidden border-y border-white/5 bg-white/[0.02]">
+    <div class="parola-gigante">TESTIMONIANZE</div>
+    <div class="relative max-w-5xl mx-auto px-4 pt-[13vw] md:pt-[10vw]">
+      <Testimonianze testimonianze={testimonianze} />
+      <div class="text-center mt-10">
+        <a data-reveal href="/recensioni" class="btn-anim inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-ink hover:bg-brand-dark">Vedi tutte le recensioni</a>
       </div>
-      <a data-reveal href="/recensioni" class="mt-8 inline-block font-semibold text-brand hover:underline">Vedi tutte le recensioni →</a>
     </div>
   </section>
 

@@ -15,34 +15,36 @@ const servizi = [
 const nastro = 'Decorazione veicoli · Vetrine · Abbigliamento · Pellicole · Cartellonistica · Adesivi · Stampa · Siti web · Packaging · ';
 ---
 <!-- Footer cinematografico a tendina: su desktop resta fermo dietro la pagina e si svela allo scroll -->
-<div class="reveal-wrap mt-24">
-  <footer class="cine-footer bg-black flex flex-col justify-center">
+<div class="reveal-wrap">
+  <footer class="cine-footer bg-black flex flex-col justify-between md:justify-center">
+    <div class="footer-sfumatura-alto"></div>
     <div class="footer-aurora"></div>
     <div class="footer-griglia"></div>
 
-    <div class="relative max-w-6xl mx-auto px-4 w-full py-14 md:py-6">
+    <!-- Nastro a tutta larghezza: primo elemento, segna l'ingresso del footer -->
+    <div class="footer-nastro marquee absolute top-0 left-0 w-full py-3 bg-black/40" aria-hidden="true">
+      <div class="marquee-track" style="animation-duration: 40s;">
+        <span class="font-display text-sm tracking-widest uppercase text-carta/50">{nastro}{nastro}</span>
+        <span class="font-display text-sm tracking-widest uppercase text-carta/50">{nastro}{nastro}</span>
+      </div>
+    </div>
+
+    <div class="relative w-full px-5 md:px-10 pt-20 pb-8 md:py-6">
       <div class="text-center">
         <h2 class="footer-titano">Diamo vita alle tue idee</h2>
-        <p class="mt-4 text-carta/60 text-sm">Preventivo gratuito in 24/48h. Ti rispondiamo su WhatsApp o via mail.</p>
         <div class="mt-7 flex flex-wrap justify-center gap-3">
           <a href="/contattaci" class="act magnetico btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">Richiedi un preventivo</a>
           <a href="https://wa.me/41765889497?text=Ciao%20VAM%20Deco%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener" class="act magnetico pillola-vetro rounded-full px-7 py-3.5 font-semibold text-carta">Scrivici su WhatsApp</a>
         </div>
       </div>
 
-      <div class="footer-nastro marquee mt-8 py-2.5" aria-hidden="true">
-        <div class="marquee-track" style="animation-duration: 40s;">
-          <span class="font-display text-sm tracking-widest uppercase text-carta/50">{nastro}{nastro}</span>
-          <span class="font-display text-sm tracking-widest uppercase text-carta/50">{nastro}{nastro}</span>
-        </div>
-      </div>
-
-      <div class="mt-8 grid gap-8 md:grid-cols-3 text-sm">
+      <div class="mt-10 grid gap-8 md:grid-cols-3 text-sm">
         <div>
           <img src="/logo-vamdeco.png" alt="Logo VAM Deco" class="h-8 w-auto mb-4" />
           <ul class="space-y-2 text-carta/70">
             <li><a href="tel:+41765889497" class="act hover:text-brand">+41 76 588 94 97</a></li>
             <li><a href="mailto:info@vamdeco.ch" class="act hover:text-brand">info@vamdeco.ch</a></li>
+            <li><a href="mailto:info@vamdeco.agency" class="act hover:text-brand">info@vamdeco.agency</a></li>
             <li><a href="https://maps.app.goo.gl/zq6THCbbrv1LWDPY6" target="_blank" rel="noopener" class="act hover:text-brand">Via Pobbia 4d, 6514 Sementina</a></li>
           </ul>
         </div>
@@ -67,7 +69,7 @@ const nastro = 'Decorazione veicoli · Vetrine · Abbigliamento · Pellicole · 
         </div>
       </div>
 
-      <div class="mt-8 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-carta/40">
+      <div class="mt-10 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-carta/40">
         <span>© VAM Deco Sagl · Sementina, Ticino</span>
         <div class="flex items-center gap-5">
           <a href="/norme-sulla-privacy" class="act hover:text-brand">Norme sulla privacy</a>

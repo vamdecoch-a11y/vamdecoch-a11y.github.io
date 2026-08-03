@@ -1,6 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import CardStack from '../components/CardStack.astro';
+import FormContatti from '../components/FormContatti.astro';
+import Testimonianze from '../components/Testimonianze.astro';
 import dati from '../dati/pellicole-satinate-ticino.json';
 
 // Benefici: nelle liste estratte come "01. Titolo: descrizione"
@@ -97,6 +99,7 @@ const faqJsonLd = JSON.stringify({
     <CardStack
       immagini={galleria.map((img) => `/img/pellicole/${img}`)}
       alt="Lavoro di applicazione pellicola satinata privacy realizzato da VAM Deco in Ticino"
+      larghezza="max-w-5xl"
     />
   </section>
 
@@ -121,39 +124,52 @@ const faqJsonLd = JSON.stringify({
     </div>
   </section>
 
-  <!-- PROCESSO IN 4 FASI: numeroni che si accendono d'arancione allo scroll -->
-  <section class="max-w-5xl mx-auto px-4 py-20">
-    <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Come funziona</div>
-    <h2 data-reveal class="text-2xl md:text-3xl font-bold mb-14">Il nostro Processo in 4 Fasi</h2>
-    <div class="space-y-16">
+  <!-- PROCESSO IN 4 FASI: sezione centrata, numeroni + linea che si illuminano, riquadri grigi -->
+  <section class="max-w-3xl mx-auto px-4 py-20">
+    <div class="text-center">
+      <div data-reveal class="inline-block rounded-full bg-white/[0.06] border border-white/10 px-5 py-2 text-xs font-bold tracking-widest text-brand uppercase mb-3">Come funziona</div>
+      <h2 data-reveal class="text-2xl md:text-4xl font-bold mb-14">Il nostro Processo in 4 Fasi</h2>
+    </div>
+    <div>
       {fasi.map((f, i) => (
-        <div class="fase-riga grid grid-cols-[auto_1fr] gap-6 md:gap-12 items-center">
-          <div class="numero-fase">0{i + 1}</div>
-          <div data-reveal>
-            <div class="font-display text-lg md:text-2xl font-semibold">{f.t}</div>
-            <p class="mt-2 text-sm md:text-base text-carta/65 leading-relaxed max-w-xl">{f.d}</p>
+        <div class="fase-riga grid grid-cols-[auto_1fr] gap-6 md:gap-10 items-stretch">
+          <div class="fase-colonna">
+            <div class="numero-fase">0{i + 1}</div>
+            {i < fasi.length - 1 && <div class="fase-linea"></div>}
+          </div>
+          <div data-reveal class="card-scura rounded-2xl p-6 md:p-7 mb-10 self-start">
+            <div class="inline-block rounded-full bg-white/[0.07] px-3.5 py-1 text-[10px] font-bold tracking-widest text-carta/60 uppercase">Step 0{i + 1}</div>
+            <div class="mt-3 font-display text-lg md:text-2xl font-semibold">{f.t}</div>
+            <p class="mt-2 text-sm md:text-base text-carta/65 leading-relaxed">{f.d}</p>
           </div>
         </div>
       ))}
     </div>
   </section>
 
-  <!-- MACCHINA DA SCRIVERE, come sull'originale -->
-  <section class="max-w-6xl mx-auto px-4 py-24 text-center">
-    <h2 class="typewriter font-display text-3xl md:text-6xl font-bold text-brand">
-      <span class="tw-testo" data-testo="Diamo vita alle tue idee"></span><span class="cursore">&nbsp;</span>
+  <!-- CTA A METÀ PAGINA: scritta che si scrive e cancella in loop + form + freccia -->
+  <section class="max-w-6xl mx-auto px-4 py-20 text-center">
+    <h2 class="typewriter font-display text-3xl md:text-6xl font-bold text-brand min-h-[1.3em]">
+      <span class="tw-testo" data-frasi='["Parliamone.", "Diamo vita alle tue idee."]'></span><span class="cursore">&nbsp;</span>
     </h2>
+    <div class="max-w-2xl mx-auto mt-10">
+      <FormContatti oggetto="Richiesta preventivo pellicole satinate" />
+    </div>
+    <div class="freccia-giu mt-12 mx-auto w-12 h-12 rounded-full border border-white/20 grid place-items-center text-brand text-xl" aria-hidden="true">↓</div>
   </section>
 
-  <!-- PERCHÉ NOI: sezione ARANCIONE piena, come l'originale -->
+  <!-- PERCHÉ NOI: sezione ARANCIONE piena con card icone -->
   <section class="bg-brand py-16">
     <div class="max-w-6xl mx-auto px-4">
       <div data-reveal class="text-xs font-bold tracking-widest text-ink/70 mb-2 uppercase">Perchè scegliere VAM Deco</div>
-      <h2 data-reveal class="text-2xl md:text-3xl font-bold mb-10 text-ink">Semplice, veloce, su misura. Ecco perché ci scelgono</h2>
+      <h2 data-reveal class="text-2xl md:text-4xl font-bold mb-10 text-ink">Semplice, veloce, su misura.<br />Ecco perché ci scelgono</h2>
       <div class="grid gap-5 md:grid-cols-2" data-reveal-stagger>
-        {perche.map((p) => (
-          <div data-reveal class="card-anim rounded-2xl bg-ink/90 border border-black/20 p-6">
-            <div class="font-semibold text-carta">{p.t}</div>
+        {perche.map((p, i) => (
+          <div data-reveal class="card-anim rounded-2xl bg-ink/90 border border-black/20 p-7">
+            <div class="w-12 h-12 rounded-xl bg-brand/15 border border-brand/30 grid place-items-center text-brand text-xl font-display font-bold">
+              {['★', '✦', '◎', '✉'][i]}
+            </div>
+            <div class="mt-4 font-display text-lg font-semibold text-carta">{p.t}</div>
             <p class="mt-2 text-sm text-carta/70 leading-relaxed">{p.d}</p>
           </div>
         ))}
@@ -161,23 +177,14 @@ const faqJsonLd = JSON.stringify({
     </div>
   </section>
 
-  <!-- TESTIMONIANZE con la scritta gigante dietro -->
-  <section class="relative max-w-6xl mx-auto px-4 py-20 overflow-hidden">
+  <!-- TESTIMONIANZE: scritta gigante a tutta larghezza + recensioni che scorrono in verticale -->
+  <section class="relative py-20 overflow-hidden">
     <div class="parola-gigante">TESTIMONIANZE</div>
-    <div class="relative pt-24">
-      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
-        {testimonianze.map((t) => (
-          <figure data-reveal class="card-scura card-anim rounded-2xl p-6 backdrop-blur-sm">
-            <div class="text-brand text-sm tracking-widest" aria-label="5 stelle su 5">★★★★★</div>
-            <blockquote class="mt-3 text-sm text-carta/80 leading-relaxed">"{t.testo}"</blockquote>
-            <figcaption class="mt-4 flex items-center gap-3">
-              <img src={`/img/pellicole/${t.avatar}`} alt={`Foto profilo della recensione di ${t.nome}`} class="w-9 h-9 rounded-full object-cover" loading="lazy" />
-              <span class="text-sm font-semibold">{t.nome}</span>
-            </figcaption>
-          </figure>
-        ))}
+    <div class="relative max-w-5xl mx-auto px-4 pt-[13vw] md:pt-[10vw]">
+      <Testimonianze testimonianze={testimonianze.map((t) => ({ ...t, avatar: `/img/pellicole/${t.avatar}` }))} />
+      <div class="text-center mt-10">
+        <a data-reveal href="/recensioni" class="btn-anim inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-ink hover:bg-brand-dark">Vedi le recensioni</a>
       </div>
-      <a data-reveal href="/recensioni" class="mt-8 inline-block font-semibold text-brand hover:underline">Vedi le recensioni →</a>
     </div>
   </section>
 
@@ -186,12 +193,12 @@ const faqJsonLd = JSON.stringify({
     <div class="max-w-3xl mx-auto px-4">
       <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Domande frequenti</div>
       <h2 data-reveal class="text-2xl md:text-3xl font-bold mb-8">Hai Domande? Ecco le nostre Risposte!</h2>
-      <div data-reveal-stagger>
+      <div data-reveal-stagger class="space-y-4">
         {dati.faq.map((f) => (
-          <details data-reveal class="faq-item group border-b border-white/10 py-1">
+          <details data-reveal class="faq-item faq-card group px-5">
             <summary class="flex items-center justify-between gap-4 cursor-pointer list-none py-4 font-semibold text-sm md:text-base">
               {f.domanda}
-              <span class="faq-chevron text-brand text-xl leading-none shrink-0">+</span>
+              <span class="faq-bottone" aria-hidden="true">⌄</span>
             </summary>
             <div class="faq-risposta">
               <div>
@@ -208,49 +215,13 @@ const faqJsonLd = JSON.stringify({
   <section id="contattaci" class="relative overflow-hidden">
     <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
     <div class="relative max-w-6xl mx-auto px-4 py-20">
-      <div class="grid gap-10 md:grid-cols-2 items-start">
-        <div data-reveal-stagger>
-          <h2 data-reveal class="font-display text-6xl md:text-8xl font-bold leading-[0.95]">Parli<br /><span class="text-brand">amo!</span></h2>
-          <p data-reveal class="mt-6 text-carta/70 leading-relaxed">
-            Compila il modulo e ricevi la tua offerta entro 24h. Oppure scrivici direttamente su WhatsApp.
-          </p>
-          <ul data-reveal class="mt-6 space-y-2.5 text-sm text-carta/80">
-            <li><a href="tel:+41765889497" class="hover:text-brand font-semibold">+41 76 588 94 97</a></li>
-            <li><a href="mailto:info@vamdeco.ch" class="hover:text-brand font-semibold">info@vamdeco.ch</a></li>
-            <li>Via Pobbia 4d, 6514 Sementina, Ticino</li>
-          </ul>
+      <div class="grid gap-10 md:grid-cols-2 items-center">
+        <div data-reveal class="w-full">
+          <h2 class="font-display font-bold leading-[0.9] text-[22vw] md:text-[9.5vw]">Parli<br /><span class="text-brand">amo!</span></h2>
         </div>
-        <form data-reveal class="card-scura rounded-2xl p-6 grid gap-4" id="form-contatti">
-          <div class="grid gap-4 sm:grid-cols-2">
-            <label class="grid gap-1.5 text-xs font-semibold">Nome*
-              <input required name="nome" type="text" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
-            </label>
-            <label class="grid gap-1.5 text-xs font-semibold">Cognome*
-              <input required name="cognome" type="text" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
-            </label>
-          </div>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <label class="grid gap-1.5 text-xs font-semibold">Azienda
-              <input name="azienda" type="text" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
-            </label>
-            <label class="grid gap-1.5 text-xs font-semibold">Email*
-              <input required name="email" type="email" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
-            </label>
-          </div>
-          <label class="grid gap-1.5 text-xs font-semibold">Numero di telefono
-            <input name="telefono" type="tel" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
-          </label>
-          <label class="grid gap-1.5 text-xs font-semibold">Messaggio*
-            <textarea required name="messaggio" rows="4" placeholder="Fornisci più informazioni possibili per ricevere l'offerta entro 24h" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta placeholder:text-carta/40 focus:border-brand outline-none resize-y"></textarea>
-          </label>
-          <label class="grid gap-1.5 text-xs font-semibold">Come ci hai conosciuti?
-            <select name="fonte" class="rounded-lg bg-superficie border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none">
-              <option>Google</option><option>Passaparola</option><option>Instagram</option><option>Facebook</option><option>Altri Social</option><option>Altro</option>
-            </select>
-          </label>
-          <button type="submit" class="btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">Invia</button>
-          <p class="text-xs text-carta/50">*Campi obbligatori</p>
-        </form>
+        <div data-reveal>
+          <FormContatti oggetto="Richiesta preventivo pellicole satinate" />
+        </div>
       </div>
     </div>
   </section>
@@ -259,7 +230,7 @@ const faqJsonLd = JSON.stringify({
   <a
     href="https://wa.me/41765889497?text=Ciao%20VAM%20Deco%2C%20vorrei%20un%20preventivo%20per%20pellicola%20satinata%20%2F%20privacy."
     target="_blank" rel="noopener"
-    class="btn-anim fixed bottom-5 right-5 z-40 rounded-full bg-[#25D366] text-white px-5 py-3.5 text-sm font-semibold shadow-xl shadow-black/50"
+    class="btn-anim fixed bottom-24 right-5 z-40 rounded-full bg-[#25D366] text-white px-5 py-3.5 text-sm font-semibold shadow-xl shadow-black/50"
     aria-label="Scrivici su WhatsApp per un preventivo"
   >Chat su WhatsApp</a>
 
@@ -270,39 +241,34 @@ const faqJsonLd = JSON.stringify({
     }, { rootMargin: '-35% 0px -35% 0px' });
     document.querySelectorAll('.fase-riga').forEach((r) => osservaFasi.observe(r));
 
-    // Macchina da scrivere: parte quando la sezione entra in vista
+    // Macchina da scrivere in loop: scrive una frase, la cancella, scrive la successiva
     const tw = document.querySelector<HTMLElement>('.tw-testo');
-    if (tw) {
-      const testo = tw.dataset.testo || '';
+    if (tw && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const frasi: string[] = JSON.parse(tw.dataset.frasi || '[]');
       const osservaTw = new IntersectionObserver((voci) => {
         if (!voci[0].isIntersecting) return;
         osservaTw.disconnect();
-        let i = 0;
-        const scrivi = () => {
-          tw.textContent = testo.slice(0, i);
-          i += 1;
-          if (i <= testo.length) setTimeout(scrivi, 65);
+        let indice = 0;
+        let pos = 0;
+        let cancella = false;
+        const passo = () => {
+          const frase = frasi[indice];
+          tw.textContent = frase.slice(0, pos);
+          let attesa = cancella ? 32 : 68;
+          if (!cancella) {
+            pos += 1;
+            if (pos > frase.length) { cancella = true; attesa = 1700; }
+          } else {
+            pos -= 1;
+            if (pos < 0) { cancella = false; pos = 0; indice = (indice + 1) % frasi.length; attesa = 350; }
+          }
+          setTimeout(passo, attesa);
         };
-        scrivi();
-      }, { threshold: 0.6 });
+        passo();
+      }, { threshold: 0.5 });
       osservaTw.observe(tw.closest('section')!);
+    } else if (tw) {
+      tw.textContent = 'Parliamone.';
     }
-  </script>
-
-  <script>
-    // Anteprima: il modulo compone una email; al go-live verrà collegato al backend sul VPS
-    document.getElementById('form-contatti')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const f = new FormData(e.target as HTMLFormElement);
-      const corpo = [
-        `Nome: ${f.get('nome')} ${f.get('cognome')}`,
-        f.get('azienda') ? `Azienda: ${f.get('azienda')}` : '',
-        `Email: ${f.get('email')}`,
-        f.get('telefono') ? `Telefono: ${f.get('telefono')}` : '',
-        `Come ci hai conosciuti: ${f.get('fonte')}`,
-        '', `${f.get('messaggio')}`,
-      ].filter(Boolean).join('\n');
-      location.href = `mailto:info@vamdeco.ch?subject=${encodeURIComponent('Richiesta preventivo pellicole satinate')}&body=${encodeURIComponent(corpo)}`;
-    });
   </script>
 </Base>

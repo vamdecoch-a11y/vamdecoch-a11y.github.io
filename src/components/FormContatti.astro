@@ -1,0 +1,57 @@
+---
+interface Props {
+  oggetto: string;
+}
+const { oggetto } = Astro.props;
+---
+<form class="form-contatti card-scura rounded-2xl p-6 grid gap-4 text-left" data-oggetto={oggetto}>
+  <div class="grid gap-4 sm:grid-cols-2">
+    <label class="grid gap-1.5 text-xs font-semibold">Nome*
+      <input required name="nome" type="text" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
+    </label>
+    <label class="grid gap-1.5 text-xs font-semibold">Cognome*
+      <input required name="cognome" type="text" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
+    </label>
+  </div>
+  <div class="grid gap-4 sm:grid-cols-2">
+    <label class="grid gap-1.5 text-xs font-semibold">Azienda
+      <input name="azienda" type="text" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
+    </label>
+    <label class="grid gap-1.5 text-xs font-semibold">Email*
+      <input required name="email" type="email" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
+    </label>
+  </div>
+  <label class="grid gap-1.5 text-xs font-semibold">Numero di telefono
+    <input name="telefono" type="tel" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
+  </label>
+  <label class="grid gap-1.5 text-xs font-semibold">Messaggio*
+    <textarea required name="messaggio" rows="4" placeholder="Fornisci più informazioni possibili per ricevere l'offerta entro 24h" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta placeholder:text-carta/40 focus:border-brand outline-none resize-y"></textarea>
+  </label>
+  <label class="grid gap-1.5 text-xs font-semibold">Come ci hai conosciuti?
+    <select name="fonte" class="rounded-lg bg-superficie border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none">
+      <option>Google</option><option>Passaparola</option><option>Instagram</option><option>Facebook</option><option>Altri Social</option><option>Altro</option>
+    </select>
+  </label>
+  <button type="submit" class="btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">Invia</button>
+  <p class="text-xs text-carta/50">*Campi obbligatori</p>
+</form>
+
+<script>
+  // Anteprima: il modulo compone una email; al go-live verrà collegato al backend sul VPS
+  document.querySelectorAll<HTMLFormElement>('.form-contatti').forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const f = new FormData(form);
+      const corpo = [
+        `Nome: ${f.get('nome')} ${f.get('cognome')}`,
+        f.get('azienda') ? `Azienda: ${f.get('azienda')}` : '',
+        `Email: ${f.get('email')}`,
+        f.get('telefono') ? `Telefono: ${f.get('telefono')}` : '',
+        `Come ci hai conosciuti: ${f.get('fonte')}`,
+        '', `${f.get('messaggio')}`,
+      ].filter(Boolean).join('\n');
+      const oggetto = form.dataset.oggetto || 'Richiesta preventivo';
+      location.href = `mailto:info@vamdeco.ch?subject=${encodeURIComponent(oggetto)}&body=${encodeURIComponent(corpo)}`;
+    });
+  });
+</script>
