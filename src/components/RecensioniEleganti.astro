@@ -11,7 +11,6 @@ interface Props {
   recensioni: Recensione[];
 }
 const { recensioni } = Astro.props;
-const nomi = recensioni.map((r) => r.nome).join(' • ');
 ---
 <section class="recensioni-eleganti relative max-w-6xl mx-auto px-4 py-24 overflow-hidden" data-recensioni={JSON.stringify(recensioni)}>
   <!-- Numero gigante di sfondo -->
@@ -31,7 +30,7 @@ const nomi = recensioni.map((r) => r.nome).join(' • ');
         Recensione verificata
       </div>
       <div class="text-brand tracking-widest text-sm mb-5" aria-label="5 stelle su 5">★★★★★</div>
-      <blockquote class="rec-citazione font-display font-light text-2xl md:text-4xl leading-[1.2] tracking-tight min-h-[9rem] md:min-h-[11rem]"></blockquote>
+      <blockquote class="rec-citazione w-full font-display font-light text-2xl md:text-4xl leading-[1.2] tracking-tight min-h-[13rem] md:min-h-[17rem]"></blockquote>
 
       <div class="flex items-end justify-between mt-10 gap-6">
         <div class="flex items-center gap-4">
@@ -50,13 +49,6 @@ const nomi = recensioni.map((r) => r.nome).join(' • ');
     </div>
   </div>
 
-  <!-- Nastro basso coi nomi -->
-  <div class="marquee absolute -bottom-2 left-0 right-0 opacity-[0.07] pointer-events-none" aria-hidden="true">
-    <div class="marquee-track" style="animation-duration: 30s;">
-      <span class="font-display text-5xl font-bold whitespace-nowrap">{nomi} • {nomi} • </span>
-      <span class="font-display text-5xl font-bold whitespace-nowrap">{nomi} • {nomi} • </span>
-    </div>
-  </div>
 </section>
 
 <script>

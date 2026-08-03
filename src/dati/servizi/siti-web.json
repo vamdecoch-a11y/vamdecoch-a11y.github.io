@@ -1,0 +1,42 @@
+{
+  "slug": "siti-web",
+  "title": "Siti Web per Aziende in Ticino | VAM Deco",
+  "description": "Creazione siti web professionali in Ticino: siti vetrina, e-commerce e landing page veloci, sicuri e ottimizzati SEO. Preventivo gratuito in 24/48h.",
+  "h1": "Siti web professionali per aziende",
+  "h1Evidenza": "in Ticino",
+  "heroParagrafi": [
+    "Dai vita alla tua presenza online con un <strong>sito web professionale su misura</strong>, progettato per valorizzare ogni aspetto del tuo brand. Ogni sito è realizzato con un design moderno e funzionale, studiato per garantire usabilità, velocità e compatibilità mobile, offrendo ai visitatori un'esperienza di navigazione fluida e coinvolgente.",
+    "Grazie a tecnologie all'avanguardia, sviluppiamo <strong>siti web ottimizzati per i motori di ricerca (SEO)</strong>, garantendo visibilità, prestazioni elevate e sicurezza avanzata. Personalizziamo ogni dettaglio per assicurare un sito efficace e performante, capace di convertire visitatori in clienti.",
+    "In Ticino, dove la concorrenza digitale è sempre più forte, avere un sito web professionale è essenziale per far crescere il tuo business. Il nostro team esperto trasforma la tua idea in una piattaforma digitale strategica, curata in ogni aspetto: dal design personalizzato alla gestione dei contenuti, fino all'ottimizzazione SEO per garantire la <strong>massima visibilità su Google</strong>."
+  ],
+  "claimArancione": "Affidati ai nostri servizi web per trasmettere professionalità e qualità, che si tratti di siti vetrina, e-commerce o pagine aziendali personalizzate.",
+  "whatsappTesto": "Ciao VAM Deco, vorrei un preventivo per un sito web professionale.",
+  "beneficiTitolo": "Perché scegliere un sito web professionale in Ticino",
+  "beneficiIntro": "Dai visibilità al tuo brand con un <strong>sito web professionale</strong> di alta qualità in Ticino. Che si tratti di siti vetrina, e-commerce o landing page, ogni progetto è sviluppato con cura per garantire una navigazione fluida, un'esperienza utente ottimale e risultati concreti.",
+  "benefici": [
+    { "n": "01", "titolo": "Siti vetrina personalizzati", "testo": "Ideali per aziende e professionisti che desiderano una presenza online efficace. Progettati con design accattivante e ottimizzati per SEO, migliorano la visibilità del brand e attirano nuovi clienti." },
+    { "n": "02", "titolo": "Landing page", "testo": "Pagine strategiche progettate per campagne di marketing e acquisizione lead. Ottimizzate per il SEO e con call-to-action efficaci, migliorano la conversione degli utenti." },
+    { "n": "03", "titolo": "Siti e-commerce", "testo": "Una piattaforma intuitiva e sicura per la vendita online. Realizzati con sistemi di pagamento integrati, schede prodotto personalizzate e ottimizzazione SEO per aumentare le conversioni." },
+    { "n": "04", "titolo": "Siti web per professionisti", "testo": "Realizziamo siti web su misura per professionisti come medici, avvocati, architetti e consulenti. Ogni sito è progettato per valorizzare competenze e servizi, migliorando la reputazione digitale." },
+    { "n": "05", "titolo": "Siti web per aziende locali", "testo": "Ottimizzati per il SEO geografico, migliorano il posizionamento su Google per chi cerca servizi nella tua area. Perfetti per artigiani, negozi e attività commerciali." },
+    { "n": "06", "titolo": "Siti web con prenotazioni online", "testo": "Il sistema di prenotazione integrato è ideale per hotel, ristoranti, palestre e servizi professionali. Ottimizzato per garantire una gestione fluida e sicura delle prenotazioni." },
+    { "n": "07", "titolo": "Siti web one-page", "testo": "Una soluzione compatta ed efficace per presentare un'attività o un evento in modo chiaro e diretto. Ottimizzati per una navigazione veloce e una user experience intuitiva." },
+    { "n": "08", "titolo": "Restyling siti web", "testo": "Miglioriamo design, prestazioni e SEO di siti obsoleti. Aggiorniamo layout, velocità di caricamento e funzionalità per garantire un sito moderno e performante." }
+  ],
+  "fasi": [
+    { "t": "Analisi e comprensione", "d": "Partiamo dai tuoi obiettivi: capiamo insieme cosa deve fare il tuo sito (presentare l'attività, vendere online, raccogliere richieste) e studiamo il tuo settore e il tuo pubblico in Ticino." },
+    { "t": "Proposta su misura", "d": "Ti presentiamo una proposta personalizzata con struttura del sito, design e funzionalità, accompagnata da un preventivo gratuito e trasparente in 24/48h." },
+    { "t": "Sviluppo e ottimizzazione", "d": "Realizziamo il sito con design personalizzato, contenuti curati e ottimizzazione SEO. Ogni pagina è veloce, sicura e perfetta su smartphone, tablet e desktop." },
+    { "t": "Pubblicazione e supporto continuo", "d": "Mettiamo online il sito, verifichiamo che tutto funzioni al meglio e rimaniamo al tuo fianco con aggiornamenti e supporto per mantenerlo sempre performante." }
+  ],
+  "faq": [
+    { "domanda": "Quanto costa realizzare un sito web professionale?", "risposta": "Il costo di un sito web professionale varia in base a complessità, funzionalità richieste e design personalizzato. Forniamo preventivi dettagliati per soddisfare le specifiche esigenze del cliente." },
+    { "domanda": "Quali sono i tempi di sviluppo per un sito web?", "risposta": "I tempi di sviluppo dipendono dalla complessità del progetto; generalmente, un sito web standard richiede dalle 2 alle 4 settimane per essere completato." },
+    { "domanda": "Cos'è la SEO e perché è importante per il mio sito?", "risposta": "La SEO (Search Engine Optimization) è l'insieme di tecniche per migliorare la visibilità del sito sui motori di ricerca, aumentando il traffico organico e potenziali clienti." },
+    { "domanda": "Il mio sito sarà responsive e compatibile con dispositivi mobili?", "risposta": "Sì, tutti i nostri siti sono progettati per essere responsive, garantendo una navigazione ottimale su smartphone, tablet e desktop." },
+    { "domanda": "Offrite servizi di manutenzione e supporto post-lancio?", "risposta": "Sì, forniamo pacchetti di manutenzione e supporto per garantire che il sito rimanga aggiornato, sicuro e performante nel tempo." },
+    { "domanda": "Posso aggiungere una sezione blog al mio sito?", "risposta": "Certamente, possiamo integrare una sezione blog per condividere notizie, aggiornamenti e contenuti rilevanti, migliorando l'engagement e la SEO. Contattaci per un preventivo gratuito." },
+    { "domanda": "Come posso monitorare le performance del mio sito web?", "risposta": "Forniamo strumenti di analisi come Google Analytics per monitorare traffico, comportamento degli utenti e altre metriche chiave, aiutandoti a valutare l'efficacia del sito." }
+  ],
+  "oggettoForm": "Richiesta preventivo sito web"
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "stampa",
+  "title": "Stampa su Carta in Ticino: Biglietti e Volantini | VAM Deco",
+  "description": "Stampa biglietti da visita, volantini, menù e brochure in Ticino: colori nitidi, carta di qualità e design su misura. Preventivo gratuito in 24/48h.",
+  "h1": "Stampa su carta in Ticino: biglietti da visita e volantini",
+  "h1Evidenza": "biglietti da visita e volantini",
+  "heroParagrafi": [
+    "Dai vita alla tua comunicazione con la nostra stampa su carta di alta qualità, progettata per valorizzare ogni aspetto del tuo brand. Ogni progetto, dai <strong>biglietti da visita</strong> ai <strong>volantini promozionali</strong>, è realizzato su misura per offrire una presentazione professionale e curata, capace di lasciare un'impressione duratura. Grazie a tecniche di stampa all'avanguardia, offriamo soluzioni che si distinguono per la nitidezza dei colori, la precisione dei dettagli e la resistenza nel tempo.",
+    "In Ticino, dove la competizione è sempre più intensa, i materiali stampati rappresentano un elemento fondamentale per rafforzare la tua identità aziendale e farti ricordare dai clienti. Con la nostra esperienza, possiamo trasformare le tue idee in strumenti di comunicazione tangibili, che attirano l'attenzione e rispecchiano l'essenza del tuo brand.",
+    "Affidati alla nostra <strong>stampa su carta</strong> per trasmettere professionalità e qualità, sia che si tratti di materiale promozionale per eventi, sia di documenti aziendali ufficiali."
+  ],
+  "claimArancione": "Colori brillanti, dettagli nitidi e materiali premium: stampati su misura per lasciare un'impressione duratura.",
+  "whatsappTesto": "Ciao VAM Deco, vorrei un preventivo per stampa su carta (biglietti da visita, volantini...).",
+  "beneficiTitolo": "Perché scegliere la stampa su carta in Ticino",
+  "beneficiIntro": "Dai visibilità al tuo brand con soluzioni di <strong>stampa su carta</strong> di alta qualità in Ticino. Che si tratti di brochure promozionali, biglietti da visita o menù personalizzati, ogni dettaglio è curato per garantire una presentazione professionale e memorabile, con materiali premium che mantengono colori brillanti e dettagli nitidi nel tempo.",
+  "benefici": [
+    { "n": "01", "titolo": "Biglietti da visita", "testo": "I biglietti da visita sono essenziali per lasciare una prima impressione memorabile. Realizzati su carta di alta qualità, possono essere personalizzati con diverse finiture per riflettere al meglio la tua identità professionale." },
+    { "n": "02", "titolo": "Volantini", "testo": "Ideali per distribuzioni di massa, i volantini combinano semplicità ed efficacia. Con un design accattivante, sono perfetti per promuovere la tua azienda e attirare nuovi clienti." },
+    { "n": "03", "titolo": "Flyer", "testo": "I flyer sono strumenti pubblicitari perfetti per eventi o promozioni speciali. Stampati in vari formati, sono progettati per catturare l'attenzione e trasmettere messaggi chiari e concisi." },
+    { "n": "04", "titolo": "Menù", "testo": "Per ristoranti e bar, i menù personalizzati sono fondamentali per creare un'esperienza unica per i clienti. Offriamo menù resistenti e accattivanti, che possono essere aggiornati regolarmente per riflettere le nuove proposte." },
+    { "n": "05", "titolo": "Brochure", "testo": "Le brochure sono ideali per fornire informazioni dettagliate su prodotti, servizi o eventi. Con layout pieghevoli e opzioni di design accattivanti, permettono di trasmettere un messaggio completo in modo professionale." },
+    { "n": "06", "titolo": "Cataloghi", "testo": "I cataloghi presentano in dettaglio la tua offerta di prodotti o servizi. Stampati su carta resistente, sono progettati per rappresentare la qualità e professionalità del tuo brand." },
+    { "n": "07", "titolo": "Cartoline e inviti", "testo": "Perfetti per eventi, auguri o promozioni speciali, le nostre cartoline e inviti aggiungono un tocco personale a ogni messaggio, rendendolo più significativo e memorabile." },
+    { "n": "08", "titolo": "Packaging personalizzato", "testo": "Il packaging personalizzato valorizza il prodotto e riflette l'immagine del tuo brand. Stampato su carta di alta qualità, è fondamentale per un'esperienza cliente memorabile e di impatto." }
+  ],
+  "fasi": [
+    { "t": "Analisi e comprensione", "d": "Ci immergiamo nelle tue esigenze e nei tuoi obiettivi: capiamo insieme che materiale ti serve (biglietti da visita, volantini, menù, cataloghi) e il messaggio che vuoi comunicare." },
+    { "t": "Progettazione personalizzata", "d": "Sviluppiamo un preventivo gratuito e un design su misura che rispecchia il tuo brand, scegliendo la carta e le finiture più adatte per valorizzare la tua immagine." },
+    { "t": "Anteprima e stampa", "d": "Ti forniamo un'anteprima digitale del design e, dopo la tua approvazione, passiamo alla stampa con attrezzature all'avanguardia, con precisione e nei tempi stabiliti." },
+    { "t": "Verifica e supporto continuo", "d": "Controlliamo che ogni prodotto rispetti gli standard di qualità richiesti e restiamo a disposizione per ristampe, aggiornamenti e nuovi materiali." }
+  ],
+  "faq": [
+    { "domanda": "Quali tipi di prodotti di stampa su carta offrite?", "risposta": "Offriamo una vasta gamma di prodotti di stampa su carta, tra cui biglietti da visita, volantini, flyer, brochure, cartoline, menù, e molto altro. Personalizziamo ogni prodotto per adattarsi alle specifiche esigenze di brand e comunicazione del cliente." },
+    { "domanda": "Quali sono i tempi di produzione per la stampa su carta?", "risposta": "I tempi di produzione variano a seconda del tipo di prodotto e della quantità richiesta. Generalmente, ordini di 500/1000 pezzi vengono completati in 5-7 giorni lavorativi, mentre per ordini più complessi può essere necessario qualche giorno in più." },
+    { "domanda": "Posso vedere un'anteprima del design prima della stampa?", "risposta": "Sì, una volta confermato il lavoro, forniamo sempre un'anteprima digitale del design per assicurare che il prodotto finale sia esattamente come desiderato. Solo dopo l'approvazione procediamo con la stampa." },
+    { "domanda": "Quali materiali di carta utilizzate per la stampa?", "risposta": "Utilizziamo vari tipi di carta di alta qualità, come carta patinata, carta opaca, riciclata, e carte speciali per prodotti premium. La scelta dipende dal tipo di prodotto e dall'effetto desiderato." },
+    { "domanda": "Quali opzioni di finitura offrite per i prodotti stampati?", "risposta": "Le nostre opzioni di finitura includono laminazione lucida o opaca, verniciatura UV, goffratura, tagli speciali e rilegatura. Queste opzioni aggiungono un tocco professionale e unico ai prodotti stampati." },
+    { "domanda": "Offrite servizi di design per i prodotti di stampa su carta?", "risposta": "Sì, offriamo anche servizi di design grafico per aiutarti a creare un layout professionale e accattivante. Possiamo lavorare insieme a te per sviluppare il design perfetto per rappresentare il tuo brand." },
+    { "domanda": "Quali sono le dimensioni standard per volantini, flyer e brochure?", "risposta": "Le dimensioni standard variano a seconda del tipo di prodotto. Ad esempio, i volantini solitamente sono A5 o A4, mentre le brochure possono essere pieghevoli o in formato A4. Siamo disponibili anche per realizzare dimensioni personalizzate." }
+  ],
+  "oggettoForm": "Richiesta preventivo stampa su carta"
+}

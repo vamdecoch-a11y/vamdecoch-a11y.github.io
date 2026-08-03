@@ -1,0 +1,43 @@
+{
+  "slug": "decorazione-veicoli",
+  "title": "Wrapping e Decorazione Veicoli in Ticino | VAM Deco",
+  "description": "Car wrapping e decorazione veicoli in Ticino: grafiche per auto, furgoni e camion che promuovono la tua azienda ovunque. Preventivo gratuito in 24/48h.",
+  "h1": "Wrapping e decorazione veicoli",
+  "h1Evidenza": "in Ticino",
+  "heroParagrafi": [
+    "Trasforma auto, furgoni e camion in veri strumenti pubblicitari con il <strong>car wrapping e la decorazione veicoli in Ticino</strong>.",
+    "Decoriamo veicoli aziendali con grafiche personalizzate, professionali e resistenti, visibili ovunque: in strada, in colonna, nei parcheggi.",
+    "Realizzazione rapida e su misura per la tua azienda, dal <strong>wrapping auto</strong> parziale alla decorazione integrale, con servizio attivo in tutto il Ticino.",
+    "Un investimento intelligente per dare visibilità al tuo brand e comunicare professionalità ovunque ti trovi."
+  ],
+  "claimArancione": "Trasforma il tuo veicolo in una pubblicità mobile, visibile 24 ore su 24 in tutto il Ticino.",
+  "whatsappTesto": "Ciao VAM Deco, vorrei un preventivo per il wrapping / decorazione del mio veicolo.",
+  "beneficiTitolo": "Perché scegliere la decorazione veicoli in Ticino?",
+  "beneficiIntro": "La <strong>decorazione dei veicoli</strong> è uno degli strumenti pubblicitari più efficaci per promuovere la tua attività: ogni giorno il tuo veicolo diventa un cartellone mobile che attira l'attenzione in città e in strada. In Ticino, con i frequenti spostamenti tra Bellinzona, Locarno, Biasca e Lugano, con il <strong>wrapping</strong> ottieni massima visibilità per il tuo brand, in modo continuo e senza sforzo.",
+  "benefici": [
+    { "n": "01", "titolo": "Visibilità incrementata", "testo": "Il veicolo diventa un cartellone pubblicitario mobile visibile ovunque." },
+    { "n": "02", "titolo": "Pubblico mirato", "testo": "Attira l'attenzione esattamente dove operi, raggiungendo il pubblico locale." },
+    { "n": "03", "titolo": "Credibilità e fiducia", "testo": "Un veicolo decorato professionalmente aumenta la fiducia dei clienti verso il tuo brand." },
+    { "n": "04", "titolo": "Design personalizzato", "testo": "Creiamo decorazioni uniche che riflettono al meglio la tua identità aziendale, attirando i giusti clienti." },
+    { "n": "05", "titolo": "Costi ridotti a lungo termine", "testo": "Rispetto a campagne pubblicitarie più costose, la decorazione veicoli rappresenta un investimento a lungo termine con alta visibilità e senza costi aggiuntivi." },
+    { "n": "06", "titolo": "Durata e resistenza", "testo": "Usiamo materiali di alta qualità resistenti alle intemperie, garantendo che la tua decorazione rimanga intatta e visibile per anni." },
+    { "n": "07", "titolo": "Brand awareness costante", "testo": "Ovunque tu vada, il tuo veicolo continuerà a promuovere il tuo brand, 24 ore su 24, 7 giorni su 7." },
+    { "n": "08", "titolo": "Differenziazione dai competitor", "testo": "Un veicolo decorato ti distingue chiaramente dai tuoi concorrenti, dandoti un vantaggio competitivo visibile." }
+  ],
+  "fasi": [
+    { "t": "Ci conosciamo", "d": "Capire chi sei, cosa ti serve e come possiamo aiutarti. Senza complicazioni." },
+    { "t": "Progettiamo insieme", "d": "Ti mostriamo idee grafiche e ti proponiamo soluzioni su misura, adatte al tuo stile, con un preventivo gratuito in 24/48h." },
+    { "t": "Produciamo il tuo ordine", "d": "Stampa e applicazione delle grafiche con materiali di qualità e attenzione ai dettagli. Tutto nei tempi giusti." },
+    { "t": "Consegniamo e restiamo con te", "d": "Controlliamo tutto prima di consegnare. E se serve, ci siamo anche dopo." }
+  ],
+  "faq": [
+    { "domanda": "Quali sono i vantaggi della decorazione dei veicoli rispetto ad altre forme di pubblicità?", "risposta": "La decorazione veicolare è una pubblicità in movimento, visibile 24/7, e offre un costo per visualizzazione molto basso rispetto ad altre forme di marketing." },
+    { "domanda": "Quanto costa decorare un veicolo in Ticino?", "risposta": "I costi variano in base alle dimensioni del veicolo, al tipo di decorazione (parziale o totale) e ai materiali utilizzati. Contattaci per un preventivo personalizzato." },
+    { "domanda": "Quanto tempo richiede la decorazione di un veicolo?", "risposta": "Il tempo necessario può variare da 1 a 6 giorni lavorativi, a seconda della complessità del progetto e della superficie da decorare." },
+    { "domanda": "È possibile decorare solo una parte del veicolo, come le portiere o il cofano?", "risposta": "Assolutamente sì, offriamo sia decorazioni parziali che integrali, a seconda delle esigenze del cliente e del tipo di impatto visivo desiderato." },
+    { "domanda": "Posso vedere un'anteprima della decorazione?", "risposta": "Sì, prima di stampare inviamo una bozza grafica del progetto al cliente per conferma, solitamente disponibile dopo il versamento di un acconto." },
+    { "domanda": "È necessario lavare il veicolo prima dell'applicazione della decorazione?", "risposta": "Sì, il veicolo deve essere pulito e privo di cere o sostanze che possano compromettere l'adesione delle pellicole. In caso contrario verrà fatturata la pulizia." },
+    { "domanda": "Che tipo di veicoli possono essere decorati?", "risposta": "Possiamo decorare qualsiasi tipo di veicolo, dai furgoni aziendali alle auto private, fino a camion e autobus." }
+  ],
+  "oggettoForm": "Richiesta preventivo decorazione veicoli"
+}
