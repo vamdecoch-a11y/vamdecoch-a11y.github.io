@@ -6,8 +6,10 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
+  ogImage?: string;
 }
-const { title, description } = Astro.props;
+const { title, description, ogImage = '/og-vamdeco.jpg' } = Astro.props;
+const urlPagina = new URL(Astro.url.pathname, Astro.site).href;
 ---
 <!doctype html>
 <html lang="it-CH">
@@ -19,6 +21,13 @@ const { title, description } = Astro.props;
     <meta name="description" content={description} />
     <!-- ANTEPRIMA: rimuovere il noindex al go-live -->
     <meta name="robots" content="noindex, nofollow" />
+    <!-- Anteprima social (WhatsApp, Facebook, ecc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={urlPagina} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <!-- Unbounded self-hosted: precarico i pesi principali -->
     <link rel="preload" href="/fonts/unbounded-400.woff2" as="font" type="font/woff2" crossorigin />
