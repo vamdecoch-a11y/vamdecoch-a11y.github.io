@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import CardStack from '../components/CardStack.astro';
+import GalleriaOrizzontale from '../components/GalleriaOrizzontale.astro';
 import FormContatti from '../components/FormContatti.astro';
 import Testimonianze from '../components/Testimonianze.astro';
 import dati from '../dati/pellicole-satinate-ticino.json';
@@ -94,14 +94,11 @@ const faqJsonLd = JSON.stringify({
     </div>
   </section>
 
-  <!-- GALLERIA A PILA DI CARD: trascina o usa le frecce -->
-  <section class="py-10">
-    <CardStack
-      immagini={galleria.map((img) => `/img/pellicole/${img}`)}
-      alt="Lavoro di applicazione pellicola satinata privacy realizzato da VAM Deco in Ticino"
-      larghezza="max-w-5xl"
-    />
-  </section>
+  <!-- GALLERIA ORIZZONTALE: scendendo, le foto scorrono di lato -->
+  <GalleriaOrizzontale
+    immagini={galleria.map((img) => `/img/pellicole/${img}`)}
+    alt="Lavoro di applicazione pellicola satinata privacy realizzato da VAM Deco in Ticino"
+  />
 
   <!-- BENEFICI -->
   <section class="border-y border-white/5 bg-white/[0.02] py-16">
