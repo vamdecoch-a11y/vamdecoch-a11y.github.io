@@ -207,10 +207,11 @@ html.js [data-reveal].is-visible {
   pointer-events: none;
   user-select: none;
 }
-/* Su mobile: stirata in orizzontale (richiesta esplicita di Michele: sproporzionata ~300%) */
+/* Su mobile: larghezza piena adattiva, ALTEZZA stirata 3-4 volte (verticale) */
 @media (max-width: 767px) {
   .parola-gigante {
-    transform: translateX(-50%) scaleX(3);
+    transform: translateX(-50%) scaleY(3.5);
+    transform-origin: top center;
   }
 }
 
@@ -278,8 +279,9 @@ html, body {
 /* ---------- Recensioni che scorrono in verticale (rallentano all'hover) ---------- */
 .testi-scroller {
   overflow: hidden;
-  mask-image: linear-gradient(transparent, #000 10%, #000 90%, transparent);
-  -webkit-mask-image: linear-gradient(transparent, #000 10%, #000 90%, transparent);
+  /* dissolvenza solo in basso: in alto le card devono sovrapporsi visibilmente alla scritta */
+  mask-image: linear-gradient(#000 86%, transparent);
+  -webkit-mask-image: linear-gradient(#000 86%, transparent);
 }
 .testi-colonna {
   will-change: transform;
