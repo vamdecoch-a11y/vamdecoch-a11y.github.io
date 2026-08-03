@@ -1,38 +1,29 @@
 ---
 interface Props {
   oggetto: string;
+  compatto?: boolean;
 }
-const { oggetto } = Astro.props;
+const { oggetto, compatto = false } = Astro.props;
+const campo = `rounded-xl bg-white/5 border border-white/15 text-sm font-normal text-carta placeholder:text-carta/45 focus:border-brand outline-none ${compatto ? 'px-4 py-2.5' : 'px-4 py-3'}`;
 ---
-<form class="form-contatti card-scura rounded-2xl p-6 grid gap-4 text-left" data-oggetto={oggetto}>
-  <div class="grid gap-4 sm:grid-cols-2">
-    <label class="grid gap-1.5 text-xs font-semibold">Nome*
-      <input required name="nome" type="text" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
-    </label>
-    <label class="grid gap-1.5 text-xs font-semibold">Cognome*
-      <input required name="cognome" type="text" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
-    </label>
+<!-- Come l'originale: campi con segnaposto, niente etichette -->
+<form class={`form-contatti text-left grid ${compatto ? 'gap-2.5' : 'gap-4 card-scura rounded-2xl p-6'}`} data-oggetto={oggetto}>
+  <div class={`grid sm:grid-cols-2 ${compatto ? 'gap-2.5' : 'gap-4'}`}>
+    <input required name="nome" type="text" placeholder="Nome*" aria-label="Nome" class={campo} />
+    <input required name="cognome" type="text" placeholder="Cognome*" aria-label="Cognome" class={campo} />
   </div>
-  <div class="grid gap-4 sm:grid-cols-2">
-    <label class="grid gap-1.5 text-xs font-semibold">Azienda
-      <input name="azienda" type="text" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
-    </label>
-    <label class="grid gap-1.5 text-xs font-semibold">Email*
-      <input required name="email" type="email" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
-    </label>
+  <input name="azienda" type="text" placeholder="Azienda" aria-label="Azienda" class={campo} />
+  <div class={`grid sm:grid-cols-2 ${compatto ? 'gap-2.5' : 'gap-4'}`}>
+    <input required name="email" type="email" placeholder="Email*" aria-label="Email" class={campo} />
+    <input name="telefono" type="tel" placeholder="Numero di telefono" aria-label="Numero di telefono" class={campo} />
   </div>
-  <label class="grid gap-1.5 text-xs font-semibold">Numero di telefono
-    <input name="telefono" type="tel" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none" />
-  </label>
-  <label class="grid gap-1.5 text-xs font-semibold">Messaggio*
-    <textarea required name="messaggio" rows="4" placeholder="Fornisci più informazioni possibili per ricevere l'offerta entro 24h" class="rounded-lg bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta placeholder:text-carta/40 focus:border-brand outline-none resize-y"></textarea>
-  </label>
-  <label class="grid gap-1.5 text-xs font-semibold">Come ci hai conosciuti?
-    <select name="fonte" class="rounded-lg bg-superficie border border-white/15 px-3.5 py-2.5 text-sm font-normal text-carta focus:border-brand outline-none">
+  <textarea required name="messaggio" rows={compatto ? 3 : 4} placeholder="Messaggio* (fornisci più informazioni possibili per ricevere l'offerta entro 24h)" aria-label="Messaggio" class={`${campo} resize-y`}></textarea>
+  <label class="grid gap-1.5 text-xs font-semibold text-carta/80">Come ci hai conosciuti?
+    <select name="fonte" class={`rounded-xl bg-superficie border border-white/15 text-sm font-normal text-carta focus:border-brand outline-none ${compatto ? 'px-4 py-2.5' : 'px-4 py-3'}`}>
       <option>Google</option><option>Passaparola</option><option>Instagram</option><option>Facebook</option><option>Altri Social</option><option>Altro</option>
     </select>
   </label>
-  <button type="submit" class="btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">Invia</button>
+  <button type="submit" class={`btn-anim rounded-full bg-brand font-semibold text-ink hover:bg-brand-dark ${compatto ? 'px-6 py-3' : 'px-7 py-3.5'}`}>Invia</button>
   <p class="text-xs text-carta/50">*Campi obbligatori</p>
 </form>
 

@@ -190,7 +190,7 @@ html.js [data-reveal].is-visible {
   text-shadow: 0 0 34px rgba(245, 131, 39, 0.55);
 }
 
-/* ---------- Parola gigante a TUTTA larghezza schermo (es. TESTIMONIANZE) ---------- */
+/* ---------- Parola gigante a TUTTA larghezza schermo, sottile (es. TESTIMONIANZE) ---------- */
 .parola-gigante {
   position: absolute;
   top: 0;
@@ -199,11 +199,11 @@ html.js [data-reveal].is-visible {
   width: 100vw;
   text-align: center;
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 12.5vw;
+  font-weight: 300;
+  font-size: 9.2vw;
   line-height: 1;
-  letter-spacing: 0.01em;
-  color: rgba(255, 255, 255, 0.06);
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.09);
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
