@@ -23,11 +23,8 @@ const link = `https://wa.me/41765889497?text=${encodeURIComponent(testo)}`;
 </div>
 
 <script>
-  // La chiusura vale per la visita corrente
-  const wa = document.getElementById('wa-tondo');
-  if (wa && sessionStorage.getItem('wa-chiuso') === '1') wa.remove();
+  // La chiusura vale solo finché resti sulla pagina: ricaricando riappare
   document.getElementById('wa-chiudi')?.addEventListener('click', () => {
-    sessionStorage.setItem('wa-chiuso', '1');
-    wa?.remove();
+    document.getElementById('wa-tondo')?.remove();
   });
 </script>
