@@ -48,22 +48,24 @@ const { immagini, alt } = Astro.props;
       trascinando = true;
       ultimoX = e.clientX;
       obiettivo = 0;
+      velocita = 0;
       cont.style.cursor = 'grabbing';
-      cont.setPointerCapture(e.pointerId);
+      e.preventDefault();
     });
-    cont.addEventListener('pointermove', (e) => {
+    // move/up a livello finestra: il trascinamento non si perde nemmeno uscendo dal riquadro
+    window.addEventListener('pointermove', (e) => {
       if (!trascinando) return;
       x -= e.clientX - ultimoX;
       ultimoX = e.clientX;
-    });
+    }, { passive: true });
     const fine = () => {
       if (!trascinando) return;
       trascinando = false;
       cont.style.cursor = 'grab';
       obiettivo = base;
     };
-    cont.addEventListener('pointerup', fine);
-    cont.addEventListener('pointercancel', fine);
+    window.addEventListener('pointerup', fine);
+    window.addEventListener('pointercancel', fine);
 
     const passo = () => {
       velocita += (obiettivo - velocita) * 0.05;

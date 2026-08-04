@@ -4,23 +4,21 @@
   "description": "Oscuramento vetri auto in Ticino con pellicole omologate: meno calore, 99% dei raggi UV bloccati e più privacy. Preventivo gratuito in 24/48h.",
   "h1": "Oscuramento vetri auto in Ticino",
   "heroParagrafi": [
-    "Aumenta il comfort e la sicurezza della tua auto con il nostro servizio di <strong>oscuramento vetri auto in Ticino</strong>. Le nostre pellicole solari riducono il calore all'interno del veicolo, schermano fino al 99% dei raggi UV e diminuiscono l'abbagliamento, per una guida più sicura e piacevole.",
-    "Perfette per veicoli privati e commerciali, le pellicole oscuranti migliorano l'estetica del veicolo e offrono <strong>maggiore privacy</strong>, proteggendo te e i tuoi passeggeri da occhi indiscreti. In più preservano sedili e cruscotto da sbiadimento e usura.",
-    "Offriamo un servizio personalizzato e professionale con <strong>pellicole certificate e omologate</strong> che rispettano le normative locali. Affidati alla nostra esperienza per un'auto più confortevole, sicura e raffinata."
+    "Più comfort e sicurezza con l'<strong>oscuramento vetri auto in Ticino</strong>: le nostre pellicole solari riducono il calore nell'abitacolo, bloccano fino al 99% dei raggi UV e diminuiscono l'abbagliamento.",
+    "Le pellicole oscuranti donano <strong>maggiore privacy</strong> a passeggeri e abitacolo, migliorano l'estetica del veicolo e proteggono sedili e cruscotto dallo sbiadimento.",
+    "Installiamo solo <strong>pellicole certificate e omologate</strong>, nel rispetto delle normative svizzere. Preventivo gratuito in 24/48h per auto private, veicoli commerciali e flotte."
   ],
   "claimArancione": "Pellicole omologate e installazione professionale, per un risultato pulito e duraturo nel tempo.",
   "whatsappTesto": "Ciao VAM Deco, vorrei un preventivo per l'oscuramento vetri auto.",
   "beneficiTitolo": "Perché scegliere l'oscuramento vetri auto in Ticino?",
   "beneficiIntro": "Con le nostre <strong>pellicole oscuranti di alta qualità</strong> migliori il comfort di guida: meno calore, protezione dai raggi UV e più privacy, senza compromettere la visibilità. Ideali per auto private, veicoli aziendali e flotte.",
   "benefici": [
-    { "n": "01", "titolo": "Riduzione del calore", "testo": "Le pellicole abbassano la temperatura interna del veicolo, per viaggi più confortevoli soprattutto nei mesi estivi." },
-    { "n": "02", "titolo": "Filtraggio dei raggi UV", "testo": "Protezione efficace contro i raggi UV dannosi: meno rischio di scolorimento degli interni e più protezione per la pelle degli occupanti." },
-    { "n": "03", "titolo": "Maggiore privacy", "testo": "Proteggi passeggeri e contenuto dell'auto da occhi indiscreti, senza compromettere la visibilità dall'interno." },
-    { "n": "04", "titolo": "Riduzione dell'abbagliamento", "testo": "Guida più sicura grazie alla riduzione dell'abbagliamento causato dal sole o dai fari degli altri veicoli di notte." },
-    { "n": "05", "titolo": "Protezione antisfondamento", "testo": "Pellicole resistenti che riducono il rischio di schegge in caso di rottura del vetro e aumentano la resistenza ai tentativi di effrazione." },
-    { "n": "06", "titolo": "Design elegante e funzionale", "testo": "Un tocco moderno e raffinato che personalizza e migliora l'estetica del tuo veicolo." },
-    { "n": "07", "titolo": "Efficienza energetica", "testo": "Meno bisogno di aria condizionata: risparmi carburante e riduci l'impatto ambientale." },
-    { "n": "08", "titolo": "Versatilità d'uso", "testo": "Disponibili in vari livelli di opacità, per adattarsi alle esigenze di stile e funzionalità di ogni veicolo." }
+    { "n": "01", "titolo": "Riduzione del calore", "testo": "Le pellicole oscuranti abbassano la temperatura interna dell'auto nei mesi caldi: più comfort di guida e meno uso di aria condizionata." },
+    { "n": "02", "titolo": "Protezione dai raggi UV", "testo": "L'oscuramento vetri auto blocca fino al 99% dei raggi UV: protegge la pelle degli occupanti e previene lo sbiadimento degli interni." },
+    { "n": "03", "titolo": "Maggiore privacy", "testo": "I vetri oscurati proteggono passeggeri e oggetti lasciati in auto da occhi indiscreti, mantenendo sempre un'ottima visibilità dall'interno del veicolo." },
+    { "n": "04", "titolo": "Riduzione dell'abbagliamento", "testo": "Meno riflessi dal sole di giorno e dai fari degli altri veicoli di notte: le pellicole oscuranti rendono la guida più sicura." },
+    { "n": "05", "titolo": "Protezione antisfondamento", "testo": "In caso di rottura la pellicola trattiene i frammenti di vetro e aumenta la resistenza ai tentativi di effrazione, per maggiore sicurezza." },
+    { "n": "06", "titolo": "Design elegante e funzionale", "testo": "I vetri oscurati donano all'auto un look moderno ed elegante: una personalizzazione che valorizza l'estetica di veicoli privati e aziendali." }
   ],
   "fasi": [
     { "t": "Analisi e comprensione", "d": "Partiamo dalle tue esigenze: tipo di veicolo, livello di oscuramento desiderato e obiettivi (comfort, privacy, estetica). Ti consigliamo la soluzione più adatta." },

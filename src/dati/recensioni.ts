@@ -1,9 +1,12 @@
-// Recensioni standard usate in TUTTO il sito (componente RecensioniEleganti).
-// Modificando qui, si aggiornano tutte le pagine (regola "sezioni collegate" di Michele).
+// RECENSIONI GOOGLE REALI (dalla pagina /recensioni del sito attuale, nomi Google autentici).
+// File CONDIVISO da tutto il sito: modifichi qui e cambiano tutte le pagine.
 export const recensioniStandard = [
-  { testo: 'Michele ha trasformato la nostra flotta aziendale con un design accattivante e professionale. La sua attenzione ai dettagli e il servizio personalizzato sono stati eccezionali.', nome: 'A. Rossi', avatar: '/img/pellicole/G1bC6MQnKLl8c7ZyjwpJlVGuw.jpg' },
-  { testo: 'Affidarci a VAM Deco per la decorazione delle nostre vetrine è stata una delle migliori decisioni per la nostra attività.', nome: 'M. Pestoni', avatar: '/img/pellicole/vE17bXTh6LumndyjLk4ly8AzJY.png' },
-  { testo: 'La qualità delle stampe e degli adesivi di VAM Deco è eccezionale. Non solo hanno rispettato le scadenze, ma hanno anche fornito un supporto costante.', nome: 'M. Ferraro', avatar: '/img/pellicole/rM9PIBsqZjq8bCq7vWVwGPT2CI.jpg' },
-  { testo: 'Siamo stati aiutati a migliorare la privacy e l’estetica della nostra casa con pellicole oscuranti di altissima qualità.', nome: 'E. Ricchino', avatar: '/img/pellicole/rlizSNVuxrrqd6I5hGaSxwqn0Os.png' },
-  { testo: 'Ho collaborato con diverse aziende di decorazione veicoli, ma VAM Deco e Michele hanno superato ogni aspettativa. Risposte rapide, lavoro impeccabile.', nome: 'N. Di Lorenzi', avatar: '/img/pellicole/YfirIiUhVQXLMtaAlNTGBf13chY.png' },
+  { testo: 'Ho avuto a che fare diverse volte con il Signor Scacco di VamDeco. Devo dire che sono sempre rimasto soddisfatto per la puntualità nella consegna dei lavori, la pignoleria e la cura dei dettagli. Complimenti!', nome: 'Adriano K' },
+  { testo: 'Magliette e loghi top, qualità ottima, tempistiche ottime e prezzo corretto, sicuramente tornerò.', nome: 'Ariel Taboada', avatar: '/img/recensioni/ariel.png' },
+  { testo: 'Sempre disponibile ed affidabile. Da anni il mio riferimento per tutto il contesto deco e grafica. Grazie di tutto!', nome: 'Simone Mangialardo', avatar: '/img/recensioni/simone.png' },
+  { testo: 'Ottima esperienza, Michele molto disponibile e professionale. Ottima qualità e ampia varietà di servizi.', nome: "Your style Barber's Studio", avatar: '/img/recensioni/barber.png' },
+  { testo: 'Servizio impeccabile, sempre cortese e utilizza materiali di qualità.', nome: 'Moreno Sirena', avatar: '/img/recensioni/moreno.png' },
+  { testo: 'Bellissima esperienza da VamDeco, il gerente Michele è stato molto preciso e puntuale con i lavori. Prezzi concorrenziali.', nome: 'Nathan Hubner', avatar: '/img/recensioni/nathan.png' },
+  { testo: 'Bravo, professionale e disponibile. Il lavoro della cover di mio nipote è stupendo, prossimamente farò fare altre cose. Grazie!', nome: 'Elena Sabbioni' },
+  { testo: 'Consulenza, servizio e tempistiche di lavoro al top delle aspettative.', nome: 'Jonathan Barella', avatar: '/img/recensioni/jonathan.png' },
 ];

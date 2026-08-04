@@ -5,23 +5,21 @@
   "h1": "Oscuramento vetrate e pellicole anticalore",
   "h1Evidenza": "in Ticino",
   "heroParagrafi": [
-    "Ottimizza il comfort e la riservatezza dei tuoi ambienti con i nostri servizi di <strong>oscuramento vetrate</strong> e pellicole privacy!",
-    "In tutto il Ticino, da Bellinzona a Locarno, Lugano e Biasca, offriamo <strong>pellicole solari anticalore</strong> che riducono il caldo e proteggono dai raggi UV, ideali per abitazioni, negozi, uffici e studi professionali.",
-    "Le nostre pellicole satinate, inoltre, garantiscono la privacy senza sacrificare la luce naturale, trasformando ogni spazio in un ambiente fresco, sicuro e protetto dagli sguardi esterni."
+    "Più comfort e riservatezza per i tuoi ambienti con <strong>oscuramento vetrate</strong> e pellicole privacy.",
+    "In tutto il Ticino, da Bellinzona a Locarno, Lugano e Biasca, applichiamo <strong>pellicole solari anticalore</strong> che riducono il caldo e proteggono dai raggi UV: ideali per abitazioni, negozi, uffici e studi professionali.",
+    "Le pellicole satinate garantiscono privacy senza rinunciare alla luce naturale, per ambienti freschi e protetti dagli sguardi esterni."
   ],
-  "claimArancione": "Fino a 10°C in meno sul vetro e fino al 99% dei raggi UV bloccati, senza lavori invasivi.",
+  "claimArancione": "Riduzione sensibile del calore in ingresso e fino al 99% dei raggi UV bloccati, senza lavori invasivi.",
   "whatsappTesto": "Ciao VAM Deco, vorrei un preventivo per pellicole anticalore / oscuramento vetrate.",
   "beneficiTitolo": "Perché scegliere l'oscuramento vetrate e privacy in Ticino?",
-  "beneficiIntro": "Il nostro servizio di <strong>oscuramento vetrate e privacy</strong> offre numerosi vantaggi per il comfort e la protezione degli ambienti. Con pellicole solari di alta qualità riduciamo fino a 10°C la temperatura del vetro, blocchiamo i raggi UV che sbiadiscono merce e arredamenti e, con le pellicole antisfondamento, aumentiamo la resistenza dei vetri contro urti ed effrazioni.",
+  "beneficiIntro": "Il nostro servizio di <strong>oscuramento vetrate e privacy</strong> offre numerosi vantaggi per il comfort e la protezione degli ambienti. Con pellicole solari di alta qualità riduciamo sensibilmente il calore in ingresso, in base a vetro ed esposizione, blocchiamo i raggi UV che sbiadiscono merce e arredamenti e, con le pellicole antisfondamento, aumentiamo la resistenza dei vetri contro urti ed effrazioni.",
   "benefici": [
-    { "n": "01", "titolo": "Riduzione del calore", "testo": "Abbassa la temperatura interna fino a 10°C, migliorando il comfort e riducendo i costi energetici nei mesi più caldi." },
-    { "n": "02", "titolo": "Filtraggio dei raggi UV", "testo": "Blocca fino al 99% dei raggi UV, proteggendo mobili, merce esposta e superfici dagli effetti dello sbiadimento e dei danni solari." },
-    { "n": "03", "titolo": "Privacy personalizzata", "testo": "Le pellicole satinate garantiscono riservatezza in spazi professionali o abitativi senza sacrificare la luce naturale, mantenendo ambienti luminosi e accoglienti." },
-    { "n": "04", "titolo": "Riduzione dell'abbagliamento", "testo": "Elimina i riflessi su schermi, vetrine e superfici lucide, migliorando la visibilità e creando un ambiente più confortevole." },
-    { "n": "05", "titolo": "Protezione antisfondamento", "testo": "Aumenta la sicurezza dei tuoi spazi con pellicole che rinforzano i vetri, prevenendo rotture accidentali e rendendo più difficile l'accesso in caso di effrazione." },
-    { "n": "06", "titolo": "Design elegante e funzionale", "testo": "Aggiungi un tocco moderno e sofisticato agli ambienti con pellicole dal design personalizzabile, disponibili in varie finiture e colori." },
-    { "n": "07", "titolo": "Efficienza energetica", "testo": "Mantieni gli ambienti freschi d'estate e più caldi d'inverno, riducendo il consumo energetico per riscaldamento e raffreddamento." },
-    { "n": "08", "titolo": "Versatilità d'uso", "testo": "Perfette per negozi, uffici, studi medici e abitazioni, le pellicole si adattano a qualsiasi esigenza grazie alla loro flessibilità." }
+    { "n": "01", "titolo": "Riduzione del calore", "testo": "Le pellicole anticalore respingono gran parte del calore solare: ambienti più freschi in estate e comfort percepito migliore, in base a vetro ed esposizione." },
+    { "n": "02", "titolo": "Filtraggio dei raggi UV", "testo": "Le pellicole solari bloccano fino al 99% dei raggi UV, proteggendo mobili, pavimenti e merce esposta dallo sbiadimento causato dal sole." },
+    { "n": "03", "titolo": "Privacy personalizzata", "testo": "Le pellicole satinate per vetrate schermano gli sguardi esterni di uffici, studi e abitazioni, mantenendo la luce naturale e ambienti luminosi." },
+    { "n": "04", "titolo": "Riduzione dell'abbagliamento", "testo": "L'oscuramento vetrate riduce riflessi e abbagliamento su schermi e vetrine, migliorando la visibilità e il comfort visivo negli uffici e nei punti vendita." },
+    { "n": "05", "titolo": "Protezione antisfondamento", "testo": "Le pellicole antisfondamento rinforzano i vetri di negozi e abitazioni, trattenendo i frammenti in caso di rottura e ostacolando i tentativi di effrazione." },
+    { "n": "06", "titolo": "Risparmio energetico", "testo": "Meno calore in ingresso significa climatizzazione meno sollecitata: le pellicole per vetrate aiutano a contenere i consumi energetici durante i mesi estivi." }
   ],
   "fasi": [
     { "t": "Analisi e comprensione", "d": "Ci immergiamo nelle tue esigenze: analizziamo le vetrate da trattare (ufficio, negozio, abitazione) e capiamo insieme se ti serve più comfort termico, privacy o sicurezza." },
@@ -30,7 +28,7 @@
     { "t": "Verifica e supporto continuo", "d": "A lavoro concluso verifichiamo che tutto rispecchi gli standard di qualità richiesti e restiamo a disposizione per supporto e consigli sulla manutenzione." }
   ],
   "faq": [
-    { "domanda": "Quali sono i vantaggi delle pellicole per oscuramento vetrate?", "risposta": "Le pellicole per oscuramento vetrate offrono una serie di vantaggi significativi: riducono il calore interno fino a 10°C, bloccano fino al 99% dei raggi UV, riducono l'abbagliamento su schermi e superfici lucide, e proteggono gli interni dai danni causati dai raggi solari. Inoltre, migliorano l'efficienza energetica e creano un ambiente più confortevole." },
+    { "domanda": "Quali sono i vantaggi delle pellicole per oscuramento vetrate?", "risposta": "Le pellicole per oscuramento vetrate offrono una serie di vantaggi significativi: riducono sensibilmente il calore interno, in base a vetro ed esposizione, bloccano fino al 99% dei raggi UV, riducono l'abbagliamento su schermi e superfici lucide, e proteggono gli interni dai danni causati dai raggi solari. Inoltre, migliorano l'efficienza energetica e creano un ambiente più confortevole." },
     { "domanda": "Come le pellicole solari possono aiutare a risparmiare energia?", "risposta": "Le pellicole solari per vetri contribuiscono al risparmio energetico riducendo la quantità di calore che entra negli edifici durante i mesi estivi. Questo significa che i sistemi di climatizzazione devono lavorare meno per mantenere gli ambienti freschi, riducendo di conseguenza i costi energetici e le emissioni di CO2." },
     { "domanda": "Le pellicole oscuranti riducono la visibilità dall'interno verso l'esterno?", "risposta": "No, le pellicole oscuranti non riducono significativamente la visibilità dall'interno verso l'esterno durante il giorno. Forniscono privacy migliorata impedendo la visione dall'esterno verso l'interno, ma lasciano inalterata la possibilità di vedere chiaramente fuori." },
     { "domanda": "Quali tipi di pellicole privacy sono disponibili per uffici e negozi?", "risposta": "Offriamo diverse tipologie di pellicole privacy, tra cui pellicole satinate, pellicole smerigliate e pellicole decorative. Queste soluzioni sono ideali per ambienti che necessitano di privacy senza compromettere la luminosità, come uffici, studi medici e vetrine di negozi." },

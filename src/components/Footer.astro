@@ -10,9 +10,9 @@ const servizi = [
   { testo: 'Oscuramento vetri auto', href: '/oscuramento-vetri-auto-ticino' },
   { testo: 'Stampa su carta', href: '/stampa-su-carta' },
   { testo: 'Siti web', href: '/siti-web' },
-  { testo: 'Packaging', href: '/packaging' },
+  { testo: 'Personalizza la tua festa', href: '/personalizza-la-tua-festa' },
 ];
-const nastro = 'Decorazione veicoli · Vetrine · Abbigliamento · Pellicole · Cartellonistica · Adesivi · Stampa · Siti web · Packaging · ';
+const nastro = 'Decorazione veicoli · Vetrine · Abbigliamento · Pellicole · Cartellonistica · Adesivi · Stampa · Siti web · Personalizza la tua festa · ';
 ---
 <!-- Footer cinematografico a tendina: su desktop resta fermo dietro la pagina e si svela allo scroll -->
 <div class="reveal-wrap">
@@ -73,7 +73,7 @@ const nastro = 'Decorazione veicoli · Vetrine · Abbigliamento · Pellicole · 
         <!-- SERVIZI: due colonne, più grandi, tutto lo spazio -->
         <div>
           <div class="font-display text-sm tracking-widest uppercase text-brand mb-5">I nostri servizi</div>
-          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3 text-base text-carta/85">
+          <ul class="grid grid-flow-row sm:grid-flow-col sm:grid-rows-6 gap-x-10 gap-y-3 text-base text-carta/85">
             {servizi.map((s) => (
               <li><a href={s.href} class="act hover:text-brand transition-colors">{s.testo}</a></li>
             ))}

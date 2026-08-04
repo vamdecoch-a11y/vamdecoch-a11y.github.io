@@ -143,22 +143,30 @@ const faqJsonLd = s.faq.length
     <div class="freccia-giu mt-12 mx-auto w-12 h-12 rounded-full border border-white/20 grid place-items-center text-brand text-xl" aria-hidden="true">↓</div>
   </section>
 
-  <!-- PERCHÉ NOI: sezione ARANCIONE -->
+  <!-- PERCHÉ NOI: fascia ARANCIONE coi numeri veri, non card generiche -->
   <section class="bg-brand py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <div data-reveal class="text-xs font-bold tracking-widest text-ink/70 mb-2 uppercase">Perchè scegliere VAM Deco</div>
-      <h2 data-reveal class="text-2xl md:text-4xl font-bold mb-10 text-ink">Semplice, veloce, su misura.<br />Ecco perché ci scelgono</h2>
-      <div class="grid gap-5 md:grid-cols-2" data-reveal-stagger>
+    <div class="max-w-6xl mx-auto px-4 grid gap-10 md:grid-cols-[1.2fr_1fr] items-center">
+      <div data-reveal-stagger>
+        <div data-reveal class="text-xs font-bold tracking-widest text-ink/70 mb-3 uppercase">Perchè scegliere VAM Deco</div>
+        <h2 data-reveal class="text-3xl md:text-5xl font-bold text-ink leading-tight">Semplice, veloce,<br />su misura.</h2>
+        <p data-reveal class="mt-5 max-w-md text-ink/80 leading-relaxed">
+          Produzione interna a Sementina, un solo referente dall'idea alla consegna
+          e la stessa cura sia per il singolo pezzo che per la flotta aziendale.
+        </p>
+        <a data-reveal href="#contattaci" class="btn-anim mt-7 inline-block rounded-full bg-ink px-7 py-3.5 font-semibold text-carta hover:bg-black">Richiedi il tuo preventivo</a>
+      </div>
+      <div class="divide-y divide-ink/20" data-reveal-stagger>
         {[
-          { t: 'Esperienza Consolidata', d: 'Con anni di esperienza e numerosi progetti realizzati, abbiamo costruito una solida reputazione come partner di fiducia per la decorazione e la personalizzazione in Ticino.', icona: '★' },
-          { t: 'Soluzioni su Misura', d: 'Ogni progetto è unico. Offriamo soluzioni personalizzate che rispondono alle specifiche esigenze di ogni cliente, garantendo sempre il miglior risultato.', icona: '✦' },
-          { t: 'Focalizzazione sul Cliente', d: 'La soddisfazione del cliente è al centro di tutto ciò che facciamo. Lavoriamo a stretto contatto con te per realizzare esattamente ciò che desideri.', icona: '◎' },
-          { t: 'Comunicazione Trasparente', d: 'Crediamo nell\'importanza della trasparenza. Manteniamo una comunicazione costante e chiara in ogni fase del progetto.', icona: '✉' },
-        ].map((p) => (
-          <div data-reveal class="card-anim rounded-2xl bg-ink/90 border border-black/20 p-7">
-            <div class="w-12 h-12 rounded-xl bg-brand/15 border border-brand/30 grid place-items-center text-brand text-xl font-display font-bold">{p.icona}</div>
-            <div class="mt-4 font-display text-lg font-semibold text-carta">{p.t}</div>
-            <p class="mt-2 text-sm text-carta/70 leading-relaxed">{p.d}</p>
+          { n: 400, s: '+', l: 'progetti realizzati', d: 'per aziende e privati in tutta la Svizzera' },
+          { n: 24, s: '/48h', l: 'per il tuo preventivo', d: 'gratuito e senza impegno, su WhatsApp o via mail' },
+          { n: 8, s: '+', l: 'anni di esperienza', d: 'in decorazione e personalizzazione in Ticino' },
+        ].map((x) => (
+          <div data-reveal class="flex items-baseline gap-5 py-5">
+            <div class="font-display text-5xl md:text-6xl font-bold text-ink shrink-0" data-count={x.n} data-suffix={x.s}>{x.n}{x.s}</div>
+            <div>
+              <div class="font-display font-semibold text-ink">{x.l}</div>
+              <p class="text-sm text-ink/70">{x.d}</p>
+            </div>
           </div>
         ))}
       </div>

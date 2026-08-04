@@ -1,28 +1,25 @@
 {
   "slug": "decorazione-veicoli",
-  "title": "Wrapping e Decorazione Veicoli in Ticino | VAM Deco",
-  "description": "Car wrapping e decorazione veicoli in Ticino: grafiche per auto, furgoni e camion che promuovono la tua azienda ovunque. Preventivo gratuito in 24/48h.",
-  "h1": "Wrapping e decorazione veicoli",
+  "title": "Decorazione Veicoli in Ticino | VAM Deco",
+  "description": "Decorazione veicoli in Ticino: grafiche per auto, furgoni e camion che promuovono la tua azienda. Richiedi un preventivo gratuito in 24/48h.",
+  "h1": "Decorazione veicoli",
   "h1Evidenza": "in Ticino",
   "heroParagrafi": [
-    "Trasforma auto, furgoni e camion in veri strumenti pubblicitari con il <strong>car wrapping e la decorazione veicoli in Ticino</strong>.",
-    "Decoriamo veicoli aziendali con grafiche personalizzate, professionali e resistenti, visibili ovunque: in strada, in colonna, nei parcheggi.",
-    "Realizzazione rapida e su misura per la tua azienda, dal <strong>wrapping auto</strong> parziale alla decorazione integrale, con servizio attivo in tutto il Ticino.",
-    "Un investimento intelligente per dare visibilità al tuo brand e comunicare professionalità ovunque ti trovi."
+    "Trasforma auto, furgoni e camion in veri strumenti pubblicitari con la <strong>decorazione veicoli in Ticino</strong>.",
+    "Grafiche personalizzate, professionali e resistenti, visibili ovunque: in strada, in colonna, nei parcheggi.",
+    "Dalla decorazione parziale a quella integrale del veicolo, con realizzazione rapida e su misura in tutto il Ticino."
   ],
   "claimArancione": "Trasforma il tuo veicolo in una pubblicità mobile, visibile 24 ore su 24 in tutto il Ticino.",
-  "whatsappTesto": "Ciao VAM Deco, vorrei un preventivo per il wrapping / decorazione del mio veicolo.",
+  "whatsappTesto": "Ciao VAM Deco, vorrei un preventivo per la decorazione del mio veicolo.",
   "beneficiTitolo": "Perché scegliere la decorazione veicoli in Ticino?",
-  "beneficiIntro": "La <strong>decorazione dei veicoli</strong> è uno degli strumenti pubblicitari più efficaci per promuovere la tua attività: ogni giorno il tuo veicolo diventa un cartellone mobile che attira l'attenzione in città e in strada. In Ticino, con i frequenti spostamenti tra Bellinzona, Locarno, Biasca e Lugano, con il <strong>wrapping</strong> ottieni massima visibilità per il tuo brand, in modo continuo e senza sforzo.",
+  "beneficiIntro": "La <strong>decorazione dei veicoli</strong> è uno degli strumenti pubblicitari più efficaci per promuovere la tua attività: ogni giorno il tuo veicolo diventa un cartellone mobile che attira l'attenzione in città e in strada. In Ticino, con i frequenti spostamenti tra Bellinzona, Locarno, Biasca e Lugano, la <strong>decorazione del veicolo</strong> ti garantisce massima visibilità per il tuo brand, in modo continuo e senza sforzo.",
   "benefici": [
-    { "n": "01", "titolo": "Visibilità incrementata", "testo": "Il veicolo diventa un cartellone pubblicitario mobile visibile ovunque." },
-    { "n": "02", "titolo": "Pubblico mirato", "testo": "Attira l'attenzione esattamente dove operi, raggiungendo il pubblico locale." },
-    { "n": "03", "titolo": "Credibilità e fiducia", "testo": "Un veicolo decorato professionalmente aumenta la fiducia dei clienti verso il tuo brand." },
-    { "n": "04", "titolo": "Design personalizzato", "testo": "Creiamo decorazioni uniche che riflettono al meglio la tua identità aziendale, attirando i giusti clienti." },
-    { "n": "05", "titolo": "Costi ridotti a lungo termine", "testo": "Rispetto a campagne pubblicitarie più costose, la decorazione veicoli rappresenta un investimento a lungo termine con alta visibilità e senza costi aggiuntivi." },
-    { "n": "06", "titolo": "Durata e resistenza", "testo": "Usiamo materiali di alta qualità resistenti alle intemperie, garantendo che la tua decorazione rimanga intatta e visibile per anni." },
-    { "n": "07", "titolo": "Brand awareness costante", "testo": "Ovunque tu vada, il tuo veicolo continuerà a promuovere il tuo brand, 24 ore su 24, 7 giorni su 7." },
-    { "n": "08", "titolo": "Differenziazione dai competitor", "testo": "Un veicolo decorato ti distingue chiaramente dai tuoi concorrenti, dandoti un vantaggio competitivo visibile." }
+    { "n": "01", "titolo": "Visibilità incrementata", "testo": "La decorazione veicoli trasforma auto e furgoni in cartelloni pubblicitari mobili, visti ogni giorno da migliaia di persone in tutto il Ticino." },
+    { "n": "02", "titolo": "Credibilità e fiducia", "testo": "Un veicolo aziendale decorato con grafiche professionali comunica serietà e cura: i clienti riconoscono subito la tua attività e si fidano del tuo brand." },
+    { "n": "03", "titolo": "Design personalizzato", "testo": "Progettiamo grafiche su misura per la decorazione del veicolo: colori, logo e messaggi coordinati alla tua identità aziendale per attirare i clienti giusti." },
+    { "n": "04", "titolo": "Costi ridotti a lungo termine", "testo": "Un solo investimento iniziale e la decorazione veicoli lavora per anni: pubblicità continua senza canoni mensili, con un costo per contatto bassissimo." },
+    { "n": "05", "titolo": "Durata e resistenza", "testo": "Utilizziamo pellicole di alta qualità resistenti a sole, pioggia e lavaggi: la decorazione del veicolo resta brillante e leggibile per molti anni." },
+    { "n": "06", "titolo": "Brand awareness costante", "testo": "In strada, in cantiere o nel parcheggio, il veicolo decorato promuove il tuo brand 24 ore su 24 in tutto il Ticino, senza sforzo." }
   ],
   "fasi": [
     { "t": "Ci conosciamo", "d": "Capire chi sei, cosa ti serve e come possiamo aiutarti. Senza complicazioni." },

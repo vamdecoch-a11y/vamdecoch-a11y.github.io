@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Marquee from '../components/Marquee.astro';
 import ParoleScroll from '../components/ParoleScroll.astro';
 import RecensioniEleganti from '../components/RecensioniEleganti.astro';
+import { recensioniStandard } from '../dati/recensioni';
 
 const servizi = [
   { titolo: 'Decorazione veicoli', href: '/decorazione-veicoli-ticino', descr: 'Trasforma la tua auto, furgone o camion in una pubblicità in movimento con grafiche resistenti e personalizzate.' },
@@ -15,7 +16,7 @@ const servizi = [
   { titolo: 'Cartellonistica', href: '/cartellonistica', descr: 'Insegne e pannelli su misura per dare visibilità e forza al tuo business.' },
   { titolo: 'Stampa su carta', href: '/stampa-su-carta', descr: 'Biglietti da visita, volantini, cataloghi e molto altro stampati con qualità professionale.' },
   { titolo: 'Siti web', href: '/siti-web', descr: 'Siti web moderni, ottimizzati SEO e mobile-friendly per far crescere la tua attività online.' },
-  { titolo: 'Packaging', href: '/packaging', descr: 'Soluzioni di packaging personalizzate per rendere unico e riconoscibile il tuo prodotto.' },
+  { titolo: 'Personalizza la tua festa', href: '/personalizza-la-tua-festa', descr: 'T-shirt, articoli in legno e decorazioni su misura per compleanni, baby shower e addii al celibato.' },
 ];
 
 const numeri = [
@@ -23,14 +24,6 @@ const numeri = [
   { n: 500, s: '+', l: 'Progetti di successo' },
   { n: 300, s: '+', l: 'Clienti soddisfatti' },
   { n: 78, s: '', l: 'Recensioni a 5 stelle' },
-];
-
-const testimonianze = [
-  { testo: 'Ho collaborato con diverse aziende di decorazione veicoli, ma VAM Deco e Michele hanno superato ogni aspettativa. Risposte rapide, lavoro impeccabile.', nome: 'N. Di Lorenzi', avatar: '/img/pellicole/YfirIiUhVQXLMtaAlNTGBf13chY.png' },
-  { testo: 'Affidarci a VAM Deco per la decorazione delle nostre vetrine è stata una delle migliori decisioni per la nostra attività.', nome: 'M. Pestoni', avatar: '/img/pellicole/vE17bXTh6LumndyjLk4ly8AzJY.png' },
-  { testo: 'Michele ha trasformato la nostra flotta aziendale con un design accattivante e professionale.', nome: 'A. Rossi', avatar: '/img/pellicole/G1bC6MQnKLl8c7ZyjwpJlVGuw.jpg' },
-  { testo: 'La qualità delle stampe e degli adesivi di VAM Deco è eccezionale. Non solo hanno rispettato le scadenze, ma hanno anche fornito un supporto costante.', nome: 'M. Ferraro', avatar: '/img/pellicole/rM9PIBsqZjq8bCq7vWVwGPT2CI.jpg' },
-  { testo: 'Siamo stati aiutati a migliorare la privacy e l’estetica della nostra casa con pellicole oscuranti di altissima qualità.', nome: 'E. Ricchino', avatar: '/img/pellicole/rlizSNVuxrrqd6I5hGaSxwqn0Os.png' },
 ];
 
 const specialita = [
@@ -131,7 +124,7 @@ const specialita = [
 
   <!-- RECENSIONI: stile elegante con numero gigante e citazione che si compone -->
   <section class="border-y border-white/5 bg-white/[0.02]">
-    <RecensioniEleganti recensioni={testimonianze} />
+    <RecensioniEleganti recensioni={recensioniStandard} />
     <div class="text-center pb-14">
       <a data-reveal href="/recensioni" class="btn-anim inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-ink hover:bg-brand-dark">Vedi tutte le recensioni</a>
     </div>

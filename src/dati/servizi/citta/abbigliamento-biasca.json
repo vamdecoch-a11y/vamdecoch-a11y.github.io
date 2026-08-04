@@ -5,23 +5,21 @@
   "h1": "Abbigliamento personalizzato",
   "h1Evidenza": "a Biasca",
   "heroParagrafi": [
-    "Personalizza <strong>t-shirt, felpe, giacche, cappellini e divise aziendali</strong> con stampa o ricamo professionale, realizzati in Ticino. Offriamo soluzioni su misura per aziende, eventi e team di Biasca e della Riviera, con materiali di alta qualità e una produzione rapida e locale.",
-    "Ogni capo diventa un mezzo pubblicitario efficace, visibile ovunque venga indossato. Valorizza la tua immagine, rafforza il legame con il tuo team e comunica professionalità.",
-    "Preventivo in meno di 24/48h, senza impegno! Ti rispondiamo velocemente su WhatsApp o via mail."
+    "Personalizza <strong>t-shirt, felpe, giacche, cappellini e divise aziendali</strong> con stampa DTF o ricamo professionale. Soluzioni su misura per aziende, eventi e team di Biasca e della Riviera, prodotte in Ticino.",
+    "Ogni capo diventa un mezzo pubblicitario efficace, visibile ovunque venga indossato: valorizza la tua immagine e comunica professionalità.",
+    "Preventivo gratuito in 24/48h, senza impegno! Ti rispondiamo velocemente su WhatsApp o via mail."
   ],
   "claimArancione": "T-shirt, polo, felpe, giacche softshell e uniformi aziendali: personalizziamo ogni capo con stampa DTF o ricamo, anche a Biasca.",
   "whatsappTesto": "Ciao VAM Deco, vorrei un preventivo per abbigliamento personalizzato a Biasca.",
   "beneficiTitolo": "Perché scegliere l'abbigliamento personalizzato a Biasca?",
   "beneficiIntro": "L'abbigliamento personalizzato è uno strumento potente per dare visibilità al tuo brand, creare un'identità chiara e comunicare professionalità. Ogni capo diventa parte del tuo marketing, grazie a <strong>materiali di qualità, design unico e tecniche di stampa avanzate</strong>.",
   "benefici": [
-    { "n": "01", "titolo": "Impatto immediato sul pubblico", "testo": "Un capo di abbigliamento personalizzato cattura l'attenzione a colpo d'occhio, rendendo il tuo brand immediatamente riconoscibile. Questa visibilità istantanea aiuta a creare un ricordo duraturo per chi lo osserva." },
-    { "n": "02", "titolo": "Promozione continua e visibilità estesa", "testo": "Gli abiti personalizzati trasformano chi li indossa in veri e propri ambasciatori del marchio. Indossati dai dipendenti o dai clienti, ampliano la visibilità del tuo brand ovunque, senza bisogno di pubblicità aggiuntiva." },
-    { "n": "03", "titolo": "Immagine professionale e fiducia", "testo": "Abbigliamento brandizzato eleva la percezione della tua azienda, creando un'immagine professionale e ispirando fiducia. I clienti riconoscono subito il tuo team, conferendo autorevolezza al tuo brand." },
-    { "n": "04", "titolo": "Design unico e personalizzato", "testo": "Offriamo abiti progettati su misura, con dettagli come colori, loghi e slogan che rispecchiano fedelmente la tua identità aziendale. Ogni capo è un pezzo unico che rappresenta al meglio la tua attività." },
-    { "n": "05", "titolo": "Risparmio e durata nel tempo", "testo": "L'abbigliamento personalizzato rappresenta un investimento a lungo termine: non solo aumenta la visibilità, ma i materiali durevoli garantiscono promozione continua senza costi aggiuntivi." },
-    { "n": "06", "titolo": "Rafforzamento dell'immagine del brand", "testo": "Grazie all'abbigliamento personalizzato, puoi consolidare il valore e la professionalità del tuo marchio. Ogni capo contribuisce a rafforzare la percezione positiva del tuo brand." },
-    { "n": "07", "titolo": "Connessione con il territorio e la comunità", "testo": "Indossare abbigliamento personalizzato favorisce un maggiore senso di appartenenza e coinvolgimento con la comunità locale, consolidando il legame tra la tua azienda e il territorio." },
-    { "n": "08", "titolo": "Differenziazione competitiva", "testo": "Un abbigliamento distintivo permette di differenziarsi dalla concorrenza. Il design unico e l'identità visiva del tuo brand lasciano un'impressione indelebile sui clienti, rendendoti unico nel tuo settore." }
+    { "n": "01", "titolo": "Impatto immediato sul pubblico", "testo": "Una t-shirt o felpa personalizzata con stampa DTF cattura subito l'attenzione e rende il tuo logo riconoscibile a Biasca e in Riviera." },
+    { "n": "02", "titolo": "Promozione continua e visibilità estesa", "testo": "Ogni capo personalizzato indossato da dipendenti e clienti promuove il tuo marchio ovunque, ogni giorno, senza costi pubblicitari aggiuntivi per la tua azienda." },
+    { "n": "03", "titolo": "Immagine professionale e fiducia", "testo": "Divise aziendali e polo ricamate con il tuo logo trasmettono professionalità: i clienti riconoscono subito il team e si fidano della tua attività." },
+    { "n": "04", "titolo": "Design unico e personalizzato", "testo": "Progettiamo grafiche su misura con colori, loghi e slogan della tua identità aziendale: ogni maglietta personalizzata è un pezzo unico stampato in Ticino." },
+    { "n": "05", "titolo": "Risparmio e durata nel tempo", "testo": "Stampa DTF e ricamo resistono a lavaggi frequenti: un investimento che dura anni e continua a promuovere il tuo brand senza spese extra." },
+    { "n": "06", "titolo": "Differenziazione competitiva", "testo": "Un abbigliamento personalizzato distintivo ti differenzia dalla concorrenza locale: il tuo stile resta impresso nei clienti e rende unica la tua azienda a Biasca." }
   ],
   "fasi": [
     { "t": "Ci conosciamo", "d": "Capire chi sei, cosa ti serve e come possiamo aiutarti. Senza complicazioni." },

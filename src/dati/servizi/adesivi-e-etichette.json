@@ -1,26 +1,24 @@
 {
   "slug": "adesivi",
   "title": "Adesivi ed Etichette Personalizzate in Ticino | VAM Deco",
-  "description": "Adesivi personalizzati in Ticino: prespaziati, stampati, resinati e DTF UV. Etichette resinate per bottiglie e packaging. Preventivo gratuito in 24/48h.",
+  "description": "Adesivi personalizzati in Ticino: prespaziati, resinati, DTF UV. Etichette resinate per bottiglie e macchinari. Preventivo gratuito in 24/48h.",
   "h1": "Adesivi ed etichette personalizzate in Ticino",
   "heroParagrafi": [
-    "Dai visibilità al tuo brand con <strong>adesivi ed etichette personalizzate</strong> di alta qualità: un mezzo versatile e potente per promuovere la tua immagine aziendale su diverse superfici e in ogni contesto. Offriamo una vasta gamma di adesivi ed etichette in Ticino, realizzati con tecniche innovative per garantire risultati duraturi e un impatto visivo elevato.",
-    "Che tu abbia bisogno di <strong>adesivi resinati</strong> per un effetto tridimensionale, adesivi stampati e laminati per una resistenza extra, o prespaziati per un look pulito e minimale, abbiamo la soluzione adatta. Utilizziamo tecnologie avanzate, inclusa la stampa UV e DTF UV, per garantire colori vividi e durabilità anche all'esterno. I nostri adesivi sono ideali per applicazioni su vetrine, veicoli, prodotti e molto altro.",
-    "Inoltre, il nostro servizio include <strong>etichette personalizzate</strong> per qualsiasi tipo di packaging, dalle etichette per bottiglie a quelle per confezioni alimentari e cosmetici. Realizziamo etichette su misura per adattarsi perfettamente alla tua identità visiva e alle esigenze del tuo prodotto, utilizzando materiali e finiture di alta qualità che garantiscono una presentazione professionale."
+    "Realizziamo <strong>adesivi ed etichette personalizzate in Ticino</strong>: prespaziati, stampati e laminati, resinati, DTF UV e magnetici. Soluzioni durature per vetrine, veicoli, prodotti e packaging.",
+    "Le nostre <strong>etichette resinate</strong> con effetto bombato e finitura lucida resistono ai raggi UV e ai solventi: perfette per macchinari, attrezzature e per dare valore al tuo brand.",
+    "Completano l'offerta le <strong>etichette per bottiglie, cosmetici e packaging alimentare</strong>, su misura per la tua identità visiva. Preventivo gratuito in 24/48h."
   ],
   "claimArancione": "Con soluzioni adatte a ogni settore, possiamo supportarti nella realizzazione di articoli promozionali, packaging e comunicazioni su larga scala.",
   "whatsappTesto": "Ciao VAM Deco, vorrei un preventivo per adesivi / etichette personalizzate.",
   "beneficiTitolo": "Perché scegliere gli adesivi personalizzati in Ticino",
   "beneficiIntro": "Dai visibilità al tuo brand e rendilo unico con <strong>adesivi ed etichette di alta qualità</strong>, personalizzati su misura per la tua attività. Grazie alla nostra esperienza e alle tecniche di stampa avanzate offriamo soluzioni che si adattano a ogni esigenza, dal branding aziendale ai dettagli più specifici del packaging.",
   "benefici": [
-    { "n": "01", "titolo": "Adesivi prespaziati", "testo": "Ideali per veicoli, vetrine e superfici grandi, offrono un look minimalista con lettere e loghi separati, perfetti per un'applicazione pulita e di grande impatto." },
-    { "n": "02", "titolo": "Adesivi stampati e laminati", "testo": "Progettati per resistere alle intemperie, questi adesivi sono coperti con una laminazione protettiva che li rende duraturi e resistenti, anche in condizioni climatiche difficili." },
-    { "n": "03", "titolo": "Adesivi ed etichette resinate", "testo": "Con un effetto 3D grazie alla copertura in resina, questi adesivi sono eleganti e resistenti, perfetti per creare un impatto visivo forte su qualsiasi superficie." },
-    { "n": "04", "titolo": "Adesivi DTF UV", "testo": "Adesivi personalizzati con tecnologia DTF che combinano resistenza e qualità di stampa elevata, perfetti per superfici difficili o applicazioni specifiche." },
-    { "n": "05", "titolo": "Adesivi magnetici", "testo": "Adatti a superfici metalliche, questi adesivi sono facilmente rimovibili e riutilizzabili. Sono ideali per veicoli aziendali o per applicazioni temporanee dove il messaggio può essere rimosso o sostituito senza lasciare residui." },
-    { "n": "06", "titolo": "Etichette per bottiglie", "testo": "Etichette resistenti all'umidità e alle variazioni di temperatura, ideali per bottiglie di vino, birra, acqua o prodotti alimentari." },
-    { "n": "07", "titolo": "Etichette per cosmetici", "testo": "Adesivi creati appositamente per resistere a oli e creme, ideali per confezioni di cosmetici e prodotti di bellezza." },
-    { "n": "08", "titolo": "Etichette per packaging alimentare", "testo": "Progettate per essere sicure e igieniche, queste etichette sono perfette per prodotti alimentari e confezioni a contatto con il cibo." }
+    { "n": "01", "titolo": "Adesivi prespaziati", "testo": "Lettere e loghi intagliati senza sfondo, perfetti per vetrine, veicoli e insegne: applicazione pulita, look professionale e ottima resa anche a distanza." },
+    { "n": "02", "titolo": "Adesivi stampati e laminati", "testo": "Stampa a colori vivi protetta da laminazione anti graffio e anti UV: adesivi personalizzati che durano anni all'esterno, su vetrine, veicoli e attrezzature." },
+    { "n": "03", "titolo": "Etichette resinate", "testo": "Etichette resinate con effetto bombato e finitura lucida 3D, resistenti ai raggi UV e ai solventi: ideali per macchinari, attrezzature e loghi di brand." },
+    { "n": "04", "titolo": "Adesivi DTF UV", "testo": "Tecnologia DTF UV per adesivi personalizzati ad alta definizione che aderiscono anche su superfici difficili: plastica, legno, metallo, vetro e oggetti curvi." },
+    { "n": "05", "titolo": "Adesivi magnetici", "testo": "Pannelli magnetici personalizzati per veicoli aziendali e superfici metalliche: si applicano e rimuovono in pochi secondi, riutilizzabili e senza residui sulla carrozzeria." },
+    { "n": "06", "titolo": "Etichette per bottiglie e packaging", "testo": "Etichette personalizzate per bottiglie di vino e birra, cosmetici e packaging alimentare: resistenti a umidità, oli e temperatura, con finiture professionali su misura." }
   ],
   "fasi": [
     { "t": "Analisi e comprensione", "d": "Ci immergiamo nelle tue esigenze e nei tuoi obiettivi: che si tratti di adesivi per veicoli e vetrine o di etichette per i tuoi prodotti, lavoriamo a stretto contatto con te per capire esattamente cosa desideri ottenere." },

@@ -13,12 +13,12 @@
   "beneficiTitolo": "Hai bisogno di privacy, comfort e sicurezza nei tuoi spazi in Ticino?",
   "beneficiIntro": "Con le nostre <strong>pellicole satinate e opache per vetri</strong> ottieni subito privacy ed eleganza, senza perdere luce naturale. Una soluzione semplice, veloce e duratura, ideale per uffici, studi, aziende e abitazioni.",
   "benefici": [
-    { "n": "01", "titolo": "Privacy immediata e elegante", "testo": "Le pellicole satinate rendono i vetri opachi alla vista, mantenendo la luminosità naturale. Ideali per uffici, studi medici, sale riunioni, bagni, vetrine e abitazioni." },
-    { "n": "02", "titolo": "Luce sempre presente", "testo": "Opaco alla vista, luminoso per l'ambiente." },
-    { "n": "03", "titolo": "Nessuna tenda, solo luce naturale", "testo": "Dì addio a tende pesanti: mantieni la luminosità in casa con una soluzione più moderna e minimalista." },
-    { "n": "04", "titolo": "Personalizzazione su misura", "testo": "Possibilità di inserire loghi, scritte o motivi decorativi per adattare lo stile della pellicola alla tua attività o ai tuoi gusti." },
-    { "n": "05", "titolo": "Nessun intervento strutturale", "testo": "La pellicola si applica direttamente sul vetro: zero opere murarie, zero disordine, effetto immediato." },
-    { "n": "06", "titolo": "Eleganza su ogni vetro", "testo": "Effetto satinato opaco uniforme, per un look sofisticato che si integra perfettamente con ogni tipo di arredamento." }
+    { "n": "01", "titolo": "Privacy immediata e elegante", "testo": "Le pellicole satinate rendono i vetri opachi agli sguardi esterni: privacy immediata per uffici, studi medici, sale riunioni, bagni e vetrine in Ticino." },
+    { "n": "02", "titolo": "Luce sempre presente", "testo": "La pellicola opaca blocca la vista ma lascia passare la luce naturale: gli ambienti restano luminosi e accoglienti, senza rinunciare alla riservatezza." },
+    { "n": "03", "titolo": "Nessuna tenda, solo luce naturale", "testo": "Elimina tende pesanti e veneziane: la pellicola satinata garantisce privacy sul vetro con uno stile moderno, minimalista e facile da pulire." },
+    { "n": "04", "titolo": "Personalizzazione su misura", "testo": "Personalizziamo le pellicole per vetri con loghi, scritte e pattern decorativi su misura, per valorizzare l'immagine della tua attività o della tua casa." },
+    { "n": "05", "titolo": "Nessun intervento strutturale", "testo": "L'installazione della pellicola avviene direttamente sul vetro esistente: niente opere murarie, niente polvere, applicazione rapida e risultato immediato, anche in ambienti già arredati." },
+    { "n": "06", "titolo": "Eleganza su ogni vetro", "testo": "L'effetto satinato uniforme dona ai vetri un aspetto raffinato e professionale, che si integra con ogni arredamento in ufficio, negozio o abitazione." }
   ],
   "fasi": [
     { "t": "Analisi delle tue esigenze", "d": "Capiremo insieme dove vuoi maggiore privacy (ufficio, bagno, vetrina…) e ti consiglieremo la soluzione più adatta." },

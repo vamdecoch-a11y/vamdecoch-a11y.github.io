@@ -4,7 +4,7 @@
   "description": "Abbigliamento personalizzato a Bellinzona: magliette, felpe e divise con stampa DTF e ricamo. Preventivo gratuito in 24/48h, anche per un solo capo.",
   "h1": "Abbigliamento personalizzato a Bellinzona",
   "heroParagrafi": [
-    "Personalizza <strong>t-shirt, felpe, giacche, cappellini e divise aziendali</strong> con stampa o ricamo professionale, realizzati in Ticino. Offriamo soluzioni su misura per aziende, eventi e team di Bellinzona, con materiali di alta qualità e una produzione rapida e locale.",
+    "Personalizza <strong>t-shirt, felpe, giacche, cappellini e divise aziendali</strong> con stampa DTF o ricamo professionale. Soluzioni su misura per aziende, eventi e team di Bellinzona, con produzione rapida e locale in Ticino.",
     "Ogni capo diventa un mezzo pubblicitario efficace, visibile ovunque venga indossato. Valorizza la tua immagine, rafforza il legame con il tuo team e comunica professionalità.",
     "Preventivo in meno di 24/48h, senza impegno! Ti rispondiamo velocemente su WhatsApp o via mail."
   ],
@@ -13,14 +13,12 @@
   "beneficiTitolo": "Perché scegliere l'abbigliamento personalizzato a Bellinzona?",
   "beneficiIntro": "L'abbigliamento personalizzato è uno strumento potente per dare visibilità al tuo brand, creare un'identità chiara e comunicare professionalità. Ogni capo diventa parte del tuo marketing, grazie a <strong>materiali di qualità, design unico e tecniche di stampa avanzate</strong>.",
   "benefici": [
-    { "n": "01", "titolo": "Impatto immediato sul pubblico", "testo": "Un capo di abbigliamento personalizzato cattura l'attenzione a colpo d'occhio, rendendo il tuo brand immediatamente riconoscibile. Questa visibilità istantanea aiuta a creare un ricordo duraturo per chi lo osserva." },
-    { "n": "02", "titolo": "Promozione continua e visibilità estesa", "testo": "Gli abiti personalizzati trasformano chi li indossa in veri e propri ambasciatori del marchio. Indossati dai dipendenti o dai clienti, ampliano la visibilità del tuo brand ovunque, senza bisogno di pubblicità aggiuntiva." },
-    { "n": "03", "titolo": "Immagine professionale e fiducia", "testo": "Abbigliamento brandizzato eleva la percezione della tua azienda, creando un'immagine professionale e ispirando fiducia. I clienti riconoscono subito il tuo team, conferendo autorevolezza al tuo brand." },
-    { "n": "04", "titolo": "Design unico e personalizzato", "testo": "Offriamo abiti progettati su misura, con dettagli come colori, loghi e slogan che rispecchiano fedelmente la tua identità aziendale. Ogni capo è un pezzo unico che rappresenta al meglio la tua attività." },
-    { "n": "05", "titolo": "Risparmio e durata nel tempo", "testo": "L'abbigliamento personalizzato rappresenta un investimento a lungo termine: non solo aumenta la visibilità, ma i materiali durevoli garantiscono promozione continua senza costi aggiuntivi." },
-    { "n": "06", "titolo": "Rafforzamento dell'immagine del brand", "testo": "Grazie all'abbigliamento personalizzato, puoi consolidare il valore e la professionalità del tuo marchio. Ogni capo contribuisce a rafforzare la percezione positiva del tuo brand." },
-    { "n": "07", "titolo": "Connessione con il territorio e la comunità", "testo": "Indossare abbigliamento personalizzato favorisce un maggiore senso di appartenenza e coinvolgimento con la comunità locale, consolidando il legame tra la tua azienda e il territorio." },
-    { "n": "08", "titolo": "Differenziazione competitiva", "testo": "Un abbigliamento distintivo permette di differenziarsi dalla concorrenza. Il design unico e l'identità visiva del tuo brand lasciano un'impressione indelebile sui clienti, rendendoti unico nel tuo settore." }
+    { "n": "01", "titolo": "Impatto immediato sul pubblico", "testo": "Una t-shirt o felpa personalizzata con stampa DTF cattura subito l'attenzione: il tuo logo diventa riconoscibile a colpo d'occhio a Bellinzona." },
+    { "n": "02", "titolo": "Promozione continua e visibilità estesa", "testo": "Ogni capo personalizzato indossato da dipendenti e clienti promuove il tuo marchio in tutto il Ticino, senza costi pubblicitari aggiuntivi ricorrenti." },
+    { "n": "03", "titolo": "Immagine professionale e fiducia", "testo": "Divise aziendali e abbigliamento da lavoro brandizzato trasmettono professionalità: i clienti riconoscono subito il tuo team e si fidano della tua azienda." },
+    { "n": "04", "titolo": "Design unico e personalizzato", "testo": "Progettiamo grafiche su misura con colori, logo e slogan della tua identità aziendale, stampate o ricamate su t-shirt, felpe e cappellini." },
+    { "n": "05", "titolo": "Risparmio e durata nel tempo", "testo": "Stampa DTF e ricamo resistono a lavaggi frequenti: un investimento duraturo che continua a promuovere il tuo brand senza spese extra." },
+    { "n": "06", "titolo": "Differenziazione competitiva", "testo": "Un abbigliamento personalizzato distintivo ti differenzia dalla concorrenza di Bellinzona: il tuo stile unico resta impresso nella memoria dei clienti." }
   ],
   "fasi": [
     { "t": "Ci conosciamo", "d": "Capire chi sei, cosa ti serve e come possiamo aiutarti. Senza complicazioni." },
