@@ -59,7 +59,7 @@ const faqJsonLd = s.faq.length
   <section class="relative pattern-hero overflow-hidden">
     <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
     <div class="relative max-w-3xl mx-auto px-4 pt-20 pb-24 text-center" data-reveal-stagger>
-      <h1 data-reveal class="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
+      <h1 data-reveal class="h1-adattivo text-3xl md:text-5xl font-bold leading-tight tracking-tight">
         {s.h1}{s.h1Evidenza && <> <span class="text-brand">{s.h1Evidenza}</span></>}
       </h1>
       {s.heroParagrafi.map((p, i) => (
@@ -222,6 +222,37 @@ const faqJsonLd = s.faq.length
   <WhatsAppTondo testo={s.whatsappTesto} />
 
   <script>
+    // Titolo senza parola orfana a capo: su desktop provo a farlo stare su UNA riga
+    // riducendo il carattere al massimo del 25%; se non basta (titolo lungo),
+    // torno a due righe ma bilanciate (text-wrap: balance), che evita comunque
+    // la parola singola sulla seconda riga. Su mobile: sempre bilanciato.
+    const h1 = document.querySelector<HTMLElement>('.h1-adattivo');
+    if (h1) {
+      const adatta = () => {
+        h1.style.fontSize = '';
+        h1.style.whiteSpace = '';
+        (h1.style as any).textWrap = 'balance';
+        if (window.innerWidth < 768) return;
+        const base = parseFloat(getComputedStyle(h1).fontSize);
+        h1.style.whiteSpace = 'nowrap';
+        let dimensione = base;
+        while (h1.scrollWidth > h1.clientWidth && dimensione > base * 0.75) {
+          dimensione -= 1;
+          h1.style.fontSize = `${dimensione}px`;
+        }
+        if (h1.scrollWidth > h1.clientWidth) {
+          h1.style.whiteSpace = '';
+          h1.style.fontSize = '';
+        }
+      };
+      adatta();
+      let attesa: number | undefined;
+      window.addEventListener('resize', () => {
+        clearTimeout(attesa);
+        attesa = window.setTimeout(adatta, 150);
+      });
+    }
+
     // Processo: numero acceso al raggiungimento, linea che si riempie col progresso di scroll
     const righeFasi = Array.from(document.querySelectorAll<HTMLElement>('.fase-riga'));
     const numeriFasi = righeFasi.map((r) => r.querySelector<HTMLElement>('.numero-fase')!);
