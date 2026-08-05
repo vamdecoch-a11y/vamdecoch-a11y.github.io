@@ -1,17 +1,22 @@
 ---
 interface Props {
   testo: string;
+  durata?: number;   // secondi per un giro (default 26; più alto = più lento)
+  pieno?: boolean;   // true: tutte le parole piene (niente contorno alternato)
+  classe?: string;   // colore/stile del testo quando pieno (es. 'text-carta/45')
 }
-const { testo } = Astro.props;
+const { testo, durata = 26, pieno = false, classe = 'text-carta/45' } = Astro.props;
 const voci = Array(6).fill(testo);
+const stile = (i: number) =>
+  `font-display text-5xl md:text-7xl font-bold ${pieno ? classe : (i % 2 ? 'testo-contorno' : 'text-carta')}`;
 ---
 <div class="marquee py-10 select-none" aria-hidden="true">
-  <div class="marquee-track">
+  <div class="marquee-track" style={`animation-duration:${durata}s`}>
     {voci.map((t, i) => (
-      <span class={`font-display text-5xl md:text-7xl font-bold ${i % 2 ? 'testo-contorno' : 'text-carta'}`}>{t}</span>
+      <span class={stile(i)}>{t}</span>
     ))}
     {voci.map((t, i) => (
-      <span class={`font-display text-5xl md:text-7xl font-bold ${i % 2 ? 'testo-contorno' : 'text-carta'}`}>{t}</span>
+      <span class={stile(i)}>{t}</span>
     ))}
   </div>
 </div>

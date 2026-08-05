@@ -3,7 +3,6 @@
 // fornitori, fondatore, processo in 4 fasi, galleria della sede, FAQ.
 import { readdirSync } from 'node:fs';
 import Base from '../layouts/Base.astro';
-import GalleriaOrizzontale from '../components/GalleriaOrizzontale.astro';
 import FormContatti from '../components/FormContatti.astro';
 import RecensioniEleganti from '../components/RecensioniEleganti.astro';
 import WhatsAppTondo from '../components/WhatsAppTondo.astro';
@@ -16,7 +15,7 @@ const galleriaSede = readdirSync('public/img/chi-siamo/galleria')
 
 const tappe = [
   { anno: '2017', titolo: 'La scintilla', testo: "VAM Deco nasce quasi per gioco in un piccolo garage, con il primo plotter e i primi lavori svolti direttamente nel piazzale." },
-  { anno: '2018', titolo: 'La prima sede', testo: "A giugno apriamo la prima sede a Giubiasco: 16 metri quadrati di pura dedizione. Sei mesi dopo arriva il secondo plotter, e lo spazio inizia già a diventare stretto." },
+  { anno: '2018', titolo: 'La prima sede', testo: "A giugno apriamo la prima sede a Giubiasco: 16 metri quadrati di pura dedizione. Sei mesi dopo arriva il secondo plotter e lo spazio inizia già a diventare stretto." },
   { anno: '2019', titolo: 'La nuova casa', testo: "A metà novembre, dopo un mese e mezzo di lavori tra risate e notti in bianco, inauguriamo la nuova sede. Una giornata che rimarrà per sempre nei nostri cuori." },
   { anno: '2020', titolo: 'La prova più dura', testo: "Dopo soli quattro mesi arriva il COVID. La dedizione e la determinazione di non arrenderci ci permettono di superare anche quel periodo." },
   { anno: 'Oggi', titolo: 'Supporto a 360 gradi', testo: "Anno dopo anno investiamo tutto in stampanti, macchinari e formazione continua. Con partner fidati offriamo una gamma completa di servizi ai nostri clienti." },
@@ -30,6 +29,11 @@ const fornitori = [
 ];
 
 const qualita = ['Visionario', 'Collaborativo', 'Orientato ai risultati', 'Problem solver', 'Integrità', 'Resiliente'];
+
+const specializzato = [
+  'Decorazione veicoli', 'Decorazione vetrine', 'Abbigliamento personalizzato', 'Cartellonistica',
+  'Adesivi ed etichette', 'Oscuramento vetrate e Privacy', 'Stampa su carta', 'Siti Web',
+];
 
 const fasi = [
   { t: 'Analisi e comprensione', d: "Ci immergiamo nelle tue esigenze e nei tuoi obiettivi: che si tratti di un veicolo, una vetrina o un capo personalizzato, lavoriamo a stretto contatto con te per capire esattamente cosa vuoi ottenere." },
@@ -65,36 +69,34 @@ const faqJsonLd = JSON.stringify({
 >
   <script type="application/ld+json" set:html={faqJsonLd} />
 
-  <!-- HERO -->
-  <section class="relative pattern-hero overflow-hidden">
-    <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
-    <div class="relative max-w-3xl mx-auto px-4 pt-20 pb-16 text-center" data-reveal-stagger>
+  <!-- HERO: foto della sede a tutto sfondo, testi sovrapposti -->
+  <section class="relative min-h-[78vh] md:min-h-[86vh] flex items-center justify-center overflow-hidden">
+    <img src="/img/chi-siamo/hero.jpg" alt="Il laboratorio VAM Deco a Sementina" class="hero-sfondo absolute inset-0 w-full h-full object-cover" loading="eager" />
+    <div class="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/65 to-ink pointer-events-none"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-4 py-24 text-center" data-reveal-stagger>
       <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-4 uppercase">Chi siamo</div>
-      <h1 data-reveal class="text-3xl md:text-5xl font-bold leading-tight tracking-tight" style="text-wrap: balance">
-        Dove la creatività incontra la <span class="text-brand">qualità</span>
+      <h1 data-reveal class="text-3xl md:text-6xl font-bold leading-[1.05] tracking-tight" style="text-wrap: balance">
+        Dove la creatività <span class="text-brand">incontra la qualità</span>
       </h1>
-      <p data-reveal class="mt-8 text-carta/80 leading-relaxed">
+      <p data-reveal class="mt-8 text-carta/85 leading-relaxed max-w-2xl mx-auto">
         Siamo più di una semplice azienda di decorazione e personalizzazione: siamo un team appassionato di
         creatività, innovazione e qualità. Ogni giorno trasformiamo le idee in realtà con soluzioni
         personalizzate che catturano l'attenzione e valorizzano ogni brand.
       </p>
-      <p data-reveal class="mt-5 font-display text-xl md:text-2xl font-bold text-brand leading-snug">
+      <p data-reveal class="mt-6 font-display text-xl md:text-2xl font-bold text-brand leading-snug">
         Da noi, la tua immagine conta.
       </p>
     </div>
-    <div class="relative max-w-5xl mx-auto px-4 pb-20" data-reveal>
-      <img src="/img/chi-siamo/hero.jpg" alt="Il laboratorio VAM Deco a Sementina" class="w-full rounded-3xl border border-white/10 shadow-2xl" loading="eager" />
-    </div>
   </section>
 
-  <!-- STORIA: timeline con linea che si riempie allo scroll -->
+  <!-- STORIA: timeline con linea che si riempie e testo che si accende allo scroll -->
   <section class="max-w-4xl mx-auto px-4 py-20">
     <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">La nostra storia</div>
     <h2 data-reveal class="text-2xl md:text-4xl font-bold mb-12">Dal garage a punto di riferimento.</h2>
     <div class="space-y-0">
       {tappe.map((t, i) => (
         <div class="tappa-riga grid grid-cols-[5.5rem_2rem_1fr] md:grid-cols-[8rem_2.5rem_1fr] gap-x-2 md:gap-x-4">
-          <div class="tappa-anno font-display text-xl md:text-3xl font-bold text-carta/30 text-right pt-0.5 transition-colors duration-500">{t.anno}</div>
+          <div class="tappa-anno font-display text-xl md:text-3xl font-bold text-right pt-0.5 transition-colors duration-500">{t.anno}</div>
           <div class="relative flex flex-col items-center">
             <span class="tappa-punto mt-2 w-3 h-3 rounded-full bg-white/20 shrink-0 transition-colors duration-500"></span>
             {i < tappe.length - 1 && (
@@ -104,8 +106,8 @@ const faqJsonLd = JSON.stringify({
             )}
           </div>
           <div class="pb-10">
-            <h3 class="font-display font-semibold text-lg">{t.titolo}</h3>
-            <p class="mt-2 text-sm md:text-base text-carta/70 leading-relaxed max-w-xl">{t.testo}</p>
+            <h3 class="tappa-titolo font-display font-semibold text-lg transition-colors duration-500">{t.titolo}</h3>
+            <p class="tappa-testo mt-2 text-sm md:text-base leading-relaxed max-w-xl transition-colors duration-500">{t.testo}</p>
           </div>
         </div>
       ))}
@@ -134,32 +136,34 @@ const faqJsonLd = JSON.stringify({
     </div>
   </section>
 
-  <!-- FORNITORI: nastro di loghi che scorre -->
-  <section class="border-y border-white/5 bg-white/[0.02] py-14 overflow-hidden">
-    <div data-reveal class="text-center text-xs font-bold tracking-widest text-carta/50 uppercase mb-8">I fornitori con cui lavoriamo</div>
-    <div class="marquee select-none" aria-label="Fornitori: Arlon, Mimaki, 3M, Clique, Siser, Roland, Avery, Hexis">
-      <div class="marquee-track items-center">
-        {[...fornitori, ...fornitori].map((f) => (
-          <span class="inline-flex items-center justify-center h-16 md:h-20 px-8 md:px-10 mx-3 rounded-2xl bg-white/95">
-            <img src={`/img/chi-siamo/fornitori/${f.slug}.png`} alt={f.nome} class="max-h-8 md:max-h-10 w-auto max-w-[8rem]" loading="lazy" />
-          </span>
-        ))}
-      </div>
+  <!-- FORNITORI: griglia di riquadri uguali su grigio scuro -->
+  <section class="border-y border-white/5 bg-white/[0.02] py-16">
+    <div data-reveal class="text-center text-xs font-bold tracking-widest text-carta/50 uppercase mb-10">I fornitori con cui lavoriamo</div>
+    <div class="max-w-5xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-4 gap-4" data-reveal-stagger>
+      {fornitori.map((f) => (
+        <div data-reveal class="group flex items-center justify-center h-24 md:h-28 rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-brand/40 hover:bg-white/[0.05]">
+          <img src={`/img/chi-siamo/fornitori/${f.slug}.png`} alt={f.nome} class="max-h-9 md:max-h-11 w-auto max-w-full object-contain opacity-85 transition-opacity group-hover:opacity-100" loading="lazy" />
+        </div>
+      ))}
     </div>
   </section>
 
-  <!-- FONDATORE -->
-  <section class="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-[1fr_1.4fr] gap-10 items-center">
-    <div data-reveal class="relative mx-auto">
-      <div class="absolute -inset-6 rounded-full bg-brand/15 blur-3xl" aria-hidden="true"></div>
-      <img src="/img/chi-siamo/michele.png" alt="Michele Scacco, fondatore di VAM Deco" class="relative w-56 md:w-72 drop-shadow-2xl" loading="lazy" />
+  <!-- FONDATORE: foto con arco arancione e nome sovrapposto, come sul sito originale -->
+  <section class="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-center">
+    <div data-reveal class="relative w-64 md:w-80 mx-auto">
+      <div class="assoluto-arco absolute left-1/2 -translate-x-1/2 bottom-0 w-[90%] h-[80%] bg-brand rounded-t-full" aria-hidden="true"></div>
+      <img src="/img/chi-siamo/michele.png" alt="Michele Scacco, fondatore di VAM Deco" class="relative z-10 w-full" loading="lazy" />
+      <div class="absolute z-20 bottom-3 left-0 right-0 text-center leading-[0.82]">
+        <div class="font-display text-2xl md:text-3xl font-bold text-brand drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">Michele</div>
+        <div class="font-display text-4xl md:text-5xl font-black text-carta tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">SCACCO</div>
+      </div>
     </div>
     <div data-reveal-stagger>
       <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Conosci il fondatore</div>
-      <h2 data-reveal class="text-2xl md:text-4xl font-bold">Michele Scacco</h2>
+      <h2 data-reveal class="text-2xl md:text-4xl font-bold">Il cuore di VAM Deco</h2>
       <p data-reveal class="mt-5 text-carta/75 leading-relaxed">
-        Il cuore pulsante di VAM Deco. Con anni di esperienza nella decorazione e personalizzazione, la passione
-        di Michele per l'innovazione e la dedizione ai clienti guidano il nostro percorso: visione strategica,
+        Michele è la forza motrice dietro VAM Deco. Con anni di esperienza nella decorazione e personalizzazione,
+        la passione per l'innovazione e la dedizione ai clienti guidano il nostro percorso: visione strategica,
         approccio orientato al cliente e capacità di trovare soluzioni creative definiscono il nostro impegno
         verso l'eccellenza.
       </p>
@@ -172,37 +176,56 @@ const faqJsonLd = JSON.stringify({
           <span class="rounded-full border border-brand/40 px-4 py-1.5 text-sm text-brand">{q}</span>
         ))}
       </div>
+
+      <div data-reveal class="mt-8">
+        <div class="text-xs font-bold tracking-widest text-carta/50 uppercase mb-3">Specializzato in</div>
+        <div class="flex flex-wrap gap-2">
+          {specializzato.map((s) => (
+            <span class="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3.5 py-2 text-sm text-carta/85">
+              <span class="text-brand text-xs" aria-hidden="true">◆</span>{s}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div data-reveal class="mt-6 flex items-center gap-3">
+        <span class="text-xs font-bold tracking-widest text-carta/50 uppercase">Strumenti</span>
+        <span class="grid place-items-center w-11 h-11 rounded-xl border-2 font-display font-bold text-lg" style="background:#310e00;border-color:#ff9a00;color:#ff9a00" title="Adobe Illustrator">Ai</span>
+        <span class="grid place-items-center w-11 h-11 rounded-xl border-2 font-display font-bold text-lg" style="background:#001e36;border-color:#31a8ff;color:#31a8ff" title="Adobe Photoshop">Ps</span>
+      </div>
     </div>
   </section>
 
-  <!-- VALORI: nastro di parole -->
-  <Marquee testo="Qualità · Precisione · Passione · Creatività · Affidabilità ·" />
+  <!-- VALORI: nastro di parole lento, grigio chiaro, tutto pieno -->
+  <Marquee testo="Qualità · Precisione · Passione · Creatività · Affidabilità ·" durata={60} pieno classe="text-carta/35" />
 
-  <!-- PROCESSO in 4 fasi (stesso linguaggio visivo delle pagine servizi) -->
-  <section class="max-w-4xl mx-auto px-4 py-20">
-    <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Come lavoriamo</div>
-    <h2 data-reveal class="text-2xl md:text-4xl font-bold mb-12">Il nostro processo in 4 fasi.</h2>
+  <!-- PROCESSO in 4 fasi: titolo centrato, numeri grandi senza cerchio -->
+  <section class="max-w-3xl mx-auto px-4 py-20">
+    <div class="text-center mb-14" data-reveal-stagger>
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Come lavoriamo</div>
+      <h2 data-reveal class="text-2xl md:text-4xl font-bold">Il nostro processo in 4 fasi.</h2>
+    </div>
     <div>
       {fasi.map((f, i) => (
-        <div class="fase-riga grid grid-cols-[3.5rem_1fr] md:grid-cols-[4.5rem_1fr] gap-x-4 md:gap-x-6">
+        <div class="fase-riga grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-x-4 md:gap-x-7">
           <div class="flex flex-col items-center">
-            <div class="numero-fase font-display text-xl md:text-2xl font-bold w-11 h-11 md:w-13 md:h-13 rounded-full border grid place-items-center shrink-0">{i + 1}</div>
+            <div class="numero-fase font-display text-5xl md:text-6xl font-black leading-none shrink-0 tabular-nums">{i + 1}</div>
             {i < fasi.length - 1 && (
-              <div class="fase-linea relative w-px flex-1 my-2 overflow-hidden">
+              <div class="fase-linea relative w-px flex-1 my-3 overflow-hidden">
                 <div class="fase-linea-riempi absolute top-0 left-0 w-full" style="height: 0%"></div>
               </div>
             )}
           </div>
-          <div class="pb-10">
-            <h3 class="font-display font-semibold text-lg md:text-xl pt-2">{f.t}</h3>
-            <p class="mt-2 text-sm md:text-base text-carta/70 leading-relaxed max-w-xl">{f.d}</p>
+          <div class="pb-12">
+            <h3 class="font-display font-semibold text-lg md:text-xl pt-1">{f.t}</h3>
+            <p class="mt-2 text-sm md:text-base text-carta/70 leading-relaxed">{f.d}</p>
           </div>
         </div>
       ))}
     </div>
   </section>
 
-  <!-- GALLERIA SEDE -->
+  <!-- GALLERIA SEDE: immagini che si espandono al passaggio del mouse -->
   <section class="pb-4">
     <div class="max-w-3xl mx-auto px-4 text-center" data-reveal-stagger>
       <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">La nostra sede e tecnologia</div>
@@ -212,10 +235,13 @@ const faqJsonLd = JSON.stringify({
         e la cura che dedichiamo ai progetti di personalizzazione, decorazione e stampa.
       </p>
     </div>
-    <GalleriaOrizzontale
-      immagini={galleriaSede.map((img) => `/img/chi-siamo/galleria/${img}`)}
-      alt="La sede e i macchinari di VAM Deco"
-    />
+    <div data-reveal class="galleria-espandi mt-10 flex gap-2 md:gap-3 px-4 max-w-6xl mx-auto overflow-x-auto md:overflow-visible" role="region" aria-label="La sede e i macchinari di VAM Deco">
+      {galleriaSede.map((img, i) => (
+        <div class={`galleria-cella relative shrink-0 w-64 md:w-auto md:shrink md:flex-1 ${i === 0 ? 'md:flex-[3]' : ''} h-64 md:h-[26rem] rounded-2xl overflow-hidden border border-white/10`}>
+          <img src={`/img/chi-siamo/galleria/${img}`} alt={`La sede VAM Deco (foto ${i + 1})`} class="h-full w-full object-cover" loading={i < 3 ? 'eager' : 'lazy'} draggable="false" />
+        </div>
+      ))}
+    </div>
   </section>
 
   <!-- RECENSIONI (condivise) -->
@@ -259,7 +285,7 @@ const faqJsonLd = JSON.stringify({
   <WhatsAppTondo testo="Ciao VAM Deco, vorrei informazioni." />
 
   <script>
-    // Timeline storia + processo: linee che si riempiono e punti che si accendono con lo scroll
+    // Timeline storia + processo: linee che si riempiono, punti/anni/testo/numeri che si accendono con lo scroll
     const gruppi: Array<{ righe: HTMLElement[]; punto: string; linea: string }> = [
       { righe: Array.from(document.querySelectorAll<HTMLElement>('.tappa-riga')), punto: '.tappa-punto', linea: '.tappa-linea-riempi' },
       { righe: Array.from(document.querySelectorAll<HTMLElement>('.fase-riga')), punto: '.numero-fase', linea: '.fase-linea-riempi' },
@@ -288,8 +314,32 @@ const faqJsonLd = JSON.stringify({
   </script>
 
   <style>
-    /* Tappe della timeline: si accendono al passaggio */
+    /* Hero: leggero zoom lento della foto di sfondo */
+    .hero-sfondo { animation: hero-zoom 18s ease-out forwards; transform-origin: center; }
+    @keyframes hero-zoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+
+    /* Timeline: anno + punto + testo spenti di default, si accendono al passaggio */
+    .tappa-anno { color: rgba(250, 250, 248, 0.28); }
+    .tappa-titolo { color: rgba(250, 250, 248, 0.4); }
+    .tappa-testo { color: rgba(250, 250, 248, 0.22); }
     .tappa-riga.accesa .tappa-anno { color: var(--color-brand); }
+    .tappa-riga.accesa .tappa-titolo { color: var(--color-carta); }
+    .tappa-riga.accesa .tappa-testo { color: rgba(250, 250, 248, 0.72); }
     .tappa-riga.accesa .tappa-punto { background: var(--color-brand); box-shadow: 0 0 14px rgba(245, 131, 39, 0.65); }
+
+    /* Processo: numero grande senza cerchio, spento -> arancione quando acceso */
+    .numero-fase { color: rgba(250, 250, 248, 0.14); transition: color 0.5s ease; }
+    .fase-riga.accesa .numero-fase { color: var(--color-brand); }
+
+    /* Galleria sede: le celle si espandono al passaggio del mouse (solo desktop) */
+    @media (min-width: 768px) and (hover: hover) {
+      .galleria-cella { transition: flex-grow 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+      .galleria-espandi:hover .galleria-cella { flex-grow: 0.6; }
+      .galleria-espandi .galleria-cella:hover { flex-grow: 4; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-sfondo { animation: none; transform: none; }
+      .galleria-cella { transition: none; }
+    }
   </style>
 </Base>
