@@ -1,0 +1,87 @@
+---
+// RECENSIONI: tutte le recensioni Google reali. Muro a colonne con altezze naturali,
+// striscia dei 5 stelle senza testo, link al profilo Google per leggerle o lasciarne una.
+import Base from '../layouts/Base.astro';
+import FormContatti from '../components/FormContatti.astro';
+import WhatsAppTondo from '../components/WhatsAppTondo.astro';
+import { recensioniTutte, recensioniSoloStelle, linkRecensioniGoogle } from '../dati/recensioni';
+
+const stelle = '★★★★★';
+---
+<Base
+  title="Recensioni clienti | Cosa dicono di VAM Deco"
+  description="Le recensioni Google reali di chi ha scelto VAM Deco per decorazione veicoli, vetrine, abbigliamento e stampa personalizzata in Ticino. Tutte a 5 stelle."
+>
+  <!-- HERO -->
+  <section class="relative pattern-hero overflow-hidden">
+    <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
+    <div class="relative max-w-3xl mx-auto px-4 pt-20 pb-16 text-center" data-reveal-stagger>
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-4 uppercase">Recensioni</div>
+      <h1 data-reveal class="text-3xl md:text-5xl font-bold leading-tight tracking-tight" style="text-wrap: balance">
+        Le parole dei nostri <span class="text-brand">clienti</span>
+      </h1>
+      <div data-reveal class="mt-6 flex items-center justify-center gap-3">
+        <span class="text-brand text-2xl tracking-wide" aria-hidden="true">{stelle}</span>
+        <span class="font-display font-semibold">5.0 su Google</span>
+      </div>
+      <p data-reveal class="mt-5 text-carta/75 leading-relaxed">
+        Recensioni vere, con nome e cognome, lasciate su Google da aziende e privati che si sono affidati a noi.
+      </p>
+    </div>
+  </section>
+
+  <!-- MURO RECENSIONI: colonne con altezze naturali -->
+  <section class="max-w-6xl mx-auto px-4 py-14">
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-5" data-reveal-stagger>
+      {recensioniTutte.map((r) => (
+        <figure data-reveal class="card-anim break-inside-avoid mb-5 rounded-2xl border border-white/10 bg-superficie p-6">
+          <div class="text-brand tracking-wide" aria-label="5 stelle su 5">{stelle}</div>
+          <blockquote class="mt-3 text-sm md:text-base text-carta/85 leading-relaxed">{r.testo}</blockquote>
+          <figcaption class="mt-4 flex items-center gap-3">
+            {r.avatar
+              ? <img src={r.avatar} alt="" class="w-9 h-9 rounded-full object-cover" loading="lazy" />
+              : <span class="w-9 h-9 rounded-full bg-brand/20 text-brand grid place-items-center font-display font-bold text-sm" aria-hidden="true">{r.nome.charAt(0)}</span>}
+            <div>
+              <div class="font-display text-sm font-semibold">{r.nome}</div>
+              <div class="text-xs text-carta/50">Recensione Google</div>
+            </div>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <!-- I 5 stelle senza testo -->
+    <div data-reveal class="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 flex flex-wrap items-center gap-x-6 gap-y-2">
+      <span class="text-sm text-carta/60">Hanno lasciato 5 stelle anche:</span>
+      {recensioniSoloStelle.map((r) => (
+        <span class="inline-flex items-center gap-2 text-sm font-semibold">
+          {r.avatar && <img src={r.avatar} alt="" class="w-6 h-6 rounded-full object-cover" loading="lazy" />}
+          {r.nome}
+          <span class="text-brand text-xs" aria-hidden="true">★</span>
+        </span>
+      ))}
+    </div>
+
+    <div data-reveal class="mt-10 flex flex-wrap justify-center gap-3">
+      <a href={linkRecensioniGoogle} target="_blank" rel="noopener" class="btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">
+        Vedi tutte le recensioni su Google
+      </a>
+      <a href={linkRecensioniGoogle} target="_blank" rel="noopener" class="btn-anim rounded-full border-2 border-white/20 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand">
+        Lascia una recensione
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA FINALE -->
+  <section id="contattaci" class="border-t border-white/5 bg-white/[0.02]">
+    <div class="max-w-2xl mx-auto px-4 py-20 text-center">
+      <h2 data-reveal class="font-display text-3xl md:text-5xl font-bold text-brand">Vuoi essere il prossimo?</h2>
+      <p data-reveal class="mt-4 text-carta/70">Raccontaci la tua idea: preventivo gratuito in 24/48h.</p>
+      <div class="mt-10">
+        <FormContatti oggetto="Richiesta dalla pagina Recensioni" />
+      </div>
+    </div>
+  </section>
+
+  <WhatsAppTondo testo="Ciao VAM Deco, vorrei un preventivo." />
+</Base>

@@ -1,0 +1,37 @@
+{
+  "slug": "etichette-resinate",
+  "title": "Etichette Resinate in Ticino | Loghi in rilievo 3D | VAM Deco",
+  "description": "Etichette resinate (doming) con effetto 3D e finitura lucida per loghi, gadget e prodotti in Ticino. Resistenti ad acqua, graffi e UV. Preventivo gratuito in 24/48h.",
+  "h1": "Etichette resinate",
+  "h1Evidenza": "in Ticino",
+  "heroParagrafi": [
+    "Dai al tuo logo un <strong>effetto tridimensionale e una finitura lucida</strong> che si vede e si tocca. Le etichette resinate, dette anche doming, sono adesivi ricoperti da una resina trasparente bombata che valorizza il marchio con un look premium.",
+    "Perfette per gadget, prodotti, packaging e attrezzature: resistono ad acqua, graffi, solventi e raggi UV, mantenendo brillantezza e adesione nel tempo, sia all'interno che all'esterno."
+  ],
+  "claimArancione": "Un dettaglio piccolo che comunica subito qualità e professionalità.",
+  "whatsappTesto": "Ciao VAM Deco, vorrei un preventivo per delle etichette resinate.",
+  "beneficiTitolo": "Perché scegliere le etichette resinate",
+  "beneficiIntro": "La resina trasparente non è solo estetica: protegge la grafica e trasforma un semplice adesivo in un segno di riconoscibilità che dura negli anni.",
+  "benefici": [
+    { "n": "01", "titolo": "Effetto 3D e look premium", "testo": "La resina bombata crea un rilievo brillante che dona profondità al logo, valorizzando l'identità del brand con un design molto più accattivante e riconoscibile." },
+    { "n": "02", "titolo": "Alta resistenza e durata", "testo": "Impermeabili e resistenti a graffi, agenti atmosferici e raggi UV: perfette per uso interno ed esterno, senza rischio di sbiadimento o deterioramento nel tempo." },
+    { "n": "03", "titolo": "Adesione su ogni superficie", "testo": "Si applicano facilmente su plastica, vetro, metallo e legno, garantendo una tenuta forte e duratura su prodotti, mezzi, gadget e attrezzature di ogni tipo." },
+    { "n": "04", "titolo": "Personalizzazione totale", "testo": "Colori vivaci, forme su misura e finiture lucide, colorate o metallizzate: massima libertà creativa per rendere unica l'etichetta e coerente con il tuo brand." },
+    { "n": "05", "titolo": "Stampa ad alta definizione", "testo": "Tecnologia avanzata per dettagli nitidi e colori brillanti, con resine trasparenti di alta qualità per un effetto ottico perfetto e una resistenza superiore." },
+    { "n": "06", "titolo": "Consulenza e supporto", "testo": "Ti guidiamo nella scelta di design, forma e finitura migliore per valorizzare il logo: un partner unico dalla grafica alla consegna, made in Ticino." }
+  ],
+  "fasi": [
+    { "t": "Raccontaci il progetto", "d": "Ci invii il logo o l'idea, la quantità e dove userai le etichette: bastano due righe su WhatsApp o nel modulo." },
+    { "t": "Proposta su misura", "d": "Ti prepariamo un preventivo gratuito in 24/48h con forma, dimensioni, finitura e resa dell'effetto resinato." },
+    { "t": "Produzione ad alta definizione", "d": "Stampiamo la grafica e applichiamo la resina trasparente con controllo qualità pezzo per pezzo, nella nostra sede in Ticino." },
+    { "t": "Ritiro o spedizione", "d": "Ritiri a Sementina oppure ricevi le etichette a casa, pronte da applicare su prodotti, gadget e attrezzature." }
+  ],
+  "faq": [
+    { "domanda": "Cosa sono esattamente le etichette resinate?", "risposta": "Sono adesivi personalizzati ricoperti da una resina trasparente bombata (per questo si chiamano anche doming). La resina dona un effetto tridimensionale e lucido e protegge grafica e logo da graffi, acqua e raggi UV." },
+    { "domanda": "Su quali superfici si possono applicare?", "risposta": "Su quasi tutte: plastica, vetro, metallo e legno. Sono ideali per gadget, prodotti, packaging, elettronica, automotive e attrezzature, sia per uso interno che esterno." },
+    { "domanda": "Quanto durano nel tempo?", "risposta": "Sono impermeabili e resistenti a graffi, solventi, agenti atmosferici e raggi UV: mantengono brillantezza e adesione per anni, senza sbiadire." },
+    { "domanda": "Posso ordinare anche piccole quantità?", "risposta": "Sì: realizziamo etichette resinate sia in piccole tirature per artigiani e progetti personali, sia in grandi quantità per aziende. Chiedici un preventivo con la quantità che ti serve." },
+    { "domanda": "Fate anche la grafica o devo portarla io?", "risposta": "Possiamo fare entrambe le cose: se hai già il file lo controlliamo e lo prepariamo per la stampa, altrimenti creiamo noi la grafica su misura per il tuo logo." }
+  ],
+  "oggettoForm": "Richiesta preventivo etichette resinate"
+}

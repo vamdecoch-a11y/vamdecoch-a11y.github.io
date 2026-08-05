@@ -1,37 +1,42 @@
 {
   "slug": "festa",
   "title": "Personalizza la tua Festa in Ticino | VAM Deco",
-  "description": "T-shirt, body, articoli in legno e decorazioni personalizzate per compleanni, baby shower e addii al celibato in Ticino. Preventivo gratuito in 24/48h.",
-  "h1": "Personalizza la tua festa",
-  "h1Evidenza": "in Ticino",
+  "description": "Party kit, regali con il nome, bomboniere e anche la torta: tutto per la tua festa, coordinato e su misura, in Ticino. Preventivo gratuito in 24/48h.",
+  "h1": "Personalizza la tua",
+  "h1Evidenza": "festa",
   "heroParagrafi": [
-    "Compleanni, baby shower, addii al celibato e nubilato, battesimi e feste a tema: rendi unico il tuo evento con <strong>t-shirt, body, articoli in legno e decorazioni personalizzate</strong>, creati su misura in Ticino.",
-    "Dalle magliette coordinate per il gruppo alle scritte in legno con il nome del festeggiato, fino a torte e biscotti personalizzati su richiesta: pensiamo noi a trasformare la tua idea in qualcosa da ricordare."
+    "Il party kit, i regali con il nome, le bomboniere e anche la torta. <strong>Tutto per la tua festa, coordinato e su misura</strong>, realizzato in Ticino insieme a Lisa Details.",
+    "Niente più giri in dieci negozi: scegli i prodotti, aggiungi la torta a tema e ricevi tutto coordinato con lo stesso stile. Pensiamo noi a ogni dettaglio, dal primo compleanno al battesimo, dal baby shower al Natale."
   ],
-  "claimArancione": "Raccontaci la tua festa: al resto pensiamo noi.",
+  "claimArancione": "Tutto per la tua festa, da una persona sola.",
   "whatsappTesto": "Ciao VAM Deco, vorrei personalizzare la mia festa.",
+  "bottoneExtra": {
+    "testo": "Scopri di più su Instagram",
+    "url": "https://instagram.com/lisaa_details"
+  },
   "beneficiTitolo": "Una festa che si ricorda si prepara nei dettagli",
-  "beneficiIntro": "Ogni evento ha la sua personalità: scegli cosa personalizzare e noi lo realizziamo con la stessa qualità dei nostri lavori per le aziende.",
+  "beneficiIntro": "Ogni prodotto è personalizzabile con nome, foto, data e tema: scegli cosa ti serve e lo ricevi coordinato con il resto della festa.",
   "benefici": [
-    { "n": "01", "titolo": "T-shirt e body personalizzati", "testo": "Magliette coordinate per compleanni e addii al celibato, body per bimbi e baby shower: stampa professionale che resiste ai lavaggi e colori brillanti." },
-    { "n": "02", "titolo": "Articoli in legno su misura", "testo": "Scritte, nomi e decorazioni in legno tagliate su misura: dettagli caldi ed eleganti per allestire la festa e da conservare come ricordo." },
-    { "n": "03", "titolo": "Decorazioni a tema", "testo": "Striscioni, adesivi, cartellonistica e segnaposto coordinati col tema della festa: un allestimento coerente che fa scena nelle foto." },
-    { "n": "04", "titolo": "Torte e biscotti personalizzati", "testo": "Su richiesta prepariamo torte e biscotti personalizzati col tema del tuo evento, tramite i nostri partner: chiedi disponibilità nel preventivo." },
-    { "n": "05", "titolo": "Idee su misura per ogni budget", "testo": "Dal singolo pezzo al kit completo per tutti gli invitati: ti proponiamo soluzioni adatte al numero di persone e al budget della festa." },
-    { "n": "06", "titolo": "Tempi rapidi e ritiro in sede", "testo": "Produzione rapida in Ticino con ritiro a Sementina o consegna: perfetto anche per le feste organizzate all'ultimo momento." }
+    { "n": "01", "titolo": "Party kit completo", "testo": "Tutto il necessario per allestire la festa in un unico kit coordinato: decorazioni, cake topper, segnaposto e accessori con lo stesso tema." },
+    { "n": "02", "titolo": "Regali con il nome", "testo": "Quadretti, scritte e regali personalizzati con il nome del festeggiato: dettagli fatti a mano che restano come ricordo dopo la festa." },
+    { "n": "03", "titolo": "Bomboniere e inviti", "testo": "Bomboniere, confettata e inviti personalizzati per nascite, battesimi e compleanni, coordinati con il tema scelto per l'evento." },
+    { "n": "04", "titolo": "Torte e biscotti a tema", "testo": "Torte su misura e biscotti decorati coordinati con la festa, preparati dal nostro pasticcere partner. Su preventivo, senza impegno." },
+    { "n": "05", "titolo": "Tutto coordinato", "testo": "Stesso tema, stessi colori e stessa cura su ogni pezzo, torta inclusa: la tua festa è armoniosa dal tavolo agli inviti, e rende nelle foto." },
+    { "n": "06", "titolo": "Fatto a mano in Ticino", "testo": "Lavorazioni curate a mano e con stampa DTF, made in Ticino: generalmente pronto in 5-10 giorni lavorativi, a seconda della richiesta." }
   ],
   "fasi": [
-    { "t": "Raccontaci la tua festa", "d": "Tema, data, numero di invitati e cosa vuoi personalizzare: bastano due righe su WhatsApp o nel modulo." },
-    { "t": "Proposta su misura", "d": "Ti prepariamo un preventivo gratuito in 24/48h con idee, grafiche e prezzi chiari per ogni articolo." },
-    { "t": "Produzione rapida", "d": "Stampiamo e realizziamo tutto nella nostra sede in Ticino, con controllo qualità pezzo per pezzo." },
-    { "t": "Ritiro o consegna", "d": "Ritiri a Sementina quando vuoi oppure ricevi tutto comodamente: pronto da mettere in scena alla festa." }
+    { "t": "Scegli", "d": "Occasione, tema e prodotti del kit. Anche la torta, se vuoi: ci racconti la tua festa su WhatsApp o nel modulo." },
+    { "t": "Personalizza", "d": "Nome, foto, data e colori: prepariamo la proposta grafica su misura e la approvi prima della produzione." },
+    { "t": "Produzione artigianale", "d": "Realizziamo tutto a mano e con stampa DTF in Ticino, generalmente in 5-10 giorni lavorativi." },
+    { "t": "Ritira o ricevi a casa", "d": "Ritiro presso la nostra sede oppure spedizione a domicilio in tutta la Svizzera, pronto da mettere in scena." }
   ],
   "faq": [
-    { "domanda": "Quanto tempo prima devo ordinare per una festa?", "risposta": "L'ideale è contattarci 1-2 settimane prima dell'evento. Per richieste urgenti chiedici comunque: la produzione è interna e spesso riusciamo ad aiutarti anche con poco preavviso." },
-    { "domanda": "Posso ordinare anche un solo pezzo?", "risposta": "Sì: realizziamo anche il singolo pezzo, come una t-shirt per il festeggiato o una scritta in legno con il nome. Nessun ordine minimo." },
-    { "domanda": "Fate anche le grafiche o devo portarle io?", "risposta": "Le facciamo noi: ci racconti il tema e prepariamo la grafica su misura, che approvi prima della stampa. Se hai già un tuo file, lo controlliamo e lo stampiamo." },
-    { "domanda": "Quali articoli posso personalizzare per la festa?", "risposta": "T-shirt e body, articoli e scritte in legno, striscioni, adesivi, segnaposto, cartellonistica e, su richiesta, torte e biscotti personalizzati tramite i nostri partner." },
-    { "domanda": "Consegnate anche fuori dal Ticino?", "risposta": "Sì, spediamo in tutta la Svizzera. Il ritiro gratuito è nella nostra sede di Sementina." }
+    { "domanda": "Quanto tempo prima devo ordinare per una festa?", "risposta": "Generalmente i prodotti sono pronti in 5-10 giorni lavorativi, a seconda della richiesta. L'ideale è contattarci 2 settimane prima dell'evento; per urgenze chiedici comunque, spesso riusciamo ad aiutarti anche con poco preavviso." },
+    { "domanda": "Posso ordinare anche un solo pezzo?", "risposta": "Sì: realizziamo anche il singolo pezzo, come un cake topper o un quadretto con il nome. Nessun ordine minimo." },
+    { "domanda": "Fate anche le torte e i biscotti?", "risposta": "Sì: torte a tema coordinate con la festa e biscotti decorati, preparati dal nostro pasticcere partner. Si richiedono su preventivo, senza impegno." },
+    { "domanda": "Fate anche le grafiche o devo portarle io?", "risposta": "Le facciamo noi: ci racconti il tema e prepariamo la grafica su misura, che approvi prima della produzione. Se hai già un tuo file, lo controlliamo e lo usiamo." },
+    { "domanda": "Dove posso ordinare?", "risposta": "Direttamente da questa pagina con il modulo o su WhatsApp, online su shop.vamdeco.ch nella sezione Lisa Details, oppure scrivendo su Instagram a @lisaa_details." },
+    { "domanda": "Consegnate anche fuori dal Ticino?", "risposta": "Sì, spediamo in tutta la Svizzera. Il ritiro gratuito è presso la nostra sede di Sementina." }
   ],
   "oggettoForm": "Richiesta preventivo personalizzazione festa"
 }
