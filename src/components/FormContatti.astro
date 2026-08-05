@@ -2,12 +2,14 @@
 interface Props {
   oggetto: string;
   compatto?: boolean;
+  origine?: string; // etichetta della pagina/posizione da cui parte la richiesta (visibile nell'admin)
 }
-const { oggetto, compatto = false } = Astro.props;
+const { oggetto, compatto = false, origine = oggetto } = Astro.props;
 const campo = `rounded-xl bg-white/5 border border-white/15 text-sm font-normal text-carta placeholder:text-carta/45 focus:border-brand outline-none ${compatto ? 'px-4 py-2.5' : 'px-4 py-3'}`;
 ---
 <!-- Come l'originale: campi con segnaposto, niente etichette -->
-<form class={`form-contatti text-left grid ${compatto ? 'gap-2.5' : 'gap-4 card-scura rounded-2xl p-6'}`} data-oggetto={oggetto}>
+<form class={`form-contatti text-left grid ${compatto ? 'gap-2.5' : 'gap-4 card-scura rounded-2xl p-6'}`} data-oggetto={oggetto} data-origine={origine}>
+  <input type="hidden" name="origine" value={origine} />
   <div class={`grid sm:grid-cols-2 ${compatto ? 'gap-2.5' : 'gap-4'}`}>
     <input required name="nome" type="text" placeholder="Nome*" aria-label="Nome" class={campo} />
     <input required name="cognome" type="text" placeholder="Cognome*" aria-label="Cognome" class={campo} />
@@ -39,6 +41,7 @@ const campo = `rounded-xl bg-white/5 border border-white/15 text-sm font-normal 
         `Email: ${f.get('email')}`,
         f.get('telefono') ? `Telefono: ${f.get('telefono')}` : '',
         `Come ci hai conosciuti: ${f.get('fonte')}`,
+        `Richiesta inviata da: ${f.get('origine')}`,
         '', `${f.get('messaggio')}`,
       ].filter(Boolean).join('\n');
       const oggetto = form.dataset.oggetto || 'Richiesta preventivo';

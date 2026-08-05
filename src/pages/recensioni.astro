@@ -4,7 +4,7 @@
 import Base from '../layouts/Base.astro';
 import FormContatti from '../components/FormContatti.astro';
 import WhatsAppTondo from '../components/WhatsAppTondo.astro';
-import { recensioniTutte, recensioniSoloStelle, linkRecensioniGoogle } from '../dati/recensioni';
+import { recensioniTutte, linkRecensioniGoogle } from '../dati/recensioni';
 
 const stelle = '★★★★★';
 ---
@@ -47,18 +47,6 @@ const stelle = '★★★★★';
             </div>
           </figcaption>
         </figure>
-      ))}
-    </div>
-
-    <!-- I 5 stelle senza testo -->
-    <div data-reveal class="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 flex flex-wrap items-center gap-x-6 gap-y-2">
-      <span class="text-sm text-carta/60">Hanno lasciato 5 stelle anche:</span>
-      {recensioniSoloStelle.map((r) => (
-        <span class="inline-flex items-center gap-2 text-sm font-semibold">
-          {r.avatar && <img src={r.avatar} alt="" class="w-6 h-6 rounded-full object-cover" loading="lazy" />}
-          {r.nome}
-          <span class="text-brand text-xs" aria-hidden="true">★</span>
-        </span>
       ))}
     </div>
 
