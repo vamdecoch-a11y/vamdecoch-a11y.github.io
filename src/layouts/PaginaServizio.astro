@@ -9,6 +9,7 @@ import FormContatti from '../components/FormContatti.astro';
 import RecensioniEleganti from '../components/RecensioniEleganti.astro';
 import WhatsAppTondo from '../components/WhatsAppTondo.astro';
 import { recensioniStandard } from '../dati/recensioni';
+import { anniEsperienza, ANNO_FONDAZIONE } from '../dati/statistiche';
 
 interface Beneficio { n: string; titolo: string; testo: string; }
 interface Fase { t: string; d: string; }
@@ -22,6 +23,7 @@ interface Servizio {
   heroParagrafi: string[];
   claimArancione: string;
   whatsappTesto: string;
+  whatsappNumero?: string; // numero WhatsApp in formato wa.me (default: VAM Deco); usato es. per far arrivare la festa a Lisa Details
   bottoneExtra?: { testo: string; url: string };
   beneficiTitolo: string;
   beneficiIntro: string;
@@ -39,7 +41,8 @@ const galleria = existsSync(cartellaGalleria)
   ? readdirSync(cartellaGalleria).filter((f: string) => /\.(jpe?g|png|webp)$/i.test(f)).sort()
   : [];
 
-const linkWhatsApp = `https://wa.me/41765889497?text=${encodeURIComponent(s.whatsappTesto)}`;
+const numeroWhatsApp = s.whatsappNumero ?? '41765889497';
+const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(s.whatsappTesto)}`;
 
 const faqJsonLd = s.faq.length
   ? JSON.stringify({
@@ -164,12 +167,12 @@ const faqJsonLd = s.faq.length
       </div>
       <div class="divide-y divide-ink/20" data-reveal-stagger>
         {[
-          { n: 400, s: '+', l: 'progetti realizzati', d: 'per aziende e privati in tutta la Svizzera' },
+          { n: 500, s: '+', l: 'progetti realizzati', d: 'per aziende e privati in tutta la Svizzera' },
           { n: 24, s: '/48h', l: 'per il tuo preventivo', d: 'gratuito e senza impegno, su WhatsApp o via mail' },
-          { n: 8, s: '+', l: 'anni di esperienza', d: 'in decorazione e personalizzazione in Ticino' },
+          { n: anniEsperienza(), s: '+', l: 'anni di esperienza', d: 'in decorazione e personalizzazione in Ticino', anniDa: ANNO_FONDAZIONE },
         ].map((x) => (
           <div data-reveal class="py-6">
-            <div class="font-display text-6xl md:text-7xl font-bold text-ink leading-none" data-count={x.n} data-suffix={x.s}>{x.n}{x.s}</div>
+            <div class="font-display text-6xl md:text-7xl font-bold text-ink leading-none" data-count={x.n} data-suffix={x.s} data-anni-da={x.anniDa}>{x.n}{x.s}</div>
             <div class="mt-3 font-display font-semibold text-ink">{x.l}</div>
             <p class="mt-1 text-sm text-ink/75 max-w-sm">{x.d}</p>
           </div>
@@ -224,7 +227,7 @@ const faqJsonLd = s.faq.length
     </div>
   </section>
 
-  <WhatsAppTondo testo={s.whatsappTesto} />
+  <WhatsAppTondo testo={s.whatsappTesto} numero={numeroWhatsApp} />
 
   <script>
     // Titolo senza parola orfana a capo: su desktop provo a farlo stare su UNA riga

@@ -4,6 +4,7 @@ import Marquee from '../components/Marquee.astro';
 import ParoleScroll from '../components/ParoleScroll.astro';
 import RecensioniEleganti from '../components/RecensioniEleganti.astro';
 import { recensioniStandard } from '../dati/recensioni';
+import { anniEsperienza, ANNO_FONDAZIONE } from '../dati/statistiche';
 
 const servizi = [
   { titolo: 'Decorazione veicoli', href: '/decorazione-veicoli-ticino', descr: 'Trasforma la tua auto, furgone o camion in una pubblicità in movimento con grafiche resistenti e personalizzate.' },
@@ -20,14 +21,14 @@ const servizi = [
 ];
 
 const numeri = [
-  { n: 8, s: '+', l: 'Anni di esperienza' },
+  { n: anniEsperienza(), s: '+', l: 'Anni di esperienza', anniDa: ANNO_FONDAZIONE },
   { n: 500, s: '+', l: 'Progetti di successo' },
   { n: 300, s: '+', l: 'Clienti soddisfatti' },
-  { n: 78, s: '', l: 'Recensioni a 5 stelle' },
+  { n: 85, s: '+', l: 'Recensioni a 5 stelle' },
 ];
 
 const specialita = [
-  { n: '400+', t: 'Progetti realizzati con successo', d: 'Abbiamo completato più di 400 progetti per aziende in tutta la Svizzera, garantendo risultati eccellenti e una personalizzazione curata.' },
+  { n: '500+', t: 'Progetti realizzati con successo', d: 'Abbiamo completato più di 500 progetti per aziende in tutta la Svizzera, garantendo risultati eccellenti e una personalizzazione curata.' },
   { n: '150%', t: 'Aumento medio della visibilità del brand', d: 'Le nostre decorazioni e personalizzazioni hanno portato a un incremento medio del 150% nella visibilità dei brand dei nostri clienti.' },
   { n: '80%', t: 'Maggiore visibilità del brand', d: 'Grazie alle nostre soluzioni di decorazione e personalizzazione, i clienti hanno sperimentato un aumento dell’80% nella visibilità.' },
 ];
@@ -91,7 +92,7 @@ const specialita = [
     <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center" data-reveal-stagger>
       {numeri.map((x) => (
         <div data-reveal>
-          <div class="font-display text-3xl md:text-4xl font-bold text-brand" data-count={x.n} data-suffix={x.s}>{x.n}{x.s}</div>
+          <div class="font-display text-3xl md:text-4xl font-bold text-brand" data-count={x.n} data-suffix={x.s} data-anni-da={x.anniDa}>{x.n}{x.s}</div>
           <div class="mt-2 text-sm text-carta/65">{x.l}</div>
         </div>
       ))}

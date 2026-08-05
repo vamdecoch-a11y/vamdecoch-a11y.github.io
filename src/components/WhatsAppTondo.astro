@@ -2,9 +2,10 @@
 // Bottone WhatsApp a cerchio (come shop.vamdeco.ch), chiudibile con la X.
 interface Props {
   testo: string;
+  numero?: string; // numero WhatsApp in formato wa.me (default: VAM Deco)
 }
-const { testo } = Astro.props;
-const link = `https://wa.me/41765889497?text=${encodeURIComponent(testo)}`;
+const { testo, numero = '41765889497' } = Astro.props;
+const link = `https://wa.me/${numero}?text=${encodeURIComponent(testo)}`;
 ---
 <div id="wa-tondo" class="fixed bottom-5 right-5 z-40">
   <a

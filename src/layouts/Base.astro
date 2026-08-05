@@ -120,6 +120,19 @@ const urlPagina = new URL(Astro.url.pathname, Astro.site).href;
           }
         }
       }, { threshold: 0.5 });
+
+      // Anni di esperienza auto-incrementanti: rileggo la data del browser così il
+      // numero sale da solo a dicembre (2026 -> 9, 2027 -> 10...) anche senza un nuovo
+      // deploy. Aggiorno data-count e testo PRIMA di costruire l'odometro/fallback.
+      document.querySelectorAll<HTMLElement>('[data-anni-da]').forEach((el) => {
+        const inizio = parseInt(el.dataset.anniDa || '0', 10);
+        if (!inizio) return;
+        const ora = new Date();
+        const anni = ora.getFullYear() - inizio - (ora.getMonth() >= 11 ? 0 : 1);
+        el.dataset.count = String(anni);
+        el.textContent = `${anni}${el.dataset.suffix || ''}`;
+      });
+
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => {
           costruisciOdometro(el);
