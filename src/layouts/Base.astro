@@ -64,30 +64,67 @@ const urlPagina = new URL(Astro.url.pathname, Astro.site).href;
         });
       });
 
-      // Contatori animati: <span data-count="500" data-suffix="+">
-      const animaContatore = (el: HTMLElement) => {
-        const fine = parseFloat(el.dataset.count || '0');
-        const suffisso = el.dataset.suffix || '';
-        const durata = 1400;
-        const inizio = performance.now();
-        const passo = (ora: number) => {
-          const t = Math.min((ora - inizio) / durata, 1);
-          const eased = 1 - Math.pow(1 - t, 3);
-          el.textContent = `${Math.round(fine * eased)}${suffisso}`;
-          if (t < 1) requestAnimationFrame(passo);
-        };
-        requestAnimationFrame(passo);
+      // Numeri "contachilometri" (stile Number Flow): <span data-count="500" data-suffix="+">
+      // Ogni cifra è una colonna che scorre in verticale e scatta al suo posto quando
+      // il numero entra nello schermo; i caratteri non numerici (+, /, h) restano fissi.
+      // Senza JS o con reduced-motion resta il testo statico già renderizzato.
+      const costruisciOdometro = (el: HTMLElement) => {
+        // fonte = testo già renderizzato dal server: JS e fallback coincidono per costruzione
+        const testo = (el.textContent || '').trim() || `${el.dataset.count || ''}${el.dataset.suffix || ''}`;
+        const vis = document.createElement('span');
+        vis.className = 'nf-vis';
+        vis.setAttribute('aria-hidden', 'true');
+        let colonna = 0;
+        for (const ch of testo) {
+          const col = document.createElement('span');
+          col.className = 'nf-col';
+          if (/[0-9]/.test(ch)) {
+            const strip = document.createElement('span');
+            strip.className = 'nf-strip';
+            // due giri di 0-9: ogni cifra fa almeno un giro completo prima di fermarsi
+            for (let giro = 0; giro < 2; giro++) {
+              for (let d = 0; d <= 9; d++) {
+                const cella = document.createElement('span');
+                cella.className = 'nf-cella';
+                cella.textContent = String(d);
+                strip.appendChild(cella);
+              }
+            }
+            strip.dataset.target = String(10 + Number(ch));
+            strip.style.transition = `transform ${(1.1 + colonna * 0.15).toFixed(2)}s cubic-bezier(0.19, 1, 0.22, 1) ${(colonna * 0.06).toFixed(2)}s`;
+            col.appendChild(strip);
+            colonna += 1;
+          } else {
+            col.textContent = ch;
+          }
+          vis.appendChild(col);
+        }
+        el.textContent = '';
+        // copia solo-testo: leggibile da screen reader, Cmd+F, Google e in stampa
+        const sr = document.createElement('span');
+        sr.className = 'nf-testo';
+        sr.textContent = testo;
+        el.appendChild(sr);
+        el.appendChild(vis);
+      };
+      const avviaOdometro = (el: HTMLElement) => {
+        el.querySelectorAll<HTMLElement>('.nf-strip').forEach((strip) => {
+          strip.style.transform = `translateY(-${strip.dataset.target}em)`;
+        });
       };
       const osservaContatori = new IntersectionObserver((voci) => {
         for (const voce of voci) {
           if (voce.isIntersecting) {
-            animaContatore(voce.target as HTMLElement);
+            avviaOdometro(voce.target as HTMLElement);
             osservaContatori.unobserve(voce.target);
           }
         }
       }, { threshold: 0.5 });
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => osservaContatori.observe(el));
+        document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => {
+          costruisciOdometro(el);
+          osservaContatori.observe(el);
+        });
       }
     </script>
   </body>

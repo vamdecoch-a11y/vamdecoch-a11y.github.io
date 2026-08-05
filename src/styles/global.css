@@ -549,3 +549,54 @@ html, body {
   .footer-aurora { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* Numeri "contachilometri" (stile Number Flow): colonne di cifre che scorrono
+   in verticale dentro una finestra alta 1em. Le celle nascoste sopra/sotto
+   restano tagliate via da overflow hidden. */
+[data-count] {
+  font-variant-numeric: tabular-nums; /* cifre a larghezza uniforme: colonne allineate, zero scatti */
+}
+.nf-vis {
+  display: inline-flex;
+  line-height: 1;
+  vertical-align: top; /* baseline di flex+overflow hidden non interoperabile su Safari: meglio esplicito */
+}
+.nf-col {
+  display: inline-block;
+  overflow: hidden;
+  height: 1em;
+}
+.nf-strip {
+  display: block;
+  will-change: transform;
+}
+.nf-cella {
+  display: block;
+  height: 1em;
+  line-height: 1;
+  text-align: center;
+}
+/* Copia solo-testo del numero: invisibile a schermo ma presente per
+   screen reader, ricerca nella pagina e motori. In stampa prende il posto
+   delle colonne animate (che uscirebbero congelate a zero). */
+.nf-testo {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media print {
+  .nf-vis { display: none; }
+  .nf-testo {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip-path: none;
+    white-space: normal;
+  }
+}
