@@ -1,0 +1,311 @@
+{
+ "aggiornato": "2026-07-31",
+ "periodo": "2025-03 … 2026-07",
+ "totali": {
+  "clic": 1615,
+  "imp": 51398,
+  "ctr": 3.14,
+  "pos": 16.5
+ },
+ "confronto": {
+  "primoMese": {
+   "mese": "2025-03",
+   "clic": 3,
+   "imp": 118,
+   "ctr": 2.54
+  },
+  "ultimoMese": {
+   "mese": "2026-07",
+   "clic": 125,
+   "imp": 2648,
+   "ctr": 4.72
+  },
+  "deltaCtr": 2.18,
+  "deltaClic": 122
+ },
+ "serie": [
+  {
+   "mese": "2025-03",
+   "clic": 3,
+   "imp": 118,
+   "ctr": 2.54
+  },
+  {
+   "mese": "2025-04",
+   "clic": 91,
+   "imp": 1706,
+   "ctr": 5.33
+  },
+  {
+   "mese": "2025-05",
+   "clic": 62,
+   "imp": 2070,
+   "ctr": 3.0
+  },
+  {
+   "mese": "2025-06",
+   "clic": 69,
+   "imp": 2076,
+   "ctr": 3.32
+  },
+  {
+   "mese": "2025-07",
+   "clic": 82,
+   "imp": 3254,
+   "ctr": 2.52
+  },
+  {
+   "mese": "2025-08",
+   "clic": 74,
+   "imp": 2406,
+   "ctr": 3.08
+  },
+  {
+   "mese": "2025-09",
+   "clic": 117,
+   "imp": 2562,
+   "ctr": 4.57
+  },
+  {
+   "mese": "2025-10",
+   "clic": 96,
+   "imp": 2361,
+   "ctr": 4.07
+  },
+  {
+   "mese": "2025-11",
+   "clic": 97,
+   "imp": 3381,
+   "ctr": 2.87
+  },
+  {
+   "mese": "2025-12",
+   "clic": 88,
+   "imp": 2922,
+   "ctr": 3.01
+  },
+  {
+   "mese": "2026-01",
+   "clic": 96,
+   "imp": 3042,
+   "ctr": 3.16
+  },
+  {
+   "mese": "2026-02",
+   "clic": 86,
+   "imp": 4126,
+   "ctr": 2.08
+  },
+  {
+   "mese": "2026-03",
+   "clic": 100,
+   "imp": 5849,
+   "ctr": 1.71
+  },
+  {
+   "mese": "2026-04",
+   "clic": 143,
+   "imp": 4970,
+   "ctr": 2.88
+  },
+  {
+   "mese": "2026-05",
+   "clic": 147,
+   "imp": 4308,
+   "ctr": 3.41
+  },
+  {
+   "mese": "2026-06",
+   "clic": 139,
+   "imp": 3599,
+   "ctr": 3.86
+  },
+  {
+   "mese": "2026-07",
+   "clic": 125,
+   "imp": 2648,
+   "ctr": 4.72
+  }
+ ],
+ "query": [
+  {
+   "label": "vam deco",
+   "clic": 120,
+   "imp": 351,
+   "ctr": 34.19,
+   "pos": 1.1
+  },
+  {
+   "label": "vamdeco",
+   "clic": 90,
+   "imp": 245,
+   "ctr": 36.73,
+   "pos": 1.41
+  },
+  {
+   "label": "stampa magliette ticino",
+   "clic": 23,
+   "imp": 479,
+   "ctr": 4.8,
+   "pos": 9.86
+  },
+  {
+   "label": "magliette personalizzate ticino",
+   "clic": 20,
+   "imp": 924,
+   "ctr": 2.16,
+   "pos": 6.4
+  },
+  {
+   "label": "wrapping ticino",
+   "clic": 13,
+   "imp": 136,
+   "ctr": 9.56,
+   "pos": 3.34
+  },
+  {
+   "label": "wrapping auto",
+   "clic": 11,
+   "imp": 294,
+   "ctr": 3.74,
+   "pos": 3.03
+  },
+  {
+   "label": "van deco",
+   "clic": 10,
+   "imp": 23,
+   "ctr": 43.48,
+   "pos": 7.39
+  },
+  {
+   "label": "oscuramento vetri auto",
+   "clic": 9,
+   "imp": 282,
+   "ctr": 3.19,
+   "pos": 4.18
+  },
+  {
+   "label": "car wrapping ticino",
+   "clic": 9,
+   "imp": 153,
+   "ctr": 5.88,
+   "pos": 3.18
+  },
+  {
+   "label": "wrap auto",
+   "clic": 8,
+   "imp": 91,
+   "ctr": 8.79,
+   "pos": 1.8
+  },
+  {
+   "label": "vandeco",
+   "clic": 8,
+   "imp": 22,
+   "ctr": 36.36,
+   "pos": 1.09
+  },
+  {
+   "label": "oscuramento vetri auto ticino",
+   "clic": 7,
+   "imp": 58,
+   "ctr": 12.07,
+   "pos": 2.31
+  }
+ ],
+ "pagine": [
+  {
+   "label": "https://vamdeco.ch/",
+   "clic": 377,
+   "imp": 5389,
+   "ctr": 7.0,
+   "pos": 12.68
+  },
+  {
+   "label": "http://www.vamdeco.ch/",
+   "clic": 366,
+   "imp": 10407,
+   "ctr": 3.52,
+   "pos": 4.64
+  },
+  {
+   "label": "https://vamdeco.ch/abbigliamento-personalizzato-ticino",
+   "clic": 167,
+   "imp": 6372,
+   "ctr": 2.62,
+   "pos": 16.69
+  },
+  {
+   "label": "https://vamdeco.ch/oscuramento-vetri-auto-ticino",
+   "clic": 100,
+   "imp": 4619,
+   "ctr": 2.16,
+   "pos": 15.83
+  },
+  {
+   "label": "https://vamdeco.ch/decorazione-veicoli-ticino",
+   "clic": 87,
+   "imp": 3144,
+   "ctr": 2.77,
+   "pos": 11.07
+  },
+  {
+   "label": "https://vamdeco.ch/abbigliamento-personalizzato-ticino/bellinzona",
+   "clic": 80,
+   "imp": 1166,
+   "ctr": 6.86,
+   "pos": 7.23
+  },
+  {
+   "label": "https://vamdeco.ch/pellicole-satinate-ticino",
+   "clic": 49,
+   "imp": 5106,
+   "ctr": 0.96,
+   "pos": 31.35
+  },
+  {
+   "label": "https://vamdeco.ch/decorazione-vetrine-ticino",
+   "clic": 42,
+   "imp": 2637,
+   "ctr": 1.59,
+   "pos": 13.65
+  },
+  {
+   "label": "https://vamdeco.ch/en/",
+   "clic": 38,
+   "imp": 688,
+   "ctr": 5.52,
+   "pos": 8.31
+  },
+  {
+   "label": "https://vamdeco.ch/cartellonistica",
+   "clic": 33,
+   "imp": 1291,
+   "ctr": 2.56,
+   "pos": 24.31
+  }
+ ],
+ "dispositivi": [
+  {
+   "label": "Dispositivo mobile",
+   "clic": 938,
+   "imp": 20775,
+   "ctr": 4.52,
+   "pos": 8.95
+  },
+  {
+   "label": "Computer",
+   "clic": 655,
+   "imp": 30230,
+   "ctr": 2.17,
+   "pos": 20.71
+  },
+  {
+   "label": "Tablet",
+   "clic": 22,
+   "imp": 393,
+   "ctr": 5.6,
+   "pos": 5.97
+  }
+ ]
+}

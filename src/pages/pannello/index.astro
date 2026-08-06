@@ -1,0 +1,154 @@
+---
+import PannelloAdmin from '../../layouts/PannelloAdmin.astro';
+import gsc from '../../dati/pannello-gsc.json';
+
+const mesiIt = { '01':'gen','02':'feb','03':'mar','04':'apr','05':'mag','06':'giu','07':'lug','08':'ago','09':'set','10':'ott','11':'nov','12':'dic' };
+const etichettaMese = (ym: string) => `${mesiIt[ym.slice(5,7) as keyof typeof mesiIt]} ${ym.slice(2,4)}`;
+
+const metriche = [
+  { label: 'Clic totali', valore: gsc.totali.clic.toLocaleString('it-CH'), sub: 'da Google, 17 mesi', delta: `+${gsc.confronto.deltaClic} vs 1° mese`, su: true },
+  { label: 'Impressioni', valore: gsc.totali.imp.toLocaleString('it-CH'), sub: 'quante volte sei apparso', delta: 'in crescita', su: true },
+  { label: 'CTR medio', valore: `${gsc.totali.ctr}%`, sub: 'clic su impressioni', delta: `${gsc.confronto.deltaCtr > 0 ? '+' : ''}${gsc.confronto.deltaCtr}% vs 1° mese`, su: gsc.confronto.deltaCtr > 0 },
+  { label: 'Posizione media', valore: gsc.totali.pos, sub: 'più bassa = meglio', delta: 'obiettivo top 10', su: true },
+];
+
+const datiGrafico = {
+  labels: gsc.serie.map((s) => etichettaMese(s.mese)),
+  clic: gsc.serie.map((s) => s.clic),
+  imp: gsc.serie.map((s) => s.imp),
+  ctr: gsc.serie.map((s) => s.ctr),
+};
+---
+<PannelloAdmin titolo="Dashboard" attivo="dashboard">
+  <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
+    <p class="text-sm text-carta/60">Andamento su Google · periodo {gsc.periodo} · aggiornato al {gsc.aggiornato}</p>
+    <span class="text-xs rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-carta/60">Dati reali Search Console</span>
+  </div>
+
+  <!-- METRICHE -->
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    {metriche.map((m) => (
+      <div class="rounded-2xl border border-white/10 bg-superficie/50 p-5">
+        <div class="text-xs font-bold tracking-widest text-carta/45 uppercase">{m.label}</div>
+        <div class="mt-2 font-display text-3xl font-bold">{m.valore}</div>
+        <div class="mt-1 text-xs text-carta/50">{m.sub}</div>
+        <div class={`mt-3 inline-flex items-center gap-1 text-xs font-semibold ${m.su ? 'text-emerald-400' : 'text-carta/50'}`}>
+          <span aria-hidden="true">{m.su ? '▲' : '—'}</span>{m.delta}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- GRAFICO ANDAMENTO + DISPOSITIVI -->
+  <div class="mt-6 grid gap-4 lg:grid-cols-[1.7fr_1fr]">
+    <div class="rounded-2xl border border-white/10 bg-superficie/50 p-5">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="font-display font-semibold">Clic e impressioni nel tempo</h2>
+        <div class="flex items-center gap-3 text-xs text-carta/55">
+          <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-brand"></span>Clic</span>
+          <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span>Impressioni</span>
+        </div>
+      </div>
+      <div class="h-64 md:h-72"><canvas id="g-andamento"></canvas></div>
+    </div>
+    <div class="rounded-2xl border border-white/10 bg-superficie/50 p-5">
+      <h2 class="font-display font-semibold mb-4">Da quale dispositivo</h2>
+      <div class="h-40"><canvas id="g-dispositivi"></canvas></div>
+      <div class="mt-4 space-y-1.5">
+        {gsc.dispositivi.map((d, i) => (
+          <div class="flex items-center justify-between text-sm">
+            <span class="inline-flex items-center gap-2"><span class={`w-2.5 h-2.5 rounded-full ${['bg-brand','bg-sky-400','bg-emerald-400'][i] || 'bg-white/40'}`}></span>{d.label}</span>
+            <span class="text-carta/55">{d.clic} clic · {d.ctr}% CTR</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFRONTO CTR (miglioramento) -->
+  <div class="mt-6 rounded-2xl border border-brand/30 bg-brand/[0.06] p-5">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <div class="text-xs font-bold tracking-widest text-brand uppercase">Il CTR sta migliorando</div>
+        <p class="mt-2 text-sm text-carta/70 max-w-xl">Confronto tra il primo mese di dati e l'ultimo. Il CTR (quante persone cliccano quando ti vedono) è passato da <strong class="text-carta">{gsc.confronto.primoMese.ctr}%</strong> a <strong class="text-brand">{gsc.confronto.ultimoMese.ctr}%</strong>. Al lancio del nuovo sito questo grafico misurerà l'effetto delle modifiche.</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="text-center"><div class="font-display text-2xl font-bold text-carta/50">{gsc.confronto.primoMese.ctr}%</div><div class="text-[10px] text-carta/40 uppercase tracking-widest">{etichettaMese(gsc.confronto.primoMese.mese)}</div></div>
+        <div class="text-brand text-2xl">→</div>
+        <div class="text-center"><div class="font-display text-3xl font-bold text-brand">{gsc.confronto.ultimoMese.ctr}%</div><div class="text-[10px] text-carta/40 uppercase tracking-widest">{etichettaMese(gsc.confronto.ultimoMese.mese)}</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABELLE QUERY + PAGINE -->
+  <div class="mt-6 grid gap-4 lg:grid-cols-2">
+    <div class="rounded-2xl border border-white/10 bg-superficie/50 p-5">
+      <h2 class="font-display font-semibold mb-4">Ricerche che ti portano visite</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead><tr class="text-left text-xs text-carta/45 uppercase tracking-widest border-b border-white/10">
+            <th class="pb-2 font-semibold">Ricerca</th><th class="pb-2 font-semibold text-right">Clic</th><th class="pb-2 font-semibold text-right">CTR</th><th class="pb-2 font-semibold text-right">Pos.</th>
+          </tr></thead>
+          <tbody>
+            {gsc.query.map((q) => (
+              <tr class="border-b border-white/5">
+                <td class="py-2.5 pr-2">{q.label}</td>
+                <td class="py-2.5 text-right font-semibold">{q.clic}</td>
+                <td class="py-2.5 text-right text-carta/60">{q.ctr}%</td>
+                <td class="py-2.5 text-right text-carta/60">{q.pos}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="rounded-2xl border border-white/10 bg-superficie/50 p-5">
+      <h2 class="font-display font-semibold mb-4">Pagine più viste</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead><tr class="text-left text-xs text-carta/45 uppercase tracking-widest border-b border-white/10">
+            <th class="pb-2 font-semibold">Pagina</th><th class="pb-2 font-semibold text-right">Clic</th><th class="pb-2 font-semibold text-right">CTR</th>
+          </tr></thead>
+          <tbody>
+            {gsc.pagine.map((p) => (
+              <tr class="border-b border-white/5">
+                <td class="py-2.5 pr-2 max-w-[15rem] truncate text-carta/80" title={p.label}>{p.label.replace('https://vamdeco.ch','').replace('http://www.vamdeco.ch','www') || '/'}</td>
+                <td class="py-2.5 text-right font-semibold">{p.clic}</td>
+                <td class="py-2.5 text-right text-carta/60">{p.ctr}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script define:vars={{ datiGrafico, dispositivi: gsc.dispositivi }}>
+    function disegna() {
+      if (typeof Chart === 'undefined') { setTimeout(disegna, 120); return; }
+      Chart.defaults.color = 'rgba(250,250,248,0.55)';
+      Chart.defaults.font.family = 'Unbounded, sans-serif';
+      Chart.defaults.font.size = 10;
+      const griglia = { color: 'rgba(255,255,255,0.06)' };
+
+      new Chart(document.getElementById('g-andamento'), {
+        type: 'line',
+        data: { labels: datiGrafico.labels, datasets: [
+          { label: 'Clic', data: datiGrafico.clic, borderColor: '#F58327', backgroundColor: 'rgba(245,131,39,0.12)', fill: true, tension: 0.35, borderWidth: 2, pointRadius: 0 },
+          { label: 'Impressioni', data: datiGrafico.imp, borderColor: '#38bdf8', backgroundColor: 'transparent', tension: 0.35, borderWidth: 2, pointRadius: 0, yAxisID: 'y2' },
+        ]},
+        options: { responsive: true, maintainAspectRatio: false, interaction: { intersect: false, mode: 'index' },
+          plugins: { legend: { display: false } },
+          scales: { x: { grid: griglia }, y: { grid: griglia, beginAtZero: true }, y2: { position: 'right', grid: { display: false }, beginAtZero: true } } }
+      });
+
+      new Chart(document.getElementById('g-dispositivi'), {
+        type: 'doughnut',
+        data: { labels: dispositivi.map(d => d.label), datasets: [{ data: dispositivi.map(d => d.clic), backgroundColor: ['#F58327','#38bdf8','#34d399'], borderColor: '#0a0a0a', borderWidth: 3 }] },
+        options: { responsive: true, maintainAspectRatio: false, cutout: '62%', plugins: { legend: { display: false } } }
+      });
+    }
+    disegna();
+  </script>
+</PannelloAdmin>
