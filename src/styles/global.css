@@ -605,3 +605,8 @@ html, body {
     white-space: normal;
   }
 }
+
+/* Mascotte volpe nella home: galleggia dolcemente */
+.volpe-mascotte { animation: galleggia 5s ease-in-out infinite; will-change: transform; }
+@keyframes galleggia { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@media (prefers-reduced-motion: reduce) { .volpe-mascotte { animation: none; } }
