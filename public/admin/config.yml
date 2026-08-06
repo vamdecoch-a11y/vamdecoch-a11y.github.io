@@ -1,0 +1,147 @@
+# =====================================================================
+# Pannello admin VAM Deco — Sveltia CMS (formato compatibile con Decap)
+# Sito statico Astro su GitHub Pages: l'admin non ha un backend, modifica
+# direttamente i file JSON nel repo. GitHub Actions ricompila e ripubblica.
+# =====================================================================
+
+backend:
+  name: github
+  repo: vamdecoch-a11y/vamdecoch-a11y.github.io   # owner/repo del sito
+  branch: main
+
+# Permette di provare il pannello in LOCALE (senza login GitHub):
+# apri il sito in locale e usa "Work with Local Repository" in Chrome.
+local_backend: true
+
+# Lingua dell'interfaccia dell'editor
+locale: it
+
+# Percorso upload di default (sovrascritto per la collezione "articoli")
+media_folder: "public/img"
+public_folder: "/img"
+
+collections:
+  # -------------------------------------------------------------------
+  # ARTICOLI DEL BLOG  ->  src/dati/articoli/<slug>.json   (formato JSON)
+  # -------------------------------------------------------------------
+  - name: articoli
+    label: "Articoli blog"
+    label_singular: "Articolo"
+    description: "Crea e modifica gli articoli del blog. Ogni articolo e un file JSON."
+    folder: "src/dati/articoli"
+    extension: json
+    format: json
+    identifier_field: slug
+    slug: "{{fields.slug}}"
+    summary: "{{fields.title}}"
+    create: true
+    delete: true
+    sortable_fields: [dataIso, title, categoria]
+    view_groups:
+      - { label: "Per categoria", field: categoria }
+    # Immagini di QUESTO articolo salvate in public/img/articoli/<slug>/
+    media_folder: "/public/img/articoli/{{slug}}"
+    public_folder: "/img/articoli/{{slug}}"
+    fields:
+      - name: slug
+        label: "Slug (parte finale dell'URL)"
+        widget: string
+        hint: "Es. pellicole-privacy-satinate. Diventa /articoli/<slug> ed e il nome del file. Compilalo PER PRIMO. Non cambiarlo dopo la pubblicazione (romperebbe link e immagini)."
+        pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Solo minuscole, numeri e trattini: niente spazi ne accenti"]
+
+      - name: title
+        label: "Title (titolo SEO, tag title)"
+        widget: string
+
+      - name: description
+        label: "Description (meta descrizione SEO)"
+        widget: text
+
+      - name: h1
+        label: "Titolo H1 (visibile in cima all'articolo)"
+        widget: string
+
+      - name: categoria
+        label: "Categoria"
+        widget: select
+        options:
+          - Abbigliamento
+          - Adesivi
+          - Cartellonistica
+          - Decorazione veicoli
+          - Decorazione vetrine
+          - Oscuramento vetri auto
+          - Privacy & UV
+
+      - name: data
+        label: "Data (testo mostrato in pagina, es. 22 feb 2025)"
+        widget: string
+        hint: "Testo della data cosi come appare. Deve corrispondere alla Data ISO qui sotto."
+
+      - name: dataIso
+        label: "Data ISO (ordinamento + SEO)"
+        widget: datetime
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        format: "YYYY-MM-DD"
+        picker_utc: true
+
+      - name: cover
+        label: "Immagine di copertina"
+        widget: image
+        required: false
+        hint: "Compila prima lo Slug, poi carica: l'immagine finisce in public/img/articoli/<slug>/."
+
+      - name: estratto
+        label: "Estratto (riassunto breve per l'elenco blog)"
+        widget: text
+
+      - name: sezioni
+        label: "Sezioni del testo"
+        label_singular: "Sezione"
+        widget: list
+        collapsed: false
+        summary: "{{fields.heading}}"
+        fields:
+          - name: heading
+            label: "Titolo sezione (H2) - opzionale"
+            widget: string
+            required: false
+          - name: paragrafi
+            label: "Paragrafi"
+            widget: list
+            required: false
+            field: { name: paragrafo, label: "Paragrafo", widget: text }
+          - name: lista
+            label: "Elenco puntato - opzionale"
+            widget: list
+            required: false
+            field: { name: voce, label: "Voce", widget: string }
+          - name: img
+            label: "Immagine nella sezione - opzionale"
+            widget: image
+            required: false
+
+      - name: faq
+        label: "FAQ (domande frequenti)"
+        label_singular: "Domanda"
+        widget: list
+        required: false
+        summary: "{{fields.domanda}}"
+        fields:
+          - { name: domanda, label: "Domanda", widget: string }
+          - { name: risposta, label: "Risposta", widget: text }
+
+      - name: galleria
+        label: "Galleria immagini (fine articolo)"
+        widget: list
+        required: false
+        field: { name: immagine, label: "Immagine", widget: image }
+
+      - name: servizioCorrelato
+        label: "Servizio correlato (bottone CTA in fondo)"
+        widget: object
+        required: false
+        fields:
+          - { name: testo, label: "Testo del bottone", widget: string }
+          - { name: href,  label: "Link (es. /oscuramento-vetrate-uv)", widget: string }
