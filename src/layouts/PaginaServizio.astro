@@ -6,6 +6,7 @@ import { readdirSync, existsSync } from 'node:fs';
 import Base from './Base.astro';
 import GalleriaOrizzontale from '../components/GalleriaOrizzontale.astro';
 import FormContatti from '../components/FormContatti.astro';
+import SezioneParliamo from '../components/SezioneParliamo.astro';
 import RecensioniEleganti from '../components/RecensioniEleganti.astro';
 import WhatsAppTondo from '../components/WhatsAppTondo.astro';
 import { recensioniStandard } from '../dati/recensioni';
@@ -134,8 +135,8 @@ const faqJsonLd = s.faq.length
           </div>
           <div data-reveal class="card-scura rounded-2xl p-6 md:p-7 mb-6 self-start">
             <div class="inline-block rounded-full bg-white/[0.07] px-3.5 py-1 text-[10px] font-bold tracking-widest text-carta/60 uppercase">Step 0{i + 1}</div>
-            <div class="mt-3 font-display text-lg md:text-2xl font-semibold">{f.t}</div>
-            <p class="mt-2 text-sm md:text-base text-carta/65 leading-relaxed">{f.d}</p>
+            <div class="fase-titolo mt-3 font-display text-lg md:text-2xl font-semibold transition-colors duration-500">{f.t}</div>
+            <p class="fase-testo mt-2 text-sm md:text-base leading-relaxed transition-colors duration-500">{f.d}</p>
           </div>
         </div>
       ))}
@@ -212,20 +213,8 @@ const faqJsonLd = s.faq.length
     </section>
   )}
 
-  <!-- PARLIAMO + FORM -->
-  <section id="contattaci" class="relative overflow-hidden">
-    <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
-    <div class="relative max-w-6xl mx-auto px-4 py-20">
-      <div class="grid gap-6 md:grid-cols-2 md:gap-4 items-center">
-        <div data-reveal class="w-full text-center md:text-left">
-          <h2 class="font-display font-light leading-none md:leading-[0.72] text-[13.5vw] md:text-[11.5vw]">Parli<br class="hidden md:block" /><span class="text-brand font-medium">amo!</span></h2>
-        </div>
-        <div data-reveal class="md:max-w-md w-full">
-          <FormContatti oggetto={s.oggettoForm} origine={`Servizio: ${s.slug} (modulo 2, in fondo)`} compatto />
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- PARLIAMO + FORM (componente condiviso) -->
+  <SezioneParliamo oggetto={s.oggettoForm} origine={`Servizio: ${s.slug} (modulo 2, in fondo)`} />
 
   <WhatsAppTondo testo={s.whatsappTesto} numero={numeroWhatsApp} />
 

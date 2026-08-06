@@ -189,6 +189,11 @@ html.js [data-reveal].is-visible {
   color: var(--color-brand);
   text-shadow: 0 0 34px rgba(245, 131, 39, 0.55);
 }
+/* Anche il testo della fase si illumina insieme al numero, scorrendo */
+.fase-riga .fase-titolo { color: rgba(250, 250, 248, 0.4); }
+.fase-riga .fase-testo { color: rgba(250, 250, 248, 0.28); }
+.fase-riga.accesa .fase-titolo { color: var(--color-carta); }
+.fase-riga.accesa .fase-testo { color: rgba(250, 250, 248, 0.72); }
 
 /* ---------- Parola gigante dietro le sezioni, sottile, adattiva (es. TESTIMONIANZE) ---------- */
 .parola-gigante {

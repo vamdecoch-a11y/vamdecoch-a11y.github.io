@@ -2,7 +2,7 @@
 // BLOG: indice degli articoli. Il più recente in evidenza a tutta larghezza,
 // gli altri in griglia. Gli articoli arrivano da src/dati/articoli/*.json.
 import Base from '../../layouts/Base.astro';
-import FormContatti from '../../components/FormContatti.astro';
+import SezioneParliamo from '../../components/SezioneParliamo.astro';
 import WhatsAppTondo from '../../components/WhatsAppTondo.astro';
 
 const moduli = import.meta.glob('../../dati/articoli/*.json', { eager: true });
@@ -72,16 +72,8 @@ const [primo, ...altri] = articoli;
     </div>
   </section>
 
-  <!-- CTA -->
-  <section id="contattaci" class="border-t border-white/5 bg-white/[0.02]">
-    <div class="max-w-2xl mx-auto px-4 py-16 text-center">
-      <h2 data-reveal class="font-display text-3xl md:text-4xl font-bold text-brand">Parliamone.</h2>
-      <p data-reveal class="mt-4 text-carta/70">Hai un progetto in mente? Preventivo gratuito in 24/48h.</p>
-      <div class="mt-10">
-        <FormContatti oggetto="Richiesta dal blog" compatto />
-      </div>
-    </div>
-  </section>
+  <!-- PARLIAMO + FORM (componente condiviso) -->
+  <SezioneParliamo oggetto="Richiesta dal blog" origine="Blog (indice)" />
 
   <WhatsAppTondo testo="Ciao VAM Deco, vorrei informazioni." />
 </Base>

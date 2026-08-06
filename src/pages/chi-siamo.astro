@@ -3,10 +3,10 @@
 // fornitori, fondatore, processo in 4 fasi, galleria della sede, FAQ.
 import { readdirSync } from 'node:fs';
 import Base from '../layouts/Base.astro';
-import FormContatti from '../components/FormContatti.astro';
 import RecensioniEleganti from '../components/RecensioniEleganti.astro';
 import WhatsAppTondo from '../components/WhatsAppTondo.astro';
 import Marquee from '../components/Marquee.astro';
+import SezioneParliamo from '../components/SezioneParliamo.astro';
 import { recensioniStandard } from '../dati/recensioni';
 
 const galleriaSede = readdirSync('public/img/chi-siamo/galleria')
@@ -72,13 +72,13 @@ const faqJsonLd = JSON.stringify({
   <!-- HERO: foto della sede a tutto sfondo, testi sovrapposti -->
   <section class="relative min-h-[78vh] md:min-h-[86vh] flex items-center justify-center overflow-hidden">
     <img src="/img/chi-siamo/hero.jpg" alt="Il laboratorio VAM Deco a Sementina" class="hero-sfondo absolute inset-0 w-full h-full object-cover" loading="eager" />
-    <div class="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/65 to-ink pointer-events-none"></div>
-    <div class="relative z-10 max-w-3xl mx-auto px-4 py-24 text-center" data-reveal-stagger>
+    <div class="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/45 to-ink pointer-events-none"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-4 py-24 text-center [text-shadow:0_2px_18px_rgba(0,0,0,0.7)]" data-reveal-stagger>
       <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-4 uppercase">Chi siamo</div>
       <h1 data-reveal class="text-3xl md:text-6xl font-bold leading-[1.05] tracking-tight" style="text-wrap: balance">
         Dove la creatività <span class="text-brand">incontra la qualità</span>
       </h1>
-      <p data-reveal class="mt-8 text-carta/85 leading-relaxed max-w-2xl mx-auto">
+      <p data-reveal class="mt-8 text-carta/90 leading-relaxed max-w-2xl mx-auto">
         Siamo più di una semplice azienda di decorazione e personalizzazione: siamo un team appassionato di
         creatività, innovazione e qualità. Ogni giorno trasformiamo le idee in realtà con soluzioni
         personalizzate che catturano l'attenzione e valorizzano ogni brand.
@@ -136,15 +136,17 @@ const faqJsonLd = JSON.stringify({
     </div>
   </section>
 
-  <!-- FORNITORI: griglia di riquadri uguali su grigio scuro -->
-  <section class="border-y border-white/5 bg-white/[0.02] py-16">
-    <div data-reveal class="text-center text-xs font-bold tracking-widest text-carta/50 uppercase mb-10">I fornitori con cui lavoriamo</div>
-    <div class="max-w-5xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-4 gap-4" data-reveal-stagger>
-      {fornitori.map((f) => (
-        <div data-reveal class="group flex items-center justify-center h-24 md:h-28 rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-brand/40 hover:bg-white/[0.05]">
-          <img src={`/img/chi-siamo/fornitori/${f.slug}.png`} alt={f.nome} class="max-h-9 md:max-h-11 w-auto max-w-full object-contain opacity-85 transition-opacity group-hover:opacity-100" loading="lazy" />
-        </div>
-      ))}
+  <!-- FORNITORI: riquadri uguali su grigio scuro che scorrono in orizzontale -->
+  <section class="border-y border-white/5 bg-white/[0.02] py-16 overflow-hidden">
+    <div data-reveal class="text-center text-xs font-bold tracking-widest text-carta/50 uppercase mb-10">Alcuni dei fornitori con cui lavoriamo</div>
+    <div class="marquee select-none" aria-label="Fornitori: Arlon, Mimaki, 3M, Clique, Siser, Roland, Avery, Hexis">
+      <div class="marquee-track" style="animation-duration:38s">
+        {[...fornitori, ...fornitori].map((f) => (
+          <span class="shrink-0 flex items-center justify-center w-52 md:w-60 h-24 md:h-28 mx-2 rounded-2xl border border-white/10 bg-white/[0.03]">
+            <img src={`/img/chi-siamo/fornitori/${f.slug}.png`} alt={f.nome} class="max-h-9 md:max-h-11 w-auto max-w-[70%] object-contain opacity-85" loading="lazy" />
+          </span>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -153,8 +155,8 @@ const faqJsonLd = JSON.stringify({
     <div data-reveal class="relative w-64 md:w-80 mx-auto">
       <div class="assoluto-arco absolute left-1/2 -translate-x-1/2 bottom-0 w-[90%] h-[80%] bg-brand rounded-t-full" aria-hidden="true"></div>
       <img src="/img/chi-siamo/michele.png" alt="Michele Scacco, fondatore di VAM Deco" class="relative z-10 w-full" loading="lazy" />
-      <div class="absolute z-20 bottom-3 left-0 right-0 text-center leading-[0.82]">
-        <div class="font-display text-2xl md:text-3xl font-bold text-brand drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">Michele</div>
+      <div class="absolute z-20 bottom-3 left-0 right-0 text-center leading-[0.78]">
+        <div class="font-display text-4xl md:text-5xl font-black text-brand drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">Michele</div>
         <div class="font-display text-4xl md:text-5xl font-black text-carta tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">SCACCO</div>
       </div>
     </div>
@@ -185,19 +187,19 @@ const faqJsonLd = JSON.stringify({
               <span class="text-brand text-xs" aria-hidden="true">◆</span>{s}
             </span>
           ))}
+          <span class="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3.5 py-2 text-sm text-carta/85">
+            <span class="grid place-items-center w-5 h-5 rounded text-[10px] font-display font-bold" style="background:#310e00;color:#ff9a00" aria-hidden="true">Ai</span>Illustrator
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3.5 py-2 text-sm text-carta/85">
+            <span class="grid place-items-center w-5 h-5 rounded text-[10px] font-display font-bold" style="background:#001e36;color:#31a8ff" aria-hidden="true">Ps</span>Photoshop
+          </span>
         </div>
-      </div>
-
-      <div data-reveal class="mt-6 flex items-center gap-3">
-        <span class="text-xs font-bold tracking-widest text-carta/50 uppercase">Strumenti</span>
-        <span class="grid place-items-center w-11 h-11 rounded-xl border-2 font-display font-bold text-lg" style="background:#310e00;border-color:#ff9a00;color:#ff9a00" title="Adobe Illustrator">Ai</span>
-        <span class="grid place-items-center w-11 h-11 rounded-xl border-2 font-display font-bold text-lg" style="background:#001e36;border-color:#31a8ff;color:#31a8ff" title="Adobe Photoshop">Ps</span>
       </div>
     </div>
   </section>
 
   <!-- VALORI: nastro di parole lento, grigio chiaro, tutto pieno -->
-  <Marquee testo="Qualità · Precisione · Passione · Creatività · Affidabilità ·" durata={60} pieno classe="text-carta/35" />
+  <Marquee testo="Qualità · Precisione · Passione · Creatività · Affidabilità ·" durata={100} pieno classe="text-carta/35" />
 
   <!-- PROCESSO in 4 fasi: titolo centrato, numeri grandi senza cerchio -->
   <section class="max-w-3xl mx-auto px-4 py-20">
@@ -217,8 +219,8 @@ const faqJsonLd = JSON.stringify({
             )}
           </div>
           <div class="pb-12">
-            <h3 class="font-display font-semibold text-lg md:text-xl pt-1">{f.t}</h3>
-            <p class="mt-2 text-sm md:text-base text-carta/70 leading-relaxed">{f.d}</p>
+            <h3 class="fase-titolo font-display font-semibold text-lg md:text-xl pt-1 transition-colors duration-500">{f.t}</h3>
+            <p class="fase-testo mt-2 text-sm md:text-base leading-relaxed transition-colors duration-500">{f.d}</p>
           </div>
         </div>
       ))}
@@ -273,14 +275,8 @@ const faqJsonLd = JSON.stringify({
     </div>
   </section>
 
-  <!-- CTA FINALE -->
-  <section id="contattaci" class="max-w-2xl mx-auto px-4 py-20 text-center">
-    <h2 data-reveal class="font-display text-3xl md:text-5xl font-bold text-brand">Parliamone.</h2>
-    <p data-reveal class="mt-4 text-carta/70">Raccontaci la tua idea: preventivo gratuito in 24/48h.</p>
-    <div class="mt-10">
-      <FormContatti oggetto="Richiesta dalla pagina Chi siamo" />
-    </div>
-  </section>
+  <!-- PARLIAMO + FORM (componente condiviso, come le pagine servizio) -->
+  <SezioneParliamo oggetto="Richiesta dalla pagina Chi siamo" origine="Pagina Chi siamo" />
 
   <WhatsAppTondo testo="Ciao VAM Deco, vorrei informazioni." />
 

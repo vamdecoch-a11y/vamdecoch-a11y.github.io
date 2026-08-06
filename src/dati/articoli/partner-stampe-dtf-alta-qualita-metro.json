@@ -1,31 +1,66 @@
 {
   "slug": "partner-stampe-dtf-alta-qualita-metro",
-  "title": "Partner stampe DTF alta qualità al metro | VAM Deco",
-  "description": "Stampe DTF professionali al metro in alta qualità, colori brillanti e resistenza al lavaggio. Ideali per aziende, laboratori grafici e rivenditori.",
-  "h1": "Hai bisogno di un partner affidabile per stampe DTF in alta qualità?",
+  "title": "Stampe DTF al metro in alta qualità | VAM Deco",
+  "description": "Stampe DTF al metro in alta qualità: colori brillanti, resistenti al lavaggio, ordini da 1 ml. Ideali per aziende e rivenditori. Chiedi un preventivo.",
+  "h1": "Stampe DTF al metro in Ticino, alta qualità",
   "categoria": "Abbigliamento",
   "data": "21 mar 2025",
   "dataIso": "2025-03-21",
   "cover": "/img/articoli/partner-stampe-dtf-alta-qualita-metro/cover.jpg",
-  "estratto": "Cerchi un fornitore di stampe DTF al metro con risultati professionali? Qualità, precisione e rapidità, con la massima flessibilità anche per piccole tirature.",
+  "estratto": "Stampe DTF al metro con colori brillanti e resistenza al lavaggio, anche in piccole tirature da 1 metro.",
   "sezioni": [
     {
       "paragrafi": [
-        "Se sei un'azienda, un laboratorio grafico o un rivenditore e stai cercando un fornitore di stampe DTF con risultati professionali, sei nel posto giusto. Offriamo un servizio pensato per chi desidera qualità, precisione e rapidità, con la massima flessibilità anche per piccole tirature.",
-        "Le nostre stampe DTF sono realizzate con cura e attenzione, ideali per personalizzare capi e accessori in modo versatile, con colori brillanti, alta definizione e resistenza al lavaggio."
-      ],
-      "lista": [
-        "Prezzo: CHF 25.00/ml + IVA",
-        "Formato file richiesto: File vettoriale pronto stampa in altezza fissa 36 cm",
-        "Comanda minima: 1 metro lineare",
-        "Sconti disponibili: su ordini a partire da 5 ml"
+        "Cerchi un fornitore di stampe DTF al metro con risultati professionali? Realizziamo transfer DTF in alta definizione, con colori brillanti e ottima resistenza al lavaggio, perfetti per personalizzare t-shirt, felpe, accessori e capi tecnici. Un servizio pensato per aziende, laboratori grafici e rivenditori, con flessibilità anche sulle piccole tirature."
       ]
     },
     {
+      "heading": "Il nostro servizio DTF al metro",
       "paragrafi": [
-        "Inoltre, offriamo anche magliette personalizzate in pronta consegna, perfette per chi ha bisogno di un prodotto finito e immediato. È disponibile anche il servizio di spedizione diretta al cliente, ideale per chi vuole gestire tutto in modo snello e senza passaggi aggiuntivi.",
-        "Chiamaci ora per una consulenza gratuita! Scrivici ora per iniziare a collaborare. Siamo pronti a diventare il tuo partner di fiducia per le stampe DTF su misura."
+        "Ordini a partire da un solo metro lineare, senza costi di avviamento. Tu ci invii la grafica pronta, noi stampiamo e spediamo."
+      ],
+      "lista": [
+        "Prezzo: CHF 25.00/ml + IVA",
+        "Formato file: vettoriale pronto stampa, altezza fissa 36 cm",
+        "Ordine minimo: 1 metro lineare",
+        "Sconti: a partire da 5 ml"
       ]
+    },
+    {
+      "heading": "Perché scegliere la stampa DTF",
+      "paragrafi": [
+        "La stampa DTF (Direct To Film) trasferisce la grafica sul tessuto tramite una pellicola e una pressa a caldo. Il risultato sono colori pieni e sfumature senza limiti cromatici e senza sovrapprezzo, anche per loghi complessi.",
+        "Si applica su cotone, poliestere, tessuti misti e tecnici, sia chiari che scuri. Con la cura corretta (lavaggio al rovescio a basse temperature, senza stiro diretto sulla stampa) resiste facilmente a decine di lavaggi."
+      ]
+    },
+    {
+      "heading": "Anche capi finiti e spedizione al cliente",
+      "paragrafi": [
+        "Oltre al transfer al metro, offriamo magliette personalizzate in pronta consegna per chi ha bisogno di un prodotto finito e immediato. Su richiesta spediamo direttamente al tuo cliente finale, così gestisci tutto senza passaggi in più.",
+        "Vuoi diventare partner o avere un preventivo su misura? Contattaci per una consulenza gratuita."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "domanda": "Cos'è la stampa DTF e come funziona?",
+      "risposta": "DTF significa Direct To Film. La grafica viene stampata su una pellicola speciale, ricoperta di polvere adesiva e trasferita sul tessuto con una pressa a caldo. Il risultato sono colori brillanti e dettagli precisi su quasi ogni tessuto."
+    },
+    {
+      "domanda": "Quanto costa la stampa DTF al metro?",
+      "risposta": "Il nostro prezzo è di CHF 25.00 al metro lineare più IVA, con ordine minimo di 1 metro. Per ordini a partire da 5 ml applichiamo sconti dedicati."
+    },
+    {
+      "domanda": "Quanto dura una stampa DTF ai lavaggi?",
+      "risposta": "Con la cura corretta una stampa DTF resiste a decine di lavaggi mantenendo colori e definizione. Consigliamo di lavare il capo al rovescio a basse temperature e di non stirare direttamente sulla stampa."
+    },
+    {
+      "domanda": "Su quali tessuti si può applicare?",
+      "risposta": "Il DTF funziona su cotone, poliestere, tessuti misti e tecnici, sia chiari che scuri. È sconsigliato su materiali molto elastici o impermeabili come softshell, neoprene ed elastan puro."
+    },
+    {
+      "domanda": "Come devo preparare il file per la stampa?",
+      "risposta": "Serve un file vettoriale pronto stampa con altezza fissa di 36 cm. Se hai dubbi sul formato possiamo verificarlo insieme prima di procedere con l'ordine."
     }
   ],
   "galleria": [

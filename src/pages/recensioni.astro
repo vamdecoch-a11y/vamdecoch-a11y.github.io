@@ -50,11 +50,11 @@ const stelle = '★★★★★';
       ))}
     </div>
 
-    <div data-reveal class="mt-10 flex flex-wrap justify-center gap-3">
-      <a href={linkRecensioniGoogle} target="_blank" rel="noopener" class="btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">
-        Vedi tutte le recensioni su Google
+    <div data-reveal class="mt-10 flex flex-col sm:flex-row justify-center gap-3">
+      <a href={linkRecensioniGoogle} target="_blank" rel="noopener" class="btn-anim w-full sm:w-auto text-center rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">
+        Vedi tutte su Google
       </a>
-      <a href={linkRecensioniGoogle} target="_blank" rel="noopener" class="btn-anim rounded-full border-2 border-white/20 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand">
+      <a href={linkRecensioniGoogle} target="_blank" rel="noopener" class="btn-anim w-full sm:w-auto text-center rounded-full border-2 border-white/20 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand">
         Lascia una recensione
       </a>
     </div>
@@ -63,7 +63,7 @@ const stelle = '★★★★★';
   <!-- CTA FINALE -->
   <section id="contattaci" class="border-t border-white/5 bg-white/[0.02]">
     <div class="max-w-2xl mx-auto px-4 py-20 text-center">
-      <h2 data-reveal class="font-display text-3xl md:text-5xl font-bold text-brand">Vuoi essere il prossimo?</h2>
+      <h2 data-reveal class="font-display text-3xl md:text-5xl font-bold text-brand md:whitespace-nowrap">Vuoi essere il prossimo?</h2>
       <p data-reveal class="mt-4 text-carta/70">Raccontaci la tua idea: preventivo gratuito in 24/48h.</p>
       <div class="mt-10">
         <FormContatti oggetto="Richiesta dalla pagina Recensioni" />
