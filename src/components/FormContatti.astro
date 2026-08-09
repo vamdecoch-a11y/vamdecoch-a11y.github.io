@@ -10,6 +10,8 @@ const campo = `rounded-xl bg-white/5 border border-white/15 text-sm font-normal 
 <!-- Come l'originale: campi con segnaposto, niente etichette -->
 <form class={`form-contatti text-left grid ${compatto ? 'gap-2.5' : 'gap-4 card-scura rounded-2xl p-6'}`} data-oggetto={oggetto} data-origine={origine}>
   <input type="hidden" name="origine" value={origine} />
+  <!-- honeypot anti-bot: invisibile agli umani, i bot lo compilano -->
+  <input type="text" name="sito" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp-campo" />
   <div class={`grid sm:grid-cols-2 ${compatto ? 'gap-2.5' : 'gap-4'}`}>
     <input required name="nome" type="text" placeholder="Nome*" aria-label="Nome" class={campo} />
     <input required name="cognome" type="text" placeholder="Cognome*" aria-label="Cognome" class={campo} />
@@ -26,26 +28,65 @@ const campo = `rounded-xl bg-white/5 border border-white/15 text-sm font-normal 
     </select>
   </label>
   <button type="submit" class={`btn-anim rounded-full bg-brand font-semibold text-ink hover:bg-brand-dark ${compatto ? 'px-6 py-3' : 'px-7 py-3.5'}`}>Invia</button>
-  <p class="text-xs text-carta/50">*Campi obbligatori</p>
+  <p class="form-note text-xs text-carta/50">*Campi obbligatori</p>
 </form>
 
+<style>
+  .hp-campo {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .form-esito {
+    border: 1px solid rgba(245, 131, 39, 0.4);
+    background: rgba(245, 131, 39, 0.08);
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+  }
+</style>
+
 <script>
-  // Anteprima: il modulo compone una email; al go-live verrà collegato al backend sul VPS
+  // Invio al pannello VAM Deco (pagina Richieste). Se la rete fallisce,
+  // ripiego sull'email: nessuna richiesta va persa.
+  const ENDPOINT = 'https://pannello.vamdeco.agency/api/lead';
+
   document.querySelectorAll<HTMLFormElement>('.form-contatti').forEach((form) => {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const f = new FormData(form);
-      const corpo = [
-        `Nome: ${f.get('nome')} ${f.get('cognome')}`,
-        f.get('azienda') ? `Azienda: ${f.get('azienda')}` : '',
-        `Email: ${f.get('email')}`,
-        f.get('telefono') ? `Telefono: ${f.get('telefono')}` : '',
-        `Come ci hai conosciuti: ${f.get('fonte')}`,
-        `Richiesta inviata da: ${f.get('origine')}`,
-        '', `${f.get('messaggio')}`,
-      ].filter(Boolean).join('\n');
-      const oggetto = form.dataset.oggetto || 'Richiesta preventivo';
-      location.href = `mailto:info@vamdeco.ch?subject=${encodeURIComponent(oggetto)}&body=${encodeURIComponent(corpo)}`;
+      const bottone = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+      const testoBottone = bottone.textContent;
+      bottone.disabled = true;
+      bottone.textContent = 'Invio in corso...';
+      try {
+        const r = await fetch(ENDPOINT, { method: 'POST', body: new URLSearchParams(f as unknown as Record<string, string>) });
+        const dati = await r.json().catch(() => ({}));
+        if (!r.ok || !dati.ok) throw new Error(dati.errore || `HTTP ${r.status}`);
+        // successo: sostituisco il form con la conferma
+        const ok = document.createElement('div');
+        ok.className = 'form-esito';
+        ok.innerHTML = '<p class="font-display font-semibold text-brand">Richiesta inviata!</p><p class="mt-2 text-sm text-carta/75">Grazie, ti rispondiamo entro 24/48h.</p>';
+        form.replaceWith(ok);
+      } catch {
+        // ripiego email con gli stessi contenuti
+        bottone.disabled = false;
+        bottone.textContent = testoBottone;
+        const corpo = [
+          `Nome: ${f.get('nome')} ${f.get('cognome')}`,
+          f.get('azienda') ? `Azienda: ${f.get('azienda')}` : '',
+          `Email: ${f.get('email')}`,
+          f.get('telefono') ? `Telefono: ${f.get('telefono')}` : '',
+          `Come ci hai conosciuti: ${f.get('fonte')}`,
+          `Richiesta inviata da: ${f.get('origine')}`,
+          '', `${f.get('messaggio')}`,
+        ].filter(Boolean).join('\n');
+        const oggetto = form.dataset.oggetto || 'Richiesta preventivo';
+        location.href = `mailto:info@vamdeco.ch?subject=${encodeURIComponent(oggetto)}&body=${encodeURIComponent(corpo)}`;
+      }
     });
   });
 </script>
