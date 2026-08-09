@@ -6,6 +6,7 @@ import Base from './Base.astro';
 import GalleriaOrizzontale from '../components/GalleriaOrizzontale.astro';
 import FormContatti from '../components/FormContatti.astro';
 import WhatsAppTondo from '../components/WhatsAppTondo.astro';
+import PrimaDopo from '../components/PrimaDopo.astro';
 
 interface Sezione {
   heading?: string;
@@ -27,6 +28,8 @@ interface Articolo {
   galleria?: string[];
   faq?: { domanda: string; risposta: string }[];
   servizioCorrelato?: { testo: string; href: string };
+  /* Slider interattivo prima/dopo: se presente sostituisce la cover in testata */
+  primaDopo?: { prima: string; dopo: string; didascalia?: string };
 }
 interface Props { articolo: Articolo; }
 const { articolo: a } = Astro.props;
@@ -70,7 +73,11 @@ const faqJsonLd = a.faq?.length
         <h1 data-reveal class="mt-5 text-2xl md:text-4xl font-bold leading-tight tracking-tight" style="text-wrap: balance">{a.h1}</h1>
         <div data-reveal class="mt-5 text-sm text-carta/55">{a.data} · VAM Deco</div>
       </div>
-      {a.cover && (
+      {a.primaDopo ? (
+        <div class="relative max-w-4xl mx-auto px-4 pb-12">
+          <PrimaDopo prima={a.primaDopo.prima} dopo={a.primaDopo.dopo} didascalia={a.primaDopo.didascalia} />
+        </div>
+      ) : a.cover && (
         <div class="relative max-w-4xl mx-auto px-4 pb-12" data-reveal>
           <img src={a.cover} alt={a.h1} class="w-full max-h-[34rem] object-cover rounded-3xl border border-white/10 shadow-2xl" loading="eager" />
         </div>

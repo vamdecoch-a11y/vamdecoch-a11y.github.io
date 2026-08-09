@@ -1,0 +1,67 @@
+{
+  "slug": "wrapping-cucina-prima-e-dopo",
+  "title": "Wrapping cucina: prima e dopo interattivo | VAM Deco Ticino",
+  "description": "Rinnovare la cucina senza cambiarla: scorri il prima e dopo interattivo di un wrapping reale realizzato in Ticino. Costi, tempi e durata della pellicola.",
+  "h1": "Wrapping cucina: scorri tu il prima e dopo",
+  "categoria": "Wrapping interni",
+  "data": "9 ago 2026",
+  "dataIso": "2026-08-09",
+  "cover": "/img/articoli/wrapping-cucina-prima-e-dopo/cover.jpg",
+  "estratto": "Una cucina rinnovata in pochi giorni senza demolizioni: trascina il cursore e guarda la trasformazione con i tuoi occhi.",
+  "primaDopo": {
+    "prima": "/img/articoli/wrapping-cucina-prima-e-dopo/prima.jpg",
+    "dopo": "/img/articoli/wrapping-cucina-prima-e-dopo/dopo.jpg",
+    "didascalia": "Trascina il cursore: a sinistra la cucina originale, a destra il wrapping realizzato da VAM Deco."
+  },
+  "sezioni": [
+    {
+      "paragrafi": [
+        "Questa cucina non è stata sostituita: è stata <strong>rivestita con pellicola adesiva professionale</strong> (wrapping). Ante, frontali e superfici hanno cambiato completamente aspetto in pochi giorni, senza demolizioni, senza polvere e a una frazione del costo di una cucina nuova.",
+        "Il risultato lo giudichi tu: usa il cursore qui sopra per confrontare il prima e il dopo."
+      ]
+    },
+    {
+      "heading": "Perché scegliere il wrapping invece di sostituire",
+      "lista": [
+        "<strong>Costo ridotto</strong>: una frazione del prezzo di una cucina nuova.",
+        "<strong>Tempi rapidi</strong>: lavoro completato in pochi giorni, cucina subito utilizzabile.",
+        "<strong>Nessun cantiere</strong>: niente demolizioni, calcinacci o traslochi di elettrodomestici.",
+        "<strong>Design su misura</strong>: legno, marmo, tinta unita opaca o lucida: centinaia di finiture.",
+        "<strong>Reversibile</strong>: la pellicola si può rimuovere o sostituire in futuro."
+      ]
+    },
+    {
+      "heading": "Come lavoriamo",
+      "paragrafi": [
+        "Prima di tutto veniamo a vedere la cucina (o ci mandi le foto), scegliamo insieme la finitura dal campionario e prepariamo un preventivo gratuito. Le superfici vengono pulite e sgrassate, poi la pellicola viene applicata a regola d'arte da posatori esperti, con cura di bordi e spigoli.",
+        "Usiamo solo pellicole professionali resistenti a umidità, calore e uso quotidiano: perfette per l'ambiente cucina."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "domanda": "Quanto costa il wrapping di una cucina?",
+      "risposta": "Dipende dalle dimensioni e dalla finitura scelta, ma in genere parliamo di una frazione del costo di una cucina nuova. Il modo più preciso per saperlo è richiedere un preventivo gratuito: bastano qualche foto e le misure indicative."
+    },
+    {
+      "domanda": "Quanto dura la pellicola in cucina?",
+      "risposta": "Con pellicole professionali e posa corretta, il wrapping dura in media 7-10 anni anche in cucina, resistendo a umidità, calore moderato e pulizie quotidiane."
+    },
+    {
+      "domanda": "Si può wrappare qualsiasi cucina?",
+      "risposta": "Quasi tutte: le superfici lisce (laminato, MDF laccato, legno verniciato) sono ideali. Valutiamo caso per caso ante molto porose o danneggiate, che potrebbero richiedere una preparazione extra."
+    },
+    {
+      "domanda": "Quanto tempo richiede il lavoro?",
+      "risposta": "Una cucina media richiede in genere 2-4 giorni lavorativi. La cucina resta utilizzabile la sera stessa e non servono lavori di muratura."
+    },
+    {
+      "domanda": "La pellicola si rovina con acqua e vapore?",
+      "risposta": "No: le pellicole che usiamo sono progettate per ambienti umidi. Basta pulirle con un panno morbido e detergenti neutri, evitando spugne abrasive e solventi aggressivi."
+    }
+  ],
+  "servizioCorrelato": {
+    "testo": "Scopri tutti i nostri servizi",
+    "href": "/servizi"
+  }
+}

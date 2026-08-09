@@ -1,0 +1,129 @@
+---
+// Slider PRIMA/DOPO interattivo (trascinabile con mouse e dito).
+// Il "dopo" e' sempre la foto reale del lavoro; il "prima" puo' essere
+// la foto reale o la versione riallineata. Cornice curata effetto WOW.
+interface Props {
+  prima: string;        // immagine PRIMA
+  dopo: string;         // immagine DOPO (il lavoro reale)
+  altPrima?: string;
+  altDopo?: string;
+  didascalia?: string;  // riga sotto lo slider (opzionale)
+}
+const { prima, dopo, altPrima = 'Prima del lavoro', altDopo = 'Dopo il lavoro VAM Deco', didascalia } = Astro.props;
+---
+<div class="pd-cornice" data-reveal>
+  <div class="pd-quadro" style="--pos:50%">
+    <img src={dopo} alt={altDopo} loading="lazy" />
+    <img class="pd-strato-prima" src={prima} alt={altPrima} loading="lazy" />
+    <span class="pd-tag pd-tag-prima">Prima</span>
+    <span class="pd-tag pd-tag-dopo">Dopo</span>
+    <div class="pd-linea" aria-hidden="true"></div>
+    <div class="pd-maniglia" aria-hidden="true">⇄</div>
+  </div>
+</div>
+{didascalia && <p class="pd-didascalia">{didascalia}</p>}
+
+<style>
+  .pd-cornice {
+    border-radius: 1.6rem;
+    padding: 0.55rem;
+    background: linear-gradient(160deg, rgba(255,255,255,0.14), rgba(255,255,255,0.03) 38%, rgba(245,131,39,0.25));
+    box-shadow: 0 30px 80px -20px rgba(0,0,0,0.8), 0 0 60px -18px rgba(245,131,39,0.35);
+  }
+  .pd-quadro {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.15rem;
+    aspect-ratio: 3 / 2;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+    cursor: ew-resize;
+    background: #111;
+  }
+  .pd-quadro img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    display: block;
+  }
+  .pd-strato-prima { clip-path: inset(0 calc(100% - var(--pos, 50%)) 0 0); }
+  .pd-linea {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--pos, 50%);
+    width: 2.5px;
+    background: rgba(255,255,255,0.95);
+    transform: translateX(-50%);
+    box-shadow: 0 0 14px rgba(0,0,0,0.65);
+    pointer-events: none;
+  }
+  .pd-maniglia {
+    position: absolute;
+    top: 50%;
+    left: var(--pos, 50%);
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 999px;
+    background: #F58327;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.55), 0 0 0 5px rgba(245,131,39,0.28);
+    color: #0a0a0a;
+    font-weight: 800;
+    font-size: 1rem;
+  }
+  .pd-quadro.attivo .pd-maniglia { transform: translate(-50%, -50%) scale(1.08); }
+  .pd-tag {
+    position: absolute;
+    top: 0.9rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: var(--font-display, 'Unbounded', sans-serif);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .pd-tag-prima { left: 0.9rem; background: rgba(10,10,10,0.55); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+  .pd-tag-dopo { right: 0.9rem; background: #F58327; color: #0a0a0a; }
+  .pd-didascalia { margin-top: 0.8rem; text-align: center; font-size: 0.78rem; color: rgba(250,250,248,0.5); }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.pd-quadro').forEach((q) => {
+    let trascina = false;
+    const muovi = (x: number) => {
+      const r = q.getBoundingClientRect();
+      const pct = Math.min(100, Math.max(0, ((x - r.left) / r.width) * 100));
+      q.style.setProperty('--pos', pct + '%');
+    };
+    q.addEventListener('pointerdown', (e) => { trascina = true; q.classList.add('attivo'); q.setPointerCapture(e.pointerId); muovi(e.clientX); });
+    q.addEventListener('pointermove', (e) => { if (trascina) muovi(e.clientX); });
+    const fine = () => { trascina = false; q.classList.remove('attivo'); };
+    q.addEventListener('pointerup', fine);
+    q.addEventListener('pointercancel', fine);
+    // invito iniziale: piccola oscillazione quando entra in vista
+    const oss = new IntersectionObserver((voci) => {
+      if (!voci[0].isIntersecting) return;
+      oss.disconnect();
+      let t = 0;
+      const anima = () => {
+        t += 0.016;
+        if (trascina || t > 2.4) return;
+        q.style.setProperty('--pos', 50 + Math.sin(t * 2.6) * 7 * Math.max(0, 1 - t / 2.4) + '%');
+        requestAnimationFrame(anima);
+      };
+      requestAnimationFrame(anima);
+    }, { threshold: 0.5 });
+    oss.observe(q);
+  });
+</script>
