@@ -94,8 +94,8 @@ const { prefisso, parole, sfondo, statistiche = [] } = Astro.props;
      sono nascoste per non fare confusione con la foto. */
   @media (max-width: 767px) {
     .assoluto-stat { top: 4.6rem; } /* sotto l'header sticky */
-    .cerchio-stat { width: 8.4rem; }
-    .contenuto-parole { margin-top: 10rem; }
+    .cerchio-stat { width: 10.1rem; } /* +20% su richiesta Michele */
+    .contenuto-parole { margin-top: 13rem; }
     .titolo-parole {
       position: absolute;
       left: 0;
@@ -111,8 +111,8 @@ const { prefisso, parole, sfondo, statistiche = [] } = Astro.props;
   /* schermi bassi (telefoni piccoli): cerchi un filo piu' compatti e blocco parole
      piu' in basso, per non far toccare cerchi e titolo */
   @media (max-width: 767px) and (max-height: 720px) {
-    .cerchio-stat { width: 7.6rem; }
-    .contenuto-parole { margin-top: 13.5rem; }
+    .cerchio-stat { width: 9.1rem; } /* +20% anche su schermi bassi */
+    .contenuto-parole { margin-top: 18.6rem; }
   }
 </style>
 

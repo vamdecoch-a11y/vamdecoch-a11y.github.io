@@ -30,7 +30,14 @@ const { recensioni } = Astro.props;
         Recensione verificata
       </div>
       <div class="text-brand tracking-widest text-sm mb-5" aria-label="5 stelle su 5">★★★★★</div>
-      <blockquote class="rec-citazione w-full font-display font-light text-2xl md:text-4xl leading-[1.2] tracking-tight min-h-[13rem] md:min-h-[17rem]"></blockquote>
+      <!-- La cella contiene, invisibili, TUTTE le recensioni sovrapposte: cosi' l'altezza
+           e' sempre quella della recensione piu' lunga e nulla si sposta al cambio. -->
+      <div class="grid w-full">
+        <blockquote class="rec-citazione [grid-area:1/1] w-full font-display font-light text-2xl md:text-4xl leading-[1.2] tracking-tight"></blockquote>
+        {recensioni.map((r) => (
+          <blockquote class="[grid-area:1/1] w-full font-display font-light text-2xl md:text-4xl leading-[1.2] tracking-tight invisible select-none" aria-hidden="true">{r.testo}</blockquote>
+        ))}
+      </div>
 
       <div class="flex items-end justify-between mt-10 gap-6">
         <div class="flex items-center gap-4">
@@ -103,25 +110,9 @@ const { recensioni } = Astro.props;
       });
     }
 
-    // Altezza fissa = recensione piu' lunga: cosi' bottoni e layout non si spostano
-    // quando cambia la recensione (misurata con un clone invisibile, ricalcolata al resize).
-    const fissaAltezza = () => {
-      const misuratore = document.createElement('blockquote');
-      misuratore.className = citazione.className;
-      misuratore.style.cssText = 'position:absolute;visibility:hidden;pointer-events:none;height:auto;';
-      misuratore.style.width = `${citazione.clientWidth}px`;
-      sez.appendChild(misuratore);
-      let max = 0;
-      dati.forEach((r) => { misuratore.textContent = r.testo; max = Math.max(max, misuratore.offsetHeight); });
-      misuratore.remove();
-      if (max) citazione.style.minHeight = `${max}px`;
-    };
-    let attesaResize: ReturnType<typeof setTimeout>;
-    window.addEventListener('resize', () => { clearTimeout(attesaResize); attesaResize = setTimeout(fissaAltezza, 200); });
-
+    // L'altezza fissa e' garantita dal layout (tutte le recensioni invisibili
+    // sovrapposte nella stessa cella): niente misure JS.
     mostra(0);
     riparti();
-    // misura quando il font Unbounded e' caricato (altrimenti l'altezza sarebbe sbagliata)
-    (document.fonts?.ready || Promise.resolve()).then(() => fissaAltezza());
   });
 </script>
