@@ -39,7 +39,9 @@ const { recensioni } = Astro.props;
         ))}
       </div>
 
-      <div class="flex items-end justify-between mt-10 gap-6">
+      <!-- Riga stabile: le frecce sono ANCORATE in alto a destra (posizione fissa),
+           cosi' non si spostano mai anche se il nome va su piu' righe -->
+      <div class="relative mt-10 min-h-14 pr-28">
         <div class="flex items-center gap-4">
           <div class="rec-linea"></div>
           <img class="rec-avatar w-11 h-11 rounded-full object-cover" src="" alt="" />
@@ -48,7 +50,7 @@ const { recensioni } = Astro.props;
             <p class="text-sm text-carta/50">Cliente VAM Deco</p>
           </div>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="absolute right-0 top-1 flex items-center gap-3">
           <button type="button" class="rec-prev rec-freccia" aria-label="Recensione precedente">←</button>
           <button type="button" class="rec-next rec-freccia" aria-label="Recensione successiva">→</button>
         </div>
@@ -87,8 +89,9 @@ const { recensioni } = Astro.props;
         citazione.querySelectorAll('.rec-parola').forEach((s) => s.classList.add('visibile'));
       }));
       nome.textContent = r.nome;
-      if (r.avatar) { avatar.src = r.avatar; avatar.alt = `Foto profilo della recensione di ${r.nome}`; avatar.style.display = ''; }
-      else avatar.style.display = 'none';
+      // visibility (non display): lo spazio dell'avatar resta riservato e nulla si sposta
+      if (r.avatar) { avatar.src = r.avatar; avatar.alt = `Foto profilo della recensione di ${r.nome}`; avatar.style.visibility = ''; }
+      else { avatar.removeAttribute('src'); avatar.alt = ''; avatar.style.visibility = 'hidden'; }
       numero.classList.remove('cambia');
       void numero.offsetWidth;
       numero.textContent = String(indice + 1).padStart(2, '0');
