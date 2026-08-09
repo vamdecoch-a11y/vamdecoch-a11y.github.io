@@ -1,24 +1,39 @@
 ---
 import Base from '../layouts/Base.astro';
-import Marquee from '../components/Marquee.astro';
 import ParoleScroll from '../components/ParoleScroll.astro';
 import RecensioniEleganti from '../components/RecensioniEleganti.astro';
 import { recensioniStandard } from '../dati/recensioni';
 import { anniEsperienza, ANNO_FONDAZIONE } from '../dati/statistiche';
 
+// Icone Phosphor (duotone) fedeli all'originale, colore arancione brand #F58327
+const ICONE: Record<string, string> = {
+  car: `<svg width="38" height="38" viewBox="0 0 256 256" fill="#F58327" xmlns="http://www.w3.org/2000/svg"><path opacity="0.2" d="M184,176h40v24a8,8,0,0,1-8,8H192a8,8,0,0,1-8-8ZM32,200a8,8,0,0,0,8,8H64a8,8,0,0,0,8-8V176H32ZM194.11,44.75A8,8,0,0,0,186.8,40H69.2a8,8,0,0,0-7.31,4.75L32,112H224Z"></path><path d="M240,104H229.2L201.42,41.5A16,16,0,0,0,186.8,32H69.2a16,16,0,0,0-14.62,9.5L26.8,104H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16V184h96v16a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V120h8a8,8,0,0,0,0-16ZM69.2,48H186.8l24.89,56H44.31ZM64,200H40V184H64Zm128,0V184h24v16Zm24-32H40V120H216ZM56,144a8,8,0,0,1,8-8H80a8,8,0,0,1,0,16H64A8,8,0,0,1,56,144Zm112,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H176A8,8,0,0,1,168,144Z"></path></svg>`,
+  house: `<svg width="38" height="38" viewBox="0 0 256 256" fill="#F58327" xmlns="http://www.w3.org/2000/svg"><path opacity="0.2" d="M216,120v96H152V152H104v64H40V120a8,8,0,0,1,2.34-5.66l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,216,120Z"></path><path d="M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V160h32v56a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48V120l80-80,80,80Z"></path></svg>`,
+  tshirt: `<svg width="38" height="38" viewBox="0 0 256 256" fill="#F58327" xmlns="http://www.w3.org/2000/svg"><path opacity="0.2" d="M247.11,78.77l-19.27,36.81a8.44,8.44,0,0,1-7.5,4.42H192V40l51.78,28.25A7.81,7.81,0,0,1,247.11,78.77Zm-238.22,0,19.27,36.81a8.44,8.44,0,0,0,7.5,4.42H64V40L12.22,68.25A7.81,7.81,0,0,0,8.89,78.77Z"></path><path d="M247.59,61.22,195.83,33A8,8,0,0,0,192,32H160a8,8,0,0,0-8,8,24,24,0,0,1-48,0,8,8,0,0,0-8-8H64a8,8,0,0,0-3.84,1L8.41,61.22A15.76,15.76,0,0,0,1.82,82.48l19.27,36.81A16.37,16.37,0,0,0,35.67,128H56v80a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V128h20.34a16.37,16.37,0,0,0,14.58-8.71l19.27-36.81A15.76,15.76,0,0,0,247.59,61.22ZM35.67,112a.62.62,0,0,1-.41-.13L16.09,75.26,56,53.48V112ZM184,208H72V48h16.8a40,40,0,0,0,78.38,0H184Zm36.75-96.14a.55.55,0,0,1-.41.14H200V53.48l39.92,21.78Z"></path></svg>`,
+  prohibit: `<svg width="38" height="38" viewBox="0 0 256 256" fill="#F58327" xmlns="http://www.w3.org/2000/svg"><path opacity="0.2" d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"></path><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm88,104a87.56,87.56,0,0,1-20.41,56.28L71.72,60.4A88,88,0,0,1,216,128ZM40,128A87.56,87.56,0,0,1,60.41,71.72L184.28,195.6A88,88,0,0,1,40,128Z"></path></svg>`,
+  perspective: `<svg width="38" height="38" viewBox="0 0 256 256" fill="#F58327" xmlns="http://www.w3.org/2000/svg"><path opacity="0.2" d="M128,144h80v72l-80-14.55ZM32,184l64,11.64V144H32ZM128,54.55V112h80V40ZM32,112H96V60.36L32,72Z"></path><path d="M208,136H128a8,8,0,0,0-8,8v57.45a8,8,0,0,0,6.57,7.88l80,14.54A7.61,7.61,0,0,0,208,224a8,8,0,0,0,8-8V144A8,8,0,0,0,208,136Zm-8,70.41-64-11.63V152h64ZM96,136H32a8,8,0,0,0-8,8v40a8,8,0,0,0,6.57,7.87l64,11.64a8.54,8.54,0,0,0,1.43.13,8,8,0,0,0,8-8V144A8,8,0,0,0,96,136Zm-8,50.05-48-8.73V152H88ZM213.13,33.86a8,8,0,0,0-6.56-1.73l-80,14.55A8,8,0,0,0,120,54.55V112a8,8,0,0,0,8,8h80a8,8,0,0,0,8-8V40A8,8,0,0,0,213.13,33.86ZM200,104H136V61.22l64-11.63ZM101.13,54.22a8,8,0,0,0-6.56-1.73l-64,11.64A8,8,0,0,0,24,72v40a8,8,0,0,0,8,8H96a8,8,0,0,0,8-8V60.36A8,8,0,0,0,101.13,54.22ZM88,104H40V78.68L88,70Z"></path></svg>`,
+  carprofile: `<svg width="38" height="38" viewBox="0 0 256 256" fill="#F58327" xmlns="http://www.w3.org/2000/svg"><path opacity="0.2" d="M88,176a24,24,0,1,1-24-24A24,24,0,0,1,88,176Zm104-24a24,24,0,1,0,24,24A24,24,0,0,0,192,152ZM162.34,74.34A8,8,0,0,0,156.69,72H44.28a8,8,0,0,0-6.66,3.56L8,120H208Z"></path><path d="M240,112H211.31L168,68.69A15.86,15.86,0,0,0,156.69,64H44.28A16,16,0,0,0,31,71.12L1.34,115.56A8.07,8.07,0,0,0,0,120v48a16,16,0,0,0,16,16H33a32,32,0,0,0,62,0h66a32,32,0,0,0,62,0h17a16,16,0,0,0,16-16V128A16,16,0,0,0,240,112ZM44.28,80H156.69l32,32H23ZM64,192a16,16,0,1,1,16-16A16,16,0,0,1,64,192Zm128,0a16,16,0,1,1,16-16A16,16,0,0,1,192,192Zm48-24H223a32,32,0,0,0-62,0H95a32,32,0,0,0-62,0H16V128H240Z"></path></svg>`,
+  sticker: `<svg width="38" height="38" viewBox="0 0 256 256" fill="#F58327" xmlns="http://www.w3.org/2000/svg"><path opacity="0.2" d="M216,136c-8,24-56,72-80,80V184a48,48,0,0,1,48-48Z"></path><path d="M168,32H88A56.06,56.06,0,0,0,32,88v80a56.06,56.06,0,0,0,56,56h48a8.07,8.07,0,0,0,2.53-.41c26.23-8.75,76.31-58.83,85.06-85.06A8.07,8.07,0,0,0,224,136V88A56.06,56.06,0,0,0,168,32ZM48,168V88A40,40,0,0,1,88,48h80a40,40,0,0,1,40,40v40H184a56.06,56.06,0,0,0-56,56v24H88A40,40,0,0,1,48,168Zm96,35.14V184a40,40,0,0,1,40-40h19.14C191,163.5,163.5,191,144,203.14Z"></path></svg>`,
+  drop: `<svg width="38" height="38" viewBox="0 0 256 256" fill="#F58327" xmlns="http://www.w3.org/2000/svg"><path opacity="0.2" d="M208,144a80,80,0,0,1-160,0c0-72,80-128,80-128S208,72,208,144Z"></path><path d="M174,47.75a254.19,254.19,0,0,0-41.45-38.3,8,8,0,0,0-9.18,0A254.19,254.19,0,0,0,82,47.75C54.51,79.32,40,112.6,40,144a88,88,0,0,0,176,0C216,112.6,201.49,79.32,174,47.75ZM128,216a72.08,72.08,0,0,1-72-72c0-57.23,55.47-105,72-118,16.53,13,72,60.75,72,118A72.08,72.08,0,0,1,128,216Zm55.89-62.66a57.6,57.6,0,0,1-46.56,46.55A8.75,8.75,0,0,1,136,200a8,8,0,0,1-1.32-15.89c16.57-2.79,30.63-16.85,33.44-33.45a8,8,0,0,1,15.78,2.68Z"></path></svg>`,
+  cards: `<svg width="38" height="38" viewBox="0 0 256 256" fill="#F58327" xmlns="http://www.w3.org/2000/svg"><path opacity="0.2" d="M192,88V200a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V88a8,8,0,0,1,8-8H184A8,8,0,0,1,192,88Z"></path><path d="M184,72H40A16,16,0,0,0,24,88V200a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V88A16,16,0,0,0,184,72Zm0,128H40V88H184V200ZM232,56V176a8,8,0,0,1-16,0V56H64a8,8,0,0,1,0-16H216A16,16,0,0,1,232,56Z"></path></svg>`,
+  printer: `<svg width="38" height="38" viewBox="0 0 256 256" fill="#F58327" xmlns="http://www.w3.org/2000/svg"><path opacity="0.2" d="M232,96v80H192V152H64v24H24V96c0-8.84,7.76-16,17.33-16H214.67C224.24,80,232,87.16,232,96Z"></path><path d="M214.67,72H200V40a8,8,0,0,0-8-8H64a8,8,0,0,0-8,8V72H41.33C27.36,72,16,82.77,16,96v80a8,8,0,0,0,8,8H56v32a8,8,0,0,0,8,8H192a8,8,0,0,0,8-8V184h32a8,8,0,0,0,8-8V96C240,82.77,228.64,72,214.67,72ZM72,48H184V72H72ZM184,208H72V160H184Zm40-40H200V152a8,8,0,0,0-8-8H64a8,8,0,0,0-8,8v16H32V96c0-4.41,4.19-8,9.33-8H214.67c5.14,0,9.33,3.59,9.33,8Zm-24-52a12,12,0,1,1-12-12A12,12,0,0,1,200,116Z"></path></svg>`,
+  mouse: `<svg width="38" height="38" viewBox="0 0 256 256" fill="#F58327" xmlns="http://www.w3.org/2000/svg"><path opacity="0.2" d="M200,112v64a56,56,0,0,1-56,56H112a56,56,0,0,1-56-56V112Z"></path><path d="M144,16H112A64.07,64.07,0,0,0,48,80v96a64.07,64.07,0,0,0,64,64h32a64.07,64.07,0,0,0,64-64V80A64.07,64.07,0,0,0,144,16Zm48,64v24H136V32h8A48.05,48.05,0,0,1,192,80ZM112,32h8v72H64V80A48.05,48.05,0,0,1,112,32Zm32,192H112a48.05,48.05,0,0,1-48-48V120H192v56A48.05,48.05,0,0,1,144,224Z"></path></svg>`,
+  confetti: `<svg width="38" height="38" viewBox="0 0 256 256" fill="#F58327" xmlns="http://www.w3.org/2000/svg"><path opacity="0.2" d="M58.89,154.89l42.22,42.22-50.63,18.4a7.79,7.79,0,0,1-10-10Zm138.82-4.72L105.83,58.29A7.79,7.79,0,0,0,93,61.14l-14.9,41,75.82,75.82,41-14.9A7.79,7.79,0,0,0,197.71,150.17Z"></path><path d="M111.49,52.63a15.8,15.8,0,0,0-26,5.77L33,202.78A15.83,15.83,0,0,0,47.76,224a16,16,0,0,0,5.46-1l144.37-52.5a15.8,15.8,0,0,0,5.78-26Zm-8.33,135.21-35-35,13.16-36.21,58.05,58.05Zm-55,20,14-38.41,24.45,24.45ZM156,168.64,87.36,100l13-35.87,91.43,91.43ZM160,72a37.8,37.8,0,0,1,3.84-15.58C169.14,45.83,179.14,40,192,40c6.7,0,11-2.29,13.65-7.21A22,22,0,0,0,208,23.94,8,8,0,0,1,224,24c0,12.86-8.52,32-32,32-6.7,0-11,2.29-13.65,7.21A22,22,0,0,0,176,72.06,8,8,0,0,1,160,72ZM136,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm101.66,82.34a8,8,0,1,1-11.32,11.31l-16-16a8,8,0,0,1,11.32-11.32Zm4.87-42.75-24,8a8,8,0,0,1-5.06-15.18l24-8a8,8,0,0,1,5.06,15.18Z"></path></svg>`,
+};
+
 const servizi = [
-  { titolo: 'Decorazione veicoli', href: '/decorazione-veicoli-ticino', descr: 'Trasforma la tua auto, furgone o camion in una pubblicità in movimento con grafiche resistenti e personalizzate.' },
-  { titolo: 'Decorazione vetrine', href: '/decorazione-vetrine-ticino', descr: 'Attira clienti e valorizza il tuo brand con vetrine creative e su misura.' },
-  { titolo: 'Abbigliamento personalizzato', href: '/abbigliamento-personalizzato-ticino', descr: 'Magliette, felpe e divise personalizzate per aziende, eventi e privati.' },
-  { titolo: 'Pellicole satinate privacy', href: '/pellicole-satinate-ticino', descr: 'Pellicole satinate per privacy e design eleganti, ideali per uffici, bagni e negozi.' },
-  { titolo: 'Oscuramento vetrate UV', href: '/oscuramento-vetrate-uv', descr: 'Pellicole che riducono calore, abbagliamento e raggi UV, migliorando comfort e protezione degli ambienti.' },
-  { titolo: 'Oscuramento vetri auto', href: '/oscuramento-vetri-auto-ticino', descr: 'Pellicole oscuranti per comfort, protezione UV e look moderno del tuo veicolo.' },
-  { titolo: 'Adesivi e etichette', href: '/adesivi-e-etichette', descr: 'Adesivi ed etichette personalizzate per prodotti, vetrine e veicoli: resistenti, precise e di qualità professionale.' },
-  { titolo: 'Etichette resinate', href: '/etichette-resinate', descr: 'Loghi in rilievo con effetto 3D e finitura lucida (doming), resistenti ad acqua, graffi e raggi UV.' },
-  { titolo: 'Cartellonistica', href: '/cartellonistica', descr: 'Insegne e pannelli su misura per dare visibilità e forza al tuo business.' },
-  { titolo: 'Stampa su carta', href: '/stampa-su-carta', descr: 'Biglietti da visita, volantini, cataloghi e molto altro stampati con qualità professionale.' },
-  { titolo: 'Siti web', href: '/siti-web', descr: 'Siti web moderni, ottimizzati SEO e mobile-friendly per far crescere la tua attività online.' },
-  { titolo: 'Personalizza la tua festa', href: '/personalizza-la-tua-festa', descr: 'T-shirt, articoli in legno e decorazioni su misura per compleanni, baby shower e addii al celibato.' },
+  { titolo: 'Decorazione veicoli', href: '/decorazione-veicoli-ticino', ico: 'car', descr: 'Trasforma la tua auto, furgone o camion in una pubblicità in movimento con grafiche resistenti e personalizzate.' },
+  { titolo: 'Decorazione vetrine', href: '/decorazione-vetrine-ticino', ico: 'house', descr: 'Attira clienti e valorizza il tuo brand con vetrine creative e su misura.' },
+  { titolo: 'Abbigliamento personalizzato', href: '/abbigliamento-personalizzato-ticino', ico: 'tshirt', descr: 'Magliette, felpe e divise personalizzate per aziende, eventi e privati.' },
+  { titolo: 'Pellicole satinate privacy', href: '/pellicole-satinate-ticino', ico: 'prohibit', descr: 'Pellicole satinate per privacy e design eleganti, ideali per uffici, bagni e negozi.' },
+  { titolo: 'Oscuramento vetrate UV', href: '/oscuramento-vetrate-uv', ico: 'perspective', descr: 'Pellicole che riducono calore, abbagliamento e raggi UV, migliorando comfort e protezione degli ambienti.' },
+  { titolo: 'Oscuramento vetri auto', href: '/oscuramento-vetri-auto-ticino', ico: 'carprofile', descr: 'Pellicole oscuranti per comfort, protezione UV e look moderno del tuo veicolo.' },
+  { titolo: 'Adesivi e etichette', href: '/adesivi-e-etichette', ico: 'sticker', descr: 'Adesivi ed etichette personalizzate per prodotti, vetrine e veicoli: resistenti, precise e di qualità professionale.' },
+  { titolo: 'Etichette resinate', href: '/etichette-resinate', ico: 'drop', descr: 'Loghi in rilievo con effetto 3D e finitura lucida (doming), resistenti ad acqua, graffi e raggi UV.' },
+  { titolo: 'Cartellonistica', href: '/cartellonistica', ico: 'cards', descr: 'Insegne e pannelli su misura per dare visibilità e forza al tuo business.' },
+  { titolo: 'Stampa su carta', href: '/stampa-su-carta', ico: 'printer', descr: 'Biglietti da visita, volantini, cataloghi e molto altro stampati con qualità professionale.' },
+  { titolo: 'Siti web', href: '/siti-web', ico: 'mouse', descr: 'Siti web moderni, ottimizzati SEO e mobile-friendly per far crescere la tua attività online.' },
+  { titolo: 'Personalizza la tua festa', href: '/personalizza-la-tua-festa', ico: 'confetti', descr: 'T-shirt, articoli in legno e decorazioni su misura per compleanni, baby shower e addii al celibato.' },
 ];
 
 const numeri = [
@@ -28,121 +43,205 @@ const numeri = [
   { n: 85, s: '+', l: 'Recensioni a 5 stelle' },
 ];
 
+// Specialità: 3 valori (come originale) + 2 percentuali, in seconda riga centrata
 const specialita = [
-  { n: '500+', t: 'Progetti realizzati con successo', d: 'Abbiamo completato più di 500 progetti per aziende in tutta la Svizzera, garantendo risultati eccellenti e una personalizzazione curata.' },
-  { n: '150%', t: 'Aumento medio della visibilità del brand', d: 'Le nostre decorazioni e personalizzazioni hanno portato a un incremento medio del 150% nella visibilità dei brand dei nostri clienti.' },
-  { n: '80%', t: 'Maggiore visibilità del brand', d: 'Grazie alle nostre soluzioni di decorazione e personalizzazione, i clienti hanno sperimentato un aumento dell’80% nella visibilità.' },
+  { kicker: 'Affidabilità', titolo: 'Risultati<br>dimostrati', descr: 'Reputazione solida come partner affidabile: decorazioni e personalizzazioni di qualità che portano risultati concreti e clienti soddisfatti.' },
+  { kicker: 'Artigianalità', titolo: 'Soluzioni<br>su misura', descr: 'Soluzioni personalizzate per decorazioni, abbigliamento, cartellonistica e altro, progettate sulle esigenze di ogni cliente e settore.' },
+  { kicker: 'Relazione', titolo: 'Focus<br>sui clienti', descr: 'Il successo dei nostri clienti è la nostra priorità: capiamo le loro esigenze per offrire risultati che superano le aspettative.' },
+  { kicker: 'Impatto', num: '150%', sotto: 'Aumento medio della visibilità del brand', descr: 'Le nostre decorazioni e personalizzazioni hanno portato a un incremento medio del 150% nella visibilità dei brand dei nostri clienti.' },
+  { kicker: 'Visibilità', num: '80%', sotto: 'Maggiore visibilità del brand', descr: 'Grazie alle nostre soluzioni di decorazione e personalizzazione, i clienti hanno sperimentato un aumento dell\'80% nella visibilità.' },
+];
+
+// Ultimi 3 articoli per la sezione blog
+const moduliArticoli = import.meta.glob('../dati/articoli/*.json', { eager: true });
+const articoliRecenti = Object.values(moduliArticoli)
+  .map((m: any) => m.default)
+  .sort((a: any, b: any) => (b.dataIso || '').localeCompare(a.dataIso || ''))
+  .slice(0, 3);
+
+// FAQ home: domande generiche che toccano più servizi
+const faqHome = [
+  { domanda: 'Di cosa si occupa VAM Deco?', risposta: 'Ci occupiamo di decorazione e personalizzazione a 360 gradi: car wrapping e decorazione veicoli, oscuramento vetri, decorazione di vetrine e spazi commerciali, adesivi ed etichette personalizzate, abbigliamento personalizzato e stampa. Seguiamo ogni progetto dall\'idea grafica fino alla posa finale, tutto internamente qui in Ticino.' },
+  { domanda: 'Quanto costano i vostri servizi?', risposta: 'Ogni lavoro è su misura, quindi il prezzo dipende da dimensioni, materiali e complessità della grafica. A titolo indicativo un wrapping parziale parte da qualche centinaio di franchi e uno completo si aggira tra 1\'500 e 3\'500 franchi, mentre stampe, adesivi e abbigliamento hanno costi più contenuti. Il modo più preciso per saperlo è richiedere un preventivo gratuito senza impegno.' },
+  { domanda: 'Quanto tempo serve per realizzare un lavoro?', risposta: 'Dipende dal servizio: un oscuramento vetri richiede in genere mezza giornata, mentre un car wrapping completo dai 3 ai 7 giorni lavorativi. Per stampe, adesivi e abbigliamento i tempi partono di solito da pochi giorni lavorativi dopo l\'approvazione della grafica.' },
+  { domanda: 'Quanto dura una pellicola applicata?', risposta: 'Con materiali professionali e una posa a regola d\'arte una pellicola di car wrapping dura in media dai 5 ai 7 anni. Anche le pellicole per vetrine e veicoli commerciali resistono a sole, pioggia e lavaggi mantenendo i colori vividi nel tempo.' },
+  { domanda: 'L\'oscuramento dei vetri auto è legale in Svizzera?', risposta: 'Sì, ma con regole precise. In Svizzera il parabrezza e i vetri anteriori devono lasciar passare almeno il 70% della luce, mentre lunotto e vetri posteriori possono essere oscurati liberamente. Usiamo solo pellicole conformi, così il veicolo resta in regola anche al collaudo.' },
+  { domanda: 'Come si mantiene un veicolo o una vetrina decorata?', risposta: 'Basta poco: un lavaggio delicato a mano con acqua e sapone neutro, evitando gli autolavaggi con spazzole e i prodotti aggressivi o a base di solventi. Dopo una nuova applicazione consigliamo di attendere circa una settimana prima del primo lavaggio.' },
+  { domanda: 'Posso ordinare anche un solo pezzo o piccole quantità?', risposta: 'Sì. Realizziamo sia il pezzo singolo sia grandi quantità, che si tratti di una maglietta personalizzata, di pochi adesivi o di una serie di etichette. Per le tirature più alte il costo del singolo pezzo si riduce.' },
+  { domanda: 'Devo già avere la grafica pronta o la create voi?', risposta: 'Non serve avere nulla di pronto. Possiamo partire da un vostro file oppure occuparci noi dell\'intera grafica, dal logo al progetto completo, adattandola al materiale e alla superficie finale. Prima di produrre vi mostriamo sempre un\'anteprima da approvare.' },
 ];
 ---
 <Base
   title="VAM Deco | Decorazione Veicoli e Vetrine in Ticino"
   description="Decorazione veicoli, vetrine, abbigliamento personalizzato e pellicole oscuranti in Ticino. Richiedi subito un preventivo gratuito per la tua azienda."
 >
-  <!-- HERO scura con pattern e bagliore arancione, mascotte volpe e titolo col megafono -->
+  <!-- HERO: titolo con 'vita' nel riquadro storto + megafono, testo centrato, volpe con scritta scorrevole e sfumatura, badge #1 -->
   <section class="relative pattern-hero overflow-hidden">
-    <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
-    <div class="relative max-w-6xl mx-auto px-4 pt-16 md:pt-20 pb-20 md:pb-24 grid lg:grid-cols-[1.25fr_1fr] items-center gap-8 lg:gap-4">
-      <!-- COLONNA TESTO -->
-      <div data-reveal-stagger class="text-center lg:text-left order-2 lg:order-1">
-        <div data-reveal class="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-ink/60 px-4 py-1.5 text-xs font-semibold tracking-wide text-brand mb-6">
-          #1 · Agenzia di decorazione e personalizzazione in Ticino
-        </div>
-        <!-- TITOLO col megafono, in un riquadro (come l'originale) -->
-        <div data-reveal class="relative inline-block rounded-3xl border border-white/10 bg-white/[0.03] px-6 py-5 md:px-8 md:py-6">
-          <img src="/img/megafono.png" alt="" aria-hidden="true" class="absolute -top-7 -left-5 w-16 md:w-20 rotate-[-12deg] drop-shadow-[0_4px_12px_rgba(245,131,39,0.35)]" />
-          <h1 class="font-display text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight">
-            Diamo <span class="text-brand">vita</span><br />alle tue idee
-          </h1>
-        </div>
-        <p data-reveal class="max-w-xl mx-auto lg:mx-0 mt-6 text-lg text-carta/75">
-          Da oltre 7 anni siamo il punto di riferimento in Ticino per la decorazione di veicoli, vetrine,
-          cartellonistica e stampa, con abbigliamento personalizzato per aziende, eventi e privati.
-        </p>
-        <div data-reveal class="mt-8 flex flex-wrap justify-center lg:justify-start gap-3">
-          <a href="#servizi" class="btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">
-            Scopri i nostri servizi
-          </a>
-          <a
-            href="https://wa.me/41765889497?text=Ciao%20VAM%20Deco%2C%20vorrei%20un%20preventivo"
-            target="_blank" rel="noopener"
-            class="btn-anim rounded-full border-2 border-white/20 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand"
-          >Preventivo su WhatsApp</a>
-        </div>
-        <p data-reveal class="mt-4 text-sm text-carta/60">Richiedi il tuo preventivo gratuito in 24/48h</p>
-        <div data-reveal class="mt-8 inline-flex items-center gap-4 rounded-2xl card-scura px-5 py-3.5 text-left">
-          <span class="text-brand text-lg tracking-widest" aria-label="5 stelle">★★★★★</span>
-          <span class="text-sm"><strong>300+</strong> clienti soddisfatti in Ticino</span>
+    <!-- sfumatura arancione: piena ai piedi della volpe, sale coprendo la volpe e svanisce all'altezza dei bottoni -->
+    <div class="sfumatura-hero" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 pt-14 md:pt-20 text-center" data-reveal-stagger>
+      <!-- TITOLO -->
+      <h1 data-reveal class="titolo-hero font-display font-bold text-white">
+        <span class="riga-titolo">
+          <span>Diamo</span>
+          <span class="pill-vita"><span>vita</span></span>
+        </span>
+        <span class="riga-titolo">
+          <span>alle tue idee</span>
+          <span class="badge-megafono"><img src="/img/megafono-doodle.png" alt="" aria-hidden="true" /></span>
+        </span>
+      </h1>
+      <!-- DESCRIZIONE (centrata) -->
+      <p data-reveal class="mx-auto mt-7 max-w-2xl text-lg text-carta/75">
+        Da oltre {anniEsperienza()} anni siamo il punto di riferimento in Ticino per la decorazione di veicoli, vetrine,
+        cartellonistica e stampa, con abbigliamento personalizzato per aziende, eventi e privati.
+      </p>
+      <!-- BOTTONI (centrati) -->
+      <div data-reveal class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="#servizi" class="btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">
+          Scopri i nostri servizi
+        </a>
+        <a
+          href="https://wa.me/41765889497?text=Ciao%20VAM%20Deco%2C%20vorrei%20un%20preventivo"
+          target="_blank" rel="noopener"
+          class="btn-anim rounded-full border-2 border-white/20 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand"
+        >Preventivo su WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- ZONA VOLPE: scritta scorrevole dietro, sfumatura arancione dai piedi, badge #1 -->
+    <div class="zona-volpe">
+      <div class="scritta-scroll" aria-hidden="true">
+        <div class="scritta-scroll-track">
+          <span>Agenzia di design a 360°</span><span>Agenzia di design a 360°</span><span>Agenzia di design a 360°</span><span>Agenzia di design a 360°</span>
+          <span>Agenzia di design a 360°</span><span>Agenzia di design a 360°</span><span>Agenzia di design a 360°</span><span>Agenzia di design a 360°</span>
         </div>
       </div>
-
-      <!-- COLONNA MASCOTTE VOLPE -->
-      <div data-reveal class="order-1 lg:order-2 flex justify-center lg:justify-end">
-        <div class="relative">
-          <div class="absolute inset-x-0 bottom-0 h-2/3 bg-brand/15 blur-3xl rounded-full" aria-hidden="true"></div>
-          <img src="/img/volpe.png" alt="La mascotte volpe di VAM Deco" class="volpe-mascotte relative w-52 sm:w-64 lg:w-full max-w-sm drop-shadow-2xl" loading="eager" />
+      <img src="/img/volpe.png" alt="La mascotte volpe di VAM Deco" class="volpe-hero" loading="eager" />
+      <div class="badge-stat" data-reveal>
+        <div class="badge-stat-titolo">#1 Agenzia di decorazione e personalizzazione in Ticino</div>
+        <div class="badge-stat-riga">
+          <span class="badge-stat-stelle" aria-label="5 stelle">★★★★★</span>
+          <span class="badge-stat-sub">300+ Clienti Soddisfatti</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NASTRO SCORREVOLE -->
-  <Marquee testo="Agenzia di design a 360°" />
-
-  <!-- SERVIZI -->
-  <section id="servizi" class="max-w-6xl mx-auto px-4 py-16">
+  <!-- SERVIZI: card con icona a sinistra del titolo, tutte della stessa altezza -->
+  <section id="servizi" class="max-w-6xl mx-auto px-4 py-16 md:py-20">
     <h2 data-reveal class="text-2xl md:text-4xl font-bold mb-10">I nostri servizi</h2>
-    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 [grid-auto-rows:1fr]" data-reveal-stagger>
       {servizi.map((s) => (
-        <a href={s.href} data-reveal class="group card-scura card-anim rounded-2xl p-6">
-          <h3 class="font-display text-sm font-semibold tracking-wide uppercase group-hover:text-brand transition-colors">{s.titolo}</h3>
-          <p class="mt-3 text-sm text-carta/65 leading-relaxed">{s.descr}</p>
-          <span class="mt-4 inline-block text-xs font-bold tracking-widest text-brand">SCOPRI DI PIÙ →</span>
+        <a href={s.href} data-reveal class="group card-scura card-anim rounded-2xl p-6 flex flex-col h-full">
+          <div class="flex items-center gap-4 min-h-[3.5rem]">
+            <span class="ico-servizio shrink-0" set:html={ICONE[s.ico]} />
+            <h3 class="font-display text-sm font-bold tracking-wide uppercase leading-tight group-hover:text-brand transition-colors">{s.titolo}</h3>
+          </div>
+          <p class="mt-5 text-sm text-carta/65 leading-relaxed">{s.descr}</p>
+          <span class="mt-auto pt-5 inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-brand">SCOPRI DI PIÙ <span aria-hidden="true">→</span></span>
         </a>
       ))}
     </div>
-  </section>
-
-  <!-- NUMERI -->
-  <section class="border-y border-white/10 bg-white/[0.03] py-14">
-    <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center" data-reveal-stagger>
-      {numeri.map((x) => (
-        <div data-reveal>
-          <div class="font-display text-3xl md:text-4xl font-bold text-brand" data-count={x.n} data-suffix={x.s} data-anni-da={x.anniDa}>{x.n}{x.s}</div>
-          <div class="mt-2 text-sm text-carta/65">{x.l}</div>
-        </div>
-      ))}
+    <!-- Bottone verso la pagina servizi completa -->
+    <div class="mt-10 text-center">
+      <a data-reveal href="/servizi" class="btn-anim inline-flex items-center gap-2 rounded-full bg-brand px-8 py-3.5 font-semibold text-ink hover:bg-brand-dark">
+        Scopri i nostri servizi <span aria-hidden="true">→</span>
+      </a>
     </div>
   </section>
 
-  <!-- PAROLE CHE SI ACCENDONO ALLO SCROLL -->
+  <!-- DIAMO VITA A: parole che si accendono, su sfondo foto con sfumatura arancione
+       e i numeri A CERCHIO sovrapposti (come l'originale) -->
   <ParoleScroll
     prefisso="Diamo vita a"
     parole={['i tuoi veicoli.', 'le tue vetrine.', 'il tuo abbigliamento.', 'i tuoi vetri.', 'le tue insegne.', 'i tuoi eventi.', 'le tue idee.']}
+    sfondo="/img/diamo-vita-sfondo.jpg"
+    statistiche={numeri}
   />
 
-  <!-- SPECIALITÀ -->
-  <section class="max-w-6xl mx-auto px-4 py-16">
-    <h2 data-reveal class="text-2xl md:text-4xl font-bold mb-4">Le nostre specialità</h2>
-    <p data-reveal class="max-w-2xl text-carta/70 mb-10">
-      VAM Deco è leader nella decorazione veicoli, vetrine e abbigliamento personalizzato e non solo.
-      Forniamo soluzioni su misura che danno visibilità al tuo brand.
-    </p>
-    <div class="grid gap-5 md:grid-cols-3" data-reveal-stagger>
-      {specialita.map((s) => (
-        <div data-reveal class="card-scura card-anim rounded-2xl p-6">
-          <div class="font-display text-3xl font-bold text-brand" data-count={parseInt(s.n)} data-suffix={s.n.replace(/[0-9]/g, '')}>{s.n}</div>
-          <div class="mt-2 font-semibold">{s.t}</div>
-          <p class="mt-2 text-sm text-carta/65 leading-relaxed">{s.d}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- RECENSIONI: stile elegante con numero gigante e citazione che si compone -->
+  <!-- RECENSIONI (prima delle specialità, come l'originale) -->
   <section class="border-y border-white/5 bg-white/[0.02]">
     <RecensioniEleganti recensioni={recensioniStandard} />
     <div class="text-center pb-14">
       <a data-reveal href="/recensioni" class="btn-anim inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-ink hover:bg-brand-dark">Vedi tutte le recensioni</a>
+    </div>
+  </section>
+
+  <!-- SPECIALITÀ: i valori (Risultati dimostrati / Soluzioni su misura / Focus sui clienti) -->
+  <section class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+    <div class="mb-12 max-w-2xl" data-reveal-stagger>
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-3 uppercase">Il nostro metodo</div>
+      <h2 data-reveal class="font-display text-3xl md:text-5xl font-bold leading-tight">Le nostre <span class="text-brand">specialità</span></h2>
+    </div>
+    <div class="grid gap-5 md:grid-cols-6 [grid-auto-rows:1fr]" data-reveal-stagger>
+      {specialita.map((s, i) => (
+        <div data-reveal class={`card-scura card-anim group relative overflow-hidden rounded-3xl p-8 ${i >= 3 ? 'md:col-span-3' : 'md:col-span-2'}`}>
+          <span class="font-display pointer-events-none absolute -right-3 -top-8 text-[130px] font-extrabold leading-none text-white/[0.04] select-none">{String(i + 1).padStart(2, '0')}</span>
+          <div class="relative">
+            <div class="flex items-center gap-2.5">
+              <span class="inline-flex h-2.5 w-2.5 rounded-full bg-brand"></span>
+              <span class="text-[11px] font-medium uppercase tracking-[0.2em] text-carta/50">{s.kicker}</span>
+            </div>
+            {s.num ? (
+              <>
+                <div class="font-display mt-6 text-5xl font-extrabold leading-none text-brand">{s.num}</div>
+                <h3 class="font-display mt-2.5 text-lg font-bold leading-tight">{s.sotto}</h3>
+              </>
+            ) : (
+              <h3 class="font-display mt-7 text-2xl font-bold leading-tight" set:html={s.titolo}></h3>
+            )}
+            <p class="mt-3 text-sm leading-relaxed text-carta/65">{s.descr}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- BLOG: ultimi 3 articoli -->
+  <section class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+    <div class="mb-12 flex items-end justify-between gap-6" data-reveal-stagger>
+      <div>
+        <div data-reveal class="mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand"><span class="h-px w-8 bg-brand"></span>Dal blog</div>
+        <h2 data-reveal class="font-display text-3xl md:text-4xl font-bold">Ultimi articoli</h2>
+      </div>
+      <a data-reveal href="/articoli" class="btn-anim hidden md:inline-flex rounded-full border border-white/15 px-5 py-2.5 text-sm text-carta/70 hover:text-carta">Tutti gli articoli</a>
+    </div>
+    <div class="grid gap-6 md:grid-cols-3 [grid-auto-rows:1fr]" data-reveal-stagger>
+      {articoliRecenti.map((a) => (
+        <article data-reveal class="card-scura card-anim group overflow-hidden rounded-3xl flex flex-col">
+          <a href={`/articoli/${a.slug}`} class="relative block aspect-[16/10] overflow-hidden">
+            <img src={a.cover} alt={a.h1} loading="lazy" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent"></div>
+            <span class="absolute bottom-4 left-4 rounded-full bg-brand px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink">{a.categoria}</span>
+          </a>
+          <div class="p-6 flex flex-col flex-1">
+            <div class="mb-3 flex items-center gap-2 text-xs text-carta/45"><span class="h-1 w-1 rounded-full bg-brand"></span><time>{a.data}</time></div>
+            <h3 class="font-display text-lg font-semibold leading-snug group-hover:text-brand transition-colors"><a href={`/articoli/${a.slug}`}>{a.h1}</a></h3>
+            <p class="mt-3 line-clamp-2 text-sm leading-relaxed text-carta/65">{a.estratto}</p>
+            <span class="mt-auto pt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand">Leggi <span aria-hidden="true">→</span></span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- FAQ: domande frequenti generiche -->
+  <section class="max-w-3xl mx-auto px-4 py-16 md:py-20">
+    <div class="text-center mb-10" data-reveal-stagger>
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-3 uppercase">Domande frequenti</div>
+      <h2 data-reveal class="font-display text-3xl md:text-4xl font-bold">Le risposte che cerchi</h2>
+    </div>
+    <div class="space-y-3" data-reveal-stagger>
+      {faqHome.map((f) => (
+        <details data-reveal class="faq-item card-scura rounded-2xl px-5 py-4 group">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-semibold gap-4">
+            <span>{f.domanda}</span>
+            <span class="text-brand text-2xl leading-none transition-transform duration-300 group-open:rotate-45 shrink-0">+</span>
+          </summary>
+          <div class="faq-risposta"><div class="overflow-hidden"><p class="pt-3 text-sm text-carta/70 leading-relaxed">{f.risposta}</p></div></div>
+        </details>
+      ))}
     </div>
   </section>
 
@@ -158,4 +257,180 @@ const specialita = [
       </div>
     </div>
   </section>
+
+  <style>
+    /* ---------- TITOLO HERO ---------- */
+    .titolo-hero {
+      font-size: clamp(2.3rem, 7.6vw, 4.4rem);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+    }
+    .riga-titolo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.12em 0.28em;
+    }
+    .riga-titolo + .riga-titolo { margin-top: 0.12em; }
+    /* riquadro arancione 'vita' leggermente storto (angoli vivi), testo dritto */
+    .pill-vita {
+      display: inline-flex;
+      background: #F58327;
+      border-radius: 0;
+      padding: 0.02em 0.2em;
+      transform: rotate(3deg);
+    }
+    .pill-vita > span {
+      display: inline-block;
+      color: #0a0a0a;
+      transform: rotate(-3deg);
+    }
+    /* badge circolare arancione col megafono */
+    .badge-megafono {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(54px, 8.2vw, 84px);
+      height: clamp(54px, 8.2vw, 84px);
+      margin-left: -0.14em;
+      border-radius: 999px;
+      background: #F58327;
+      overflow: hidden;
+      flex: none;
+    }
+    .badge-megafono img {
+      width: 92%;
+      height: 92%;
+      object-fit: contain;
+      transform: rotate(-16deg);
+    }
+
+    /* ---------- ZONA VOLPE ---------- */
+    .zona-volpe {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin-top: clamp(0.5rem, 2vw, 2rem);
+      min-height: clamp(340px, 46vw, 600px);
+    }
+    .volpe-hero {
+      position: relative;
+      z-index: 10;
+      height: clamp(320px, 43vw, 575px);
+      width: auto;
+      object-fit: contain;
+      /* la coda sporge a sinistra: sposto l'immagine per centrare busto+testa, non la mezzeria della foto */
+      transform: translateX(-12.5%);
+      filter: drop-shadow(8px 10px 14px rgba(0, 0, 0, 0.45));
+    }
+    /* scritta grande che scorre, dietro la volpe, centrata verticalmente su di essa */
+    .scritta-scroll {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      transform: translateY(-50%);
+      z-index: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      pointer-events: none;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+    }
+    .scritta-scroll-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 0.45em 2.5rem 0.7em 0;
+      width: max-content;
+      animation: scorri-hero 60s linear infinite;
+    }
+    .scritta-scroll-track span {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 500;
+      font-size: clamp(3rem, 10vw, 6rem);
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.3;
+      text-shadow: 0 6px 22px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+    @keyframes scorri-hero {
+      to { transform: translateX(-50%); }
+    }
+    /* sfumatura arancione: piena ai piedi, sale coprendo la volpe, svanisce all'altezza dei bottoni */
+    .sfumatura-hero {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: clamp(460px, 52vw, 700px);
+      z-index: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent 0%, rgba(245, 131, 39, 0.06) 24%, rgba(245, 131, 39, 0.22) 58%, rgba(245, 131, 39, 0.5) 92%);
+    }
+    /* badge #1 galleggiante */
+    .badge-stat {
+      position: absolute;
+      z-index: 20;
+      right: clamp(0.5rem, 4vw, 3.5rem);
+      bottom: clamp(0.5rem, 3vw, 2rem);
+      max-width: 340px;
+      border-radius: 1.4rem;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: rgba(10, 10, 10, 0.42);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 1.1rem 1.25rem;
+      text-align: left;
+    }
+    .badge-stat-titolo {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 600;
+      font-size: 0.92rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .badge-stat-riga {
+      margin-top: 0.7rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .badge-stat-stelle { color: #FF8442; letter-spacing: 0.15em; font-size: 0.95rem; }
+    .badge-stat-sub { color: rgba(255, 255, 255, 0.85); font-size: 0.85rem; }
+
+    /* ---------- ICONA SERVIZIO ---------- */
+    .ico-servizio {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    @media (max-width: 640px) {
+      .zona-volpe {
+        flex-direction: column;
+        align-items: center;
+        min-height: 0;
+      }
+      .badge-stat {
+        position: static;
+        transform: none;
+        max-width: 92%;
+        margin: 1.25rem auto 0;
+        text-align: center;
+      }
+      .badge-stat-riga { align-items: center; }
+      .scritta-scroll { top: 4%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .scritta-scroll-track { animation: none; }
+    }
+  </style>
 </Base>

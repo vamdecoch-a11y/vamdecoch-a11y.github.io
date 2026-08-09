@@ -1,19 +1,50 @@
 ---
+interface Statistica {
+  n: number;
+  s?: string;     // suffisso (+ / %)
+  l: string;      // etichetta
+  anniDa?: number; // se presente, il numero si auto-aggiorna con l'anno
+}
 interface Props {
   prefisso: string;
   parole: string[];
+  sfondo?: string;          // path immagine di sfondo (la foto con sfumatura arancione)
+  statistiche?: Statistica[]; // cerchi statistica sovrapposti allo sfondo (come l'originale)
 }
-const { prefisso, parole } = Astro.props;
+const { prefisso, parole, sfondo, statistiche = [] } = Astro.props;
 ---
 <!-- Effetto cinematografico: scorrendo, le parole si accendono d'arancione una alla volta -->
 <section class="parole-sezione relative" style={`height: ${parole.length * 60 + 100}vh;`}>
   <div class="sticky top-0 h-screen flex items-center overflow-hidden">
-    <div class="absolute inset-0 glow-arancio pointer-events-none opacity-60"></div>
+    {sfondo ? (
+      <>
+        <img src={sfondo} alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover object-center" />
+        <!-- sfumatura arancione radiale (come l'originale): arancione al centro che sfuma nel nero -->
+        <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(58% 65% at 52% 44%, rgba(245,131,39,0.92) 0%, rgba(10,10,10,0.98) 100%); mix-blend-mode: multiply; opacity: 0.95;"></div>
+        <div class="absolute inset-0 pointer-events-none bg-ink/50"></div>
+      </>
+    ) : (
+      <div class="absolute inset-0 glow-arancio pointer-events-none opacity-60"></div>
+    )}
+
+    {statistiche.length > 0 && (
+      <div class="assoluto-stat">
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-3 md:gap-6">
+          {statistiche.map((x) => (
+            <div class="cerchio-stat">
+              <div class="font-display font-extrabold cerchio-num" data-count={x.n} data-suffix={x.s} data-anni-da={x.anniDa}>{x.n}{x.s}</div>
+              <div class="cerchio-lab">{x.l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
     <div class="relative max-w-6xl mx-auto px-4 w-full grid gap-6 md:grid-cols-2 items-center">
-      <h2 class="font-display text-3xl md:text-5xl font-bold leading-tight">
-        {prefisso}<span class="text-brand">...</span>
+      <h2 class="font-display text-4xl md:text-6xl font-extrabold leading-[1.02] tracking-tight" style="text-shadow: 0 2px 24px rgba(0,0,0,0.55)">
+        {prefisso}<span class="text-white">...</span>
       </h2>
-      <div class="parole-lista font-display text-4xl md:text-6xl font-bold leading-[1.35]">
+      <div class="parole-lista font-display text-4xl md:text-6xl font-bold leading-[1.35]" style="text-shadow: 0 2px 24px rgba(0,0,0,0.55)">
         {parole.map((p) => (
           <div class="parola-scroll">{p}</div>
         ))}
@@ -21,6 +52,48 @@ const { prefisso, parole } = Astro.props;
     </div>
   </div>
 </section>
+
+<style>
+  /* Cerchi statistica 'frosted glass' sopra la foto, come l'originale */
+  .assoluto-stat {
+    position: absolute;
+    top: clamp(4.5rem, 10vh, 7rem);
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0 1rem;
+  }
+  .cerchio-stat {
+    width: clamp(7.2rem, 12.5vw, 11rem);
+    aspect-ratio: 1;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.9rem;
+  }
+  .cerchio-num {
+    font-size: clamp(1.5rem, 2.6vw, 2.5rem);
+    line-height: 1;
+    color: #fff;
+  }
+  .cerchio-lab {
+    margin-top: 0.45rem;
+    font-size: clamp(0.6rem, 0.85vw, 0.8rem);
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 90%;
+  }
+  @media (max-width: 640px) {
+    .assoluto-stat { top: 4.6rem; } /* sotto l'header sticky */
+    .cerchio-stat { width: 8.2rem; }
+  }
+</style>
 
 <script>
   // Movimento FLUIDO: la posizione segue lo scroll in continuo (interpolazione morbida),
