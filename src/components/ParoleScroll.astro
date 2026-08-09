@@ -40,8 +40,8 @@ const { prefisso, parole, sfondo, statistiche = [] } = Astro.props;
       </div>
     )}
 
-    <div class="relative max-w-6xl mx-auto px-4 w-full grid gap-6 md:grid-cols-2 items-center">
-      <h2 class="font-display text-4xl md:text-6xl font-extrabold leading-[1.02] tracking-tight" style="text-shadow: 0 2px 24px rgba(0,0,0,0.55)">
+    <div class="contenuto-parole relative max-w-6xl mx-auto px-4 w-full grid gap-6 md:grid-cols-2 items-center">
+      <h2 class="titolo-parole font-display text-4xl md:text-6xl font-extrabold leading-[1.02] tracking-tight" style="text-shadow: 0 2px 24px rgba(0,0,0,0.55)">
         {prefisso}<span class="text-white">...</span>
       </h2>
       <div class="parole-lista font-display text-4xl md:text-6xl font-bold leading-[1.35]" style="text-shadow: 0 2px 24px rgba(0,0,0,0.55)">
@@ -89,9 +89,29 @@ const { prefisso, parole, sfondo, statistiche = [] } = Astro.props;
     color: rgba(255, 255, 255, 0.85);
     max-width: 90%;
   }
-  @media (max-width: 640px) {
+  /* MOBILE: cerchi in alto (2x2), sotto la scritta "Diamo vita a..." centrata
+     subito sopra la parola attiva, anch'essa centrata. Le parole non attive
+     sono nascoste per non fare confusione con la foto. */
+  @media (max-width: 767px) {
     .assoluto-stat { top: 4.6rem; } /* sotto l'header sticky */
-    .cerchio-stat { width: 8.2rem; }
+    .cerchio-stat { width: 7.4rem; }
+    .contenuto-parole { margin-top: 10rem; }
+    .titolo-parole {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(50% - 6rem);
+      text-align: center;
+      z-index: 5;
+    }
+    .parole-lista { text-align: center; }
+    .parole-lista .parola-scroll {
+      opacity: 0 !important;
+      transition: opacity 0.35s ease;
+    }
+    .parole-lista .parola-scroll.accesa {
+      opacity: 1 !important;
+    }
   }
 </style>
 

@@ -177,7 +177,7 @@ const faqHome = [
     <div class="grid gap-5 md:grid-cols-6 [grid-auto-rows:1fr]" data-reveal-stagger>
       {specialita.map((s, i) => (
         <div data-reveal class={`card-scura card-anim group relative overflow-hidden rounded-3xl p-8 ${i >= 3 ? 'md:col-span-3' : 'md:col-span-2'}`}>
-          <span class="font-display pointer-events-none absolute -right-3 -top-8 text-[130px] font-extrabold leading-none text-white/[0.04] select-none">{String(i + 1).padStart(2, '0')}</span>
+          <span class="font-display pointer-events-none absolute -right-3 -top-8 text-[130px] font-extrabold leading-none text-white/[0.055] select-none">{String(i + 1).padStart(2, '0')}</span>
           <div class="relative">
             <div class="flex items-center gap-2.5">
               <span class="inline-flex h-2.5 w-2.5 rounded-full bg-brand"></span>
@@ -414,20 +414,26 @@ const faqHome = [
     }
 
     @media (max-width: 640px) {
+      /* il badge #1 deve sporgere a meta' sulla riga di separazione tra le sezioni */
+      section.pattern-hero { overflow: visible; }
       .zona-volpe {
         flex-direction: column;
         align-items: center;
         min-height: 0;
       }
       .badge-stat {
-        position: static;
+        position: relative;
+        z-index: 30;
         transform: none;
         max-width: 92%;
-        margin: 1.25rem auto 0;
+        margin: 1.25rem auto -3.6rem;
         text-align: center;
       }
       .badge-stat-riga { align-items: center; }
-      .scritta-scroll { top: 4%; }
+      /* scritta scorrevole centrata sulla volpe (volpe alta 320px su mobile) */
+      .scritta-scroll { top: 10rem; }
+      /* sfumatura arancione piu' alta */
+      .sfumatura-hero { height: 64%; }
     }
     @media (prefers-reduced-motion: reduce) {
       .scritta-scroll-track { animation: none; }
