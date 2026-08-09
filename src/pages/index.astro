@@ -118,7 +118,7 @@ const faqHome = [
         </div>
       </div>
       <img src="/img/volpe.png" alt="La mascotte volpe di VAM Deco" class="volpe-hero" loading="eager" />
-      <div class="badge-stat" data-reveal>
+      <div class="badge-stat">
         <div class="badge-stat-titolo">#1 Agenzia di decorazione e personalizzazione in Ticino</div>
         <div class="badge-stat-riga">
           <span class="badge-stat-stelle" aria-label="5 stelle">★★★★★</span>
@@ -423,12 +423,18 @@ const faqHome = [
       }
       .badge-stat {
         position: relative;
+        right: auto; /* annulla il posizionamento desktop che lo spingeva a sinistra */
+        left: auto;
         z-index: 30;
-        transform: none;
         max-width: 92%;
-        margin: 1.25rem auto -3.6rem;
+        margin: 1.25rem auto 0;
         text-align: center;
+        /* meta' sopra e meta' sotto la riga di separazione tra le sezioni
+           (+12px misurati di scarto residuo del layout) */
+        transform: translateY(calc(50% + 12px));
       }
+      /* spazio extra nella sezione servizi per la meta' del badge che sporge */
+      #servizi { padding-top: 6.5rem; }
       .badge-stat-riga { align-items: center; }
       /* scritta scorrevole centrata sulla volpe (volpe alta 320px su mobile) */
       .scritta-scroll { top: 10rem; }

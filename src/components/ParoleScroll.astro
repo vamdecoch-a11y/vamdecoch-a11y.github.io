@@ -94,7 +94,7 @@ const { prefisso, parole, sfondo, statistiche = [] } = Astro.props;
      sono nascoste per non fare confusione con la foto. */
   @media (max-width: 767px) {
     .assoluto-stat { top: 4.6rem; } /* sotto l'header sticky */
-    .cerchio-stat { width: 7.4rem; }
+    .cerchio-stat { width: 8.4rem; }
     .contenuto-parole { margin-top: 10rem; }
     .titolo-parole {
       position: absolute;
@@ -104,14 +104,15 @@ const { prefisso, parole, sfondo, statistiche = [] } = Astro.props;
       text-align: center;
       z-index: 5;
     }
-    .parole-lista { text-align: center; }
-    .parole-lista .parola-scroll {
-      opacity: 0 !important;
-      transition: opacity 0.35s ease;
-    }
-    .parole-lista .parola-scroll.accesa {
-      opacity: 1 !important;
-    }
+    /* parole centrate e un po' piu' in basso; la parola prima/dopo resta
+       leggermente visibile (effetto rullo), le altre spariscono: vedi JS */
+    .parole-lista { text-align: center; margin-top: 7rem; }
+  }
+  /* schermi bassi (telefoni piccoli): cerchi un filo piu' compatti e blocco parole
+     piu' in basso, per non far toccare cerchi e titolo */
+  @media (max-width: 767px) and (max-height: 720px) {
+    .cerchio-stat { width: 7.6rem; }
+    .contenuto-parole { margin-top: 13.5rem; }
   }
 </style>
 
@@ -127,6 +128,7 @@ const { prefisso, parole, sfondo, statistiche = [] } = Astro.props;
       return;
     }
     let liscio = 0;
+    const schermoPiccolo = window.matchMedia('(max-width: 767px)');
     const tick = () => {
       const r = sez.getBoundingClientRect();
       const corsa = r.height - window.innerHeight;
@@ -137,7 +139,8 @@ const { prefisso, parole, sfondo, statistiche = [] } = Astro.props;
       lista.style.transform = `translateY(${((parole.length - 1) / 2 - liscio) * passo}px)`;
       parole.forEach((p, i) => {
         const d = Math.abs(i - liscio);
-        p.style.opacity = String(Math.max(0.22, 1 - d * 0.42));
+        // Su mobile effetto "rullo": prima/successiva appena visibili, le altre nascoste
+        p.style.opacity = String(schermoPiccolo.matches ? Math.max(0, 1 - d * 0.6) : Math.max(0.22, 1 - d * 0.42));
         p.style.filter = d < 0.45 ? 'none' : `blur(${Math.min(4, d * 2.1)}px)`;
         p.style.transform = `scale(${Math.max(0.9, 1 - d * 0.045)})`;
         p.classList.toggle('accesa', d < 0.5);
