@@ -1,4 +1,4 @@
-# ANTEPRIMA DI LAVORO: blocco totale dei motori di ricerca.
-# Al go-live su vamdeco.ch sostituire con robots aperto + sitemap.
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://vamdeco.ch/sitemap-index.xml
