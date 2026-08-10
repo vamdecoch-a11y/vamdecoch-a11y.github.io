@@ -1,0 +1,31 @@
+---
+// Pagina di ringraziamento post-invio form (testi fedeli all'originale Framer).
+// I form reindirizzano qui: utile anche per misurare le conversioni in Analytics.
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Grazie! | VAM Deco"
+  description="Abbiamo ricevuto la tua richiesta. Ti contatteremo entro 24/48h lavorative."
+  noindex
+>
+  <section class="relative pattern-hero overflow-hidden min-h-[70vh] flex items-center">
+    <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
+    <div class="relative max-w-2xl mx-auto px-4 py-20 text-center" data-reveal-stagger>
+      <div data-reveal class="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-brand text-ink text-4xl font-bold" aria-hidden="true">✓</div>
+      <h1 data-reveal class="font-display text-5xl md:text-7xl font-bold text-brand">Grazie!</h1>
+      <p data-reveal class="mt-8 text-lg text-carta/80 leading-relaxed">
+        Abbiamo ricevuto correttamente il tuo modulo. Ti contatteremo entro 24/48h lavorative
+        per fornirti tutte le informazioni necessarie e rispondere alla tua richiesta nel dettaglio.
+      </p>
+      <p data-reveal class="mt-6 text-carta/70">
+        Se hai domande urgenti o richieste particolari, chiamaci subito al
+        <a href="tel:+41765889497" class="text-brand font-semibold hover:underline">+41 76 588 94 97</a>
+        oppure scrivici a
+        <a href="mailto:info@vamdeco.ch" class="text-brand font-semibold hover:underline">info@vamdeco.ch</a>
+      </p>
+      <div data-reveal class="mt-10">
+        <a href="/" class="btn-anim inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-ink hover:bg-brand-dark uppercase tracking-wide text-sm">Ritorna alla home</a>
+      </div>
+    </div>
+  </section>
+</Base>

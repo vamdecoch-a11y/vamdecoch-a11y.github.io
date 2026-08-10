@@ -7,8 +7,9 @@ interface Props {
   title: string;
   description: string;
   ogImage?: string;
+  noindex?: boolean; // pagine da tenere fuori da Google anche dopo il go-live (es. /ringraziamenti)
 }
-const { title, description, ogImage = '/og-vamdeco.jpg' } = Astro.props;
+const { title, description, ogImage = '/og-vamdeco.jpg', noindex = false } = Astro.props;
 const urlPagina = new URL(Astro.url.pathname, Astro.site).href;
 ---
 <!doctype html>
@@ -19,8 +20,9 @@ const urlPagina = new URL(Astro.url.pathname, Astro.site).href;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <!-- ANTEPRIMA: rimuovere il noindex al go-live -->
+    <!-- ANTEPRIMA: al go-live rimuovere questa riga (resta il noindex per pagina qui sotto) -->
     <meta name="robots" content="noindex, nofollow" />
+    {noindex && <meta name="robots" content="noindex, nofollow" data-per-pagina />}
     <!-- Anteprima social (WhatsApp, Facebook, ecc.) -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />

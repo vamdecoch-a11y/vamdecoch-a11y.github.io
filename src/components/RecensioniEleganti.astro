@@ -32,7 +32,7 @@ const { recensioni } = Astro.props;
       <div class="text-brand tracking-widest text-sm mb-5" aria-label="5 stelle su 5">★★★★★</div>
       <!-- La cella contiene, invisibili, TUTTE le recensioni sovrapposte: cosi' l'altezza
            e' sempre quella della recensione piu' lunga e nulla si sposta al cambio. -->
-      <div class="grid w-full">
+      <div class="grid w-full min-h-[13rem] md:min-h-[17rem] content-center">
         <blockquote class="rec-citazione [grid-area:1/1] w-full font-display font-light text-2xl md:text-4xl leading-[1.2] tracking-tight"></blockquote>
         {recensioni.map((r) => (
           <blockquote class="[grid-area:1/1] w-full font-display font-light text-2xl md:text-4xl leading-[1.2] tracking-tight invisible select-none" aria-hidden="true">{r.testo}</blockquote>
