@@ -1,0 +1,133 @@
+---
+// Banner cookie con consenso (stesse regole di vamautomotors.ch).
+// 4 categorie: Necessari (sempre), Preferenze, Statistiche, Marketing.
+// Google Analytics (G-PNS7X8SYV6) parte SOLO se "Statistiche" e' accettato
+// E solo sul dominio vero (vamdeco.ch), mai su anteprima/localhost.
+---
+<div id="vam-cc-ov" aria-hidden="true">
+  <div id="vam-cc-modal" role="dialog" aria-modal="true" aria-labelledby="vam-cc-titolo">
+    <h2 id="vam-cc-titolo">Rispettiamo la tua privacy</h2>
+    <p class="d">
+      Usiamo i cookie per migliorare la tua esperienza e analizzare il traffico del sito.
+      Puoi accettare tutti i cookie oppure scegliere quali attivare.
+      Maggiori dettagli nelle <a href="/norme-sulla-privacy">norme sulla privacy</a>.
+    </p>
+
+    <div class="vam-cc-btns">
+      <button type="button" id="vam-cc-all" class="b1">Accetta tutto</button>
+      <button type="button" id="vam-cc-nec" class="b2">Solo necessari</button>
+      <button type="button" id="vam-cc-custom" class="b3">Personalizza</button>
+    </div>
+
+    <div id="vam-cc-prefs">
+      <label class="cat"><span><strong>Necessari</strong><em>Attivi sempre. Consentono la sicurezza e le funzionalità di base del sito.</em></span><input type="checkbox" checked disabled></label>
+      <label class="cat"><span><strong>Preferenze</strong><em>Memorizzano le tue scelte e impostazioni per un'esperienza personalizzata.</em></span><input type="checkbox" id="vam-cc-pref" checked></label>
+      <label class="cat"><span><strong>Statistiche</strong><em>Ci aiutano a capire come viene usato il sito, in forma anonima (Google Analytics).</em></span><input type="checkbox" id="vam-cc-ana" checked></label>
+      <label class="cat"><span><strong>Marketing</strong><em>Usati per mostrarti offerte e annunci pertinenti ai tuoi interessi.</em></span><input type="checkbox" id="vam-cc-mkt" checked></label>
+    </div>
+
+    <button type="button" id="vam-cc-save">Salva preferenze</button>
+  </div>
+</div>
+
+<style is:global>
+  #vam-cc-ov, #vam-cc-ov * { box-sizing: border-box; }
+  #vam-cc-ov {
+    position: fixed; inset: 0; z-index: 2147483000;
+    background: rgba(10, 8, 6, .74);
+    -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+    display: none; align-items: center; justify-content: center; padding: 18px;
+  }
+  #vam-cc-ov.show { display: flex; }
+  #vam-cc-modal {
+    background: #fff; border-radius: 20px; max-width: 520px; width: 100%;
+    padding: 26px 26px 22px; box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+    max-height: 88vh; overflow-y: auto;
+    font-family: 'Unbounded', system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+  }
+  #vam-cc-modal h2 { margin: 0 0 10px; font-size: 1.15rem; color: #16120c; font-weight: 700; letter-spacing: -.01em; }
+  #vam-cc-modal p.d { margin: 0 0 18px; font-size: .86rem; color: #55504a; line-height: 1.55; font-weight: 400; }
+  #vam-cc-modal a { color: #F58327; text-decoration: underline; font-weight: 600; }
+  .vam-cc-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+  .vam-cc-btns button { flex: 1 1 auto; border-radius: 999px; padding: 12px 16px; font-size: .8rem; font-weight: 700; cursor: pointer; border: 1px solid transparent; font-family: inherit; transition: filter .2s, background .2s; }
+  #vam-cc-all { background: #F58327; color: #0a0a0a; }
+  #vam-cc-all:hover { filter: brightness(1.05); }
+  #vam-cc-nec { background: #f1efec; color: #16120c; }
+  #vam-cc-custom { background: #fff; color: #16120c; border-color: #d9d4ce; }
+  #vam-cc-nec:hover, #vam-cc-custom:hover { background: #eceae6; }
+  #vam-cc-prefs { display: none; margin-top: 18px; }
+  #vam-cc-prefs.show { display: block; }
+  .cat { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; padding: 13px 0; border-top: 1px solid #eee; }
+  .cat span { display: flex; flex-direction: column; gap: 3px; }
+  .cat strong { font-size: .84rem; color: #16120c; }
+  .cat em { font-size: .74rem; color: #6b655e; font-style: normal; line-height: 1.4; font-weight: 400; }
+  .cat input { width: 42px; height: 24px; appearance: none; -webkit-appearance: none; background: #d9d4ce; border-radius: 999px; position: relative; cursor: pointer; flex: none; margin-top: 2px; transition: background .2s; }
+  .cat input:checked { background: #F58327; }
+  .cat input::after { content: ''; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 999px; background: #fff; transition: transform .2s; }
+  .cat input:checked::after { transform: translateX(18px); }
+  .cat input:disabled { opacity: .6; cursor: not-allowed; }
+  #vam-cc-save { display: none; width: 100%; margin-top: 18px; border-radius: 999px; padding: 13px; font-size: .82rem; font-weight: 700; cursor: pointer; background: #F58327; color: #0a0a0a; border: none; font-family: inherit; }
+  #vam-cc-save.show { display: block; }
+</style>
+
+<script is:inline>
+  (function () {
+    var KEY = 'vamdeco-cc', GA = 'G-PNS7X8SYV6';
+    var SITO_VERO = ['vamdeco.ch', 'www.vamdeco.ch'].indexOf(location.hostname) !== -1;
+
+    function loadGA() {
+      if (!SITO_VERO || window.__vamGA) return;  // niente tracciamento su anteprima/localhost
+      window.__vamGA = 1;
+      var s = document.createElement('script');
+      s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      window.gtag = gtag; gtag('js', new Date());
+      gtag('config', GA, { anonymize_ip: true });
+    }
+
+    var ov = document.getElementById('vam-cc-ov');
+    function apri() {
+      ov.classList.add('show'); ov.setAttribute('aria-hidden', 'false');
+    }
+    function chiudi() {
+      ov.classList.remove('show'); ov.setAttribute('aria-hidden', 'true');
+    }
+    function salva(c) {
+      try { localStorage.setItem(KEY, JSON.stringify(c)); } catch (e) {}
+      chiudi();
+      if (c.analytics) loadGA();
+    }
+    // reso disponibile al footer / pagina privacy per riaprire il pannello
+    window.vamCookie = { apri: apri };
+
+    // consenso gia' dato in passato?
+    var raw = null; try { raw = localStorage.getItem(KEY); } catch (e) {}
+    if (raw) {
+      try { var c = JSON.parse(raw); if (c && c.analytics) loadGA(); } catch (e) {}
+    } else {
+      apri();  // prima visita: mostro il banner
+    }
+
+    document.getElementById('vam-cc-all').onclick = function () {
+      salva({ necessary: true, preferences: true, analytics: true, marketing: true });
+    };
+    document.getElementById('vam-cc-nec').onclick = function () {
+      salva({ necessary: true, preferences: false, analytics: false, marketing: false });
+    };
+    document.getElementById('vam-cc-custom').onclick = function () {
+      document.querySelector('.vam-cc-btns').style.display = 'none';
+      document.getElementById('vam-cc-prefs').classList.add('show');
+      document.getElementById('vam-cc-save').classList.add('show');
+    };
+    document.getElementById('vam-cc-save').onclick = function () {
+      salva({
+        necessary: true,
+        preferences: document.getElementById('vam-cc-pref').checked,
+        analytics: document.getElementById('vam-cc-ana').checked,
+        marketing: document.getElementById('vam-cc-mkt').checked,
+      });
+    };
+  })();
+</script>

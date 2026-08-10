@@ -100,8 +100,7 @@ const nastro = 'Decorazione veicoli · Vetrine · Abbigliamento · Pellicole · 
         </div>
         <div class="flex items-center gap-5">
           <a href="/norme-sulla-privacy" class="act hover:text-brand">Norme sulla privacy</a>
-          <!-- Al go-live: collegare al pannello del gestore cookie -->
-          <button type="button" id="impostazioni-cookie" class="act hover:text-brand cursor-pointer">Cookie Settings</button>
+          <button type="button" id="impostazioni-cookie" class="act hover:text-brand cursor-pointer">Impostazioni cookie</button>
           <button type="button" id="torna-su" class="act magnetico pillola-vetro rounded-full px-4 py-2 text-carta/80 cursor-pointer">Torna su ↑</button>
         </div>
       </div>
@@ -113,6 +112,11 @@ const nastro = 'Decorazione veicoli · Vetrine · Abbigliamento · Pellicole · 
   // Torna su
   document.getElementById('torna-su')?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Riapre il banner cookie per cambiare il consenso
+  document.getElementById('impostazioni-cookie')?.addEventListener('click', () => {
+    (window as any).vamCookie?.apri();
   });
 
   // Bottoni magnetici (solo su dispositivi con mouse, niente GSAP: vanilla)

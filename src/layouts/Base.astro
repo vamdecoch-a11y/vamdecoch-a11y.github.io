@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import BannerCookie from '../components/BannerCookie.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -23,19 +24,8 @@ const urlPagina = new URL(Astro.url.pathname, Astro.site).href;
     <!-- ANTEPRIMA: al go-live rimuovere questa riga (resta il noindex per pagina qui sotto) -->
     <meta name="robots" content="noindex, nofollow" />
     {noindex && <meta name="robots" content="noindex, nofollow" data-per-pagina />}
-    <!-- Google Analytics (GA4): si attiva SOLO sul dominio vero, mai su anteprima/localhost -->
-    <script is:inline>
-      if (['vamdeco.ch', 'www.vamdeco.ch'].includes(location.hostname)) {
-        var sGA = document.createElement('script');
-        sGA.async = true;
-        sGA.src = 'https://www.googletagmanager.com/gtag/js?id=G-PNS7X8SYV6';
-        document.head.appendChild(sGA);
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){ dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-PNS7X8SYV6');
-      }
-    </script>
+    <!-- Google Analytics: caricato dal banner cookie SOLO dopo consenso "Statistiche" -->
+
     <!-- Anteprima social (WhatsApp, Facebook, ecc.) -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -55,6 +45,7 @@ const urlPagina = new URL(Astro.url.pathname, Astro.site).href;
     <Header />
     <slot />
     <Footer />
+    <BannerCookie />
     <script>
       // Comparsa allo scroll degli elementi [data-reveal]
       const osservatore = new IntersectionObserver(
