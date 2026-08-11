@@ -1,94 +1,145 @@
 ---
 import Base from '../layouts/Base.astro';
+
+// Cookie realmente usati dal sito (per la tabella nella sezione 6)
+const cookieList = [
+  { nome: 'vamdeco-cc', forn: 'VAM Deco (questo sito)', fin: 'Memorizza le tue scelte sui cookie, così non ti chiediamo il consenso a ogni visita.', dur: 'Permanente (finché non la cancelli)', cat: 'Necessari' },
+  { nome: '_ga', forn: 'Google Analytics', fin: 'Distingue i visitatori in forma anonima per le statistiche di traffico.', dur: '2 anni', cat: 'Statistiche' },
+  { nome: '_ga_PNS7X8SYV6', forn: 'Google Analytics', fin: 'Mantiene lo stato della sessione per il conteggio anonimo delle visite.', dur: '2 anni', cat: 'Statistiche' },
+  { nome: '_gid', forn: 'Google Analytics', fin: 'Distingue i visitatori nell’arco della giornata, in forma anonima.', dur: '24 ore', cat: 'Statistiche' },
+];
 ---
 <Base
-  title="Norme sulla privacy | VAM Deco"
-  description="Informativa sulla privacy e sull'uso dei cookie di VAM Deco Agency Sagl, Sementina (Ticino)."
+  title="Norme sulla privacy e cookie | VAM Deco"
+  description="Informativa sulla privacy e sull'uso dei cookie di VAM Deco Agency Sagl, Sementina (Ticino): quali dati raccogliamo, perché, con chi li condividiamo e i tuoi diritti."
 >
   <article class="max-w-3xl mx-auto px-4 pt-16 pb-20">
-    <h1 class="font-display text-3xl md:text-5xl font-bold tracking-tight">Norme sulla privacy</h1>
-    <p class="mt-4 text-sm text-carta/50">VAM Deco Agency Sagl · Via Pobbia 4D, 6514 Sementina (Ticino)</p>
-    <div class="mt-8">
-        <ul class="mt-3 space-y-2.5">
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Dati di navigazione: Indirizzo IP, tipo di dispositivo, browser, pagine visitate e tempi di permanenza sul sito.</span></li>
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Dati di pagamento: Se effettui un acquisto sul nostro sito, potremmo raccogliere dati relativi al pagamento attraverso fornitori di servizi sicuri.</span></li>
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Dati forniti volontariamente: Informazioni inserite nei moduli di contatto, richieste di preventivo o moduli per i lead pubblicitari.</span></li>
-        </ul>
-        <h2 class="font-display text-lg md:text-xl font-bold mt-9 mb-1 text-brand">2. Finalità del trattamento dei dati</h2>
-        <p class="mt-3 text-carta/75 leading-relaxed">Utilizziamo i dati personali raccolti per:</p>
-        <ul class="mt-3 space-y-2.5">
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Fornire i servizi richiesti, come la personalizzazione di prodotti e preventivi.</span></li>
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Contattarti per rispondere a richieste di informazioni o supporto.</span></li>
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Migliorare l’esperienza di navigazione sul nostro sito web.</span></li>
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Inviare comunicazioni promozionali e offerte, solo con il tuo consenso esplicito.</span></li>
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Adempiere agli obblighi legali e fiscali.</span></li>
-        </ul>
-        <h2 class="font-display text-lg md:text-xl font-bold mt-9 mb-1 text-brand">3. Condivisione dei dati</h2>
-        <p class="mt-3 text-carta/75 leading-relaxed">Non vendiamo né cediamo i tuoi dati a terzi. Tuttavia, potremmo condividerli con:</p>
-        <ul class="mt-3 space-y-2.5">
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Fornitori di servizi di pagamento per elaborare transazioni sicure.</span></li>
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Piattaforme pubblicitarie (Google Ads, Facebook Ads, ecc.) per campagne di marketing mirate.</span></li>
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Servizi di analisi web (Google Analytics, ecc.) per migliorare le prestazioni del sito.</span></li>
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Autorità competenti, se richiesto per obblighi legali.</span></li>
-        </ul>
-        <h2 class="font-display text-lg md:text-xl font-bold mt-9 mb-1 text-brand">4. Conservazione dei dati</h2>
-        <p class="mt-3 text-carta/75 leading-relaxed">I tuoi dati personali vengono conservati solo per il tempo necessario a soddisfare le finalità sopra descritte. Quando non saranno più necessari, verranno eliminati in modo sicuro.</p>
-        <h2 class="font-display text-lg md:text-xl font-bold mt-9 mb-1 text-brand">5. Cookie e tecnologie di tracciamento</h2>
-        <p class="mt-3 text-carta/75 leading-relaxed">Il nostro sito utilizza cookie per migliorare la navigazione e raccogliere dati anonimi sull’uso del sito. Puoi gestire le tue preferenze sui cookie attraverso le impostazioni del browser. Per maggiori informazioni, consulta la nostra Politica sui Cookie.</p>
-        <h2 class="font-display text-lg md:text-xl font-bold mt-9 mb-1 text-brand">6. Sicurezza dei dati</h2>
-        <p class="mt-3 text-carta/75 leading-relaxed">Adottiamo misure di sicurezza adeguate per proteggere i tuoi dati da accessi non autorizzati, modifiche o perdite accidentali.</p>
-        <h2 class="font-display text-lg md:text-xl font-bold mt-9 mb-1 text-brand">7. Diritti dell’utente</h2>
-        <p class="mt-3 text-carta/75 leading-relaxed">Hai il diritto di:</p>
-        <ul class="mt-3 space-y-2.5">
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Accedere ai tuoi dati personali e richiederne una copia.</span></li>
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Rettificare o aggiornare i tuoi dati se inesatti.</span></li>
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Chiedere la cancellazione dei tuoi dati, salvo obblighi legali che ne impongano la conservazione.</span></li>
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Revocare il consenso al trattamento dei dati per finalità di marketing.</span></li>
-        </ul>
-        <p class="mt-3 text-carta/75 leading-relaxed">Per esercitare questi diritti, contattaci all’email: info@vamdeco.ch.</p>
-        <h2 class="font-display text-lg md:text-xl font-bold mt-9 mb-1 text-brand">8. Modifiche alla presente informativa</h2>
-        <p class="mt-3 text-carta/75 leading-relaxed">Ci riserviamo il diritto di aggiornare questa informativa in qualsiasi momento. Ti invitiamo a controllarla periodicamente per eventuali modifiche.</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Contatti</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Per qualsiasi domanda sulle nostre Norme sulla Privacy, puoi contattarci:</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">📍 VAM Deco Sagl📧 Email: info@vamdeco.ch📞 Telefono: +41 76 588 94 97🌍 Sito web: www.vamdeco.ch</p>
-        <h2 class="font-display text-lg md:text-xl font-bold mt-9 mb-1 text-brand">1. Dati raccolti</h2>
-        <p class="mt-3 text-carta/75 leading-relaxed">Durante l’utilizzo dei nostri servizi, potremmo raccogliere diversi tipi di informazioni, tra cui:</p>
-        <ul class="mt-3 space-y-2.5">
-          <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Dati di contatto: Nome, indirizzo email, numero di telefono, indirizzo postale.</span></li>
-        </ul>
-        <p class="mt-3 text-carta/75 leading-relaxed">Parli</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">amo!</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Come ci hai conosciuti?</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Invia</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">*Campi obbligatori</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">info@vamdeco.ch</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">info@vamdeco.agency</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">+41 76 588 94 97</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Via Pobbia 4d, 6514 Sementina, Ticino, Svizzera</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Home</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Chi siamo</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Servizi</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Recensioni</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Blog</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Contattaci</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Decorazione veicoli</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Decorazione vetrine</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Abbiglimento personalizzato</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Cartellonistica</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Adesivi e etichette</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Pellicole satinate privacy</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Oscuramento vetrate UV</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Oscuramento vetri</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Stampa su carta</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Siti web</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Packaging</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Norme sulla privacy</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">© Progettazione e sviluppo by VAM Deco Agency Sagl</p>
-        <p class="mt-3 text-carta/75 leading-relaxed">Parliamo!</p>
+    <span class="inline-flex items-center gap-2.5 text-brand font-display text-xs font-semibold uppercase tracking-[0.14em]">
+      <span class="h-px w-8 bg-brand" aria-hidden="true"></span>Privacy
+    </span>
+    <h1 class="font-display text-3xl md:text-5xl font-bold tracking-tight mt-4">Norme sulla privacy e cookie</h1>
+    <p class="mt-4 text-sm text-carta/50">VAM Deco Agency Sagl · Via Pobbia 4D, 6514 Sementina (Ticino) · Ultimo aggiornamento: agosto 2026</p>
+
+    <p class="mt-8 text-carta/75 leading-relaxed">La tua privacy è importante per noi. Questa pagina spiega in modo chiaro quali dati raccogliamo quando visiti il nostro sito o ci invii una richiesta, perché li usiamo, con chi li condividiamo e quali sono i tuoi diritti. Il documento è redatto nel rispetto della Legge federale svizzera sulla protezione dei dati (LPD, RS 235.1) e, per i visitatori dell'Unione Europea, del Regolamento UE 2016/679 (GDPR).</p>
+
+    <!-- 1 -->
+    <h2 class="font-display text-lg md:text-xl font-bold mt-10 mb-1 text-brand">1. Titolare del trattamento</h2>
+    <p class="mt-3 text-carta/75 leading-relaxed">Il titolare del trattamento dei dati è <strong class="text-carta">VAM Deco Agency Sagl</strong>, Via Pobbia 4D, 6514 Sementina (Ticino), Svizzera. Per qualsiasi domanda sulla privacy puoi scriverci a <a href="mailto:info@vamdeco.ch" class="text-brand font-semibold hover:underline">info@vamdeco.ch</a> o chiamarci al <a href="tel:+41765889497" class="text-brand font-semibold hover:underline">+41 76 588 94 97</a>.</p>
+
+    <!-- 2 -->
+    <h2 class="font-display text-lg md:text-xl font-bold mt-10 mb-1 text-brand">2. Quali dati raccogliamo</h2>
+    <p class="mt-3 text-carta/75 leading-relaxed">A seconda di come interagisci con noi, possiamo raccogliere:</p>
+    <ul class="mt-3 space-y-2.5">
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span><strong class="text-carta">Dati di contatto:</strong> nome, cognome, email, numero di telefono e, se la indichi, l'azienda.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span><strong class="text-carta">Dati forniti volontariamente:</strong> le informazioni che inserisci nei moduli di contatto, nelle richieste di preventivo e nel campo messaggio.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span><strong class="text-carta">Dati di navigazione:</strong> indirizzo IP, tipo di dispositivo e browser, pagine visitate e tempo di permanenza, raccolti in forma anonima tramite Google Analytics e solo se accetti i cookie statistici.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span><strong class="text-carta">Dati di pagamento:</strong> se effettui un acquisto, i dati della transazione sono gestiti direttamente da fornitori di pagamento sicuri. Non conserviamo i numeri completi delle carte.</span></li>
+    </ul>
+
+    <!-- 3 -->
+    <h2 class="font-display text-lg md:text-xl font-bold mt-10 mb-1 text-brand">3. Perché usiamo i tuoi dati</h2>
+    <ul class="mt-3 space-y-2.5">
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Per rispondere alle tue richieste e preparare preventivi e proposte.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Per fornirti i servizi richiesti, come la personalizzazione di prodotti e progetti.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Per contattarti via email, telefono o messaggio riguardo alla tua richiesta.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Per capire come viene usato il sito e migliorarlo, in forma anonima e solo con il tuo consenso.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Per inviarti comunicazioni promozionali, solo se ci dai un consenso esplicito.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Per adempiere agli obblighi legali e fiscali.</span></li>
+    </ul>
+
+    <!-- 4 -->
+    <h2 class="font-display text-lg md:text-xl font-bold mt-10 mb-1 text-brand">4. Su quale base giuridica</h2>
+    <p class="mt-3 text-carta/75 leading-relaxed">Trattiamo i tuoi dati sulla base del <strong class="text-carta">tuo consenso</strong> (per esempio per i cookie statistici e di marketing), per dare seguito alla tua richiesta (misure precontrattuali) e per adempiere ai nostri obblighi di legge. Fornire i dati è libero: senza le informazioni essenziali, però, non possiamo gestire la tua richiesta. Puoi revocare il consenso in qualsiasi momento.</p>
+
+    <!-- 5 -->
+    <h2 class="font-display text-lg md:text-xl font-bold mt-10 mb-1 text-brand">5. A chi comunichiamo i dati</h2>
+    <p class="mt-3 text-carta/75 leading-relaxed">Non vendiamo né cediamo i tuoi dati. Li condividiamo solo con chi ci aiuta a fornirti il servizio, e solo per quanto necessario:</p>
+    <ul class="mt-3 space-y-2.5">
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Fornitori di servizi di pagamento, per elaborare le transazioni in sicurezza.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Google Analytics, per le statistiche di visita in forma anonima, attivo solo se accetti i cookie statistici.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Piattaforme pubblicitarie (ad esempio Google Ads o Meta), solo se accetti i cookie di marketing.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Autorità competenti, se richiesto per obblighi di legge.</span></li>
+    </ul>
+
+    <!-- 6 -->
+    <h2 class="font-display text-lg md:text-xl font-bold mt-10 mb-1 text-brand">6. Cookie e tecnologie di tracciamento</h2>
+    <p class="mt-3 text-carta/75 leading-relaxed">I cookie sono piccoli file salvati sul tuo dispositivo che permettono al sito di funzionare e di ricordare le tue scelte. Alla prima visita ti mostriamo un banner: puoi accettare tutti i cookie oppure aprire <strong class="text-carta">Personalizza</strong> per scegliere categoria per categoria. I cookie statistici e di marketing si attivano <strong class="text-carta">solo dopo il tuo consenso</strong>: se rifiuti, non viene inviato nulla a Google né alle piattaforme pubblicitarie.</p>
+
+    <p class="mt-5 text-carta/75 leading-relaxed">Usiamo quattro categorie di cookie:</p>
+    <ul class="mt-3 space-y-2.5">
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span><strong class="text-carta">Necessari:</strong> sempre attivi. Consentono la sicurezza e le funzionalità di base del sito, compreso il ricordo delle tue scelte sui cookie.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span><strong class="text-carta">Preferenze:</strong> memorizzano le tue impostazioni per un'esperienza personalizzata.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span><strong class="text-carta">Statistiche:</strong> ci aiutano a capire come viene usato il sito, in forma anonima (Google Analytics).</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span><strong class="text-carta">Marketing:</strong> usati per mostrarti offerte e annunci pertinenti ai tuoi interessi.</span></li>
+    </ul>
+
+    <div class="mt-6 overflow-x-auto rounded-xl border border-white/10">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead class="bg-white/5 text-carta/60">
+          <tr>
+            <th class="px-4 py-3 font-semibold whitespace-nowrap">Cookie</th>
+            <th class="px-4 py-3 font-semibold whitespace-nowrap">Fornitore</th>
+            <th class="px-4 py-3 font-semibold">Finalità</th>
+            <th class="px-4 py-3 font-semibold whitespace-nowrap">Durata</th>
+            <th class="px-4 py-3 font-semibold whitespace-nowrap">Categoria</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-white/10">
+          {cookieList.map((c) => (
+            <tr>
+              <td class="px-4 py-3 text-carta font-medium whitespace-nowrap">{c.nome}</td>
+              <td class="px-4 py-3 text-carta/70 whitespace-nowrap">{c.forn}</td>
+              <td class="px-4 py-3 text-carta/70 min-w-[16rem]">{c.fin}</td>
+              <td class="px-4 py-3 text-carta/70 whitespace-nowrap">{c.dur}</td>
+              <td class="px-4 py-3 text-carta/70 whitespace-nowrap">{c.cat}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
-    <div class="mt-12 rounded-2xl card-scura p-6">
-      <p class="text-sm text-carta/75">Per qualsiasi domanda sui tuoi dati o per gestire il consenso ai cookie, scrivici a <a href="mailto:info@vamdeco.ch" class="text-brand font-semibold hover:underline">info@vamdeco.ch</a> oppure usa il pulsante <button type="button" id="apri-cookie-da-privacy" class="text-brand font-semibold hover:underline">Impostazioni cookie</button>.</p>
+    <p class="mt-3 text-xs text-carta/45 leading-relaxed">I cookie di marketing vengono impostati dalle piattaforme pubblicitarie solo se attivi la categoria "Marketing", e solo durante eventuali campagne attive. Puoi anche bloccare o cancellare i cookie dalle impostazioni del tuo browser.</p>
+
+    <div class="mt-6 rounded-2xl card-scura p-6">
+      <p class="text-sm text-carta/75">Vuoi rivedere le tue scelte sui cookie? Riapri il pannello con il pulsante <button type="button" id="apri-cookie-da-privacy" class="text-brand font-semibold hover:underline">Impostazioni cookie</button>.</p>
     </div>
+
+    <!-- 7 -->
+    <h2 class="font-display text-lg md:text-xl font-bold mt-10 mb-1 text-brand">7. Per quanto tempo conserviamo i dati</h2>
+    <p class="mt-3 text-carta/75 leading-relaxed">Conserviamo i dati solo per il tempo necessario a soddisfare le finalità descritte e a rispettare gli obblighi di legge (ad esempio quelli contabili). Quando non sono più necessari, vengono cancellati in modo sicuro o resi anonimi.</p>
+
+    <!-- 8 -->
+    <h2 class="font-display text-lg md:text-xl font-bold mt-10 mb-1 text-brand">8. I tuoi diritti</h2>
+    <p class="mt-3 text-carta/75 leading-relaxed">In ogni momento puoi:</p>
+    <ul class="mt-3 space-y-2.5">
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Accedere ai tuoi dati e richiederne una copia.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Rettificare o aggiornare i dati inesatti.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Chiedere la cancellazione dei dati, salvo obblighi legali di conservazione.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Limitare o opporti al trattamento e richiedere la portabilità dei dati.</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Revocare in qualsiasi momento un consenso già dato.</span></li>
+    </ul>
+    <p class="mt-3 text-carta/75 leading-relaxed">Per esercitare questi diritti scrivici a <a href="mailto:info@vamdeco.ch" class="text-brand font-semibold hover:underline">info@vamdeco.ch</a>. Hai inoltre il diritto di rivolgerti all'autorità di controllo competente (in Svizzera l'Incaricato federale della protezione dei dati e della trasparenza, IFPDT).</p>
+
+    <!-- 9 -->
+    <h2 class="font-display text-lg md:text-xl font-bold mt-10 mb-1 text-brand">9. Sicurezza dei dati</h2>
+    <p class="mt-3 text-carta/75 leading-relaxed">Adottiamo misure tecniche e organizzative adeguate per proteggere i tuoi dati da accessi non autorizzati, modifiche o perdite. Il sito funziona interamente tramite connessione cifrata (HTTPS).</p>
+
+    <!-- 10 -->
+    <h2 class="font-display text-lg md:text-xl font-bold mt-10 mb-1 text-brand">10. Trasferimento dei dati all'estero</h2>
+    <p class="mt-3 text-carta/75 leading-relaxed">Alcuni fornitori che utilizziamo (come Google) possono trattare i dati anche fuori dalla Svizzera e dall'Unione Europea. In questi casi il trasferimento avviene con garanzie adeguate previste dalla legge, come le clausole contrattuali tipo.</p>
+
+    <!-- 11 -->
+    <h2 class="font-display text-lg md:text-xl font-bold mt-10 mb-1 text-brand">11. Modifiche a questa informativa</h2>
+    <p class="mt-3 text-carta/75 leading-relaxed">Possiamo aggiornare questa informativa nel tempo. La versione valida è sempre quella pubblicata su questa pagina, con la data di ultimo aggiornamento indicata in alto. Ti invitiamo a consultarla periodicamente.</p>
+
+    <!-- 12 -->
+    <h2 class="font-display text-lg md:text-xl font-bold mt-10 mb-1 text-brand">12. Contatti</h2>
+    <p class="mt-3 text-carta/75 leading-relaxed">Per qualsiasi domanda sulle presenti norme o sul trattamento dei tuoi dati:</p>
+    <ul class="mt-3 space-y-2.5">
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>VAM Deco Agency Sagl, Via Pobbia 4D, 6514 Sementina (Ticino), Svizzera</span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Email: <a href="mailto:info@vamdeco.ch" class="text-brand font-semibold hover:underline">info@vamdeco.ch</a></span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Telefono: <a href="tel:+41765889497" class="text-brand font-semibold hover:underline">+41 76 588 94 97</a></span></li>
+      <li class="flex gap-3 text-carta/75 leading-relaxed"><span class="text-brand shrink-0 font-bold" aria-hidden="true">&rarr;</span><span>Sito web: <a href="https://vamdeco.ch" class="text-brand font-semibold hover:underline">vamdeco.ch</a></span></li>
+    </ul>
   </article>
   <script>
     document.getElementById('apri-cookie-da-privacy')?.addEventListener('click', () => (window as any).vamCookie?.apri());
