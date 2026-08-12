@@ -1,40 +1,101 @@
 {
   "slug": "decorazione-veicoli",
   "title": "Decorazione Veicoli a Lugano | VAM Deco",
-  "description": "Decorazione veicoli a Lugano: grafiche per auto, furgoni e camion che promuovono la tua azienda. Preventivo gratuito in 24/48h.",
+  "description": "Car wrapping e decorazione veicoli a Lugano: grafiche e pellicole per auto, furgoni e camion aziendali. Preventivo gratuito in 24/48h.",
   "h1": "Decorazione veicoli",
   "h1Evidenza": "a Lugano",
   "heroParagrafi": [
-    "Trasforma il tuo veicolo in una pubblicità in movimento con la <strong>decorazione veicoli a Lugano</strong> di VAM Deco: grafiche personalizzate per auto, furgoni e camion.",
-    "I tuoi veicoli aziendali diventano <strong>pubblicità mobili</strong> che promuovono il brand ogni giorno, nel traffico di Lugano e su tutte le strade del Ticino.",
-    "Design su misura, stampa e applicazione professionale: rendi il tuo marchio visibile e memorabile. Richiedi un preventivo gratuito in 24/48 ore."
+    "A Lugano il tuo veicolo circola ogni giorno tra il centro finanziario, le vetrine di Via Nassa e la zona commerciale del Pian Scairolo: con la <strong>decorazione veicoli a Lugano</strong> di VAM Deco lo trasformi in una pubblicità in movimento che lavora per te su ogni tratta.",
+    "Dal lungolago a Piazza della Riforma, il tuo furgone o la tua auto aziendale diventa una <strong>pubblicità mobile</strong> vista da residenti, professionisti e turisti internazionali, un pubblico attento alla qualità e all'immagine.",
+    "Progettazione grafica su misura, stampa e applicazione professionale di pellicole ad alta resistenza: rendiamo il tuo marchio riconoscibile in tutto il Luganese. Richiedi un <strong>preventivo gratuito</strong> in 24/48 ore."
   ],
-  "claimArancione": "Trasforma il tuo veicolo in un cartellone pubblicitario mobile, visibile ogni giorno nel traffico di Lugano e in tutto il Ticino.",
-  "whatsappTesto": "Ciao VAM Deco, vorrei un preventivo per decorazione del veicolo a Lugano.",
-  "beneficiTitolo": "Perché scegliere la decorazione veicoli a Lugano?",
-  "beneficiIntro": "La <strong>decorazione dei veicoli</strong> è uno degli strumenti pubblicitari più efficaci e convenienti per promuovere la tua attività. Ogni giorno, il tuo veicolo diventa un cartellone mobile che attira l'attenzione in città e in strada. A Lugano, grazie al traffico locale e alla movimentata vita cittadina, il tuo <strong>veicolo decorato</strong> può raggiungere un'ampia visibilità, migliorando la tua esposizione a una vasta gamma di potenziali clienti.",
+  "claimArancione": "Un solo veicolo decorato ti fa notare ogni giorno tra Via Nassa, il lungolago e il Pian Scairolo, senza costi ricorrenti come i cartelloni.",
+  "whatsappTesto": "Ciao VAM Deco, vorrei un preventivo per la decorazione (car wrapping) del mio veicolo a Lugano.",
+  "beneficiTitolo": "Perché fare car wrapping e decorazione veicoli a Lugano",
+  "beneficiIntro": "In una città come Lugano, dove <strong>immagine e reputazione contano</strong>, il tuo veicolo aziendale è uno degli strumenti pubblicitari più efficaci a disposizione. Tra il traffico del centro, gli spostamenti verso il Pian Scairolo e le soste lungo il lungolago, un <strong>veicolo decorato</strong> raggiunge ogni giorno migliaia di persone: residenti benestanti, clienti di boutique e studi professionali, turisti internazionali. A differenza di un annuncio che scorre in pochi secondi, la <strong>decorazione veicoli a Lugano</strong> lavora per anni con un unico investimento.",
   "benefici": [
-    { "n": "01", "titolo": "Visibilità incrementata", "testo": "Il tuo veicolo decorato diventa un cartellone pubblicitario mobile che promuove la tua azienda ogni giorno nel traffico di Lugano e del Ticino." },
-    { "n": "02", "titolo": "Pubblico mirato", "testo": "La decorazione veicoli raggiunge i potenziali clienti proprio dove operi: strade, cantieri e quartieri di Lugano frequentati ogni giorno dal tuo pubblico locale." },
-    { "n": "03", "titolo": "Credibilità e fiducia", "testo": "Un veicolo aziendale decorato in modo professionale trasmette serietà e affidabilità, aumentando la fiducia dei clienti verso il tuo brand a Lugano." },
-    { "n": "04", "titolo": "Design personalizzato", "testo": "Progettiamo grafiche su misura per auto, furgoni e camion: decorazioni uniche che valorizzano la tua identità aziendale e attirano i clienti giusti." },
-    { "n": "05", "titolo": "Costi ridotti a lungo termine", "testo": "Rispetto a cartelloni e campagne pubblicitarie tradizionali, la decorazione veicoli è un investimento unico che garantisce visibilità continua per anni senza costi ricorrenti." },
-    { "n": "06", "titolo": "Durata e resistenza", "testo": "Utilizziamo pellicole adesive di alta qualità resistenti a sole, pioggia e lavaggi: la decorazione del tuo veicolo resta perfetta e visibile per anni." }
+    {
+      "n": "01",
+      "titolo": "Visibilità dal centro al Pian Scairolo",
+      "testo": "Il tuo veicolo decorato ti fa notare lungo le tratte più frequentate del Luganese, dal centro e Via Nassa fino alla zona commerciale del Pian Scairolo, dove passano ogni giorno migliaia di potenziali clienti."
+    },
+    {
+      "n": "02",
+      "titolo": "Un pubblico esigente e internazionale",
+      "testo": "Lugano vive di clientela attenta alla qualità, tra residenti benestanti e turisti internazionali. Una decorazione veicolare curata comunica subito professionalità a un pubblico che valuta i dettagli."
+    },
+    {
+      "n": "03",
+      "titolo": "Immagine all'altezza della citta",
+      "testo": "In una piazza fatta di banche, boutique di moda e studi professionali, la cura estetica fa la differenza. Un wrapping ben progettato allinea il tuo brand allo stile che i clienti di Lugano si aspettano."
+    },
+    {
+      "n": "04",
+      "titolo": "Grafiche su misura per ogni attivita",
+      "testo": "Progettiamo decorazioni personalizzate per artigiani, corrieri, negozi, ristoratori e studi: dal piccolo lettering sulle portiere al wrapping integrale di furgoni e camion aziendali."
+    },
+    {
+      "n": "05",
+      "titolo": "Piu conveniente delle affissioni in centro",
+      "testo": "Cartelloni e spazi pubblicitari a Lugano hanno costi ricorrenti elevati. La decorazione del veicolo è un investimento unico che garantisce visibilità continua per diversi anni, senza canoni mensili."
+    },
+    {
+      "n": "06",
+      "titolo": "Pellicole resistenti al clima del lago",
+      "testo": "Usiamo pellicole adesive professionali che reggono sole intenso, umidità del lago, sbalzi termici e lavaggi frequenti: la decorazione resta brillante e integra a lungo, anche con uso quotidiano."
+    }
   ],
   "fasi": [
-    { "t": "Analisi e comprensione", "d": "Durante questa prima fase ci immergiamo nelle tue esigenze e nei tuoi obiettivi. Analizziamo il tipo di progetto e lavoriamo a stretto contatto con te per comprendere esattamente ciò che desideri ottenere dalla decorazione del tuo veicolo a Lugano." },
-    { "t": "Progettazione personalizzata", "d": "Sviluppiamo un preventivo gratuito e personalizzato, scegliendo le tecnologie e i materiali che si adattano di più al lavoro, per garantire che ogni dettaglio sia all'altezza delle aspettative. Creiamo design che rispecchiano il tuo brand, catturano l'attenzione e valorizzano la tua immagine." },
-    { "t": "Produzione e installazione", "d": "Dopo l'approvazione del progetto passiamo alla fase operativa: con le nostre attrezzature all'avanguardia ci occupiamo della stampa e dell'applicazione delle grafiche sul veicolo, presso la nostra sede o la tua in base alle esigenze e alla fattibilità. Tutto viene eseguito con precisione e nei tempi stabiliti." },
-    { "t": "Verifica e supporto continuo", "d": "A progetto completato eseguiamo una verifica dettagliata per garantire che tutto rispecchi gli standard di qualità richiesti. Restiamo a disposizione per fornire supporto continuo e assicurarci che tu sia completamente soddisfatto." }
+    {
+      "t": "Analisi e comprensione",
+      "d": "Durante questa prima fase ci immergiamo nelle tue esigenze e nei tuoi obiettivi. Analizziamo il tipo di progetto e lavoriamo a stretto contatto con te per comprendere esattamente ciò che desideri ottenere dalla decorazione del tuo veicolo a Lugano."
+    },
+    {
+      "t": "Progettazione personalizzata",
+      "d": "Sviluppiamo un preventivo gratuito e personalizzato, scegliendo le tecnologie e i materiali che si adattano di più al lavoro, per garantire che ogni dettaglio sia all'altezza delle aspettative. Creiamo design che rispecchiano il tuo brand, catturano l'attenzione e valorizzano la tua immagine."
+    },
+    {
+      "t": "Produzione e installazione",
+      "d": "Dopo l'approvazione del progetto passiamo alla fase operativa: con le nostre attrezzature all'avanguardia ci occupiamo della stampa e dell'applicazione delle grafiche sul veicolo, presso la nostra sede o la tua in base alle esigenze e alla fattibilità. Tutto viene eseguito con precisione e nei tempi stabiliti."
+    },
+    {
+      "t": "Verifica e supporto continuo",
+      "d": "A progetto completato eseguiamo una verifica dettagliata per garantire che tutto rispecchi gli standard di qualità richiesti. Restiamo a disposizione per fornire supporto continuo e assicurarci che tu sia completamente soddisfatto."
+    }
   ],
   "faq": [
-    { "domanda": "Quali sono i vantaggi della decorazione dei veicoli rispetto ad altre forme di pubblicità?", "risposta": "La decorazione veicolare è una pubblicità in movimento, visibile 24/7, e offre un costo per visualizzazione molto basso rispetto ad altre forme di marketing." },
-    { "domanda": "Quanto costa decorare un veicolo a Lugano?", "risposta": "I costi variano in base alle dimensioni del veicolo, al tipo di decorazione (parziale o totale) e ai materiali utilizzati. Contattaci per un preventivo personalizzato." },
-    { "domanda": "Quanto tempo richiede la decorazione di un veicolo?", "risposta": "Il tempo necessario può variare da 1 a 6 giorni lavorativi, a seconda della complessità del progetto e della superficie da decorare." },
-    { "domanda": "È possibile decorare solo una parte del veicolo, come le portiere o il cofano?", "risposta": "Assolutamente sì, offriamo sia decorazioni parziali che integrali, a seconda delle esigenze del cliente e del tipo di impatto visivo desiderato." },
-    { "domanda": "Posso vedere un'anteprima della decorazione?", "risposta": "Sì, prima di stampare inviamo una bozza grafica del progetto al cliente per conferma, solitamente disponibile dopo il versamento di un acconto." },
-    { "domanda": "È necessario lavare il veicolo prima dell'applicazione della decorazione?", "risposta": "Sì, il veicolo deve essere pulito e privo di cere o sostanze che possano compromettere l'adesione delle pellicole. In caso contrario verrà fatturata la pulizia." },
-    { "domanda": "Che tipo di veicoli possono essere decorati?", "risposta": "Possiamo decorare qualsiasi tipo di veicolo, dai furgoni aziendali alle auto private, fino a camion e autobus." }
+    {
+      "domanda": "Quanto costa decorare un veicolo a Lugano?",
+      "risposta": "Il prezzo dipende dalle dimensioni del veicolo, dal tipo di intervento (scritte e logo, decorazione parziale o wrapping integrale) e dai materiali scelti. Un lettering aziendale su un furgone ha un costo contenuto, mentre un wrapping completo richiede un investimento maggiore. Ti prepariamo un preventivo gratuito e personalizzato in 24/48 ore."
+    },
+    {
+      "domanda": "Quanto tempo serve per la decorazione del veicolo?",
+      "risposta": "In genere da 1 a 6 giorni lavorativi, in base alla complessità del progetto e alla superficie da rivestire. Semplici scritte e loghi si applicano in poche ore, mentre un wrapping integrale richiede più tempo per stampa, plastificazione e posa accurata."
+    },
+    {
+      "domanda": "Dove applicate le grafiche? Coprite anche i dintorni di Lugano?",
+      "risposta": "L'applicazione avviene nella nostra sede in Ticino, in ambiente controllato per garantire una posa a regola d'arte. Serviamo tutto il Luganese e i comuni vicini, da Paradiso, Massagno e Cassarate fino ad Agno, Bioggio e la zona del Pian Scairolo. Per flotte aziendali possiamo valutare interventi presso la tua sede."
+    },
+    {
+      "domanda": "Posso decorare solo una parte del veicolo, ad esempio le portiere?",
+      "risposta": "Certo. Offriamo sia decorazioni parziali (logo, scritte, portiere, lunotto) sia wrapping integrale. Per molte attività del centro di Lugano una decorazione parziale ben progettata è già sufficiente a farsi riconoscere, con un investimento più contenuto."
+    },
+    {
+      "domanda": "Che tipo di veicoli potete decorare?",
+      "risposta": "Decoriamo qualsiasi mezzo: auto private e aziendali, furgoni per consegne in centro, van, camion e mezzi commerciali. Adattiamo grafica e pellicole alla forma e alla superficie di ogni veicolo."
+    },
+    {
+      "domanda": "Posso vedere un'anteprima prima della stampa?",
+      "risposta": "Sì. Prima di stampare ti inviamo una bozza grafica del progetto sul modello reale del tuo veicolo, così puoi valutare colori, posizionamento e resa. Procediamo alla produzione solo dopo la tua conferma."
+    },
+    {
+      "domanda": "Devo lavare il veicolo prima dell'applicazione?",
+      "risposta": "Sì, il veicolo deve arrivare pulito e privo di cere o trattamenti che compromettano l'adesione della pellicola. Se necessario possiamo occuparci noi della preparazione della superficie, con un costo aggiuntivo indicato nel preventivo."
+    },
+    {
+      "domanda": "Quanto dura una decorazione veicolare?",
+      "risposta": "Con pellicole professionali e una posa corretta, una decorazione mantiene colori e adesione per diversi anni anche con uso quotidiano tra il traffico di Lugano e le strade del Ticino. La durata dipende da esposizione al sole, tipo di rimessaggio e frequenza dei lavaggi."
+    }
   ],
   "oggettoForm": "Richiesta preventivo decorazione del veicolo Lugano"
 }

@@ -1,40 +1,101 @@
 {
   "slug": "decorazione-veicoli",
   "title": "Decorazione Veicoli a Biasca | VAM Deco",
-  "description": "Decorazione veicoli a Biasca: grafiche per auto, furgoni e camion che promuovono la tua azienda. Richiedi un preventivo gratuito in 24/48h.",
+  "description": "Decorazione e wrapping veicoli a Biasca: grafiche per furgoni, auto e mezzi aziendali nelle Tre Valli. Preventivo gratuito in 24/48h.",
   "h1": "Decorazione veicoli",
   "h1Evidenza": "a Biasca",
   "heroParagrafi": [
-    "Trasforma il tuo veicolo in una pubblicità in movimento con la <strong>decorazione veicoli a Biasca</strong> di VAM Deco.",
-    "Grafiche personalizzate per auto, furgoni e camion: la <strong>massima visibilità del tuo brand</strong> ovunque vai, da Biasca a tutto il Ticino.",
-    "Design curato, materiali di qualità e installazione professionale: il tuo mezzo aziendale diventa una <strong>pubblicità mobile</strong> che lavora per te 24 ore su 24."
+    "A Biasca, porta delle Tre Valli, ogni furgone che sale verso la Leventina o la valle di Blenio incrocia cantieri, officine e clienti di zona: con la <strong>decorazione veicoli a Biasca</strong> di VAM Deco quel tragitto quotidiano si trasforma in pubblicità.",
+    "Grafiche e <strong>car wrapping su misura</strong> per i mezzi delle attività della Riviera: imprese edili, autotrasportatori, installatori e artigiani che vogliono farsi riconoscere lungo la via San Gottardo e nella zona industriale.",
+    "Pellicole professionali, applicazione precisa e design pensato per resistere ai chilometri di valle: il tuo mezzo aziendale lavora come <strong>cartellone in movimento</strong> tra Biasca, Blenio e Leventina, tutti i giorni."
   ],
-  "claimArancione": "Ogni giorno il tuo veicolo diventa un cartellone pubblicitario mobile che promuove il tuo brand a Biasca e in tutto il Ticino, 24 ore su 24, 7 giorni su 7.",
-  "whatsappTesto": "Ciao VAM Deco, vorrei un preventivo per decorazione del veicolo a Biasca.",
+  "claimArancione": "Da Biasca fino alle valli di Blenio e Leventina, il tuo veicolo decorato promuove la tua attività lungo ogni strada che percorri, 24 ore su 24, 7 giorni su 7.",
+  "whatsappTesto": "Ciao VAM Deco, vorrei un preventivo per la decorazione del mio veicolo a Biasca.",
   "beneficiTitolo": "Perché scegliere la decorazione veicoli a Biasca?",
-  "beneficiIntro": "La <strong>decorazione dei veicoli</strong> è uno degli strumenti pubblicitari più efficaci e convenienti per promuovere la tua attività. Ogni giorno il tuo veicolo diventa un cartellone mobile che attira l'attenzione in città e in strada. A Biasca, grazie al traffico locale e al movimento della vita cittadina, il tuo <strong>veicolo decorato</strong> può raggiungere un'ampia visibilità, migliorando la tua esposizione a una vasta gamma di potenziali clienti.",
+  "beneficiIntro": "Biasca è uno snodo di passaggio: chi lavora nelle Tre Valli attraversa più volte al giorno la sua zona industriale e l'asse della via San Gottardo. Un <strong>furgone o un'auto decorata</strong> sfrutta questo movimento costante, trasformando ogni spostamento di lavoro verso Blenio o la Leventina in visibilità senza costi aggiuntivi. In una comunità raccolta come quella della Riviera, dove il passaparola conta e i volti si riconoscono, un <strong>mezzo aziendale ben riconoscibile</strong> costruisce fiducia molto più in fretta di qualsiasi annuncio.",
   "benefici": [
-    { "n": "01", "titolo": "Visibilità incrementata", "testo": "La decorazione veicoli trasforma auto e furgoni in cartelloni pubblicitari mobili, visibili ogni giorno sulle strade di Biasca e in tutto il Ticino." },
-    { "n": "02", "titolo": "Pubblico mirato", "testo": "Il veicolo decorato promuove la tua attività proprio dove lavori: raggiungi clienti locali a Biasca e nelle Tre Valli senza costi per contatto." },
-    { "n": "03", "titolo": "Credibilità e fiducia", "testo": "Una grafica professionale su auto o furgone aziendale trasmette serietà e affidabilità: i clienti riconoscono subito il tuo brand e si fidano di più." },
-    { "n": "04", "titolo": "Design personalizzato", "testo": "Progettiamo la decorazione del veicolo su misura: colori, logo e grafiche studiati per la tua identità aziendale e per attirare i clienti giusti." },
-    { "n": "05", "titolo": "Costi ridotti a lungo termine", "testo": "Un investimento unico che lavora per anni: la decorazione veicoli costa meno di altre campagne pubblicitarie e non ha spese ricorrenti." },
-    { "n": "06", "titolo": "Durata e resistenza", "testo": "Utilizziamo pellicole adesive di alta qualità, resistenti a sole, pioggia e lavaggi: la decorazione del veicolo resta brillante e intatta per anni." }
+    {
+      "n": "01",
+      "titolo": "Visibilità lungo gli assi di valle",
+      "testo": "A Biasca i tragitti passano sempre dagli stessi punti: la via San Gottardo, gli svincoli verso Blenio e la Leventina, la zona industriale. Un veicolo decorato viene visto e rivisto dalle stesse persone, giorno dopo giorno."
+    },
+    {
+      "n": "02",
+      "titolo": "Clientela di zona fedele",
+      "testo": "Nella Riviera il lavoro nasce spesso dal passaparola e dai rapporti di vicinato. Un mezzo riconoscibile ti rende familiare tra imprese, cantieri e famiglie del territorio, dove la fiducia locale vale più di ogni campagna."
+    },
+    {
+      "n": "03",
+      "titolo": "Immagine solida per gli artigiani",
+      "testo": "Edili, installatori e autotrasportatori: a Biasca il tessuto è fatto di attività concrete. Una grafica curata sul furgone comunica ordine e professionalità già prima di arrivare in cantiere."
+    },
+    {
+      "n": "04",
+      "titolo": "Design su misura per il tuo mestiere",
+      "testo": "Studiamo la decorazione attorno a ciò che fai: logo, contatti e messaggi disposti per restare leggibili anche da un mezzo in movimento sulle strade di valle."
+    },
+    {
+      "n": "05",
+      "titolo": "Investimento unico, resa per anni",
+      "testo": "Rispetto ad annunci o sponsorizzazioni ricorrenti, il wrapping è una spesa sola che continua a lavorare a ogni consegna verso Blenio o la Leventina, senza costi mensili."
+    },
+    {
+      "n": "06",
+      "titolo": "Pellicole che reggono i chilometri di valle",
+      "testo": "Sole d'estate, neve e sale invernali, lavaggi frequenti: usiamo pellicole di alta qualità pensate per resistere alle condizioni delle Tre Valli e mantenere i colori vivi nel tempo."
+    }
   ],
   "fasi": [
-    { "t": "Analisi e comprensione", "d": "Durante questa prima fase ci immergiamo nelle tue esigenze e nei tuoi obiettivi. Analizziamo il tipo di progetto e lavoriamo a stretto contatto con te per comprendere esattamente ciò che desideri ottenere dalla decorazione del tuo veicolo." },
-    { "t": "Progettazione personalizzata", "d": "Sviluppiamo un preventivo gratuito e personalizzato, scegliendo le tecnologie e i materiali che si adattano di più al lavoro, per garantire che ogni dettaglio sia all'altezza delle aspettative. Creiamo design che rispecchiano il tuo brand, catturano l'attenzione e valorizzano la tua immagine." },
-    { "t": "Produzione e installazione", "d": "Dopo l'approvazione del progetto passiamo alla fase operativa: con le nostre attrezzature all'avanguardia ci occupiamo della produzione e dell'applicazione presso la nostra o la tua sede, in base alle esigenze e alla fattibilità. Tutto viene eseguito con precisione e nei tempi stabiliti." },
-    { "t": "Verifica e supporto continuo", "d": "A progetto completato eseguiamo una verifica dettagliata per garantire che tutto rispecchi gli standard di qualità richiesti. Restiamo a disposizione per fornire supporto continuo e assicurarci che tu sia completamente soddisfatto." }
+    {
+      "t": "Analisi e comprensione",
+      "d": "Durante questa prima fase ci immergiamo nelle tue esigenze e nei tuoi obiettivi. Analizziamo il tipo di progetto e lavoriamo a stretto contatto con te per comprendere esattamente ciò che desideri ottenere dalla decorazione del tuo veicolo."
+    },
+    {
+      "t": "Progettazione personalizzata",
+      "d": "Sviluppiamo un preventivo gratuito e personalizzato, scegliendo le tecnologie e i materiali che si adattano di più al lavoro, per garantire che ogni dettaglio sia all'altezza delle aspettative. Creiamo design che rispecchiano il tuo brand, catturano l'attenzione e valorizzano la tua immagine."
+    },
+    {
+      "t": "Produzione e installazione",
+      "d": "Dopo l'approvazione del progetto passiamo alla fase operativa: con le nostre attrezzature all'avanguardia ci occupiamo della produzione e dell'applicazione presso la nostra o la tua sede, in base alle esigenze e alla fattibilità. Tutto viene eseguito con precisione e nei tempi stabiliti."
+    },
+    {
+      "t": "Verifica e supporto continuo",
+      "d": "A progetto completato eseguiamo una verifica dettagliata per garantire che tutto rispecchi gli standard di qualità richiesti. Restiamo a disposizione per fornire supporto continuo e assicurarci che tu sia completamente soddisfatto."
+    }
   ],
   "faq": [
-    { "domanda": "Quali sono i vantaggi della decorazione dei veicoli rispetto ad altre forme di pubblicità?", "risposta": "La decorazione veicolare è una pubblicità in movimento, visibile 24/7, e offre un costo per visualizzazione molto basso rispetto ad altre forme di marketing." },
-    { "domanda": "Quanto costa decorare un veicolo a Biasca?", "risposta": "I costi variano in base alle dimensioni del veicolo, al tipo di decorazione (parziale o totale) e ai materiali utilizzati. Contattaci per un preventivo personalizzato e gratuito in 24/48h." },
-    { "domanda": "Quanto tempo richiede la decorazione di un veicolo?", "risposta": "Il tempo necessario può variare da 1 a 6 giorni lavorativi, a seconda della complessità del progetto e della superficie da decorare." },
-    { "domanda": "È possibile decorare solo una parte del veicolo, come le portiere o il cofano?", "risposta": "Assolutamente sì, offriamo sia decorazioni parziali che integrali, a seconda delle esigenze del cliente e del tipo di impatto visivo desiderato." },
-    { "domanda": "Posso vedere un'anteprima della decorazione?", "risposta": "Sì, prima di stampare inviamo una bozza grafica del progetto al cliente per conferma, solitamente disponibile dopo il versamento di un acconto." },
-    { "domanda": "È necessario lavare il veicolo prima dell'applicazione della decorazione?", "risposta": "Sì, il veicolo deve essere pulito e privo di cere o sostanze che possano compromettere l'adesione delle pellicole. In caso contrario verrà fatturata la pulizia." },
-    { "domanda": "Che tipo di veicoli possono essere decorati?", "risposta": "Possiamo decorare qualsiasi tipo di veicolo, dai furgoni aziendali alle auto private, fino a camion e autobus." }
+    {
+      "domanda": "Quanto costa decorare un veicolo a Biasca?",
+      "risposta": "Il prezzo dipende dalle dimensioni del mezzo, dal tipo di intervento (decorazione parziale o wrapping totale) e dai materiali scelti. Per un furgone artigianale o un'auto aziendale prepariamo un preventivo gratuito e personalizzato in 24/48h."
+    },
+    {
+      "domanda": "Lavorate anche con le imprese delle valli di Blenio e Leventina?",
+      "risposta": "Sì. Biasca è la nostra porta verso le Tre Valli: seguiamo abitualmente attività della Riviera e dei mezzi che salgono verso Blenio e la Leventina, dalle piccole ditte artigianali alle imprese con più veicoli."
+    },
+    {
+      "domanda": "Quanto tempo serve per decorare un furgone?",
+      "risposta": "In genere da 1 a 6 giorni lavorativi, in base alla complessità della grafica e alla superficie da coprire. Concordiamo insieme i tempi per non fermare troppo il tuo mezzo di lavoro."
+    },
+    {
+      "domanda": "Devo portare il veicolo da voi o venite voi a Biasca?",
+      "risposta": "Valutiamo insieme la soluzione più comoda: l'applicazione può avvenire presso la nostra sede o, in base alla fattibilità e al tipo di lavoro, direttamente nella tua zona. Ci organizziamo per ridurre al minimo i tuoi spostamenti."
+    },
+    {
+      "domanda": "Posso far decorare solo le portiere o una parte del furgone?",
+      "risposta": "Certamente. Offriamo sia decorazioni parziali, ideali per logo e contatti sulle fiancate, sia il wrapping integrale del veicolo, a seconda dell'impatto visivo e del budget."
+    },
+    {
+      "domanda": "Che differenza c'è tra decorazione parziale e car wrapping totale?",
+      "risposta": "La decorazione parziale applica scritte e grafiche su alcune superfici, come portiere e retro. Il car wrapping totale riveste l'intera carrozzeria, permettendo anche di cambiare colore al mezzo e ottenere il massimo effetto pubblicitario."
+    },
+    {
+      "domanda": "Le pellicole rovinano la carrozzeria quando si rimuovono?",
+      "risposta": "No. Utilizziamo pellicole di qualità removibili che, applicate e rimosse a regola d'arte, non danneggiano la vernice originale e possono anzi proteggerla dai piccoli graffi quotidiani."
+    },
+    {
+      "domanda": "Posso vedere un'anteprima prima della stampa?",
+      "risposta": "Sì. Prima di produrre la grafica ti inviamo una bozza del progetto sul veicolo, così puoi valutarla e confermarla. La bozza è solitamente disponibile dopo il versamento di un acconto."
+    }
   ],
   "oggettoForm": "Richiesta preventivo decorazione del veicolo Biasca"
 }
