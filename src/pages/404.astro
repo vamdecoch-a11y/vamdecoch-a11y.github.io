@@ -1,13 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Pagina in costruzione | VAM Deco" description="Questa pagina del nuovo sito è in costruzione.">
+<Base title="Pagina non trovata | VAM Deco" description="La pagina che cercavi non esiste o è stata spostata.">
   <section class="max-w-2xl mx-auto px-4 py-28 text-center">
-    <div class="font-display text-5xl font-bold text-brand">In arrivo</div>
-    <p class="mt-6 text-carta/70 leading-relaxed">
-      Questa pagina del nuovo sito è ancora in costruzione: la stiamo migrando dal sito attuale.
-      Nel frattempo puoi tornare alla home dell'anteprima.
+    <div class="font-display text-6xl md:text-7xl font-bold text-brand">404</div>
+    <h1 class="font-display text-2xl md:text-3xl font-bold mt-4">Pagina non trovata</h1>
+    <p class="mt-5 text-carta/70 leading-relaxed">
+      La pagina che cercavi non esiste o è stata spostata. Puoi tornare alla home
+      oppure dare un'occhiata ai nostri servizi.
     </p>
-    <a href="/" class="btn-anim mt-8 inline-block rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">Torna alla home</a>
+    <div class="mt-8 flex flex-wrap gap-3 justify-center">
+      <a href="/" class="btn-anim inline-block rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">Torna alla home</a>
+      <a href="/servizi" class="inline-block rounded-full border border-white/20 px-7 py-3.5 font-semibold text-carta hover:border-brand">I nostri servizi</a>
+    </div>
   </section>
 </Base>

@@ -11,7 +11,10 @@ interface Props {
   noindex?: boolean; // pagine da tenere fuori da Google anche dopo il go-live (es. /ringraziamenti)
 }
 const { title, description, ogImage = '/og-vamdeco.jpg', noindex = false } = Astro.props;
-const urlPagina = new URL(Astro.url.pathname, Astro.site).href;
+// URL "ufficiale" pulito (senza .html e senza /index): coerente con sitemap e menu,
+// così canonical e og:url non creano doppioni /pagina vs /pagina.html
+const percorsoPulito = Astro.url.pathname.replace(/index\.html$/, '').replace(/\.html$/, '') || '/';
+const urlPagina = new URL(percorsoPulito, Astro.site).href;
 ---
 <!doctype html>
 <html lang="it-CH">
