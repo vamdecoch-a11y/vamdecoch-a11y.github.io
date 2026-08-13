@@ -23,6 +23,7 @@ interface Articolo {
   data: string;
   dataIso: string;
   cover: string | null;
+  coverCredito?: string;
   estratto: string;
   sezioni: Sezione[];
   galleria?: string[];
@@ -150,6 +151,10 @@ const faqJsonLd = a.faq?.length
       <FormContatti oggetto={`Richiesta dall'articolo: ${a.h1}`} compatto />
     </div>
   </section>
+
+  {a.coverCredito && (
+    <p class="max-w-2xl mx-auto px-4 pb-10 text-center text-xs text-carta/35">{a.coverCredito}</p>
+  )}
 
   <WhatsAppTondo testo="Ciao VAM Deco, ho letto un vostro articolo e vorrei informazioni." />
 </Base>
