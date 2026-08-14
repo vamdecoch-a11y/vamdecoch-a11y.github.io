@@ -88,6 +88,7 @@ const TURNSTILE_SITEKEY = '0x4AAAAAAEObBnZNNOIiq0MD';
         const dati = await r.json().catch(() => ({}));
         if (!r.ok || !dati.ok) throw new Error(dati.errore || `HTTP ${r.status}`);
         // successo: pagina di ringraziamento (come sul sito originale)
+        try { sessionStorage.setItem('vd-lead-ok', '1'); } catch (e) {}  // flag per l'evento GA4 generate_lead su /ringraziamenti
         location.href = '/ringraziamenti';
       } catch {
         // ripiego email con gli stessi contenuti

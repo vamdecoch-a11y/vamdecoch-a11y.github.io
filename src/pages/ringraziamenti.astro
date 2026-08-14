@@ -28,4 +28,20 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
   </section>
+  <script is:inline>
+    (function () {
+      try {
+        if (sessionStorage.getItem('vd-lead-ok') !== '1') return;
+        sessionStorage.removeItem('vd-lead-ok');
+      } catch (e) { return; }
+      var tenta = 0;
+      (function invia() {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'generate_lead', { metodo: 'form_sito' });
+        } else if (tenta++ < 30) {
+          setTimeout(invia, 100); // aspetta fino a 3s che BannerCookie definisca gtag
+        }
+      })();
+    })();
+  </script>
 </Base>

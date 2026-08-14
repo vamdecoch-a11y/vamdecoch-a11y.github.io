@@ -145,5 +145,20 @@ const urlPagina = new URL(percorsoPulito, Astro.site).href;
         });
       }
     </script>
+    <script is:inline>
+      // GA4: click su WhatsApp e telefono. Un solo listener per tutto il sito (fase capture,
+      // così intercetta anche se un componente ferma la propagazione). Se gtag non esiste
+      // (cookie rifiutati) non parte nulla: comportamento corretto, nessun workaround.
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+        if (!a || typeof window.gtag !== 'function') return;
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) {
+          window.gtag('event', 'click_whatsapp', { pagina: location.pathname });
+        } else if (h.indexOf('tel:') === 0) {
+          window.gtag('event', 'click_telefono', { pagina: location.pathname });
+        }
+      }, true);
+    </script>
   </body>
 </html>
