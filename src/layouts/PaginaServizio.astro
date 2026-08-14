@@ -56,9 +56,22 @@ const faqJsonLd = s.faq.length
       })),
     })
   : null;
+
+// Recensioni aggregate reali (Google): fanno comparire le stelle nello snippet
+const businessJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'VAM Deco Agency Sagl',
+  url: 'https://vamdeco.ch',
+  telephone: '+41765889497',
+  image: 'https://vamdeco.ch/og-vamdeco.jpg',
+  address: { '@type': 'PostalAddress', streetAddress: 'Via Pobbia 4D', postalCode: '6514', addressLocality: 'Sementina', addressRegion: 'Ticino', addressCountry: 'CH' },
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '72', bestRating: '5' },
+});
 ---
 <Base title={s.title} description={s.description}>
   {faqJsonLd && <script type="application/ld+json" set:html={faqJsonLd} />}
+  <script type="application/ld+json" set:html={businessJsonLd} />
 
   <!-- HERO scura con pattern e bagliore -->
   <section class="relative pattern-hero overflow-hidden">
