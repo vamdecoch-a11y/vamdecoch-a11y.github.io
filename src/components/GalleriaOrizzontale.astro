@@ -16,7 +16,8 @@ const { immagini, alt } = Astro.props;
           alt={i < immagini.length ? `${alt} (foto ${i + 1})` : ''}
           aria-hidden={i >= immagini.length ? 'true' : undefined}
           class="h-[42vh] md:h-[52vh] w-auto object-cover transition-transform duration-500 group-hover:scale-110"
-          loading={i < 4 ? 'eager' : 'lazy'}
+          loading="lazy"
+          decoding="async"
           draggable="false"
         />
       </div>

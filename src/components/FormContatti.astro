@@ -42,14 +42,28 @@ const TURNSTILE_SITEKEY = '0x4AAAAAAEObBnZNNOIiq0MD';
   <p class="form-note text-xs text-carta/50">*Campi obbligatori</p>
 </form>
 <script is:inline>
-  // Carica lo script Turnstile una sola volta, anche se ci sono piu' form in pagina
-  if (!document.getElementById('cf-turnstile-api')) {
-    var s = document.createElement('script');
-    s.id = 'cf-turnstile-api';
-    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
-    s.async = true; s.defer = true;
-    document.head.appendChild(s);
-  }
+  // Turnstile caricato in modo "pigro": solo quando il modulo si avvicina allo schermo.
+  // Cosi' non pesa (~500KB) sul primo caricamento, dato che i form sono in fondo alla pagina.
+  (function () {
+    function caricaTurnstile() {
+      if (document.getElementById('cf-turnstile-api')) return;
+      var s = document.createElement('script');
+      s.id = 'cf-turnstile-api';
+      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      s.async = true; s.defer = true;
+      document.head.appendChild(s);
+    }
+    var widget = document.querySelector('.cf-turnstile');
+    if (!widget) return;
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (voci) {
+        voci.forEach(function (v) { if (v.isIntersecting) { caricaTurnstile(); io.disconnect(); } });
+      }, { rootMargin: '600px' });
+      io.observe(widget);
+    } else {
+      caricaTurnstile();
+    }
+  })();
 </script>
 
 <style>
