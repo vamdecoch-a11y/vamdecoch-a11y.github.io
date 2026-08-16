@@ -22,6 +22,8 @@ interface Servizio {
   h1: string;
   h1Evidenza?: string;
   heroParagrafi: string[];
+  heroSfondo?: string; // immagine di sfondo della prima schermata (desktop), dietro un velo scuro per leggibilita'
+  heroSfondoMobile?: string; // sfondo hero dedicato al mobile (verticale); se assente usa heroSfondo
   perchePara?: string; // paragrafo "Perche VAM Deco" personalizzato per servizio (es. testo "vetri" su pellicole); se assente usa quello di default
   claimArancione: string;
   whatsappTesto: string;
@@ -76,6 +78,15 @@ const businessJsonLd = JSON.stringify({
 
   <!-- HERO scura con pattern e bagliore -->
   <section class="relative pattern-hero overflow-hidden">
+    {s.heroSfondo && (
+      <>
+        <img src={s.heroSfondo} alt="" aria-hidden="true" class={`absolute inset-0 w-full h-full object-cover ${s.heroSfondoMobile ? 'hidden md:block' : ''}`} />
+        {s.heroSfondoMobile && (
+          <img src={s.heroSfondoMobile} alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover md:hidden" />
+        )}
+        <div class="absolute inset-0 bg-ink/[0.72]"></div>
+      </>
+    )}
     <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
     <div class="relative max-w-3xl mx-auto px-4 pt-20 pb-24 text-center" data-reveal-stagger>
       <div data-reveal class="flex justify-center mb-6">
