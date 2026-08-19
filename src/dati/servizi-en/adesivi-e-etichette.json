@@ -1,0 +1,39 @@
+{
+  "slug": "adesivi",
+  "title": "Custom Stickers & Labels in Ticino, Switzerland | VAM Deco",
+  "description": "Custom stickers in Ticino: cut vinyl, printed & laminated, resin-domed, UV DTF. Resin labels for bottles and machinery. Free quote in 24/48h.",
+  "h1": "Custom stickers and labels in Ticino",
+  "heroParagrafi": [
+    "We produce <strong>custom stickers and labels in Ticino</strong>: cut vinyl, printed and laminated, resin-domed, UV DTF and magnetic. Long-lasting solutions for shop windows, vehicles, products and packaging.",
+    "Our <strong>resin-domed labels</strong>, with their raised 3D effect and glossy finish, stand up to UV rays and solvents: perfect for machinery, equipment and for adding value to your brand.",
+    "Rounding out the range are our <strong>labels for bottles, cosmetics and food packaging</strong>, made to measure for your visual identity. Free quote in 24/48h."
+  ],
+  "claimArancione": "With solutions suited to every sector, we can support you in producing promotional items, packaging and large-scale communications.",
+  "whatsappTesto": "Hi VAM Deco, I would like a quote for custom stickers / labels.",
+  "beneficiTitolo": "Why choose custom stickers in Ticino",
+  "beneficiIntro": "Give your brand visibility and make it stand out with <strong>high-quality stickers and labels</strong>, custom made for your business. Thanks to our experience and advanced printing techniques, we offer solutions for every need, from corporate branding to the finest packaging details.",
+  "benefici": [
+    { "n": "01", "titolo": "Cut vinyl lettering", "testo": "Cut-out letters and logos with no background, perfect for shop windows, vehicles and signs: clean application, a professional look and great impact even from a distance." },
+    { "n": "02", "titolo": "Printed and laminated stickers", "testo": "Vivid full-colour printing protected by scratch- and UV-resistant lamination: custom stickers that last for years outdoors, on shop windows, vehicles and equipment." },
+    { "n": "03", "titolo": "Resin-domed labels", "testo": "Resin-domed labels with a raised, glossy 3D finish, resistant to UV rays and solvents: ideal for machinery, equipment and brand logos." },
+    { "n": "04", "titolo": "UV DTF stickers", "testo": "UV DTF technology for high-definition custom stickers that adhere even to challenging surfaces: plastic, wood, metal, glass and curved objects." },
+    { "n": "05", "titolo": "Magnetic stickers", "testo": "Custom magnetic panels for company vehicles and metal surfaces: applied and removed in seconds, reusable and leaving no residue on the bodywork." },
+    { "n": "06", "titolo": "Labels for bottles and packaging", "testo": "Custom labels for wine and beer bottles, cosmetics and food packaging: resistant to moisture, oils and temperature, with professional made-to-measure finishes." }
+  ],
+  "fasi": [
+    { "t": "Analysis and understanding", "d": "We dive into your needs and goals: whether stickers for vehicles and shop windows or labels for your products, we work closely with you to understand exactly what you want to achieve." },
+    { "t": "Custom design", "d": "We put together a free, tailored quote, choosing the technologies and materials best suited to the job. We create designs that reflect your brand, capture attention and enhance your image." },
+    { "t": "Production and installation", "d": "Once the project is approved, our state-of-the-art equipment handles production and, where needed, application at our premises or yours, with precision and on schedule." },
+    { "t": "Quality check and ongoing support", "d": "When the project is complete, we run a detailed check to ensure the required quality standards. We stay on hand with ongoing support until you are completely satisfied." }
+  ],
+  "faq": [
+    { "domanda": "What types of stickers do you offer?", "risposta": "We offer a wide range of stickers, including cut vinyl, printed, resin-domed, laminated, UV-printed and UV DTF stickers, ideal for every need." },
+    { "domanda": "What is the difference between cut vinyl, resin-domed and printed stickers?", "risposta": "Cut vinyl stickers are precision cut with no background, perfect for application on glass. Resin-domed stickers have a three-dimensional finish thanks to a protective resin. Printed stickers can be produced in a range of formats and customised with colourful graphics." },
+    { "domanda": "How long do stickers last outdoors? Are they weatherproof?", "risposta": "Yes, our laminated stickers are engineered to withstand the elements and last on average 3 to 6 years outdoors, thanks to water- and UV-resistant materials." },
+    { "domanda": "Which stickers are best for transparent surfaces such as glass or windows?", "risposta": "Cut vinyl and transparent stickers are ideal for glass surfaces, as they let you see through the sticker without compromising visibility." },
+    { "domanda": "How much do custom stickers cost?", "risposta": "The cost depends on the type, size and quantity of the order. We provide tailored quotes to guarantee the best value for money." },
+    { "domanda": "How long does it take to produce custom stickers?", "risposta": "Production time varies with the complexity and quantity of the order. As a rule, excluding resin-domed and UV DTF stickers, production takes 2 to 4 working days." },
+    { "domanda": "How do I choose the right type of sticker or label for my project?", "risposta": "Our team is on hand to recommend the best solution based on the intended use and the surface you will apply the sticker or label to. Get in touch for a free, personalised consultation." }
+  ],
+  "oggettoForm": "Stickers and labels quote request"
+}

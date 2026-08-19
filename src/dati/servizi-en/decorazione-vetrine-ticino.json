@@ -1,0 +1,40 @@
+{
+  "slug": "decorazione-vetrine",
+  "title": "Window Graphics & Storefront Decoration Ticino | VAM Deco",
+  "description": "Window decals, custom glass and storefront decoration in Ticino, Switzerland: make your shop stand out. Free quote in 24/48h from VAM Deco.",
+  "h1": "Window graphics and storefront decoration",
+  "h1Evidenza": "in Ticino",
+  "heroParagrafi": [
+    "Turn your shop window into your best business card with custom <strong>window graphics</strong> from VAM Deco, throughout Ticino: Bellinzona, Locarno, Lugano and Biasca.",
+    "We create <strong>window decals</strong>, <strong>custom glass panels</strong> and decorative glass for shops, offices and professional practices: solutions that catch the eye of passers-by and boost your brand visibility.",
+    "Eye-catching design, high-quality materials and professional installation: request your free quote now."
+  ],
+  "claimArancione": "From window decals to custom decorative glass, every storefront becomes your best business card.",
+  "whatsappTesto": "Hi VAM Deco, I would like a quote for window decoration / window graphics.",
+  "beneficiTitolo": "Why choose window decoration in Ticino?",
+  "beneficiIntro": "Window decoration is one of the most immediate and visible advertising tools for attracting customers and enhancing your business. In Ticino, with the constant flow of people through cities like Bellinzona, Locarno, Biasca and Lugano, a professionally decorated storefront with <strong>window decals, films and decorative glass</strong> can make all the difference, increasing the visibility and appeal of your business.",
+  "benefici": [
+    { "n": "01", "titolo": "Immediate visual impact", "testo": "A well-designed window decal catches the eye of passers-by within seconds and turns your storefront into a real invitation to step inside." },
+    { "n": "02", "titolo": "Greater visibility", "testo": "Window decoration makes your shop recognisable along the streets of Bellinzona, Locarno and Lugano, boosting visibility and foot traffic from potential customers." },
+    { "n": "03", "titolo": "Custom design", "testo": "Every window decal and custom glass panel is made to measure: graphics, colours and formats tailored to your brand and your commercial message." },
+    { "n": "04", "titolo": "Professionalism and credibility", "testo": "A carefully decorated storefront conveys quality and reliability: customers immediately perceive a professional, well-kept business they can trust." },
+    { "n": "05", "titolo": "Long-term value", "testo": "Films and materials resistant to UV rays and the weather ensure long-lasting decoration: a one-off advertising investment that keeps working for years." },
+    { "n": "06", "titolo": "Standing out from competitors", "testo": "In a crowded market, custom window decals and decorative glass set your business apart from the competition and turn it into a local landmark." }
+  ],
+  "fasi": [
+    { "t": "Analysis and understanding", "d": "In this first phase we dive into your needs and objectives. We analyse the type of project and work closely with you to understand exactly what you want to achieve from your storefront." },
+    { "t": "Custom design", "d": "We develop a free, tailored quote, selecting the technologies and materials best suited to the job so that every detail lives up to your expectations. We create designs that reflect your brand, capture attention and enhance your image." },
+    { "t": "Production and installation", "d": "Once the project is approved, we move on to the operational phase: with our state-of-the-art equipment we handle production and installation at your premises or ours, depending on your needs. Everything is carried out with precision and on schedule." },
+    { "t": "Inspection and ongoing support", "d": "When the project is complete, we carry out a detailed inspection to ensure everything meets the required quality standards. We remain available to provide ongoing support and make sure you are completely satisfied." }
+  ],
+  "faq": [
+    { "domanda": "What are the advantages of window decoration compared to other forms of advertising?", "risposta": "Window decoration immediately grabs the attention of passers-by and regular customers, offering an effective, low-cost form of visual advertising. It is ideal for strengthening your brand, promoting special offers or simply improving the look of your shop." },
+    { "domanda": "How much does it cost to decorate a shop window in Ticino?", "risposta": "The cost depends on the size of the window, the type of design and the materials used. We offer free, tailored quotes in 24/48h to make sure you receive a service built around your needs." },
+    { "domanda": "How long does it take to install decoration on a shop window?", "risposta": "Installation generally takes four to five hours, though the time can vary depending on the complexity of the design and the size of the window." },
+    { "domanda": "Is it possible to decorate only part of the window, such as the logo or a specific piece of text?", "risposta": "Yes, you can decorate specific parts of the window, such as logos or slogans, for a targeted impact without having to cover the entire surface." },
+    { "domanda": "What types of materials are used for window decoration?", "risposta": "We use high-quality materials that are resistant to UV rays and the elements, ensuring the decoration keeps its appearance over time without fading or deteriorating." },
+    { "domanda": "Is window decoration resistant to weather conditions?", "risposta": "Yes, the materials we use are designed to withstand all weather conditions, ensuring durability and a flawless appearance even in heavy rain or strong sun." },
+    { "domanda": "Does the window need to be cleaned before applying the decoration?", "risposta": "Yes, it is essential for the window to be clean and free of dust or residue to ensure the decoration adheres perfectly." }
+  ],
+  "oggettoForm": "Window decoration quote request"
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "oscuramento-auto",
+  "title": "Car Window Tinting in Ticino, Switzerland | VAM Deco",
+  "description": "Car window tinting in Ticino, Switzerland with certified films: cut heat, block 99% of UV rays and gain privacy. Free quote in 24/48h from VAM Deco.",
+  "h1": "Car window tinting in Ticino",
+  "heroParagrafi": [
+    "More comfort and safety with <strong>car window tinting in Ticino</strong>: our solar films reduce the heat inside the cabin, block up to 99% of UV rays and cut down glare.",
+    "Tinting films give <strong>greater privacy</strong> to passengers and the cabin, enhance the look of your vehicle and protect seats and dashboard from fading.",
+    "We install only <strong>certified, approved films</strong>, in full compliance with Swiss regulations. Free quote in 24/48h for private cars, commercial vehicles and fleets."
+  ],
+  "claimArancione": "Approved films and professional installation, for a clean result that lasts over time.",
+  "whatsappTesto": "Hi VAM Deco, I would like a quote for car window tinting.",
+  "beneficiTitolo": "Why choose car window tinting in Ticino?",
+  "beneficiIntro": "With our <strong>high-quality tinting films</strong> you improve driving comfort: less heat, UV protection and more privacy, without compromising visibility. Ideal for private cars, company vehicles and fleets.",
+  "benefici": [
+    { "n": "01", "titolo": "Heat reduction", "testo": "Tinting films lower the temperature inside the car during the hot months: more driving comfort and less use of air conditioning." },
+    { "n": "02", "titolo": "UV ray protection", "testo": "Car window tinting blocks up to 99% of UV rays: it protects occupants' skin and prevents the interior from fading." },
+    { "n": "03", "titolo": "Greater privacy", "testo": "Tinted windows shield passengers and any belongings left in the car from prying eyes, while keeping excellent visibility from inside the vehicle." },
+    { "n": "04", "titolo": "Reduced glare", "testo": "Less glare from the sun during the day and from other vehicles' headlights at night: tinting films make driving safer." },
+    { "n": "05", "titolo": "Shatter protection", "testo": "If the glass breaks, the film holds the fragments together and increases resistance to break-in attempts, for greater safety." },
+    { "n": "06", "titolo": "Elegant, functional design", "testo": "Tinted windows give the car a modern, elegant look: a finishing touch that enhances the appearance of both private and company vehicles." }
+  ],
+  "fasi": [
+    { "t": "Analysis and understanding", "d": "We start from your needs: type of vehicle, desired level of tint and goals (comfort, privacy, looks). We then recommend the solution that suits you best." },
+    { "t": "Tailored proposal", "d": "We prepare a free, made-to-measure quote, choosing the film and level of opacity best suited to your vehicle, always in line with the regulations." },
+    { "t": "Professional installation", "d": "We apply the films with precision and state-of-the-art equipment, taking the utmost care of the glass and keeping to the agreed timeframe." },
+    { "t": "Checks and ongoing support", "d": "Once the work is done we check every detail to guarantee the quality of the result. We remain available for any future needs." }
+  ],
+  "faq": [
+    { "domanda": "What are the benefits of car window tinting?", "risposta": "Car window tinting offers many benefits, including:\n\n1. Less interior heat: it lowers the temperature inside the vehicle, increasing comfort.\n2. UV protection: it blocks up to 99% of ultraviolet rays, preventing the interior from fading.\n3. Greater privacy: it limits visibility from outside, protecting passengers and belongings inside.\n4. Reduced glare: it improves visibility while driving by cutting reflections." },
+    { "domanda": "How much does car window tinting cost in Ticino?", "risposta": "The cost of window tinting depends on several factors, including the type of vehicle, the quality of the film chosen and the number of windows to be treated. On average, prices range between 300 and 700 CHF. Contact us for a free, tailored quote in 24/48h." },
+    { "domanda": "How long does it take to install tinting films?", "risposta": "Installing tinting films on a standard vehicle usually takes between 3 and 6 hours. The time can vary depending on the complexity of the job and the number of windows to be treated." },
+    { "domanda": "Can tinting films be removed without damaging the windows?", "risposta": "Yes, tinting films can be removed without damaging the windows, provided the job is carried out by a professional. A proper removal ensures that no adhesive residue or marks are left on the glass." },
+    { "domanda": "Do tinting films interfere with GPS or radio signals?", "risposta": "High-quality films, free of metal components, do not interfere with GPS, radio or mobile phone signals. It is important to choose certified films to avoid any interference issues." },
+    { "domanda": "Is it possible to tint only some of the car windows?", "risposta": "Yes, you can choose to tint only certain windows of the vehicle, such as the rear side windows or the rear windscreen. The choice depends on your personal needs and the regulations in force." },
+    { "domanda": "Do tinting films improve safety in the event of an accident?", "risposta": "Tinting films can help hold glass fragments together if the glass breaks, reducing the risk of injury to the vehicle's occupants. For optimal protection, however, there are dedicated shatter-resistant films available." },
+    { "domanda": "What is the average lifespan of tinting films?", "risposta": "Quality tinting films have an average lifespan of between 5 and 10 years, depending on sun exposure and weather conditions. Proper maintenance can extend their useful life." }
+  ],
+  "oggettoForm": "Car window tinting quote request"
+}

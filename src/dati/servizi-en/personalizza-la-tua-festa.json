@@ -1,0 +1,42 @@
+{
+  "slug": "festa",
+  "title": "Custom Party Decorations & Kits in Ticino | VAM Deco",
+  "description": "Party kits, personalised name gifts, favours and even the cake: everything for your party, coordinated and made to measure in Ticino. Free quote in 24/48h.",
+  "h1": "Personalise your",
+  "h1Evidenza": "party",
+  "heroParagrafi": [
+    "The party kit, the personalised name gifts, the favours and even the cake. <strong>Everything for your party, coordinated and made to measure</strong>, crafted in Ticino together with Lisa Details.",
+    "No more running around ten different shops. Choose your products, add a themed cake and receive everything coordinated in the same style. We take care of every detail, from a first birthday to a christening, from a baby shower to Christmas."
+  ],
+  "claimArancione": "Everything for your party, all from one place.",
+  "whatsappTesto": "Hi VAM Deco, I'd like to personalise my party.",
+  "bottoneExtra": {
+    "testo": "See more on Instagram",
+    "url": "https://instagram.com/lisaa_details"
+  },
+  "beneficiTitolo": "A memorable party is built on the details",
+  "beneficiIntro": "Every item can be personalised with a name, photo, date and theme: choose what you need and receive it coordinated with the rest of the party.",
+  "benefici": [
+    { "n": "01", "titolo": "Complete party kit", "testo": "Everything you need to set up the party in one coordinated kit: decorations, cake toppers, place cards and accessories all in the same theme." },
+    { "n": "02", "titolo": "Personalised name gifts", "testo": "Framed prints, lettering and gifts personalised with the guest of honour's name: handmade details that stay as a keepsake after the party." },
+    { "n": "03", "titolo": "Favours and invitations", "testo": "Party favours, a sweet table and personalised invitations for births, christenings and birthdays, coordinated with the theme chosen for the event." },
+    { "n": "04", "titolo": "Themed cakes and cookies", "testo": "Made-to-measure cakes and decorated cookies coordinated with the party, prepared by our partner pastry chef. On quote, with no obligation." },
+    { "n": "05", "titolo": "Everything coordinated", "testo": "Same theme, same colours and the same care on every piece, cake included: your party looks harmonious from the table to the invitations, and photographs beautifully." },
+    { "n": "06", "titolo": "Handmade in Ticino", "testo": "Carefully handcrafted work with DTF printing, made in Ticino: generally ready in 5-10 working days, depending on the request." }
+  ],
+  "fasi": [
+    { "t": "Choose", "d": "The occasion, theme and products for the kit. The cake too, if you like: tell us about your party on WhatsApp or in the form." },
+    { "t": "Personalise", "d": "Name, photo, date and colours: we prepare the custom design and you approve it before production." },
+    { "t": "Handcrafted production", "d": "We make everything by hand and with DTF printing in Ticino, generally in 5-10 working days." },
+    { "t": "Collect or get it delivered", "d": "Collect it at our premises or have it shipped to your door anywhere in Switzerland, ready to set the scene." }
+  ],
+  "faq": [
+    { "domanda": "How far in advance should I order for a party?", "risposta": "Products are generally ready in 5-10 working days, depending on the request. Ideally, get in touch 2 weeks before the event; for urgent orders ask us anyway, we can often help even at short notice." },
+    { "domanda": "Can I order just a single item?", "risposta": "Yes: we also make single items, such as a cake topper or a framed name print. No minimum order." },
+    { "domanda": "Do you make the cakes and cookies too?", "risposta": "Yes: themed cakes coordinated with the party and decorated cookies, prepared by our partner pastry chef. They are requested on quote, with no obligation." },
+    { "domanda": "Do you create the artwork too, or do I have to provide it?", "risposta": "We create it for you: tell us the theme and we prepare the custom artwork, which you approve before production. If you already have your own file, we check it and use it." },
+    { "domanda": "Where can I order?", "risposta": "Directly from this page using the form or on WhatsApp, online at shop.vamdeco.ch in the Lisa Details section, or by messaging @lisaa_details on Instagram." },
+    { "domanda": "Do you deliver outside Ticino too?", "risposta": "Yes, we ship throughout Switzerland. Free collection is available at our premises in Sementina." }
+  ],
+  "oggettoForm": "Party personalisation quote request"
+}

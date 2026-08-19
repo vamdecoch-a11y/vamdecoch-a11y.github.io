@@ -1,0 +1,42 @@
+{
+  "slug": "abbigliamento",
+  "title": "Custom T-Shirts in Ticino, Print & Embroidery | VAM Deco",
+  "description": "DTF printing and embroidery on t-shirts, hoodies and workwear in Ticino, Switzerland. 5-star reviews, even a single item. Free quote in 24/48 working hours.",
+  "h1": "Custom t-shirts and clothing in Ticino",
+  "heroParagrafi": [
+    "Personalise <strong>t-shirts, polos, hoodies, jackets, caps and corporate uniforms</strong> with professional DTF printing or embroidery, right here in Ticino. Tailor-made solutions for companies, events and teams, with fast, local production.",
+    "Every garment becomes advertising: it enhances your image, strengthens your team and communicates professionalism wherever it is worn.",
+    "Perfect for <strong>private parties and events</strong> too: stag and hen dos, birthdays and sports teams.",
+    "Free quote within 24/48 hours, no obligation. We reply quickly on WhatsApp or by email."
+  ],
+  "heroSfondo": "/img/abbigliamento/hero-sfondo.jpg",
+  "heroSfondoMobile": "/img/abbigliamento/hero-sfondo-mobile.jpg",
+  "claimArancione": "Just need a single t-shirt? We'll make it.",
+  "whatsappTesto": "Hi VAM Deco, I'd like a quote for custom t-shirts / personalised clothing.",
+  "beneficiTitolo": "Why choose custom clothing in Ticino?",
+  "beneficiIntro": "Custom clothing is a powerful way to give your brand visibility, build a clear identity and communicate professionalism. Every garment becomes part of your marketing, thanks to <strong>quality materials, unique design and advanced printing techniques</strong>.",
+  "benefici": [
+    { "n": "01", "titolo": "Immediate impact on your audience", "testo": "A custom t-shirt with your logo grabs attention at a glance and makes your brand recognisable on every occasion." },
+    { "n": "02", "titolo": "Ongoing promotion and wider visibility", "testo": "Custom t-shirts, hoodies and corporate uniforms promote your brand wherever they are worn: continuous advertising across Ticino, at no extra cost." },
+    { "n": "03", "titolo": "A professional image that builds trust", "testo": "Workwear personalised with printing or embroidery gives your team a polished look and instantly earns your customers' trust." },
+    { "n": "04", "titolo": "Unique, made-to-measure design", "testo": "We design custom graphics: colours, logo and slogan tailored to your business, for one-of-a-kind garments that reflect your identity." },
+    { "n": "05", "titolo": "Savings and long-lasting quality", "testo": "DTF printing and professional embroidery withstand frequent washing: an investment that lasts for years and keeps promoting your brand." },
+    { "n": "06", "titolo": "Stand out from the competition", "testo": "With custom t-shirts and uniforms you stand out from the competition: a strong visual identity that customers remember and associate with your company." }
+  ],
+  "fasi": [
+    { "t": "We get to know each other", "d": "Understanding who you are, what you need and how we can help. No hassle." },
+    { "t": "We design together", "d": "We show you graphic ideas and propose tailor-made solutions to suit your style. Free quote in 24/48 hours." },
+    { "t": "We produce your order", "d": "Printing or embroidery, with quality materials and attention to detail. All within the right timescales." },
+    { "t": "We deliver and stay by your side", "d": "We check everything before delivery. And if you need us, we're here afterwards too." }
+  ],
+  "faq": [
+    { "domanda": "What are the advantages of DTF printing for clothing?", "risposta": "DTF (Direct to Film) technology lets us print high-resolution images directly onto fabric, delivering vivid colour and excellent durability over time. Ideal for t-shirts and promotional clothing, it withstands frequent washing and keeps its colours bright even after repeated use." },
+    { "domanda": "What does heat-transfer personalisation involve?", "risposta": "Heat-transfer personalisation involves applying heat-adhesive films directly onto the garments. It is a very versatile technique, suited to logos, names and simple graphics, and perfect for creating eye-catching designs on many types of fabric. This solution is hard-wearing and ideal for garments that need a simpler, more direct personalisation." },
+    { "domanda": "When is embroidery the right choice for custom clothing?", "risposta": "Embroidery is an elegant and long-lasting choice, particularly suited to corporate clothing and uniforms. It works well on heavier fabrics such as hoodies and caps, and gives a professional, high-quality look that enhances your brand in formal settings." },
+    { "domanda": "How much does a custom t-shirt cost?", "risposta": "A single t-shirt, 100% cotton included, starts from CHF 24.90 + VAT with a front print; add CHF 10.00 for a front-and-back print. For orders of 10 pieces, with front-and-back print, the price drops to around CHF 25.00 + VAT per item. The final price depends on the size of the prints: we set it to the exact franc in your free quote." },
+    { "domanda": "Which garments can be personalised?", "risposta": "We offer personalisation for a wide range of garments: t-shirts, polos, hoodies, jackets, caps and workwear. Every type of garment can be personalised with different techniques depending on your preference and your brand's needs." },
+    { "domanda": "How long does a custom clothing order take?", "risposta": "Production times depend on the order volume and the complexity of the design. Generally, for small orders, the turnaround is around a couple of days. Get in touch for an estimated delivery time for your project." },
+    { "domanda": "Which personalisation techniques are most wash-resistant?", "risposta": "Embroidery is the most hard-wearing and long-lasting technique, ideal for garments that need to withstand frequent washing. DTF printing also offers good durability, especially when the garment is washed according to the instructions provided." }
+  ],
+  "oggettoForm": "Custom clothing quote request"
+}

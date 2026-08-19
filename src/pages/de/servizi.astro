@@ -1,0 +1,155 @@
+---
+// LEISTUNGEN (DE): redaktionelle Übersicht aller Leistungen. Gleiches Layout wie die IT-Seite.
+import { readdirSync, existsSync } from 'node:fs';
+import Base from '../../layouts/Base.astro';
+import SezioneParliamo from '../../components/SezioneParliamo.astro';
+import WhatsAppTondo from '../../components/WhatsAppTondo.astro';
+
+const servizi = [
+  { nome: 'Fahrzeugbeschriftung', slug: 'decorazione-veicoli', href: '/de/decorazione-veicoli-ticino', desc: 'Verwandeln Sie Autos, Lieferwagen und LKW mit langlebigen, individuellen Grafiken in mobile Werbung.' },
+  { nome: 'Schaufensterbeschriftung', slug: 'decorazione-vetrine', href: '/de/decorazione-vetrine-ticino', desc: 'Gewinnen Sie Kunden und stärken Sie Ihre Marke mit kreativen, massgeschneiderten Schaufenstern.' },
+  { nome: 'Personalisierte Bekleidung', slug: 'abbigliamento', href: '/de/abbigliamento-personalizzato-ticino', desc: 'T-Shirts, Hoodies und Uniformen nach Mass für Unternehmen, Events und Privatpersonen.' },
+  { nome: 'Sichtschutzfolien satiniert', slug: 'pellicole', href: '/de/pellicole-satinate-ticino', desc: 'Satinierte Folien für Sichtschutz und elegantes Design, ideal für Büros, Bäder und Geschäfte.' },
+  { nome: 'UV-Fensterfolien', slug: 'oscuramento-vetrate', href: '/de/oscuramento-vetrate-uv', desc: 'Folien, die Hitze, Blendung und UV-Strahlen reduzieren, für mehr Komfort und Schutz Ihrer Räume.' },
+  { nome: 'Autoscheiben-Tönung', slug: 'oscuramento-auto', href: '/de/oscuramento-vetri-auto-ticino', desc: 'Tönungsfolien für Komfort, UV-Schutz und einen modernen Look Ihres Fahrzeugs.' },
+  { nome: 'Aufkleber und Etiketten', slug: 'adesivi', href: '/de/adesivi-e-etichette', desc: 'Individuelle Aufkleber und personalisierte Etiketten für Produkte, Fahrzeuge und Verpackungen.' },
+  { nome: 'Doming-Etiketten', slug: 'etichette-resinate', href: '/de/etichette-resinate', desc: 'Erhabene Logos mit 3D-Effekt und glänzender Doming-Oberfläche, beständig gegen Wasser, Kratzer und UV.' },
+  { nome: 'Beschilderung', slug: 'cartellonistica', href: '/de/cartellonistica', desc: 'Massgeschneiderte Schilder und Tafeln, die Ihrem Unternehmen Sichtbarkeit und Wirkung verleihen.' },
+  { nome: 'Papierdruck', slug: 'stampa', href: '/de/stampa-su-carta', desc: 'Visitenkarten, Flyer, Kataloge und vieles mehr in professioneller Druckqualität.' },
+  { nome: 'Websites', slug: 'siti-web', href: '/de/siti-web', desc: 'Moderne, SEO-optimierte und mobilfreundliche Websites, um Ihr Geschäft online wachsen zu lassen.' },
+  { nome: 'Gestalten Sie Ihr Fest', slug: 'festa', href: '/de/personalizza-la-tua-festa', desc: 'Party-Kits, Geschenke mit Namen, Gastgeschenke und sogar die Torte: alles aufeinander abgestimmt und nach Mass.' },
+].map((s) => {
+  const cartella = `public/img/${s.slug}/galleria`;
+  const foto = existsSync(cartella)
+    ? readdirSync(cartella).filter((f: string) => /\.(jpe?g|png|webp)$/i.test(f)).sort()[0]
+    : null;
+  return { ...s, anteprima: foto ? `/img/${s.slug}/galleria/${foto}` : null };
+});
+
+const punti = [
+  { n: '01', titolo: 'Bewährte Erfahrung', testo: 'Jahrelange Erfahrung und Hunderte realisierte Projekte haben uns zu einem vertrauenswürdigen Partner für Dekoration und Personalisierung gemacht.' },
+  { n: '02', titolo: 'Massgeschneiderte Lösungen', testo: 'Jedes Projekt ist einzigartig: Wir bieten individuelle Lösungen, die auf die spezifischen Bedürfnisse jedes Kunden zugeschnitten sind, für das beste Ergebnis.' },
+  { n: '03', titolo: 'Kundenfokus', testo: 'Ihre Zufriedenheit steht im Mittelpunkt all unseres Handelns: Wir arbeiten eng mit Ihnen zusammen, um genau das zu realisieren, was Sie sich wünschen.' },
+  { n: '04', titolo: 'Transparente Kommunikation', testo: 'Wir setzen auf Transparenz: konstante, klare Kommunikation in jeder Phase, von der Offerte bis zur Lieferung.' },
+  { n: '05', titolo: 'Kontinuierliche Betreuung', testo: 'Wir begleiten Sie vom ersten Treffen bis zur finalen Umsetzung, mit einem engagierten Team, das für Ihre Anliegen bereitsteht.' },
+  { n: '06', titolo: 'Branchenübergreifende Kompetenz', testo: 'Erfahrung in unterschiedlichen Branchen: ein vielseitiger Service, der sich an verschiedenste Projekte und Geschäftsarten anpasst.' },
+];
+---
+<Base
+  title="Unsere Leistungen | VAM Deco: Dekoration, Personalisierung und Druck im Tessin"
+  description="Fahrzeug- und Schaufensterbeschriftung, personalisierte Bekleidung, Folien, Aufkleber, Beschilderung, Druck und Websites: alle Leistungen von VAM Deco im Tessin."
+  i18n
+>
+  <!-- HERO -->
+  <section class="relative pattern-hero overflow-hidden">
+    <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
+    <div class="relative max-w-3xl mx-auto px-4 pt-20 pb-16 text-center" data-reveal-stagger>
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-4 uppercase">Unsere Leistungen</div>
+      <h1 data-reveal class="text-3xl md:text-5xl font-bold leading-tight tracking-tight" style="text-wrap: balance">
+        Ein Partner, <span class="text-brand">zwölf Wege</span>, um aufzufallen
+      </h1>
+      <p data-reveal class="mt-8 text-carta/80 leading-relaxed">
+        Von der Fahrzeug- und Schaufensterbeschriftung über personalisierte Bekleidung bis hin zu Druck und Websites:
+        Wählen Sie eine Leistung und entdecken Sie, was wir für Ihr Image tun können.
+      </p>
+    </div>
+  </section>
+
+  <!-- LEISTUNGSLISTE -->
+  <section class="max-w-5xl mx-auto px-4 py-14 relative">
+    <div data-reveal-stagger>
+      {servizi.map((s, i) => (
+        <a
+          data-reveal
+          href={s.href}
+          class="servizio-riga group grid grid-cols-[2.6rem_1fr_auto] md:grid-cols-[4rem_1fr_auto] items-center gap-4 md:gap-6 border-t border-white/10 py-6 md:py-7 transition-colors hover:border-brand/60"
+          data-anteprima={s.anteprima}
+        >
+          <span class="font-display text-sm md:text-base font-semibold text-carta/35 group-hover:text-brand transition-colors">{String(i + 1).padStart(2, '0')}</span>
+          <span>
+            <span class="font-display block text-xl md:text-3xl font-bold leading-tight group-hover:text-brand transition-colors">{s.nome}</span>
+            <span class="block mt-1.5 text-sm text-carta/60 leading-relaxed max-w-xl">{s.desc}</span>
+          </span>
+          <span class="freccia-servizio text-2xl md:text-3xl text-carta/30 group-hover:text-brand transition-all group-hover:translate-x-1.5" aria-hidden="true">→</span>
+        </a>
+      ))}
+    </div>
+    <div class="border-t border-white/10"></div>
+    <div class="anteprima-flottante" aria-hidden="true">
+      <img alt="" />
+    </div>
+  </section>
+
+  <!-- WARUM WIR -->
+  <section class="border-y border-white/5 bg-white/[0.02] py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-2xl" data-reveal-stagger>
+        <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Warum VAM Deco wählen</div>
+        <h2 data-reveal class="text-2xl md:text-4xl font-bold">Ihr idealer Partner.</h2>
+      </div>
+      <div class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
+        {punti.map((p) => (
+          <div data-reveal class="border-t border-white/10 pt-5">
+            <div class="font-display text-sm font-semibold text-brand">{p.n}</div>
+            <h3 class="mt-2 font-display font-semibold text-lg">{p.titolo}</h3>
+            <p class="mt-2 text-sm text-carta/65 leading-relaxed">{p.testo}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SezioneParliamo oggetto="Richiesta dalla pagina Servizi (DE)" origine="Pagina Servizi DE" />
+
+  <WhatsAppTondo testo="Hallo VAM Deco, ich hätte gerne Informationen zu einer Ihrer Leistungen." />
+
+  <script>
+    const box = document.querySelector<HTMLElement>('.anteprima-flottante');
+    const img = box?.querySelector<HTMLImageElement>('img');
+    if (box && img && window.matchMedia('(hover: hover) and (min-width: 768px)').matches) {
+      let x = 0, y = 0, lx = 0, ly = 0, visibile = false;
+      document.querySelectorAll<HTMLElement>('.servizio-riga').forEach((riga) => {
+        riga.addEventListener('pointerenter', () => {
+          const src = riga.dataset.anteprima;
+          if (!src) { box.classList.remove('attiva'); visibile = false; return; }
+          img.src = src;
+          box.classList.add('attiva');
+          visibile = true;
+        });
+        riga.addEventListener('pointerleave', () => { box.classList.remove('attiva'); visibile = false; });
+      });
+      window.addEventListener('pointermove', (e) => { x = e.clientX; y = e.clientY; }, { passive: true });
+      const passo = () => {
+        lx += (x - lx) * 0.12;
+        ly += (y - ly) * 0.12;
+        if (visibile) box.style.transform = `translate(${lx + 28}px, ${ly - 90}px)`;
+        requestAnimationFrame(passo);
+      };
+      requestAnimationFrame(passo);
+    }
+  </script>
+
+  <style>
+    .anteprima-flottante {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 40;
+      width: 15rem;
+      aspect-ratio: 4 / 3;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid rgb(255 255 255 / 0.15);
+      box-shadow: 0 22px 50px rgb(0 0 0 / 0.55);
+      opacity: 0;
+      scale: 0.9;
+      transition: opacity 0.25s ease, scale 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+      pointer-events: none;
+    }
+    .anteprima-flottante.attiva { opacity: 1; scale: 1; }
+    .anteprima-flottante img { width: 100%; height: 100%; object-fit: cover; }
+    @media (prefers-reduced-motion: reduce) {
+      .anteprima-flottante { display: none; }
+    }
+  </style>
+</Base>

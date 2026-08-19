@@ -3,29 +3,29 @@
 // 4 categorie: Necessari (sempre), Preferenze, Statistiche, Marketing.
 // Google Analytics (G-PNS7X8SYV6) parte SOLO se "Statistiche" e' accettato
 // E solo sul dominio vero (vamdeco.ch), mai su anteprima/localhost.
+import { t, type Locale } from '../i18n';
+const locale = (Astro.currentLocale ?? 'it') as Locale;
 ---
 <div id="vam-cc-ov" aria-hidden="true">
   <div id="vam-cc-modal" role="dialog" aria-modal="true" aria-labelledby="vam-cc-titolo">
-    <h2 id="vam-cc-titolo">Rispettiamo la tua privacy</h2>
+    <h2 id="vam-cc-titolo">{t(locale, 'cc_titolo')}</h2>
     <p class="d">
-      Usiamo i cookie per migliorare la tua esperienza e analizzare il traffico del sito.
-      Puoi accettare tutti i cookie oppure personalizzare le tue scelte.
-      Maggiori dettagli nelle <a href="/norme-sulla-privacy">norme sulla privacy</a>.
+      {t(locale, 'cc_desc')} <a href="/norme-sulla-privacy">{t(locale, 'cc_privacy_link')}</a>.
     </p>
 
     <div class="vam-cc-btns">
-      <button type="button" id="vam-cc-custom" class="b3">Personalizza</button>
-      <button type="button" id="vam-cc-all" class="b1">Accetta tutto</button>
+      <button type="button" id="vam-cc-custom" class="b3">{t(locale, 'cc_personalizza')}</button>
+      <button type="button" id="vam-cc-all" class="b1">{t(locale, 'cc_accetta')}</button>
     </div>
 
     <div id="vam-cc-prefs">
-      <label class="cat"><span><strong>Necessari</strong><em>Attivi sempre. Consentono la sicurezza e le funzionalità di base del sito.</em></span><input type="checkbox" checked disabled></label>
-      <label class="cat"><span><strong>Preferenze</strong><em>Memorizzano le tue scelte e impostazioni per un'esperienza personalizzata.</em></span><input type="checkbox" id="vam-cc-pref" checked></label>
-      <label class="cat"><span><strong>Statistiche</strong><em>Ci aiutano a capire come viene usato il sito, in forma anonima (Google Analytics).</em></span><input type="checkbox" id="vam-cc-ana" checked></label>
-      <label class="cat"><span><strong>Marketing</strong><em>Usati per mostrarti offerte e annunci pertinenti ai tuoi interessi.</em></span><input type="checkbox" id="vam-cc-mkt" checked></label>
+      <label class="cat"><span><strong>{t(locale, 'cc_nec')}</strong><em>{t(locale, 'cc_nec_d')}</em></span><input type="checkbox" checked disabled></label>
+      <label class="cat"><span><strong>{t(locale, 'cc_pref')}</strong><em>{t(locale, 'cc_pref_d')}</em></span><input type="checkbox" id="vam-cc-pref" checked></label>
+      <label class="cat"><span><strong>{t(locale, 'cc_ana')}</strong><em>{t(locale, 'cc_ana_d')}</em></span><input type="checkbox" id="vam-cc-ana" checked></label>
+      <label class="cat"><span><strong>{t(locale, 'cc_mkt')}</strong><em>{t(locale, 'cc_mkt_d')}</em></span><input type="checkbox" id="vam-cc-mkt" checked></label>
     </div>
 
-    <button type="button" id="vam-cc-save">Salva preferenze</button>
+    <button type="button" id="vam-cc-save">{t(locale, 'cc_salva')}</button>
   </div>
 </div>
 

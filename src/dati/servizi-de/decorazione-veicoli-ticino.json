@@ -1,0 +1,40 @@
+{
+  "slug": "decorazione-veicoli",
+  "title": "Fahrzeugbeschriftung & Autobeschriftung Tessin | VAM Deco",
+  "description": "Fahrzeugbeschriftung im Tessin: Grafiken für Autos, Transporter und Lastwagen, die Ihr Unternehmen bewerben. Kostenloses Angebot in 24/48h anfragen.",
+  "h1": "Fahrzeugbeschriftung",
+  "h1Evidenza": "im Tessin",
+  "heroParagrafi": [
+    "Verwandeln Sie Autos, Transporter und Lastwagen in echte Werbeträger mit der <strong>Fahrzeugbeschriftung im Tessin</strong>.",
+    "Individuelle, professionelle und widerstandsfähige Grafiken, überall sichtbar: auf der Strasse, im Stau, auf dem Parkplatz.",
+    "Von der Teilbeschriftung bis zur Vollverklebung des Fahrzeugs, mit schneller und massgeschneiderter Umsetzung im ganzen Tessin."
+  ],
+  "claimArancione": "Verwandeln Sie Ihr Fahrzeug in mobile Werbung, rund um die Uhr sichtbar im ganzen Tessin.",
+  "whatsappTesto": "Hallo VAM Deco, ich hätte gerne ein Angebot für die Beschriftung meines Fahrzeugs.",
+  "beneficiTitolo": "Warum die Fahrzeugbeschriftung im Tessin wählen?",
+  "beneficiIntro": "Die <strong>Fahrzeugbeschriftung</strong> ist eines der wirksamsten Werbemittel, um Ihr Geschäft bekannt zu machen: Jeden Tag wird Ihr Fahrzeug zu einer mobilen Werbefläche, die in der Stadt und auf der Strasse Aufmerksamkeit erregt. Im Tessin, mit den häufigen Fahrten zwischen Bellinzona, Locarno, Biasca und Lugano, sichert Ihnen die <strong>Fahrzeugbeschriftung</strong> maximale Sichtbarkeit für Ihre Marke, kontinuierlich und ganz ohne Aufwand.",
+  "benefici": [
+    { "n": "01", "titolo": "Mehr Sichtbarkeit", "testo": "Die Fahrzeugbeschriftung verwandelt Autos und Transporter in mobile Werbeflächen, die täglich von Tausenden Menschen im ganzen Tessin gesehen werden." },
+    { "n": "02", "titolo": "Glaubwürdigkeit und Vertrauen", "testo": "Ein mit professionellen Grafiken beschriftetes Firmenfahrzeug vermittelt Seriosität und Sorgfalt: Die Kunden erkennen Ihr Geschäft sofort und vertrauen Ihrer Marke." },
+    { "n": "03", "titolo": "Individuelles Design", "testo": "Wir gestalten massgeschneiderte Grafiken für die Fahrzeugbeschriftung: Farben, Logo und Botschaften abgestimmt auf Ihre Unternehmensidentität, um die richtigen Kunden anzuziehen." },
+    { "n": "04", "titolo": "Geringere Kosten auf lange Sicht", "testo": "Eine einmalige Anfangsinvestition und die Fahrzeugbeschriftung arbeitet über Jahre: kontinuierliche Werbung ohne monatliche Gebühren, mit sehr niedrigen Kosten pro Kontakt." },
+    { "n": "05", "titolo": "Langlebigkeit und Widerstandsfähigkeit", "testo": "Wir verwenden hochwertige Folien, die Sonne, Regen und Waschanlagen standhalten: Die Fahrzeugbeschriftung bleibt über viele Jahre leuchtend und gut lesbar." },
+    { "n": "06", "titolo": "Konstante Markenbekanntheit", "testo": "Auf der Strasse, auf der Baustelle oder auf dem Parkplatz bewirbt das beschriftete Fahrzeug Ihre Marke rund um die Uhr im ganzen Tessin, ganz ohne Aufwand." }
+  ],
+  "fasi": [
+    { "t": "Wir lernen uns kennen", "d": "Verstehen, wer Sie sind, was Sie brauchen und wie wir Ihnen helfen können. Ganz unkompliziert." },
+    { "t": "Wir gestalten gemeinsam", "d": "Wir zeigen Ihnen grafische Ideen und schlagen massgeschneiderte Lösungen passend zu Ihrem Stil vor, mit einem kostenlosen Angebot in 24/48h." },
+    { "t": "Wir produzieren Ihren Auftrag", "d": "Druck und Anbringung der Grafiken mit hochwertigen Materialien und Liebe zum Detail. Alles termingerecht." },
+    { "t": "Wir liefern und bleiben an Ihrer Seite", "d": "Wir prüfen alles vor der Übergabe. Und falls nötig, sind wir auch danach für Sie da." }
+  ],
+  "faq": [
+    { "domanda": "Welche Vorteile bietet die Fahrzeugbeschriftung gegenüber anderen Werbeformen?", "risposta": "Die Fahrzeugbeschriftung ist Werbung in Bewegung, rund um die Uhr sichtbar, und bietet im Vergleich zu anderen Marketingformen sehr niedrige Kosten pro Sichtkontakt." },
+    { "domanda": "Wie viel kostet die Beschriftung eines Fahrzeugs im Tessin?", "risposta": "Die Kosten hängen von der Grösse des Fahrzeugs, der Art der Beschriftung (Teil- oder Vollverklebung) und den verwendeten Materialien ab. Kontaktieren Sie uns für ein persönliches Angebot." },
+    { "domanda": "Wie lange dauert die Beschriftung eines Fahrzeugs?", "risposta": "Der Zeitaufwand kann zwischen 1 und 6 Arbeitstagen betragen, je nach Komplexität des Projekts und der zu beschriftenden Fläche." },
+    { "domanda": "Ist es möglich, nur einen Teil des Fahrzeugs zu beschriften, zum Beispiel die Türen oder die Motorhaube?", "risposta": "Selbstverständlich, wir bieten sowohl Teil- als auch Vollbeschriftungen an, je nach Bedürfnissen des Kunden und der gewünschten visuellen Wirkung." },
+    { "domanda": "Kann ich eine Vorschau der Beschriftung sehen?", "risposta": "Ja, vor dem Druck senden wir dem Kunden einen grafischen Entwurf des Projekts zur Bestätigung, in der Regel verfügbar nach Zahlung einer Anzahlung." },
+    { "domanda": "Muss das Fahrzeug vor dem Anbringen der Beschriftung gewaschen werden?", "risposta": "Ja, das Fahrzeug muss sauber und frei von Wachsen oder Substanzen sein, welche die Haftung der Folien beeinträchtigen könnten. Andernfalls wird die Reinigung in Rechnung gestellt." },
+    { "domanda": "Welche Arten von Fahrzeugen können beschriftet werden?", "risposta": "Wir können jede Art von Fahrzeug beschriften, von Firmentransportern über Privatautos bis hin zu Lastwagen und Bussen." }
+  ],
+  "oggettoForm": "Angebotsanfrage Fahrzeugbeschriftung"
+}

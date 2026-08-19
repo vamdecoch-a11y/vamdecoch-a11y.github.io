@@ -1,19 +1,21 @@
 ---
+import { t, localePath, type Locale } from '../i18n';
+const locale = (Astro.currentLocale ?? 'it') as Locale;
 const servizi = [
-  { testo: 'Decorazione veicoli', href: '/decorazione-veicoli-ticino' },
-  { testo: 'Decorazione vetrine', href: '/decorazione-vetrine-ticino' },
-  { testo: 'Abbigliamento personalizzato', href: '/abbigliamento-personalizzato-ticino' },
-  { testo: 'Cartellonistica', href: '/cartellonistica' },
-  { testo: 'Adesivi e etichette', href: '/adesivi-e-etichette' },
-  { testo: 'Etichette resinate', href: '/etichette-resinate' },
-  { testo: 'Pellicole satinate privacy', href: '/pellicole-satinate-ticino' },
-  { testo: 'Oscuramento vetrate UV', href: '/oscuramento-vetrate-uv' },
-  { testo: 'Oscuramento vetri auto', href: '/oscuramento-vetri-auto-ticino' },
-  { testo: 'Stampa su carta', href: '/stampa-su-carta' },
-  { testo: 'Siti web', href: '/siti-web' },
-  { testo: 'Personalizza la tua festa', href: '/personalizza-la-tua-festa' },
+  { k: 'sv_veicoli', href: '/decorazione-veicoli-ticino' },
+  { k: 'sv_vetrine', href: '/decorazione-vetrine-ticino' },
+  { k: 'sv_abbigliamento', href: '/abbigliamento-personalizzato-ticino' },
+  { k: 'sv_cartellonistica', href: '/cartellonistica' },
+  { k: 'sv_adesivi', href: '/adesivi-e-etichette' },
+  { k: 'sv_resinate', href: '/etichette-resinate' },
+  { k: 'sv_pellicole', href: '/pellicole-satinate-ticino' },
+  { k: 'sv_oscuramentouv', href: '/oscuramento-vetrate-uv' },
+  { k: 'sv_oscuramentoauto', href: '/oscuramento-vetri-auto-ticino' },
+  { k: 'sv_stampa', href: '/stampa-su-carta' },
+  { k: 'sv_siti', href: '/siti-web' },
+  { k: 'sv_festa', href: '/personalizza-la-tua-festa' },
 ];
-const nastro = 'Decorazione veicoli · Vetrine · Abbigliamento · Pellicole · Cartellonistica · Adesivi · Stampa · Siti web · Personalizza la tua festa · ';
+const nastro = servizi.map((s) => t(locale, s.k)).join(' · ') + ' · ';
 ---
 <!-- Footer cinematografico a tendina: su desktop resta fermo dietro la pagina e si svela allo scroll -->
 <div class="reveal-wrap">
@@ -32,10 +34,10 @@ const nastro = 'Decorazione veicoli · Vetrine · Abbigliamento · Pellicole · 
 
     <div class="relative w-full px-5 md:px-10 py-10 md:py-0 md:my-auto">
       <div class="text-center">
-        <h2 class="footer-titano">Diamo vita alle tue idee</h2>
+        <h2 class="footer-titano">{t(locale, 'footer_titano')}</h2>
         <div class="mt-6 flex flex-wrap justify-center gap-3">
-          <a href="/contattaci" class="act magnetico btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">Richiedi un preventivo</a>
-          <a href="https://wa.me/41765889497?text=Ciao%20VAM%20Deco%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener" class="act magnetico pillola-vetro rounded-full px-7 py-3.5 font-semibold text-carta">Scrivici su WhatsApp</a>
+          <a href={localePath(locale, '/contattaci')} class="act magnetico btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">{t(locale, 'footer_preventivo')}</a>
+          <a href="https://wa.me/41765889497?text=Ciao%20VAM%20Deco%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener" class="act magnetico pillola-vetro rounded-full px-7 py-3.5 font-semibold text-carta">{t(locale, 'cta_whatsapp')}</a>
         </div>
       </div>
 
@@ -73,10 +75,10 @@ const nastro = 'Decorazione veicoli · Vetrine · Abbigliamento · Pellicole · 
 
         <!-- SERVIZI: due colonne, più grandi, tutto lo spazio -->
         <div>
-          <div class="font-display text-sm tracking-widest uppercase text-brand mb-5">I nostri servizi</div>
+          <div class="font-display text-sm tracking-widest uppercase text-brand mb-5">{t(locale, 'footer_servizi')}</div>
           <ul class="grid grid-flow-row sm:grid-flow-col sm:grid-rows-6 gap-x-10 gap-y-3 text-base text-carta/85">
             {servizi.map((s) => (
-              <li><a href={s.href} class="act hover:text-brand transition-colors">{s.testo}</a></li>
+              <li><a href={localePath(locale, s.href)} class="act hover:text-brand transition-colors">{t(locale, s.k)}</a></li>
             ))}
           </ul>
         </div>
@@ -85,7 +87,7 @@ const nastro = 'Decorazione veicoli · Vetrine · Abbigliamento · Pellicole · 
 
     <div class="relative w-full px-5 md:px-10 pb-5">
       <div class="pt-4 border-t border-white/10 flex flex-col md:flex-row md:flex-wrap items-center justify-between gap-4 md:gap-3 text-xs text-carta/55">
-        <a href="https://vamdeco.ch" class="act hover:text-brand order-2 md:order-none">© Progettazione e sviluppo by VAM Deco Agency Sagl</a>
+        <a href="https://vamdeco.ch" class="act hover:text-brand order-2 md:order-none">{t(locale, 'footer_credit')}</a>
         <!-- SEGUICI: icone animate (su mobile SOPRA il credit) -->
         <div class="flex items-center gap-3 order-1 md:order-none">
           <a href="https://instagram.com/vamdeco.ch" target="_blank" rel="noopener" class="act social-tile" aria-label="Seguici su Instagram">
@@ -99,9 +101,9 @@ const nastro = 'Decorazione veicoli · Vetrine · Abbigliamento · Pellicole · 
           </a>
         </div>
         <div class="flex items-center gap-5">
-          <a href="/norme-sulla-privacy" class="act hover:text-brand">Norme sulla privacy</a>
-          <button type="button" id="impostazioni-cookie" class="act hover:text-brand cursor-pointer">Impostazioni cookie</button>
-          <button type="button" id="torna-su" class="act magnetico pillola-vetro rounded-full px-4 py-2 text-carta/80 cursor-pointer">Torna su ↑</button>
+          <a href="/norme-sulla-privacy" class="act hover:text-brand">{t(locale, 'footer_privacy')}</a>
+          <button type="button" id="impostazioni-cookie" class="act hover:text-brand cursor-pointer">{t(locale, 'footer_cookie')}</button>
+          <button type="button" id="torna-su" class="act magnetico pillola-vetro rounded-full px-4 py-2 text-carta/80 cursor-pointer">{t(locale, 'footer_su')}</button>
         </div>
       </div>
     </div>

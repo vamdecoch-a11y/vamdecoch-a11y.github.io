@@ -1,0 +1,97 @@
+{
+  "slug": "stampa",
+  "title": "Printing in Ticino: Business Cards & Flyers | VAM Deco",
+  "description": "Print business cards, flyers, menus and brochures in Ticino, Switzerland: crisp colours and custom design. Free quote in 24/48h.",
+  "h1": "Paper printing in Ticino:",
+  "h1Evidenza": "business cards and flyers",
+  "heroParagrafi": [
+    "High-quality <strong>paper printing</strong> in Ticino: custom-made <strong>business cards</strong>, <strong>flyers</strong>, menus and brochures with sharp colours and materials that last over time.",
+    "A well-made printed piece strengthens your company identity and keeps you top of mind with clients. We turn your ideas into concrete, effective communication tools.",
+    "From an event flyer to official company documents, we choose the paper, format and finishes together to convey professionalism in every detail."
+  ],
+  "claimArancione": "Vivid colours, sharp details and premium materials, custom printed to leave a lasting impression.",
+  "whatsappTesto": "Hi VAM Deco, I'd like a quote for paper printing (business cards, flyers...).",
+  "beneficiTitolo": "Why choose paper printing in Ticino",
+  "beneficiIntro": "Give your brand visibility with high-quality <strong>paper printing</strong> solutions in Ticino. Whether it's promotional brochures, business cards or custom menus, every detail is looked after to guarantee a professional, memorable presentation, with premium materials that keep colours vivid and details sharp over time.",
+  "benefici": [
+    {
+      "n": "01",
+      "titolo": "Business cards",
+      "testo": "<strong>Business cards</strong> printed on premium 350 gsm stock with a matte or gloss finish: your first professional impression in Ticino."
+    },
+    {
+      "n": "02",
+      "titolo": "Flyers and leaflets",
+      "testo": "Advertising <strong>flyers and leaflets</strong> printed in A5 or A6 format, with vivid colours and fast turnaround: ideal for promotions, events and local distribution."
+    },
+    {
+      "n": "03",
+      "titolo": "Menus",
+      "testo": "<strong>Custom menus</strong> for restaurants and bars in Ticino: durable paper, a stain-resistant laminated finish and a layout you can update whenever your offerings change."
+    },
+    {
+      "n": "04",
+      "titolo": "Brochures",
+      "testo": "<strong>Folded brochures</strong> with two or three panels to present products and services: sharp printing, refined design and a complete, professional company message."
+    },
+    {
+      "n": "05",
+      "titolo": "Catalogues",
+      "testo": "<strong>Bound catalogues</strong> that showcase your company's full range: quality coated paper, true-to-life images and a clear layout page after page."
+    },
+    {
+      "n": "06",
+      "titolo": "Postcards and invitations",
+      "testo": "<strong>Postcards and invitations</strong> printed on special papers for weddings, events and corporate greetings: custom formats and elegant finishes that people remember."
+    }
+  ],
+  "fasi": [
+    {
+      "t": "Analysis and understanding",
+      "d": "We dive into your needs and goals, working out together which materials you need (business cards, flyers, menus, catalogues) and the message you want to get across."
+    },
+    {
+      "t": "Custom design",
+      "d": "We prepare a free quote and a tailored design that reflects your brand, choosing the paper and finishes best suited to enhance your image."
+    },
+    {
+      "t": "Preview and printing",
+      "d": "We provide a digital preview of the design and, once you approve it, we move on to printing with cutting-edge equipment, with precision and on schedule."
+    },
+    {
+      "t": "Quality check and ongoing support",
+      "d": "We check that every product meets the required quality standards and stay available for reprints, updates and new materials."
+    }
+  ],
+  "faq": [
+    {
+      "domanda": "What types of paper printing products do you offer?",
+      "risposta": "We offer a wide range of paper printing products, including business cards, flyers, leaflets, brochures, postcards, menus and much more. We customise every product to fit each client's specific brand and communication needs."
+    },
+    {
+      "domanda": "How long does paper printing take to produce?",
+      "risposta": "Production time depends on the type of product and the quantity ordered. Orders of 500/1000 pieces are generally completed in 5 to 7 working days, while more complex orders may need a few days more."
+    },
+    {
+      "domanda": "Can I see a preview of the design before printing?",
+      "risposta": "Yes. Once the job is confirmed, we always provide a digital preview of the design to make sure the final product is exactly as you want it. We only move on to printing after your approval."
+    },
+    {
+      "domanda": "What types of paper do you use for printing?",
+      "risposta": "We use various high-quality papers, such as coated, matte and recycled stock, plus special papers for premium products. The choice depends on the type of product and the effect you want to achieve."
+    },
+    {
+      "domanda": "What finishing options do you offer for printed products?",
+      "risposta": "Our finishing options include gloss or matte lamination, UV coating, embossing, special die-cuts and binding. These options add a professional, distinctive touch to your printed products."
+    },
+    {
+      "domanda": "Do you offer design services for paper printing products?",
+      "risposta": "Yes, we also offer graphic design services to help you create a professional, eye-catching layout. We can work alongside you to develop the perfect design to represent your brand."
+    },
+    {
+      "domanda": "What are the standard sizes for flyers, leaflets and brochures?",
+      "risposta": "Standard sizes vary depending on the type of product. Flyers, for example, are usually A5 or A4, while brochures can be folded or in A4 format. We can also produce custom sizes on request."
+    }
+  ],
+  "oggettoForm": "Paper printing quote request"
+}

@@ -1,0 +1,155 @@
+---
+// SERVICES (EN): editorial overview of every service. Same layout as the IT page.
+import { readdirSync, existsSync } from 'node:fs';
+import Base from '../../layouts/Base.astro';
+import SezioneParliamo from '../../components/SezioneParliamo.astro';
+import WhatsAppTondo from '../../components/WhatsAppTondo.astro';
+
+const servizi = [
+  { nome: 'Vehicle wrapping', slug: 'decorazione-veicoli', href: '/en/decorazione-veicoli-ticino', desc: 'Turn cars, vans and trucks into moving advertising with durable, custom-made graphics.' },
+  { nome: 'Window graphics', slug: 'decorazione-vetrine', href: '/en/decorazione-vetrine-ticino', desc: 'Attract customers and boost your brand with creative, tailor-made shop windows.' },
+  { nome: 'Custom clothing', slug: 'abbigliamento', href: '/en/abbigliamento-personalizzato-ticino', desc: 'Custom t-shirts, hoodies and uniforms for companies, events and individuals.' },
+  { nome: 'Privacy frosted films', slug: 'pellicole', href: '/en/pellicole-satinate-ticino', desc: 'Frosted films for privacy and elegant design, ideal for offices, bathrooms and shops.' },
+  { nome: 'UV window films', slug: 'oscuramento-vetrate', href: '/en/oscuramento-vetrate-uv', desc: 'Films that cut heat, glare and UV rays, improving comfort and protecting your spaces.' },
+  { nome: 'Car window tinting', slug: 'oscuramento-auto', href: '/en/oscuramento-vetri-auto-ticino', desc: 'Tinting films for comfort, UV protection and a modern look for your vehicle.' },
+  { nome: 'Stickers and labels', slug: 'adesivi', href: '/en/adesivi-e-etichette', desc: 'Custom stickers and personalised labels for products, vehicles and packaging.' },
+  { nome: 'Resin domed labels', slug: 'etichette-resinate', href: '/en/etichette-resinate', desc: 'Raised logos with a 3D effect and glossy doming finish, resistant to water, scratches and UV.' },
+  { nome: 'Signage', slug: 'cartellonistica', href: '/en/cartellonistica', desc: 'Custom signs and panels to give your business visibility and impact.' },
+  { nome: 'Print on paper', slug: 'stampa', href: '/en/stampa-su-carta', desc: 'Business cards, flyers, catalogues and much more, printed to professional quality.' },
+  { nome: 'Websites', slug: 'siti-web', href: '/en/siti-web', desc: 'Modern, SEO-optimised, mobile-friendly websites to grow your business online.' },
+  { nome: 'Personalise your party', slug: 'festa', href: '/en/personalizza-la-tua-festa', desc: 'Party kits, named gifts, favours and even the cake: all coordinated and made to measure.' },
+].map((s) => {
+  const cartella = `public/img/${s.slug}/galleria`;
+  const foto = existsSync(cartella)
+    ? readdirSync(cartella).filter((f: string) => /\.(jpe?g|png|webp)$/i.test(f)).sort()[0]
+    : null;
+  return { ...s, anteprima: foto ? `/img/${s.slug}/galleria/${foto}` : null };
+});
+
+const punti = [
+  { n: '01', titolo: 'Proven experience', testo: 'Years of experience and hundreds of completed projects have made us a trusted partner for decoration and personalisation.' },
+  { n: '02', titolo: 'Tailor-made solutions', testo: 'Every project is unique: we offer custom solutions built around each client\'s specific needs, for the best possible result.' },
+  { n: '03', titolo: 'Customer focus', testo: 'Your satisfaction is at the heart of everything we do: we work closely with you to create exactly what you want.' },
+  { n: '04', titolo: 'Transparent communication', testo: 'We believe in transparency: constant, clear communication at every stage, from quote to delivery.' },
+  { n: '05', titolo: 'Ongoing support', testo: 'We support you from the first meeting to the final result, with a dedicated team ready to meet your needs.' },
+  { n: '06', titolo: 'Cross-sector expertise', testo: 'Experience across different sectors: a versatile service that adapts to a wide range of projects and businesses.' },
+];
+---
+<Base
+  title="Our services | VAM Deco: decoration, personalisation and print in Ticino"
+  description="Vehicle and window graphics, custom clothing, films, stickers, signage, print and websites: all VAM Deco services in Ticino."
+  i18n
+>
+  <!-- HERO -->
+  <section class="relative pattern-hero overflow-hidden">
+    <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
+    <div class="relative max-w-3xl mx-auto px-4 pt-20 pb-16 text-center" data-reveal-stagger>
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-4 uppercase">Our services</div>
+      <h1 data-reveal class="text-3xl md:text-5xl font-bold leading-tight tracking-tight" style="text-wrap: balance">
+        One partner, <span class="text-brand">twelve ways</span> to get noticed
+      </h1>
+      <p data-reveal class="mt-8 text-carta/80 leading-relaxed">
+        From vehicle and window graphics to custom clothing, from printing to websites:
+        choose a service and discover what we can do for your image.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICE LIST -->
+  <section class="max-w-5xl mx-auto px-4 py-14 relative">
+    <div data-reveal-stagger>
+      {servizi.map((s, i) => (
+        <a
+          data-reveal
+          href={s.href}
+          class="servizio-riga group grid grid-cols-[2.6rem_1fr_auto] md:grid-cols-[4rem_1fr_auto] items-center gap-4 md:gap-6 border-t border-white/10 py-6 md:py-7 transition-colors hover:border-brand/60"
+          data-anteprima={s.anteprima}
+        >
+          <span class="font-display text-sm md:text-base font-semibold text-carta/35 group-hover:text-brand transition-colors">{String(i + 1).padStart(2, '0')}</span>
+          <span>
+            <span class="font-display block text-xl md:text-3xl font-bold leading-tight group-hover:text-brand transition-colors">{s.nome}</span>
+            <span class="block mt-1.5 text-sm text-carta/60 leading-relaxed max-w-xl">{s.desc}</span>
+          </span>
+          <span class="freccia-servizio text-2xl md:text-3xl text-carta/30 group-hover:text-brand transition-all group-hover:translate-x-1.5" aria-hidden="true">→</span>
+        </a>
+      ))}
+    </div>
+    <div class="border-t border-white/10"></div>
+    <div class="anteprima-flottante" aria-hidden="true">
+      <img alt="" />
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="border-y border-white/5 bg-white/[0.02] py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-2xl" data-reveal-stagger>
+        <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Why choose VAM Deco</div>
+        <h2 data-reveal class="text-2xl md:text-4xl font-bold">Your ideal partner.</h2>
+      </div>
+      <div class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
+        {punti.map((p) => (
+          <div data-reveal class="border-t border-white/10 pt-5">
+            <div class="font-display text-sm font-semibold text-brand">{p.n}</div>
+            <h3 class="mt-2 font-display font-semibold text-lg">{p.titolo}</h3>
+            <p class="mt-2 text-sm text-carta/65 leading-relaxed">{p.testo}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SezioneParliamo oggetto="Richiesta dalla pagina Servizi (EN)" origine="Pagina Servizi EN" />
+
+  <WhatsAppTondo testo="Hi VAM Deco, I'd like information about one of your services." />
+
+  <script>
+    const box = document.querySelector<HTMLElement>('.anteprima-flottante');
+    const img = box?.querySelector<HTMLImageElement>('img');
+    if (box && img && window.matchMedia('(hover: hover) and (min-width: 768px)').matches) {
+      let x = 0, y = 0, lx = 0, ly = 0, visibile = false;
+      document.querySelectorAll<HTMLElement>('.servizio-riga').forEach((riga) => {
+        riga.addEventListener('pointerenter', () => {
+          const src = riga.dataset.anteprima;
+          if (!src) { box.classList.remove('attiva'); visibile = false; return; }
+          img.src = src;
+          box.classList.add('attiva');
+          visibile = true;
+        });
+        riga.addEventListener('pointerleave', () => { box.classList.remove('attiva'); visibile = false; });
+      });
+      window.addEventListener('pointermove', (e) => { x = e.clientX; y = e.clientY; }, { passive: true });
+      const passo = () => {
+        lx += (x - lx) * 0.12;
+        ly += (y - ly) * 0.12;
+        if (visibile) box.style.transform = `translate(${lx + 28}px, ${ly - 90}px)`;
+        requestAnimationFrame(passo);
+      };
+      requestAnimationFrame(passo);
+    }
+  </script>
+
+  <style>
+    .anteprima-flottante {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 40;
+      width: 15rem;
+      aspect-ratio: 4 / 3;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid rgb(255 255 255 / 0.15);
+      box-shadow: 0 22px 50px rgb(0 0 0 / 0.55);
+      opacity: 0;
+      scale: 0.9;
+      transition: opacity 0.25s ease, scale 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+      pointer-events: none;
+    }
+    .anteprima-flottante.attiva { opacity: 1; scale: 1; }
+    .anteprima-flottante img { width: 100%; height: 100%; object-fit: cover; }
+    @media (prefers-reduced-motion: reduce) {
+      .anteprima-flottante { display: none; }
+    }
+  </style>
+</Base>

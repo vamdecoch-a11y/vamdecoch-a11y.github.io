@@ -1,0 +1,184 @@
+---
+// CONTACT (EN): hero, contact cards, map and final "Let's talk" section.
+import Base from '../../layouts/Base.astro';
+import SezioneParliamo from '../../components/SezioneParliamo.astro';
+import WhatsAppTondo from '../../components/WhatsAppTondo.astro';
+
+const orari = [
+  { g: 'Monday - Friday', o: '08:30 - 12:00 / 13:30 - 18:00' },
+  { g: 'Saturday', o: '09:30 - 12:00' },
+  { g: 'Sunday', o: 'Closed' },
+];
+
+const localBusinessJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'VAM Deco Agency Sagl',
+  url: 'https://vamdeco.ch',
+  telephone: '+41765889497',
+  email: 'info@vamdeco.ch',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Via Pobbia 4D',
+    postalCode: '6514',
+    addressLocality: 'Sementina',
+    addressRegion: 'Ticino',
+    addressCountry: 'CH',
+  },
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:30', closes: '12:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '13:30', closes: '18:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:30', closes: '12:00' },
+  ],
+  sameAs: ['https://instagram.com/vamdeco.ch', 'https://facebook.com/vamdeco.ch', 'https://www.tiktok.com/@vamdeco.ch'],
+});
+---
+<Base
+  title="Contact us | Request a free quote | VAM Deco"
+  description="Got an idea to bring to life? Contact VAM Deco in Sementina: phone, WhatsApp, email or form. Free personalised quote in 24/48h."
+  i18n
+>
+  <script type="application/ld+json" set:html={localBusinessJsonLd} />
+
+  <!-- HERO -->
+  <section class="relative pattern-hero overflow-hidden">
+    <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
+    <div class="relative max-w-4xl mx-auto px-4 pt-20 pb-14 text-center" data-reveal-stagger>
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-4 uppercase">Contact us</div>
+      <h1 data-reveal class="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
+        Let's bring your <span class="text-brand">project</span> to life
+      </h1>
+      <p data-reveal class="mt-8 text-carta/80 leading-relaxed max-w-2xl mx-auto">
+        Call us, message us on WhatsApp or fill in the form: we'll reply with a free quote in 24/48h.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT CARDS -->
+  <section class="max-w-6xl mx-auto px-4 py-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-reveal-stagger>
+    <a data-reveal href="tel:+41765889497" class="reca-card group">
+      <span class="reca-icona" aria-hidden="true">
+        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/></svg>
+      </span>
+      <div class="mt-5 text-xs font-bold tracking-widest text-carta/45 uppercase">Mobile</div>
+      <div class="mt-1.5 font-display font-semibold text-lg">+41 76 588 94 97</div>
+      <div class="mt-2 text-sm text-brand opacity-0 group-hover:opacity-100 transition-opacity">Call now →</div>
+    </a>
+
+    <a data-reveal href="https://maps.app.goo.gl/zq6THCbbrv1LWDPY6" target="_blank" rel="noopener" class="reca-card group">
+      <span class="reca-icona" aria-hidden="true">
+        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+      </span>
+      <div class="mt-5 text-xs font-bold tracking-widest text-carta/45 uppercase">Address</div>
+      <div class="mt-1.5 font-display font-semibold text-lg leading-tight">Via Pobbia 4D<br />6514 Sementina</div>
+      <div class="mt-2 text-sm text-brand opacity-0 group-hover:opacity-100 transition-opacity">Open the map →</div>
+    </a>
+
+    <a data-reveal href="mailto:info@vamdeco.ch" class="reca-card group">
+      <span class="reca-icona" aria-hidden="true">
+        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+      </span>
+      <div class="mt-5 text-xs font-bold tracking-widest text-carta/45 uppercase">Email</div>
+      <div class="mt-1.5 font-display font-semibold text-lg break-all">info@vamdeco.ch</div>
+      <div class="mt-1 text-sm text-carta/55 break-all">info@vamdeco.agency</div>
+    </a>
+
+    <div data-reveal class="reca-card">
+      <span class="reca-icona" aria-hidden="true">
+        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4.2 14.2-4.7-2.8V7h1.5v5.6l4 2.4-.8 1.2Z"/></svg>
+      </span>
+      <div class="mt-5 text-xs font-bold tracking-widest text-carta/45 uppercase">Opening hours</div>
+      <div class="mt-2 space-y-1.5 text-sm">
+        {orari.map((r) => (
+          <div class="flex justify-between gap-3">
+            <span class="text-carta/60">{r.g}</span>
+            <span class={`font-semibold text-right ${r.o === 'Closed' ? 'text-carta/40' : ''}`}>{r.o}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL + WHATSAPP -->
+  <section class="max-w-6xl mx-auto px-4 pb-12 flex flex-wrap items-center justify-center gap-4" data-reveal>
+    <a href="https://wa.me/41765889497" target="_blank" rel="noopener" class="btn-anim inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 font-semibold text-white">
+      <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" aria-hidden="true"><path d="M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 6.99 2.9 9.83 9.83 0 0 1 2.9 7c0 5.45-4.44 9.88-9.9 9.88Zm5.42-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.42.25-.7.25-1.29.18-1.42-.08-.13-.28-.2-.57-.35Z"/></svg>
+      Message us on WhatsApp
+    </a>
+    <div class="flex items-center gap-3">
+      <a href="https://instagram.com/vamdeco.ch" target="_blank" rel="noopener" class="social-tile" aria-label="Follow us on Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23a3.7 3.7 0 0 1-.9 1.38c-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07ZM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.86 5.86 0 0 0-2.13 1.38A5.86 5.86 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.72 1.47 1.38 2.13a5.86 5.86 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.13-1.38 5.86 5.86 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.13A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0Zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84Zm0 10.15A4 4 0 1 1 16 12a4 4 0 0 1-4 3.99Zm7.85-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44Z"/></svg>
+      </a>
+      <a href="https://facebook.com/vamdeco.ch" target="_blank" rel="noopener" class="social-tile" aria-label="Follow us on Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12Z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@vamdeco.ch" target="_blank" rel="noopener" class="social-tile" aria-label="Follow us on TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07Z"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="max-w-6xl mx-auto px-4 pb-20" data-reveal>
+    <div class="rounded-3xl overflow-hidden border border-white/10 h-72 md:h-96">
+      <iframe
+        title="VAM Deco's premises in Sementina, Via Pobbia 4D"
+        src="https://maps.google.com/maps?q=Via+Pobbia+4D,+6514+Sementina,+Ticino&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        class="w-full h-full border-0"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+
+  <SezioneParliamo oggetto="Richiesta dalla pagina Contattaci (EN)" origine="Pagina Contattaci EN" />
+
+  <WhatsAppTondo testo="Hi VAM Deco, I'd like some information." />
+
+  <style>
+    .reca-card {
+      position: relative;
+      display: block;
+      border-radius: 1.35rem;
+      border: 1px solid rgb(255 255 255 / 0.1);
+      background: linear-gradient(160deg, rgb(255 255 255 / 0.05), rgb(255 255 255 / 0.015));
+      padding: 1.5rem;
+      overflow: hidden;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s, box-shadow 0.3s;
+    }
+    .reca-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      height: 3px; width: 2.5rem;
+      background: linear-gradient(90deg, var(--color-brand), transparent);
+      transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    a.reca-card:hover {
+      transform: translateY(-5px);
+      border-color: rgb(245 131 39 / 0.45);
+      box-shadow: 0 18px 40px -12px rgb(245 131 39 / 0.28);
+    }
+    a.reca-card:hover::before { width: 100%; }
+    .reca-icona {
+      display: grid;
+      place-items: center;
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 1rem;
+      background: linear-gradient(150deg, rgb(245 131 39 / 0.28), rgb(245 131 39 / 0.08));
+      border: 1px solid rgb(245 131 39 / 0.25);
+      color: var(--color-brand);
+      transition: background 0.3s, color 0.3s, transform 0.3s;
+    }
+    a.reca-card:hover .reca-icona {
+      background: var(--color-brand);
+      color: var(--color-ink);
+      transform: scale(1.05);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reca-card, a.reca-card:hover, .reca-icona, .reca-card::before { transition: none; transform: none; }
+    }
+  </style>
+</Base>

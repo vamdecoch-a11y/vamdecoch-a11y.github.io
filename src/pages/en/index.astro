@@ -1,0 +1,378 @@
+---
+import Base from '../../layouts/Base.astro';
+import ParoleScroll from '../../components/ParoleScroll.astro';
+import RecensioniEleganti from '../../components/RecensioniEleganti.astro';
+import { recensioniStandard } from '../../dati/recensioni';
+import { anniEsperienza, ANNO_FONDAZIONE } from '../../dati/statistiche';
+import { ICONE } from '../../dati/icone-servizi';
+
+const servizi = [
+  { titolo: 'Vehicle wrapping', href: '/en/decorazione-veicoli-ticino', ico: 'car', descr: 'Turn your car, van or truck into moving advertising with durable, custom-made graphics.' },
+  { titolo: 'Window graphics', href: '/en/decorazione-vetrine-ticino', ico: 'house', descr: 'Attract customers and boost your brand with creative, tailor-made shop windows.' },
+  { titolo: 'Custom clothing', href: '/en/abbigliamento-personalizzato-ticino', ico: 'tshirt', descr: 'Custom t-shirts, hoodies and uniforms for companies, events and individuals.' },
+  { titolo: 'Privacy frosted films', href: '/en/pellicole-satinate-ticino', ico: 'prohibit', descr: 'Frosted films for privacy and elegant design, ideal for offices, bathrooms and shops.' },
+  { titolo: 'UV window films', href: '/en/oscuramento-vetrate-uv', ico: 'perspective', descr: 'Films that cut heat, glare and UV rays, improving comfort and protecting your spaces.' },
+  { titolo: 'Car window tinting', href: '/en/oscuramento-vetri-auto-ticino', ico: 'carprofile', descr: 'Tinting films for comfort, UV protection and a modern look for your vehicle.' },
+  { titolo: 'Stickers and labels', href: '/en/adesivi-e-etichette', ico: 'sticker', descr: 'Custom stickers and labels for products, windows and vehicles: durable, precise and professional quality.' },
+  { titolo: 'Resin domed labels', href: '/en/etichette-resinate', ico: 'drop', descr: 'Raised logos with a 3D effect and glossy doming finish, resistant to water, scratches and UV.' },
+  { titolo: 'Signage', href: '/en/cartellonistica', ico: 'cards', descr: 'Custom signs and panels to give your business visibility and impact.' },
+  { titolo: 'Print on paper', href: '/en/stampa-su-carta', ico: 'printer', descr: 'Business cards, flyers, catalogues and much more, printed to professional quality.' },
+  { titolo: 'Websites', href: '/en/siti-web', ico: 'mouse', descr: 'Modern, SEO-optimised and mobile-friendly websites to grow your business online.' },
+  { titolo: 'Personalise your party', href: '/en/personalizza-la-tua-festa', ico: 'confetti', descr: 'Custom t-shirts, wooden items and decorations for birthdays, baby showers and stag parties.' },
+];
+
+const numeri = [
+  { n: anniEsperienza(), s: '+', l: 'Years of experience', anniDa: ANNO_FONDAZIONE },
+  { n: 500, s: '+', l: 'Successful projects' },
+  { n: 300, s: '+', l: 'Happy customers' },
+  { n: 85, s: '+', l: '5-star reviews' },
+];
+
+const specialita = [
+  { kicker: 'Reliability', titolo: 'Proven<br>results', descr: 'A solid reputation as a reliable partner: quality decoration and personalisation that deliver real results and satisfied customers.' },
+  { kicker: 'Craftsmanship', titolo: 'Tailor-made<br>solutions', descr: 'Custom solutions for decoration, clothing, signage and more, designed around the needs of each client and sector.' },
+  { kicker: 'Relationship', titolo: 'Customer<br>focus', descr: 'Our clients\' success is our priority: we understand their needs to deliver results that exceed expectations.' },
+  { kicker: 'Impact', num: '150%', sotto: 'Average boost in brand visibility', descr: 'Our decoration and personalisation work has delivered an average 150% increase in our clients\' brand visibility.' },
+  { kicker: 'Visibility', num: '80%', sotto: 'More brand visibility', descr: 'Thanks to our decoration and personalisation solutions, clients have experienced an 80% rise in visibility.' },
+];
+
+// FAQ home: general questions covering several services
+const faqHome = [
+  { domanda: 'What does VAM Deco do?', risposta: 'We handle decoration and personalisation across the board: car wrapping and vehicle graphics, window tinting, decoration of shop windows and commercial spaces, custom stickers and labels, personalised clothing and printing. We follow every project from the graphic idea to the final installation, all in-house here in Ticino.' },
+  { domanda: 'How much do your services cost?', risposta: 'Every job is tailor-made, so the price depends on size, materials and the complexity of the graphics. As a rough guide, a partial wrap starts from a few hundred francs and a full one ranges between CHF 1,500 and 3,500, while prints, stickers and clothing cost considerably less. The most accurate way to find out is to request a free, no-obligation quote.' },
+  { domanda: 'How long does a job take?', risposta: 'It depends on the service: window tinting usually takes half a day, while a full car wrap takes 3 to 7 working days. For prints, stickers and clothing, timescales generally start from a few working days after the graphics are approved.' },
+  { domanda: 'How long does an applied film last?', risposta: 'With professional materials and expert installation, a car wrapping film lasts on average 5 to 7 years. Films for windows and commercial vehicles also withstand sun, rain and washing, keeping their colours vivid over time.' },
+  { domanda: 'Is car window tinting legal in Switzerland?', risposta: 'Yes, but with clear rules. In Switzerland the windscreen and front windows must let through at least 70% of light, while the rear window and rear side windows can be tinted freely. We only use compliant films, so your vehicle stays road-legal, including at the inspection.' },
+  { domanda: 'How do I look after a decorated vehicle or window?', risposta: 'Very little is needed: a gentle hand wash with water and neutral soap, avoiding brush car washes and harsh or solvent-based products. After a new application we recommend waiting about a week before the first wash.' },
+  { domanda: 'Can I order a single piece or small quantities?', risposta: 'Yes. We produce both single pieces and large runs, whether it\'s one custom t-shirt, a few stickers or a batch of labels. For larger runs, the cost per piece goes down.' },
+  { domanda: 'Do I need the artwork ready, or do you create it?', risposta: 'You don\'t need anything ready. We can start from your file or take care of the whole design ourselves, from the logo to the complete project, adapting it to the material and final surface. Before we produce anything, we always show you a preview to approve.' },
+];
+---
+<Base
+  title="VAM Deco | Vehicle & Window Graphics in Ticino"
+  description="Vehicle and window graphics, custom clothing and tinting films in Ticino. Request a free quote for your business today."
+  i18n
+>
+  <!-- HERO -->
+  <section class="relative pattern-hero overflow-hidden">
+    <div class="sfumatura-hero" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 pt-14 md:pt-20 text-center" data-reveal-stagger>
+      <h1 data-reveal class="titolo-hero font-display font-bold text-white">
+        <span class="riga-titolo">
+          <span>We bring your</span>
+          <span class="pill-vita"><span>ideas</span></span>
+        </span>
+        <span class="riga-titolo">
+          <span>to life</span>
+          <span class="badge-megafono"><img src="/img/megafono-doodle.png" alt="" aria-hidden="true" /></span>
+        </span>
+      </h1>
+      <p data-reveal class="mx-auto mt-7 max-w-2xl text-lg text-carta/75">
+        For over {anniEsperienza()} years we've been the go-to name in Ticino for vehicle, window, signage and
+        print decoration, with custom clothing for companies, events and individuals.
+      </p>
+      <div data-reveal class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="#servizi" class="btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">
+          Discover our services
+        </a>
+        <a
+          href="https://wa.me/41765889497?text=Hi%20VAM%20Deco%2C%20I%27d%20like%20a%20quote"
+          target="_blank" rel="noopener"
+          class="btn-anim rounded-full border-2 border-white/20 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand"
+        >Quote on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="zona-volpe">
+      <div class="scritta-scroll" aria-hidden="true">
+        <div class="scritta-scroll-track">
+          <span>360° design agency</span><span>360° design agency</span><span>360° design agency</span><span>360° design agency</span>
+          <span>360° design agency</span><span>360° design agency</span><span>360° design agency</span><span>360° design agency</span>
+        </div>
+      </div>
+      <img src="/img/volpe.png" alt="VAM Deco's fox mascot" class="volpe-hero" loading="eager" />
+      <div class="badge-stat">
+        <div class="badge-stat-titolo">#1 decoration and personalisation agency in Ticino</div>
+        <div class="badge-stat-riga">
+          <span class="badge-stat-stelle" aria-label="5 stars">★★★★★</span>
+          <span class="badge-stat-sub">300+ Happy Customers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="servizi" class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+    <h2 data-reveal class="text-2xl md:text-4xl font-bold mb-10">Our services</h2>
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 [grid-auto-rows:1fr]" data-reveal-stagger>
+      {servizi.map((s) => (
+        <a href={s.href} data-reveal class="group card-scura card-anim rounded-2xl p-6 flex flex-col h-full">
+          <div class="flex items-center gap-4 min-h-[3.5rem]">
+            <span class="ico-servizio shrink-0" set:html={ICONE[s.ico]} />
+            <h3 class="font-display text-sm font-bold tracking-wide uppercase leading-tight group-hover:text-brand transition-colors">{s.titolo}</h3>
+          </div>
+          <p class="mt-5 text-sm text-carta/65 leading-relaxed">{s.descr}</p>
+          <span class="mt-auto pt-5 inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-brand">LEARN MORE <span aria-hidden="true">→</span></span>
+        </a>
+      ))}
+    </div>
+    <div class="mt-10 text-center">
+      <a data-reveal href="/en/servizi" class="btn-anim inline-flex items-center gap-2 rounded-full bg-brand px-8 py-3.5 font-semibold text-ink hover:bg-brand-dark">
+        See all our services <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- WE BRING TO LIFE -->
+  <ParoleScroll
+    prefisso="We bring to life"
+    parole={['your vehicles.', 'your shop windows.', 'your clothing.', 'your glass.', 'your signs.', 'your events.', 'your ideas.']}
+    sfondo="/img/diamo-vita-sfondo.jpg"
+    statistiche={numeri}
+  />
+
+  <!-- REVIEWS -->
+  <section class="border-y border-white/5 bg-white/[0.02]">
+    <RecensioniEleganti recensioni={recensioniStandard} />
+  </section>
+
+  <!-- SPECIALTIES -->
+  <section class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+    <div class="mb-12 max-w-2xl" data-reveal-stagger>
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-3 uppercase">Our method</div>
+      <h2 data-reveal class="font-display text-3xl md:text-5xl font-bold leading-tight">Our <span class="text-brand">specialties</span></h2>
+    </div>
+    <div class="grid gap-5 md:grid-cols-6 [grid-auto-rows:1fr]" data-reveal-stagger>
+      {specialita.map((s, i) => (
+        <div data-reveal class={`card-scura card-anim group relative overflow-hidden rounded-3xl p-8 ${i >= 3 ? 'md:col-span-3' : 'md:col-span-2'}`}>
+          <span class="font-display pointer-events-none absolute -right-3 -top-8 text-[130px] font-extrabold leading-none text-white/[0.055] select-none">{String(i + 1).padStart(2, '0')}</span>
+          <div class="relative">
+            <div class="flex items-center gap-2.5">
+              <span class="inline-flex h-2.5 w-2.5 rounded-full bg-brand"></span>
+              <span class="text-[11px] font-medium uppercase tracking-[0.2em] text-carta/50">{s.kicker}</span>
+            </div>
+            {s.num ? (
+              <>
+                <div class="font-display mt-6 text-5xl font-extrabold leading-none text-brand">{s.num}</div>
+                <h3 class="font-display mt-2.5 text-lg font-bold leading-tight">{s.sotto}</h3>
+              </>
+            ) : (
+              <h3 class="font-display mt-7 text-2xl font-bold leading-tight" set:html={s.titolo}></h3>
+            )}
+            <p class="mt-3 text-sm leading-relaxed text-carta/65">{s.descr}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="max-w-3xl mx-auto px-4 py-16 md:py-20">
+    <div class="text-center mb-10" data-reveal-stagger>
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-3 uppercase">FAQ</div>
+      <h2 data-reveal class="font-display text-3xl md:text-4xl font-bold">The answers you're looking for</h2>
+    </div>
+    <div class="space-y-3" data-reveal-stagger>
+      {faqHome.map((f) => (
+        <details data-reveal class="faq-item card-scura rounded-2xl px-5 py-4 group">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-semibold gap-4">
+            <span>{f.domanda}</span>
+            <span class="text-brand text-2xl leading-none transition-transform duration-300 group-open:rotate-45 shrink-0">+</span>
+          </summary>
+          <div class="faq-risposta"><div class="overflow-hidden"><p class="pt-3 text-sm text-carta/70 leading-relaxed">{f.risposta}</p></div></div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto px-4 py-20 text-center" data-reveal-stagger>
+      <h2 data-reveal class="text-2xl md:text-4xl font-bold">Got a project in mind?</h2>
+      <p data-reveal class="mt-4 text-carta/70">We reply fast on WhatsApp or by email. Free quote in 24/48h.</p>
+      <div data-reveal class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="/en/contattaci" class="btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">Contact us now</a>
+        <a href="tel:+41765889497" class="btn-anim rounded-full border-2 border-white/20 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand">+41 76 588 94 97</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* ---------- TITOLO HERO ---------- */
+    .titolo-hero {
+      font-size: clamp(2.3rem, 7.6vw, 4.4rem);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+    }
+    .riga-titolo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.12em 0.28em;
+    }
+    .riga-titolo + .riga-titolo { margin-top: 0.12em; }
+    .pill-vita {
+      display: inline-flex;
+      background: #F58327;
+      border-radius: 0;
+      padding: 0.02em 0.2em;
+      transform: rotate(3deg);
+    }
+    .pill-vita > span {
+      display: inline-block;
+      color: #0a0a0a;
+      transform: rotate(-3deg);
+    }
+    .badge-megafono {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(54px, 8.2vw, 84px);
+      height: clamp(54px, 8.2vw, 84px);
+      margin-left: -0.14em;
+      border-radius: 999px;
+      background: #F58327;
+      overflow: hidden;
+      flex: none;
+    }
+    .badge-megafono img {
+      width: 92%;
+      height: 92%;
+      object-fit: contain;
+      transform: rotate(-16deg);
+    }
+
+    /* ---------- ZONA VOLPE ---------- */
+    .zona-volpe {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin-top: clamp(0.5rem, 2vw, 2rem);
+      min-height: clamp(340px, 46vw, 600px);
+    }
+    .volpe-hero {
+      position: relative;
+      z-index: 10;
+      height: clamp(320px, 43vw, 575px);
+      width: auto;
+      object-fit: contain;
+      transform: translateX(-12.5%);
+      filter: drop-shadow(8px 10px 14px rgba(0, 0, 0, 0.45));
+    }
+    .scritta-scroll {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      transform: translateY(-50%);
+      z-index: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      pointer-events: none;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+    }
+    .scritta-scroll-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 0.45em 2.5rem 0.7em 0;
+      width: max-content;
+      animation: scorri-hero 60s linear infinite;
+    }
+    .scritta-scroll-track span {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 500;
+      font-size: clamp(3rem, 10vw, 6rem);
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.3;
+      text-shadow: 0 6px 22px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+    @keyframes scorri-hero {
+      to { transform: translateX(-50%); }
+    }
+    .sfumatura-hero {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: clamp(460px, 52vw, 700px);
+      z-index: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent 0%, rgba(245, 131, 39, 0.06) 24%, rgba(245, 131, 39, 0.22) 58%, rgba(245, 131, 39, 0.5) 92%);
+    }
+    .badge-stat {
+      position: absolute;
+      z-index: 20;
+      right: clamp(0.5rem, 4vw, 3.5rem);
+      bottom: clamp(0.5rem, 3vw, 2rem);
+      max-width: 340px;
+      border-radius: 1.4rem;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: rgba(10, 10, 10, 0.42);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 1.1rem 1.25rem;
+      text-align: left;
+    }
+    .badge-stat-titolo {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 600;
+      font-size: 0.92rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .badge-stat-riga {
+      margin-top: 0.7rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .badge-stat-stelle { color: #FF8442; letter-spacing: 0.15em; font-size: 0.95rem; }
+    .badge-stat-sub { color: rgba(255, 255, 255, 0.85); font-size: 0.85rem; }
+
+    /* ---------- ICONA SERVIZIO ---------- */
+    .ico-servizio {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    @media (max-width: 640px) {
+      section.pattern-hero { overflow: visible; }
+      .zona-volpe {
+        flex-direction: column;
+        align-items: center;
+        min-height: 0;
+        margin-top: 5.5rem;
+      }
+      .badge-stat {
+        position: relative;
+        right: auto;
+        left: auto;
+        z-index: 30;
+        max-width: 92%;
+        margin: 1.25rem auto 0;
+        text-align: center;
+        transform: translateY(calc(50% + 12px));
+      }
+      #servizi { padding-top: 6.5rem; }
+      .badge-stat-riga { align-items: center; }
+      .volpe-hero { height: 368px; }
+      .scritta-scroll { top: 11.5rem; }
+      .sfumatura-hero { height: 64%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .scritta-scroll-track { animation: none; }
+    }
+  </style>
+</Base>

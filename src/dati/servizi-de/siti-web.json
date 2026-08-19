@@ -1,0 +1,40 @@
+{
+  "slug": "siti-web",
+  "title": "Webseiten & Webdesign für Firmen im Tessin | VAM Deco",
+  "description": "Professionelle Webseiten im Tessin: Firmenwebseiten, Onlineshops und schnelle Landingpages, sicher und SEO-optimiert. Gratis Kostenvoranschlag in 24/48h.",
+  "h1": "Professionelle Webseiten für Firmen",
+  "h1Evidenza": "im Tessin",
+  "heroParagrafi": [
+    "Erwecken Sie Ihre Onlinepräsenz zum Leben mit einer <strong>professionellen, massgeschneiderten Webseite</strong>: modernes Design, schnelle Navigation und perfekte Darstellung auf Smartphone, Tablet und Desktop.",
+    "Wir entwickeln <strong>SEO-optimierte Webseiten</strong>, sicher und leistungsstark, konzipiert, um Besucher in Kunden zu verwandeln.",
+    "Im Tessin wächst der digitale Wettbewerb täglich: mit einer bis ins Detail gepflegten Webseite erzielen Sie <strong>maximale Sichtbarkeit bei Google</strong> und lassen Ihr Geschäft wachsen."
+  ],
+  "claimArancione": "Vertrauen Sie auf unsere Webdienstleistungen, um Professionalität und Qualität zu vermitteln, ob Firmenwebseite, Onlineshop oder personalisierte Unternehmensseiten.",
+  "whatsappTesto": "Hallo VAM Deco, ich hätte gerne einen Kostenvoranschlag für eine professionelle Webseite.",
+  "beneficiTitolo": "Warum eine professionelle Webseite im Tessin wählen",
+  "beneficiIntro": "Verschaffen Sie Ihrer Marke Sichtbarkeit mit einer hochwertigen <strong>professionellen Webseite</strong> im Tessin. Ob Firmenwebseite, Onlineshop oder Landingpage: jedes Projekt wird mit Sorgfalt entwickelt, um eine flüssige Navigation, ein optimales Nutzererlebnis und konkrete Ergebnisse zu gewährleisten.",
+  "benefici": [
+    { "n": "01", "titolo": "Individuelle Firmenwebseiten", "testo": "Wir realisieren professionelle Firmenwebseiten mit massgeschneidertem Design und SEO-Optimierung: sie präsentieren Ihr Unternehmen im Tessin und verwandeln Besucher in Kunden." },
+    { "n": "02", "titolo": "Landingpages", "testo": "Schnelle und SEO-optimierte Landingpages für Google-Ads- und Social-Kampagnen: gezielte Call-to-Actions, die Conversions steigern und neue Kontakte gewinnen." },
+    { "n": "03", "titolo": "Onlineshops", "testo": "Wir entwickeln sichere Onlineshops mit integrierten Zahlungen, gepflegten Produktseiten und SEO-Optimierung: Ihr Onlineshop verkauft rund um die Uhr." },
+    { "n": "04", "titolo": "Webseiten für lokale Unternehmen", "testo": "Für die lokale SEO optimierte Webseiten: Ihr Betrieb erscheint bei Google, wenn Kunden im Tessin nach Ihren Dienstleistungen suchen." },
+    { "n": "05", "titolo": "Webseiten mit Online-Reservierung", "testo": "Wir integrieren Online-Reservierungssysteme für Hotels, Restaurants, Fitnessstudios und Praxen: einfache, sichere und jederzeit verfügbare Terminverwaltung." },
+    { "n": "06", "titolo": "Restyling von Webseiten", "testo": "Wir erneuern veraltete Webseiten und verbessern Design, Ladegeschwindigkeit und SEO-Positionierung: eine moderne, sichere und auf jedem Gerät perfekte Webseite." }
+  ],
+  "fasi": [
+    { "t": "Analyse und Verständnis", "d": "Wir starten bei Ihren Zielen: gemeinsam klären wir, was Ihre Webseite leisten soll (das Unternehmen präsentieren, online verkaufen, Anfragen sammeln) und analysieren Ihre Branche und Ihr Publikum im Tessin." },
+    { "t": "Individueller Vorschlag", "d": "Wir präsentieren Ihnen einen personalisierten Vorschlag mit Struktur, Design und Funktionen der Webseite, begleitet von einem kostenlosen und transparenten Kostenvoranschlag in 24/48h." },
+    { "t": "Entwicklung und Optimierung", "d": "Wir realisieren die Webseite mit individuellem Design, gepflegten Inhalten und SEO-Optimierung. Jede Seite ist schnell, sicher und perfekt auf Smartphone, Tablet und Desktop." },
+    { "t": "Veröffentlichung und laufende Unterstützung", "d": "Wir stellen die Webseite online, prüfen, dass alles bestens funktioniert, und bleiben mit Updates und Support an Ihrer Seite, damit sie stets leistungsstark bleibt." }
+  ],
+  "faq": [
+    { "domanda": "Was kostet die Realisierung einer professionellen Webseite?", "risposta": "Die Kosten einer professionellen Webseite variieren je nach Komplexität, gewünschten Funktionen und individuellem Design. Wir erstellen detaillierte Kostenvoranschläge, um den spezifischen Anforderungen jedes Kunden gerecht zu werden." },
+    { "domanda": "Wie lange dauert die Entwicklung einer Webseite?", "risposta": "Die Entwicklungszeit hängt von der Komplexität des Projekts ab; in der Regel benötigt eine Standard-Webseite 2 bis 4 Wochen bis zur Fertigstellung." },
+    { "domanda": "Was ist SEO und warum ist sie für meine Webseite wichtig?", "risposta": "SEO (Search Engine Optimization) umfasst alle Techniken zur Verbesserung der Sichtbarkeit einer Webseite in Suchmaschinen und steigert so den organischen Traffic und die Zahl potenzieller Kunden." },
+    { "domanda": "Ist meine Webseite responsive und mit Mobilgeräten kompatibel?", "risposta": "Ja, alle unsere Webseiten sind responsive gestaltet und gewährleisten eine optimale Navigation auf Smartphone, Tablet und Desktop." },
+    { "domanda": "Bieten Sie Wartung und Support nach dem Launch an?", "risposta": "Ja, wir bieten Wartungs- und Support-Pakete, damit Ihre Webseite dauerhaft aktuell, sicher und leistungsstark bleibt." },
+    { "domanda": "Kann ich meiner Webseite einen Blog-Bereich hinzufügen?", "risposta": "Selbstverständlich, wir können einen Blog-Bereich integrieren, um Neuigkeiten, Updates und relevante Inhalte zu teilen und so Engagement und SEO zu verbessern. Kontaktieren Sie uns für einen kostenlosen Kostenvoranschlag." },
+    { "domanda": "Wie kann ich die Performance meiner Webseite überwachen?", "risposta": "Wir stellen Analyse-Tools wie Google Analytics bereit, um Traffic, Nutzerverhalten und weitere Schlüsselkennzahlen zu überwachen und Ihnen zu helfen, die Wirksamkeit Ihrer Webseite zu bewerten." }
+  ],
+  "oggettoForm": "Anfrage Kostenvoranschlag Webseite"
+}

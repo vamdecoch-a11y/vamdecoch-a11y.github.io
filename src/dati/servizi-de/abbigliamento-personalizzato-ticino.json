@@ -1,0 +1,42 @@
+{
+  "slug": "abbigliamento",
+  "title": "T-Shirts bedrucken im Tessin, Textildruck & Stickerei | VAM Deco",
+  "description": "DTF-Druck und Stickerei auf T-Shirts, Hoodies und Berufskleidung im Tessin. 5-Sterne-Bewertungen, auch ein einzelnes Stück. Gratis-Offerte in 24/48 Std.",
+  "h1": "Personalisierte T-Shirts und Bekleidung im Tessin",
+  "heroParagrafi": [
+    "Gestalten Sie <strong>T-Shirts, Polos, Hoodies, Jacken, Caps und Firmenbekleidung</strong> mit professionellem DTF-Druck oder Stickerei, direkt im Tessin. Massgeschneiderte Lösungen für Unternehmen, Events und Teams, mit schneller und lokaler Produktion.",
+    "Jedes Kleidungsstück wird zur Werbung: Es wertet Ihr Image auf, stärkt das Team und vermittelt Professionalität, wo immer es getragen wird.",
+    "Perfekt auch für <strong>private Feste und Anlässe</strong>: Junggesellenabschiede, Geburtstage und Sportteams.",
+    "Kostenlose Offerte in 24/48 Std., unverbindlich! Wir antworten Ihnen schnell via WhatsApp oder E-Mail."
+  ],
+  "heroSfondo": "/img/abbigliamento/hero-sfondo.jpg",
+  "heroSfondoMobile": "/img/abbigliamento/hero-sfondo-mobile.jpg",
+  "claimArancione": "Brauchen Sie auch nur ein einziges T-Shirt? Wir machen es.",
+  "whatsappTesto": "Hallo VAM Deco, ich hätte gerne eine Offerte für bedruckte T-Shirts / personalisierte Bekleidung.",
+  "beneficiTitolo": "Warum personalisierte Bekleidung im Tessin?",
+  "beneficiIntro": "Personalisierte Bekleidung ist ein wirkungsvolles Mittel, um Ihre Marke sichtbar zu machen, eine klare Identität zu schaffen und Professionalität zu vermitteln. Jedes Kleidungsstück wird Teil Ihres Marketings, dank <strong>hochwertigen Materialien, einzigartigem Design und fortschrittlichen Drucktechniken</strong>.",
+  "benefici": [
+    { "n": "01", "titolo": "Sofortige Wirkung beim Publikum", "testo": "Ein T-Shirt mit Ihrem Logo zieht auf den ersten Blick die Aufmerksamkeit auf sich und macht Ihre Marke bei jeder Gelegenheit wiedererkennbar." },
+    { "n": "02", "titolo": "Kontinuierliche Werbung und grosse Sichtbarkeit", "testo": "Personalisierte T-Shirts, Hoodies und Firmenbekleidung bewerben Ihre Marke, wo immer sie getragen werden: durchgehende Werbung im ganzen Tessin, ohne Zusatzkosten." },
+    { "n": "03", "titolo": "Professionelles Image und Vertrauen", "testo": "Personalisierte Arbeitskleidung mit Druck oder Stickerei verleiht Ihrem Team ein gepflegtes Auftreten und schafft bei Kunden sofort Vertrauen." },
+    { "n": "04", "titolo": "Einzigartiges, individuelles Design", "testo": "Wir gestalten massgeschneiderte Grafiken: Farben, Logo und Slogan, abgestimmt auf Ihr Unternehmen, für einzigartige Kleidungsstücke, die Ihre Identität widerspiegeln." },
+    { "n": "05", "titolo": "Sparsam und langlebig", "testo": "DTF-Druck und professionelle Stickerei halten häufigen Wäschen stand: eine Investition, die jahrelang hält und Ihre Marke weiter bewirbt." },
+    { "n": "06", "titolo": "Abheben von der Konkurrenz", "testo": "Mit personalisierten T-Shirts und Uniformen heben Sie sich von der Konkurrenz ab: eine starke visuelle Identität, die Kunden im Gedächtnis bleibt und die sie mit Ihrem Unternehmen verbinden." }
+  ],
+  "fasi": [
+    { "t": "Wir lernen uns kennen", "d": "Wir verstehen, wer Sie sind, was Sie brauchen und wie wir helfen können. Ganz unkompliziert." },
+    { "t": "Wir gestalten gemeinsam", "d": "Wir zeigen Ihnen grafische Ideen und schlagen massgeschneiderte Lösungen vor, passend zu Ihrem Stil. Kostenlose Offerte in 24/48 Std." },
+    { "t": "Wir produzieren Ihre Bestellung", "d": "Druck oder Stickerei, mit hochwertigen Materialien und Liebe zum Detail. Alles termingerecht." },
+    { "t": "Wir liefern und bleiben an Ihrer Seite", "d": "Wir kontrollieren alles vor der Lieferung. Und wenn nötig, sind wir auch danach für Sie da." }
+  ],
+  "faq": [
+    { "domanda": "Welche Vorteile bietet die DTF-Personalisierung von Bekleidung?", "risposta": "Die DTF-Technik (Direct to Film) ermöglicht den Druck hochauflösender Motive direkt auf den Stoff und sorgt für kräftige Farben und ausgezeichnete Langlebigkeit. Ideal für T-Shirts und Werbebekleidung, ist sie widerstandsfähig gegen häufiges Waschen und behält auch nach mehrmaligem Gebrauch leuchtende Farben." },
+    { "domanda": "Was versteht man unter der Personalisierung mit Thermotransferfolien?", "risposta": "Bei der Personalisierung mit Thermotransferfolien werden hitzeaktivierte Folien direkt auf die Kleidungsstücke aufgebracht. Die Technik ist sehr vielseitig und eignet sich für Logos, Namen und einfache Grafiken, ideal für ansprechende Designs auf verschiedenen Stoffarten. Diese Lösung ist widerstandsfähig und ideal für Kleidungsstücke, die eine einfachere und direktere Personalisierung erfordern." },
+    { "domanda": "Wann empfiehlt sich Stickerei für personalisierte Bekleidung?", "risposta": "Stickerei ist eine elegante und langlebige Wahl, besonders geeignet für Firmenbekleidung und Uniformen. Sie eignet sich gut für schwere Stoffe wie Hoodies und Caps und verleiht ein professionelles, hochwertiges Aussehen, das die Marke in formellen Kontexten aufwertet." },
+    { "domanda": "Was kostet ein personalisiertes T-Shirt?", "risposta": "Ein einzelnes T-Shirt, inklusive Shirt aus 100% Baumwolle, beginnt bei CHF 24.90 + MwSt. mit Druck auf der Vorderseite; für den Druck vorne und hinten kommen CHF 10.00 hinzu. Bei Bestellungen ab 10 Stück, mit Druck vorne und hinten, sinkt der Preis auf rund CHF 25.00 + MwSt. pro Stück. Der Endpreis hängt von der Grösse der Drucke ab: in der kostenlosen Offerte legen wir ihn auf den Franken genau fest." },
+    { "domanda": "Welche Kleidungsstücke können personalisiert werden?", "risposta": "Wir personalisieren eine breite Palette an Kleidungsstücken: T-Shirts, Polos, Hoodies, Jacken, Caps und Arbeitskleidung. Jedes Kleidungsstück kann mit unterschiedlichen Techniken personalisiert werden, je nach Ihren Wünschen und den Anforderungen der Marke." },
+    { "domanda": "Wie lange dauert die Realisierung einer Bestellung personalisierter Bekleidung?", "risposta": "Die Produktionszeit hängt vom Umfang der Bestellung und der Komplexität des Designs ab. In der Regel dauert die Bearbeitung bei kleineren Bestellungen etwa ein paar Tage. Kontaktieren Sie uns für eine geschätzte Lieferzeit für Ihr Projekt." },
+    { "domanda": "Welche Personalisierungstechniken sind am waschbeständigsten?", "risposta": "Stickerei ist die widerstandsfähigste und langlebigste Technik, ideal für Kleidungsstücke, die häufigem Waschen standhalten müssen. Auch der DTF-Druck bietet gute Haltbarkeit, besonders wenn das Kleidungsstück gemäss den mitgelieferten Anweisungen gewaschen wird." }
+  ],
+  "oggettoForm": "Offertanfrage personalisierte Bekleidung"
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "festa",
+  "title": "Party-Set & Feiern personalisieren im Tessin | VAM Deco",
+  "description": "Party-Set, Geschenke mit Namen, Gastgeschenke und sogar die Torte: alles für Ihre Feier, abgestimmt und massgeschneidert im Tessin. Gratis Kostenvoranschlag in 24/48h.",
+  "h1": "Personalisieren Sie Ihre",
+  "h1Evidenza": "Feier",
+  "heroParagrafi": [
+    "Das Party-Set, die Geschenke mit Namen, die Gastgeschenke und sogar die Torte. <strong>Alles für Ihre Feier, abgestimmt und massgeschneidert</strong>, gefertigt im Tessin zusammen mit Lisa Details.",
+    "Schluss mit dem Weg durch zehn Geschäfte: Sie wählen die Produkte, fügen die passende Themen-Torte hinzu und erhalten alles im gleichen Stil aufeinander abgestimmt. Wir kümmern uns um jedes Detail, vom ersten Geburtstag über die Taufe bis zur Babyparty und zu Weihnachten."
+  ],
+  "claimArancione": "Alles für Ihre Feier, aus einer Hand.",
+  "whatsappTesto": "Hallo VAM Deco, ich möchte meine Feier personalisieren.",
+  "bottoneExtra": {
+    "testo": "Mehr auf Instagram entdecken",
+    "url": "https://instagram.com/lisaa_details"
+  },
+  "beneficiTitolo": "Eine unvergessliche Feier entsteht im Detail",
+  "beneficiIntro": "Jedes Produkt lässt sich mit Namen, Foto, Datum und Thema personalisieren: Sie wählen, was Sie brauchen, und erhalten es abgestimmt auf den Rest der Feier.",
+  "benefici": [
+    { "n": "01", "titolo": "Komplettes Party-Set", "testo": "Alles Nötige, um die Feier auszustatten, in einem einzigen abgestimmten Set: Dekorationen, Cake Topper, Tischkärtchen und Accessoires im gleichen Thema." },
+    { "n": "02", "titolo": "Geschenke mit Namen", "testo": "Bilder, Schriftzüge und personalisierte Geschenke mit dem Namen der gefeierten Person: handgefertigte Details, die als Erinnerung nach der Feier bleiben." },
+    { "n": "03", "titolo": "Gastgeschenke und Einladungen", "testo": "Gastgeschenke, Candy-Bar und personalisierte Einladungen für Geburten, Taufen und Geburtstage, abgestimmt auf das gewählte Thema der Veranstaltung." },
+    { "n": "04", "titolo": "Torten und Kekse nach Thema", "testo": "Massgeschneiderte Torten und dekorierte Kekse, abgestimmt auf die Feier und zubereitet von unserem Partner-Konditor. Auf Kostenvoranschlag, unverbindlich." },
+    { "n": "05", "titolo": "Alles aufeinander abgestimmt", "testo": "Gleiches Thema, gleiche Farben und gleiche Sorgfalt bei jedem Stück, Torte inklusive: Ihre Feier wirkt harmonisch vom Tisch bis zu den Einladungen und macht auf Fotos etwas her." },
+    { "n": "06", "titolo": "Handgefertigt im Tessin", "testo": "Sorgfältige Handarbeit und DTF-Druck, made in Ticino: in der Regel in 5-10 Arbeitstagen fertig, je nach Anfrage." }
+  ],
+  "fasi": [
+    { "t": "Wählen", "d": "Anlass, Thema und Produkte des Sets. Auf Wunsch auch die Torte: Sie erzählen uns von Ihrer Feier per WhatsApp oder im Formular." },
+    { "t": "Personalisieren", "d": "Name, Foto, Datum und Farben: Wir erstellen den massgeschneiderten Grafikvorschlag, den Sie vor der Produktion freigeben." },
+    { "t": "Handwerkliche Produktion", "d": "Wir fertigen alles von Hand und mit DTF-Druck im Tessin, in der Regel in 5-10 Arbeitstagen." },
+    { "t": "Abholen oder nach Hause erhalten", "d": "Abholung an unserem Standort oder Versand nach Hause in die ganze Schweiz, bereit zum Inszenieren." }
+  ],
+  "faq": [
+    { "domanda": "Wie lange im Voraus muss ich für eine Feier bestellen?", "risposta": "In der Regel sind die Produkte in 5-10 Arbeitstagen fertig, je nach Anfrage. Ideal ist es, uns 2 Wochen vor der Veranstaltung zu kontaktieren. Bei dringenden Fällen fragen Sie uns trotzdem, oft können wir auch kurzfristig helfen." },
+    { "domanda": "Kann ich auch nur ein einzelnes Stück bestellen?", "risposta": "Ja: Wir fertigen auch das einzelne Stück, etwa einen Cake Topper oder ein Bild mit dem Namen. Keine Mindestbestellmenge." },
+    { "domanda": "Machen Sie auch Torten und Kekse?", "risposta": "Ja: Themen-Torten, abgestimmt auf die Feier, und dekorierte Kekse, zubereitet von unserem Partner-Konditor. Sie werden auf Kostenvoranschlag angefragt, unverbindlich." },
+    { "domanda": "Erstellen Sie auch die Grafiken oder muss ich sie mitbringen?", "risposta": "Wir erstellen sie: Sie erzählen uns das Thema und wir bereiten die massgeschneiderte Grafik vor, die Sie vor der Produktion freigeben. Wenn Sie bereits eine eigene Datei haben, prüfen wir sie und verwenden sie." },
+    { "domanda": "Wo kann ich bestellen?", "risposta": "Direkt auf dieser Seite über das Formular oder per WhatsApp, online auf shop.vamdeco.ch im Bereich Lisa Details, oder per Nachricht auf Instagram an @lisaa_details." },
+    { "domanda": "Liefern Sie auch ausserhalb des Tessins?", "risposta": "Ja, wir versenden in die ganze Schweiz. Die kostenlose Abholung ist an unserem Standort in Sementina möglich." }
+  ],
+  "oggettoForm": "Anfrage Kostenvoranschlag Feier-Personalisierung"
+}

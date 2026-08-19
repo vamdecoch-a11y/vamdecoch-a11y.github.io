@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BannerCookie from '../components/BannerCookie.astro';
+import { localePath, type Locale } from '../i18n';
 import '../styles/global.css';
 
 interface Props {
@@ -9,15 +10,23 @@ interface Props {
   description: string;
   ogImage?: string;
   noindex?: boolean; // pagine da tenere fuori da Google anche dopo il go-live (es. /ringraziamenti)
+  i18n?: boolean; // se true, emette i link hreflang it/en/de (solo per pagine che hanno le 3 versioni)
 }
-const { title, description, ogImage = '/og-vamdeco.jpg', noindex = false } = Astro.props;
+const { title, description, ogImage = '/og-vamdeco.jpg', noindex = false, i18n = false } = Astro.props;
+const locale = (Astro.currentLocale ?? 'it') as Locale;
+const langAttr = locale === 'it' ? 'it-CH' : locale;
 // URL "ufficiale" pulito (senza .html e senza /index): coerente con sitemap e menu,
 // così canonical e og:url non creano doppioni /pagina vs /pagina.html
 const percorsoPulito = Astro.url.pathname.replace(/index\.html$/, '').replace(/\.html$/, '') || '/';
 const urlPagina = new URL(percorsoPulito, Astro.site).href;
+// percorso senza prefisso lingua, per calcolare le versioni nelle altre lingue (hreflang)
+const base = percorsoPulito.replace(/^\/(en|de)(?=\/|$)/, '') || '/';
+const altIt = new URL(base, Astro.site).href;
+const altEn = new URL(localePath('en', base), Astro.site).href;
+const altDe = new URL(localePath('de', base), Astro.site).href;
 ---
 <!doctype html>
-<html lang="it-CH">
+<html lang={langAttr}>
   <head>
     <script>document.documentElement.classList.add('js');</script>
     <meta charset="UTF-8" />
@@ -26,6 +35,14 @@ const urlPagina = new URL(percorsoPulito, Astro.site).href;
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={urlPagina} />
+    {i18n && (
+      <>
+        <link rel="alternate" hreflang="it-ch" href={altIt} />
+        <link rel="alternate" hreflang="en" href={altEn} />
+        <link rel="alternate" hreflang="de" href={altDe} />
+        <link rel="alternate" hreflang="x-default" href={altIt} />
+      </>
+    )}
     <!-- Google Analytics: caricato dal banner cookie SOLO dopo consenso "Statistiche" -->
 
     <!-- Anteprima social (WhatsApp, Facebook, ecc.) -->

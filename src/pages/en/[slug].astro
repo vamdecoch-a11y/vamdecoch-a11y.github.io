@@ -1,0 +1,14 @@
+---
+// Pagine servizio in inglese (/en/<slug>). Stesso layout PaginaServizio: la lingua
+// viene dall'URL (Astro.currentLocale='en'), i contenuti dai JSON di servizi-en.
+import PaginaServizio from '../../layouts/PaginaServizio.astro';
+export function getStaticPaths() {
+  const moduli = import.meta.glob('../../dati/servizi-en/*.json', { eager: true });
+  return Object.entries(moduli).map(([path, mod]) => ({
+    params: { slug: path.split('/').pop()!.replace('.json', '') },
+    props: { servizio: (mod as any).default },
+  }));
+}
+const { servizio } = Astro.props;
+---
+<PaginaServizio servizio={servizio} />

@@ -1,0 +1,40 @@
+{
+  "slug": "siti-web",
+  "title": "Web Design for Businesses in Ticino, Switzerland | VAM Deco",
+  "description": "Professional web design in Ticino, Switzerland: business websites, e-commerce and landing pages that are fast, secure and SEO-optimised. Free quote in 24/48h.",
+  "h1": "Professional websites for businesses",
+  "h1Evidenza": "in Ticino",
+  "heroParagrafi": [
+    "Bring your online presence to life with a <strong>bespoke professional website</strong>: modern design, fast navigation and flawless performance across smartphones, tablets and desktops.",
+    "We build <strong>SEO-optimised websites</strong> that are secure and high-performing, designed to turn visitors into customers.",
+    "Digital competition in Ticino grows by the day. With a website crafted down to the last detail, you gain <strong>maximum visibility on Google</strong> and grow your business."
+  ],
+  "claimArancione": "Trust our web services to convey professionalism and quality, whether you need a business website, an online store or custom company pages.",
+  "whatsappTesto": "Hi VAM Deco, I'd like a quote for a professional website.",
+  "beneficiTitolo": "Why choose a professional website in Ticino",
+  "beneficiIntro": "Give your brand visibility with a high-quality <strong>professional website</strong> in Ticino. Whether it's a business website, an e-commerce store or a landing page, every project is carefully built to deliver smooth navigation, an outstanding user experience and real results.",
+  "benefici": [
+    { "n": "01", "titolo": "Custom business websites", "testo": "We build professional business websites with bespoke design and SEO optimisation: they showcase your company in Ticino and turn visitors into customers." },
+    { "n": "02", "titolo": "Landing pages", "testo": "Fast, SEO-optimised landing pages for Google Ads and social campaigns: focused calls to action that boost conversions and bring in new leads." },
+    { "n": "03", "titolo": "E-commerce websites", "testo": "We develop secure e-commerce stores with integrated payments, polished product pages and SEO optimisation: your online shop sells around the clock." },
+    { "n": "04", "titolo": "Websites for local businesses", "testo": "Websites optimised for local SEO: your business shows up on Google when customers in Ticino search for your services." },
+    { "n": "05", "titolo": "Websites with online booking", "testo": "We integrate online booking systems for hotels, restaurants, gyms and professional practices: simple, secure appointment management available at any time." },
+    { "n": "06", "titolo": "Website redesigns", "testo": "We revamp outdated websites, improving design, loading speed and SEO ranking: a modern, secure site that looks perfect on every device." }
+  ],
+  "fasi": [
+    { "t": "Analysis and understanding", "d": "We start from your goals: together we work out what your site needs to do (present your business, sell online, capture enquiries) and study your industry and your audience in Ticino." },
+    { "t": "Tailored proposal", "d": "We present a custom proposal covering site structure, design and features, along with a free, transparent quote within 24/48h." },
+    { "t": "Development and optimisation", "d": "We build the site with custom design, carefully written content and SEO optimisation. Every page is fast, secure and perfect on smartphones, tablets and desktops." },
+    { "t": "Launch and ongoing support", "d": "We take the site live, check that everything runs smoothly and stay by your side with updates and support to keep it performing at its best." }
+  ],
+  "faq": [
+    { "domanda": "How much does a professional website cost?", "risposta": "The cost of a professional website depends on its complexity, the features required and the level of custom design. We provide detailed quotes tailored to each client's specific needs." },
+    { "domanda": "How long does it take to develop a website?", "risposta": "Development time depends on the complexity of the project. As a rule, a standard website takes between 2 and 4 weeks to complete." },
+    { "domanda": "What is SEO and why does it matter for my site?", "risposta": "SEO (Search Engine Optimisation) is the set of techniques used to improve your site's visibility on search engines, increasing organic traffic and potential customers." },
+    { "domanda": "Will my site be responsive and mobile-friendly?", "risposta": "Yes, all our websites are designed to be responsive, ensuring an optimal browsing experience on smartphones, tablets and desktops." },
+    { "domanda": "Do you offer maintenance and post-launch support?", "risposta": "Yes, we provide maintenance and support packages to keep your site up to date, secure and high-performing over time." },
+    { "domanda": "Can I add a blog section to my site?", "risposta": "Absolutely. We can integrate a blog section to share news, updates and relevant content, boosting engagement and SEO. Get in touch for a free quote." },
+    { "domanda": "How can I track my website's performance?", "risposta": "We set up analytics tools such as Google Analytics to monitor traffic, user behaviour and other key metrics, helping you measure how well your site is performing." }
+  ],
+  "oggettoForm": "Website quote request"
+}

@@ -8,6 +8,12 @@ export default defineConfig({
   site: 'https://vamdeco.ch',
   trailingSlash: 'never',
   build: { format: 'file' },
+  // Multilingua: italiano alla radice (/), inglese su /en/, tedesco su /de/.
+  i18n: {
+    locales: ['it', 'en', 'de'],
+    defaultLocale: 'it',
+    routing: { prefixDefaultLocale: false },
+  },
   // Redirect di vecchi URL (Framer) verso le pagine nuove, per non perdere posizioni su Google.
   // Elenco ricavato dal confronto tra l'archivio del vecchio sito e il sito nuovo.
   // In output statico Astro genera una pagina che rimanda automaticamente alla destinazione.

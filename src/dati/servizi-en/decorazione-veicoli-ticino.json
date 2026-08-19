@@ -1,0 +1,40 @@
+{
+  "slug": "decorazione-veicoli",
+  "title": "Vehicle Graphics & Wrapping Ticino, Switzerland | VAM Deco",
+  "description": "Vehicle wrapping and graphics in Ticino, Switzerland: promote your business on cars, vans and trucks. Get a free quote in 24/48h from VAM Deco.",
+  "h1": "Vehicle wrapping",
+  "h1Evidenza": "in Ticino",
+  "heroParagrafi": [
+    "Turn cars, vans and trucks into true advertising tools with <strong>vehicle wrapping in Ticino</strong>.",
+    "Custom, professional and hard-wearing graphics, visible everywhere: on the road, in traffic and in car parks.",
+    "From partial to full vehicle wraps, produced fast and tailored to you across Ticino."
+  ],
+  "claimArancione": "Turn your vehicle into mobile advertising, seen around the clock across Ticino.",
+  "whatsappTesto": "Hi VAM Deco, I would like a quote for wrapping my vehicle.",
+  "beneficiTitolo": "Why choose vehicle wrapping in Ticino?",
+  "beneficiIntro": "<strong>Vehicle wrapping</strong> is one of the most effective advertising tools to promote your business: every day your vehicle becomes a mobile billboard that draws attention around town and out on the road. In Ticino, with frequent trips between Bellinzona, Locarno, Biasca and Lugano, <strong>vehicle wrapping</strong> gives your brand maximum visibility, continuously and effortlessly.",
+  "benefici": [
+    { "n": "01", "titolo": "Increased visibility", "testo": "Vehicle wrapping turns cars and vans into mobile billboards, seen every day by thousands of people across Ticino." },
+    { "n": "02", "titolo": "Credibility and trust", "testo": "A company vehicle wrapped with professional graphics conveys reliability and care: customers instantly recognise your business and trust your brand." },
+    { "n": "03", "titolo": "Custom design", "testo": "We design tailor-made graphics for your vehicle wrap: colours, logo and messaging coordinated with your corporate identity to attract the right customers." },
+    { "n": "04", "titolo": "Lower long-term costs", "testo": "One initial investment and your vehicle wrap works for years: continuous advertising with no monthly fees and an extremely low cost per contact." },
+    { "n": "05", "titolo": "Durability and resistance", "testo": "We use high-quality films that withstand sun, rain and car washes: your vehicle wrap stays bright and legible for many years." },
+    { "n": "06", "titolo": "Constant brand awareness", "testo": "On the road, on site or in the car park, a wrapped vehicle promotes your brand around the clock across Ticino, effortlessly." }
+  ],
+  "fasi": [
+    { "t": "We get to know you", "d": "Understanding who you are, what you need and how we can help. No hassle." },
+    { "t": "We design together", "d": "We share graphic ideas and propose tailor-made solutions that suit your style, with a free quote in 24/48h." },
+    { "t": "We produce your order", "d": "Printing and application of the graphics with quality materials and attention to detail. All within the right timeframe." },
+    { "t": "We deliver and stay with you", "d": "We check everything before delivery. And if you need us, we are here afterwards too." }
+  ],
+  "faq": [
+    { "domanda": "What are the advantages of vehicle wrapping compared to other forms of advertising?", "risposta": "Vehicle wrapping is advertising on the move, visible 24/7, and it offers a very low cost per view compared to other forms of marketing." },
+    { "domanda": "How much does it cost to wrap a vehicle in Ticino?", "risposta": "Costs vary depending on the size of the vehicle, the type of wrap (partial or full) and the materials used. Contact us for a personalised quote." },
+    { "domanda": "How long does it take to wrap a vehicle?", "risposta": "The time required can range from 1 to 6 working days, depending on the complexity of the project and the surface to be wrapped." },
+    { "domanda": "Is it possible to wrap only part of the vehicle, such as the doors or the bonnet?", "risposta": "Absolutely. We offer both partial and full wraps, depending on your needs and the visual impact you want to achieve." },
+    { "domanda": "Can I see a preview of the wrap?", "risposta": "Yes. Before printing we send you a graphic draft of the project for approval, usually available once a deposit has been paid." },
+    { "domanda": "Does the vehicle need to be washed before the wrap is applied?", "risposta": "Yes. The vehicle must be clean and free of waxes or substances that could compromise the adhesion of the films. Otherwise, cleaning will be charged." },
+    { "domanda": "What types of vehicles can be wrapped?", "risposta": "We can wrap any type of vehicle, from company vans to private cars, right through to trucks and buses." }
+  ],
+  "oggettoForm": "Vehicle wrapping quote request"
+}

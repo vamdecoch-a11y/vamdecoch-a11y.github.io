@@ -11,6 +11,7 @@ import RecensioniEleganti from '../components/RecensioniEleganti.astro';
 import WhatsAppTondo from '../components/WhatsAppTondo.astro';
 import { recensioniStandard } from '../dati/recensioni';
 import { anniEsperienza, ANNO_FONDAZIONE } from '../dati/statistiche';
+import { t, haTraduzioni, type Locale } from '../i18n';
 
 interface Beneficio { n: string; titolo: string; testo: string; }
 interface Fase { t: string; d: string; }
@@ -38,6 +39,10 @@ interface Servizio {
 }
 interface Props { servizio: Servizio; }
 const { servizio: s } = Astro.props;
+const locale = (Astro.currentLocale ?? 'it') as Locale;
+// hreflang solo per le 12 pagine servizio principali (che hanno EN/DE);
+// le sottopagine città sono solo-IT, quindi niente hreflang verso pagine inesistenti.
+const conTraduzioni = haTraduzioni(Astro.url.pathname);
 
 // Galleria: tutte le foto nella cartella del servizio (pipeline pronta per il bot Telegram)
 const cartellaGalleria = `public/img/${s.slug}/galleria`;
@@ -72,7 +77,7 @@ const businessJsonLd = JSON.stringify({
   aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '72', bestRating: '5' },
 });
 ---
-<Base title={s.title} description={s.description}>
+<Base title={s.title} description={s.description} i18n={conTraduzioni}>
   {faqJsonLd && <script type="application/ld+json" set:html={faqJsonLd} />}
   <script type="application/ld+json" set:html={businessJsonLd} />
 
@@ -92,7 +97,7 @@ const businessJsonLd = JSON.stringify({
       <div data-reveal class="flex justify-center mb-6">
         <a href="/recensioni" class="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-4 py-1.5 hover:border-brand/50 transition-colors">
           <span class="text-brand text-sm tracking-tight" aria-hidden="true">★★★★★</span>
-          <span class="text-sm"><span class="font-bold">5.0</span> <span class="text-carta/60">su 72 recensioni Google</span></span>
+          <span class="text-sm"><span class="font-bold">5.0</span> <span class="text-carta/60">{t(locale, 'badge_recensioni')}</span></span>
         </a>
       </div>
       <h1 data-reveal class="h1-adattivo text-3xl md:text-5xl font-bold leading-tight tracking-tight">
@@ -106,10 +111,10 @@ const businessJsonLd = JSON.stringify({
       </p>
       <div data-reveal class="mt-8 flex flex-wrap justify-center gap-3">
         <a href="#preventivo" class="btn-anim rounded-full bg-brand px-7 py-3.5 font-semibold text-ink hover:bg-brand-dark">
-          Richiedi il tuo preventivo gratuito
+          {t(locale, 'cta_preventivo')}
         </a>
         <a href={linkWhatsApp} target="_blank" rel="noopener" class="btn-anim rounded-full border-2 border-white/20 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand">
-          Scrivici su WhatsApp
+          {t(locale, 'cta_whatsapp')}
         </a>
         {s.bottoneExtra && (
           <a href={s.bottoneExtra.url} target="_blank" rel="noopener" class="btn-anim inline-flex items-center gap-2.5 rounded-full border-2 border-white/20 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand">
@@ -119,8 +124,8 @@ const businessJsonLd = JSON.stringify({
         )}
       </div>
       <div data-reveal class="mt-6 space-y-1.5">
-        <p class="text-base md:text-lg font-semibold text-carta">Richiedi il tuo preventivo gratuito in <span class="text-brand">24/48h</span></p>
-        <p class="text-base md:text-lg font-semibold text-carta/85">Ti rispondiamo velocemente su WhatsApp o via mail</p>
+        <p class="text-base md:text-lg font-semibold text-carta">{t(locale, 'hero_rass1')} <span class="text-brand">{t(locale, 'hero_2448')}</span></p>
+        <p class="text-base md:text-lg font-semibold text-carta/85">{t(locale, 'hero_rass2')}</p>
       </div>
     </div>
   </section>
@@ -136,7 +141,7 @@ const businessJsonLd = JSON.stringify({
   <!-- BENEFICI -->
   <section class="border-y border-white/5 bg-white/[0.02] py-16">
     <div class="max-w-6xl mx-auto px-4">
-      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Benefici</div>
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">{t(locale, 'lab_benefici')}</div>
       <h2 data-reveal class="text-2xl md:text-3xl font-bold mb-4">{s.beneficiTitolo}</h2>
       <p data-reveal class="max-w-3xl text-carta/70 mb-10" set:html={s.beneficiIntro} />
       <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
@@ -154,8 +159,8 @@ const businessJsonLd = JSON.stringify({
   <!-- PROCESSO IN 4 FASI -->
   <section class="max-w-3xl mx-auto px-4 py-20">
     <div class="text-center">
-      <div data-reveal class="inline-block rounded-full bg-white/[0.06] border border-white/10 px-5 py-2 text-xs font-bold tracking-widest text-brand uppercase mb-3">Come funziona</div>
-      <h2 data-reveal class="text-2xl md:text-4xl font-bold mb-14">Il nostro Processo in 4 Fasi</h2>
+      <div data-reveal class="inline-block rounded-full bg-white/[0.06] border border-white/10 px-5 py-2 text-xs font-bold tracking-widest text-brand uppercase mb-3">{t(locale, 'lab_comefunziona')}</div>
+      <h2 data-reveal class="text-2xl md:text-4xl font-bold mb-14">{t(locale, 'processo_titolo')}</h2>
     </div>
     <div>
       {s.fasi.map((f, i) => (
@@ -165,7 +170,7 @@ const businessJsonLd = JSON.stringify({
             {i < s.fasi.length - 1 && <div class="fase-linea"><div class="fase-linea-riempi"></div></div>}
           </div>
           <div data-reveal class="card-scura rounded-2xl p-6 md:p-7 mb-6 self-start">
-            <div class="inline-block rounded-full bg-white/[0.07] px-3.5 py-1 text-[10px] font-bold tracking-widest text-carta/60 uppercase">Step 0{i + 1}</div>
+            <div class="inline-block rounded-full bg-white/[0.07] px-3.5 py-1 text-[10px] font-bold tracking-widest text-carta/60 uppercase">{t(locale, 'step')} 0{i + 1}</div>
             <div class="fase-titolo mt-3 font-display text-lg md:text-2xl font-semibold transition-colors duration-500">{f.t}</div>
             <p class="fase-testo mt-2 text-sm md:text-base leading-relaxed transition-colors duration-500">{f.d}</p>
           </div>
@@ -177,7 +182,7 @@ const businessJsonLd = JSON.stringify({
   <!-- CTA A META PAGINA: typewriter + form + freccia (primo form: target dei pulsanti principali) -->
   <section id="preventivo" class="max-w-6xl mx-auto px-4 pt-6 pb-16 text-center scroll-mt-20">
     <h2 class="typewriter font-display text-3xl md:text-6xl font-bold text-brand min-h-[1.3em]">
-      <span class="tw-testo" data-frasi='["Parliamone.", "Diamo vita alle tue idee."]'></span><span class="cursore">&nbsp;</span>
+      <span class="tw-testo" data-frasi={JSON.stringify([t(locale, 'tw1'), t(locale, 'tw2')])}></span><span class="cursore">&nbsp;</span>
     </h2>
     <div class="max-w-2xl mx-auto mt-10">
       <FormContatti oggetto={s.oggettoForm} origine={`Servizio: ${s.slug} (modulo 1, a metà pagina)`} />
@@ -189,23 +194,23 @@ const businessJsonLd = JSON.stringify({
   <section class="bg-brand py-16">
     <div class="max-w-6xl mx-auto px-4 grid gap-10 md:grid-cols-[1.2fr_1fr] items-center">
       <div data-reveal-stagger>
-        <div data-reveal class="text-xs font-bold tracking-widest text-ink/70 mb-3 uppercase">Perché scegliere VAM Deco</div>
-        <h2 data-reveal class="text-3xl md:text-5xl font-bold text-ink leading-tight">Semplice, veloce,<br />su misura.</h2>
+        <div data-reveal class="text-xs font-bold tracking-widest text-ink/70 mb-3 uppercase">{t(locale, 'perche_label')}</div>
+        <h2 data-reveal class="text-3xl md:text-5xl font-bold text-ink leading-tight">{t(locale, 'perche_titolo1')}<br />{t(locale, 'perche_titolo2')}</h2>
         <p data-reveal class="mt-5 max-w-md text-ink/80 leading-relaxed">
-          {s.perchePara ?? "Produzione interna a Sementina, un solo referente dall'idea alla consegna e la stessa cura sia per il singolo pezzo che per la flotta aziendale."}
+          {s.perchePara ?? t(locale, 'perche_para_default')}
         </p>
-        <a data-reveal href="#preventivo" class="btn-anim mt-7 inline-block rounded-full bg-ink px-7 py-3.5 font-semibold text-carta hover:bg-black">Richiedi il tuo preventivo</a>
+        <a data-reveal href="#preventivo" class="btn-anim mt-7 inline-block rounded-full bg-ink px-7 py-3.5 font-semibold text-carta hover:bg-black">{t(locale, 'cta_preventivo2')}</a>
       </div>
       <div class="divide-y divide-ink/20" data-reveal-stagger>
         {[
-          { n: 500, s: '+', l: 'progetti realizzati', d: 'per aziende e privati in tutta la Svizzera' },
-          { n: 24, s: '/48h', l: 'per il tuo preventivo', d: 'gratuito e senza impegno, su WhatsApp o via mail' },
-          { n: anniEsperienza(), s: '+', l: 'anni di esperienza', d: 'in decorazione e personalizzazione in Ticino', anniDa: ANNO_FONDAZIONE },
+          { n: 500, s: '+', lk: 'stat1_l', dk: 'stat1_d' },
+          { n: 24, s: '/48h', lk: 'stat2_l', dk: 'stat2_d' },
+          { n: anniEsperienza(), s: '+', lk: 'stat3_l', dk: 'stat3_d', anniDa: ANNO_FONDAZIONE },
         ].map((x) => (
           <div data-reveal class="py-6">
             <div class="font-display text-6xl md:text-7xl font-bold text-ink leading-none" data-count={x.n} data-suffix={x.s} data-anni-da={x.anniDa}>{x.n}{x.s}</div>
-            <div class="mt-3 font-display font-semibold text-ink">{x.l}</div>
-            <p class="mt-1 text-sm text-ink/75 max-w-sm">{x.d}</p>
+            <div class="mt-3 font-display font-semibold text-ink">{t(locale, x.lk)}</div>
+            <p class="mt-1 text-sm text-ink/75 max-w-sm">{t(locale, x.dk)}</p>
           </div>
         ))}
       </div>
@@ -215,15 +220,15 @@ const businessJsonLd = JSON.stringify({
   <!-- RECENSIONI (componente condiviso in tutto il sito) -->
   <RecensioniEleganti recensioni={recensioniStandard} />
   <div class="text-center pb-16">
-    <a data-reveal href="/recensioni" class="btn-anim inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-ink hover:bg-brand-dark">Vedi le recensioni</a>
+    <a data-reveal href="/recensioni" class="btn-anim inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-ink hover:bg-brand-dark">{t(locale, 'vedi_recensioni')}</a>
   </div>
 
   <!-- FAQ (solo se il servizio le ha) -->
   {s.faq.length > 0 && (
     <section class="border-y border-white/5 bg-white/[0.02] py-16">
       <div class="max-w-3xl mx-auto px-4">
-        <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Domande frequenti</div>
-        <h2 data-reveal class="text-2xl md:text-3xl font-bold mb-8">Hai Domande? Ecco le nostre Risposte!</h2>
+        <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">{t(locale, 'faq_label')}</div>
+        <h2 data-reveal class="text-2xl md:text-3xl font-bold mb-8">{t(locale, 'faq_titolo')}</h2>
         <div data-reveal-stagger class="space-y-4">
           {s.faq.map((f) => (
             <details class="faq-item faq-card group px-5" data-reveal>
@@ -332,7 +337,7 @@ const businessJsonLd = JSON.stringify({
       }, { threshold: 0.15 });
       osservaTw.observe(tw.closest('h2')!);
     } else if (tw) {
-      tw.textContent = 'Parliamone.';
+      tw.textContent = (JSON.parse(tw.dataset.frasi || '[]')[0]) || '';
     }
   </script>
 </Base>
