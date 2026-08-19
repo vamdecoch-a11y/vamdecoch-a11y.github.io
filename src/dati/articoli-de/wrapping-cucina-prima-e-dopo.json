@@ -1,0 +1,67 @@
+{
+  "slug": "wrapping-cucina-prima-e-dopo",
+  "title": "Küchenfolierung: Vorher-Nachher interaktiv | VAM Deco Tessin",
+  "description": "Die Küche erneuern, ohne sie auszutauschen: Sehen Sie das interaktive Vorher-Nachher einer echten Folierung aus dem Tessin. Kosten, Dauer und Haltbarkeit der Folie.",
+  "h1": "Küchenfolierung: Verschieben Sie selbst den Vorher-Nachher-Regler",
+  "categoria": "Innenfolierung",
+  "data": "9. Aug. 2026",
+  "dataIso": "2026-08-09",
+  "cover": "/img/articoli/wrapping-cucina-prima-e-dopo/cover.jpg",
+  "estratto": "Eine in wenigen Tagen erneuerte Küche ganz ohne Abbrucharbeiten: Verschieben Sie den Regler und sehen Sie die Verwandlung mit eigenen Augen.",
+  "primaDopo": {
+    "prima": "/img/articoli/wrapping-cucina-prima-e-dopo/prima.jpg",
+    "dopo": "/img/articoli/wrapping-cucina-prima-e-dopo/dopo.jpg",
+    "didascalia": "Verschieben Sie den Regler: links die ursprüngliche Küche, rechts die von VAM Deco umgesetzte Folierung."
+  },
+  "sezioni": [
+    {
+      "paragrafi": [
+        "Diese Küche wurde nicht ersetzt: Sie wurde <strong>mit einer professionellen Klebefolie beschichtet</strong> (Folierung). Fronten, Türen und Oberflächen haben in wenigen Tagen ihr Aussehen komplett verändert, ohne Abbrucharbeiten, ohne Staub und zu einem Bruchteil der Kosten einer neuen Küche.",
+        "Das Ergebnis beurteilen Sie selbst: Nutzen Sie den Regler oben, um das Vorher und Nachher zu vergleichen."
+      ]
+    },
+    {
+      "heading": "Warum eine Folierung statt eines Austauschs",
+      "lista": [
+        "<strong>Geringere Kosten</strong>: nur ein Bruchteil des Preises einer neuen Küche.",
+        "<strong>Schnelle Umsetzung</strong>: Arbeit in wenigen Tagen erledigt, Küche sofort nutzbar.",
+        "<strong>Keine Baustelle</strong>: keine Abbrucharbeiten, kein Bauschutt, kein Umstellen der Geräte.",
+        "<strong>Massgeschneidertes Design</strong>: Holz, Marmor, matte oder glänzende Unifarben: Hunderte von Oberflächen.",
+        "<strong>Reversibel</strong>: Die Folie lässt sich später entfernen oder austauschen."
+      ]
+    },
+    {
+      "heading": "So arbeiten wir",
+      "paragrafi": [
+        "Zuerst schauen wir uns Ihre Küche vor Ort an (oder Sie senden uns Fotos), gemeinsam wählen wir die Oberfläche aus dem Musterkatalog und erstellen einen kostenlosen Kostenvoranschlag. Die Oberflächen werden gereinigt und entfettet, danach wird die Folie von erfahrenen Verlegern fachgerecht angebracht, mit besonderer Sorgfalt an Kanten und Ecken.",
+        "Wir verwenden ausschliesslich professionelle Folien, die Feuchtigkeit, Hitze und täglichem Gebrauch standhalten: ideal für den Küchenbereich."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "domanda": "Was kostet die Folierung einer Küche?",
+      "risposta": "Das hängt von den Massen und der gewählten Oberfläche ab, in der Regel sprechen wir aber von einem Bruchteil der Kosten einer neuen Küche. Am genauesten erfahren Sie es mit einem kostenlosen Kostenvoranschlag: Einige Fotos und die ungefähren Masse genügen."
+    },
+    {
+      "domanda": "Wie lange hält die Folie in der Küche?",
+      "risposta": "Mit professionellen Folien und fachgerechter Verlegung hält die Folierung im Schnitt 7-10 Jahre, auch in der Küche, und widersteht Feuchtigkeit, mässiger Hitze und der täglichen Reinigung."
+    },
+    {
+      "domanda": "Kann jede Küche foliert werden?",
+      "risposta": "Fast alle: glatte Oberflächen (Laminat, lackiertes MDF, lackiertes Holz) sind ideal. Sehr poröse oder beschädigte Fronten prüfen wir im Einzelfall, da sie eine zusätzliche Vorbereitung erfordern können."
+    },
+    {
+      "domanda": "Wie viel Zeit nimmt die Arbeit in Anspruch?",
+      "risposta": "Eine durchschnittliche Küche benötigt in der Regel 2-4 Arbeitstage. Die Küche ist noch am selben Abend nutzbar und es sind keine Maurerarbeiten nötig."
+    },
+    {
+      "domanda": "Nimmt die Folie durch Wasser und Dampf Schaden?",
+      "risposta": "Nein: Die Folien, die wir verwenden, sind für feuchte Umgebungen ausgelegt. Reinigen Sie sie einfach mit einem weichen Tuch und neutralen Reinigungsmitteln und vermeiden Sie Scheuerschwämme sowie aggressive Lösungsmittel."
+    }
+  ],
+  "servizioCorrelato": {
+    "testo": "Entdecken Sie alle unsere Dienstleistungen",
+    "href": "/servizi"
+  }
+}

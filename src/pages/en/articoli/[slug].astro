@@ -1,0 +1,15 @@
+---
+// Rotta dinamica articoli EN (/en/articoli/<slug>). Stesso layout, contenuti da articoli-en.
+import ArticoloBlog from '../../../layouts/ArticoloBlog.astro';
+
+export function getStaticPaths() {
+  const moduli = import.meta.glob('../../../dati/articoli-en/*.json', { eager: true });
+  return Object.values(moduli).map((m: any) => {
+    const articolo = m.default ?? m;
+    return { params: { slug: articolo.slug }, props: { articolo } };
+  });
+}
+
+const { articolo } = Astro.props;
+---
+<ArticoloBlog articolo={articolo} />

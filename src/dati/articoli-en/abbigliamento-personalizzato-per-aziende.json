@@ -1,0 +1,77 @@
+{
+  "slug": "abbigliamento-personalizzato-per-aziende",
+  "title": "Custom Corporate Clothing Ticino | VAM Deco",
+  "description": "Custom uniforms and corporate clothing in Ticino: DTF printing or logo embroidery on t-shirts, polos and hoodies. Request a free quote.",
+  "h1": "Custom Corporate Clothing in Ticino",
+  "categoria": "Clothing",
+  "data": "25 Feb 2025",
+  "dataIso": "2025-02-25",
+  "cover": "/img/articoli/abbigliamento-personalizzato-per-aziende/cover.jpg",
+  "estratto": "Coordinated uniforms with your logo: more professionalism and a recognizable brand. We guide you in choosing between DTF printing and embroidery.",
+  "sezioni": [
+    {
+      "paragrafi": [
+        "Dressing your team in coordinated apparel bearing your logo is one of the most effective, low-cost branding tools out there. In Ticino we personalize t-shirts, polos, hoodies and jackets with DTF printing or embroidery, for companies, shops, events and sports teams."
+      ]
+    },
+    {
+      "heading": "Why it pays off for your business",
+      "paragrafi": [
+        "A uniform with your logo isn't just clothing: it's a business card that travels everywhere your team goes. Here are the concrete benefits."
+      ],
+      "lista": [
+        "A more recognizable brand: a well-placed logo makes you instantly identifiable.",
+        "A professional image: a consistent look conveys order and reliability to your customers.",
+        "Long-term marketing: every interaction between your team and the public becomes free visibility.",
+        "A closer-knit team: coordinated apparel builds a sense of belonging and team spirit."
+      ]
+    },
+    {
+      "heading": "DTF printing or embroidery: how to choose",
+      "paragrafi": [
+        "These are the two techniques we use most often. The right choice depends on the garment, the artwork, the quantity and the effect you want to achieve.",
+        "DTF (Direct to Film) printing reproduces detailed graphics and vivid colors on any fabric, holds up well to washing and is the most cost-effective option for large quantities. It's ideal for t-shirts, hoodies, promotional shirts and merchandising.",
+        "Embroidery stitches your logo in thread: it gives an elegant, three-dimensional and highly durable result, perfect for polos, jackets and uniforms exposed to frequent or high-temperature washing. It works best with simple logos and text, and less so with photographic images."
+      ]
+    },
+    {
+      "heading": "Why choose VAM Deco",
+      "paragrafi": [
+        "We personalize t-shirts, polos, hoodies, jackets and caps with quality materials and professional techniques, guiding you from the artwork all the way to delivery. Whether you need an order for your entire company or just a few pieces for an event, a team or a stag party, we'll find the right solution for your budget and quantity.",
+        "We work with businesses and private customers throughout Ticino. Get in touch for a free, no-obligation quote."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "domanda": "Is DTF printing or embroidery better?",
+      "risposta": "It depends on the use. DTF printing is perfect for detailed graphics, vivid colors and large quantities. Embroidery is more elegant and durable, ideal for polos, jackets and workwear."
+    },
+    {
+      "domanda": "What is the minimum quantity to personalize clothing?",
+      "risposta": "We handle both large orders for an entire company and small runs for events, teams or private occasions. We'll suggest the solution best suited to the quantity you need."
+    },
+    {
+      "domanda": "How much does it cost to personalize corporate clothing?",
+      "risposta": "The price depends on quantity, garment type and technique. DTF printing is more cost-effective for large quantities, while embroidery suits small premium runs. Get in touch for a free quote."
+    },
+    {
+      "domanda": "Which garments can I personalize with my logo?",
+      "risposta": "T-shirts, polos, shirts, hoodies, jackets, caps and technical workwear. We'll help you choose the right garment based on your industry and the season."
+    },
+    {
+      "domanda": "Will the logo survive washing?",
+      "risposta": "Yes. Both DTF printing and embroidery are made to last and to withstand frequent washing. Embroidery also holds up well to the high temperatures used for workwear."
+    }
+  ],
+  "galleria": [
+    "/img/articoli/abbigliamento-personalizzato-per-aziende/galleria-01.jpg",
+    "/img/articoli/abbigliamento-personalizzato-per-aziende/galleria-02.jpg",
+    "/img/articoli/abbigliamento-personalizzato-per-aziende/galleria-03.jpg",
+    "/img/articoli/abbigliamento-personalizzato-per-aziende/galleria-04.jpg"
+  ],
+  "servizioCorrelato": {
+    "testo": "Discover the service: Custom clothing",
+    "href": "/abbigliamento-personalizzato-ticino"
+  }
+}

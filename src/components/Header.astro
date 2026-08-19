@@ -2,17 +2,13 @@
 import { t, localePath, haTraduzioni, type Locale } from '../i18n';
 const locale = (Astro.currentLocale ?? 'it') as Locale;
 
-// Menu completo in italiano; ridotto in EN/DE (solo le pagine tradotte in fase 1).
-const NAV: Record<Locale, { k: string; href: string }[]> = {
-  it: [
-    { k: 'nav_home', href: '/' }, { k: 'nav_chisiamo', href: '/chi-siamo' },
-    { k: 'nav_servizi', href: '/servizi' }, { k: 'nav_recensioni', href: '/recensioni' },
-    { k: 'nav_blog', href: '/articoli' },
-  ],
-  en: [{ k: 'nav_home', href: '/' }, { k: 'nav_servizi', href: '/servizi' }],
-  de: [{ k: 'nav_home', href: '/' }, { k: 'nav_servizi', href: '/servizi' }],
-};
-const voci = NAV[locale] ?? NAV.it;
+// Menu completo, uguale in tutte le lingue (tutte le pagine del menu sono tradotte).
+// localePath prefissa gli href per la lingua corrente.
+const voci = [
+  { k: 'nav_home', href: '/' }, { k: 'nav_chisiamo', href: '/chi-siamo' },
+  { k: 'nav_servizi', href: '/servizi' }, { k: 'nav_recensioni', href: '/recensioni' },
+  { k: 'nav_blog', href: '/articoli' },
+];
 
 // Selettore lingua: link alla stessa pagina nelle tre lingue.
 const pulito = (Astro.url.pathname.replace(/index\.html$/, '').replace(/\.html$/, '') || '/');

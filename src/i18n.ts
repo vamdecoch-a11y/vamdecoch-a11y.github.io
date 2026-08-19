@@ -19,6 +19,7 @@ type Dict = Record<string, string>;
 const it: Dict = {
   nav_home: 'Home', nav_chisiamo: 'Chi siamo', nav_servizi: 'I nostri servizi',
   nav_recensioni: 'Recensioni', nav_blog: 'Blog', contattaci: 'Contattaci',
+  art_faq: 'Domande frequenti', art_cta_t: 'Ti è venuta un\'idea?', art_cta_p: 'Preventivo gratuito in 24/48h, senza impegno.', art_wa: 'Ciao VAM Deco, ho letto un vostro articolo e vorrei informazioni.',
   cerca_sito: 'Cerca nel sito', cerca_placeholder: 'Cerca un servizio...',
   cerca_nessuno: 'Nessun risultato. Prova con "vetrine", "magliette", "pellicole"...',
   badge_recensioni: 'su 72 recensioni Google',
@@ -66,6 +67,7 @@ const it: Dict = {
 const en: Dict = {
   nav_home: 'Home', nav_chisiamo: 'About us', nav_servizi: 'Our services',
   nav_recensioni: 'Reviews', nav_blog: 'Blog', contattaci: 'Contact us',
+  art_faq: 'Frequently asked questions', art_cta_t: 'Got an idea?', art_cta_p: 'Free quote in 24/48h, no obligation.', art_wa: "Hi VAM Deco, I read one of your articles and I'd like some information.",
   cerca_sito: 'Search the site', cerca_placeholder: 'Search a service...',
   cerca_nessuno: 'No results. Try "signage", "t-shirts", "films"...',
   badge_recensioni: 'on 72 Google reviews',
@@ -113,6 +115,7 @@ const en: Dict = {
 const de: Dict = {
   nav_home: 'Home', nav_chisiamo: 'Über uns', nav_servizi: 'Unsere Leistungen',
   nav_recensioni: 'Bewertungen', nav_blog: 'Blog', contattaci: 'Kontakt',
+  art_faq: 'Häufige Fragen', art_cta_t: 'Haben Sie eine Idee?', art_cta_p: 'Kostenlose Offerte in 24/48 Std., unverbindlich.', art_wa: 'Hallo VAM Deco, ich habe einen Ihrer Artikel gelesen und hätte gerne Informationen.',
   cerca_sito: 'Website durchsuchen', cerca_placeholder: 'Leistung suchen...',
   cerca_nessuno: 'Keine Ergebnisse. Versuchen Sie "Schaufenster", "T-Shirts", "Folien"...',
   badge_recensioni: 'aus 72 Google-Bewertungen',
@@ -169,7 +172,7 @@ export function t(locale: Locale | undefined, key: string): string {
 // (chi-siamo, recensioni, blog, privacy...) NON sono qui: su di esse non emettiamo
 // hreflang e il selettore lingua rimanda alla home EN/DE (mai un 404).
 export const PAGINE_TRADOTTE = new Set<string>([
-  '/', '/servizi', '/contattaci',
+  '/', '/servizi', '/contattaci', '/chi-siamo', '/recensioni', '/articoli',
   '/decorazione-veicoli-ticino', '/decorazione-vetrine-ticino', '/abbigliamento-personalizzato-ticino',
   '/pellicole-satinate-ticino', '/oscuramento-vetrate-uv', '/oscuramento-vetri-auto-ticino',
   '/adesivi-e-etichette', '/etichette-resinate', '/cartellonistica', '/stampa-su-carta',
@@ -177,8 +180,9 @@ export const PAGINE_TRADOTTE = new Set<string>([
 ]);
 
 // True se il percorso corrente (in qualsiasi lingua) ha le tre versioni linguistiche.
+// Tutti i singoli articoli del blog (/articoli/<slug>) sono tradotti in EN e DE.
 export function haTraduzioni(pathname: string): boolean {
   const pulito = pathname.replace(/index\.html$/, '').replace(/\.html$/, '') || '/';
   const base = pulito.replace(/^\/(en|de)(?=\/|$)/, '') || '/';
-  return PAGINE_TRADOTTE.has(base);
+  return PAGINE_TRADOTTE.has(base) || base.startsWith('/articoli/');
 }

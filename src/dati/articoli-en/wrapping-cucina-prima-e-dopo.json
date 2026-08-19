@@ -1,0 +1,67 @@
+{
+  "slug": "wrapping-cucina-prima-e-dopo",
+  "title": "Kitchen Wrapping: Interactive Before & After | VAM Deco Ticino",
+  "description": "Refresh your kitchen without replacing it: slide through the interactive before and after of a real wrap done in Ticino. Costs, timing and film lifespan.",
+  "h1": "Kitchen Wrapping: Slide Through the Before & After Yourself",
+  "categoria": "Interior Wrapping",
+  "data": "9 Aug 2026",
+  "dataIso": "2026-08-09",
+  "cover": "/img/articoli/wrapping-cucina-prima-e-dopo/cover.jpg",
+  "estratto": "A kitchen renewed in just a few days with no demolition: drag the slider and watch the transformation with your own eyes.",
+  "primaDopo": {
+    "prima": "/img/articoli/wrapping-cucina-prima-e-dopo/prima.jpg",
+    "dopo": "/img/articoli/wrapping-cucina-prima-e-dopo/dopo.jpg",
+    "didascalia": "Drag the slider: on the left the original kitchen, on the right the wrap done by VAM Deco."
+  },
+  "sezioni": [
+    {
+      "paragrafi": [
+        "This kitchen wasn't replaced: it was <strong>covered with professional adhesive film</strong> (wrapping). Doors, fronts and surfaces completely changed their look in just a few days, with no demolition, no dust and at a fraction of the cost of a brand-new kitchen.",
+        "You be the judge of the result: use the slider above to compare the before and after."
+      ]
+    },
+    {
+      "heading": "Why choose wrapping instead of replacing",
+      "lista": [
+        "<strong>Lower cost</strong>: a fraction of the price of a new kitchen.",
+        "<strong>Fast turnaround</strong>: work completed in a few days, kitchen ready to use right away.",
+        "<strong>No building site</strong>: no demolition, no rubble and no moving appliances around.",
+        "<strong>Tailor-made design</strong>: wood, marble, matte or glossy solid colours: hundreds of finishes.",
+        "<strong>Reversible</strong>: the film can be removed or replaced in the future."
+      ]
+    },
+    {
+      "heading": "How we work",
+      "paragrafi": [
+        "First we come to see the kitchen (or you send us photos), together we pick the finish from our sample book and we prepare a free quote. The surfaces are cleaned and degreased, then the film is applied flawlessly by expert installers, with great care around edges and corners.",
+        "We only use professional films that stand up to moisture, heat and everyday use: perfect for the kitchen environment."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "domanda": "How much does it cost to wrap a kitchen?",
+      "risposta": "It depends on the size and the finish you choose, but generally we're talking about a fraction of the cost of a new kitchen. The most accurate way to find out is to request a free quote: just a few photos and rough measurements are enough."
+    },
+    {
+      "domanda": "How long does the film last in a kitchen?",
+      "risposta": "With professional films and proper installation, wrapping lasts on average 7-10 years even in a kitchen, holding up to moisture, moderate heat and everyday cleaning."
+    },
+    {
+      "domanda": "Can any kitchen be wrapped?",
+      "risposta": "Almost all of them: smooth surfaces (laminate, lacquered MDF, painted wood) are ideal. We assess case by case any very porous or damaged doors, which may need extra preparation."
+    },
+    {
+      "domanda": "How long does the job take?",
+      "risposta": "An average kitchen usually takes 2-4 working days. The kitchen is usable again the same evening and no masonry work is required."
+    },
+    {
+      "domanda": "Does the film get ruined by water and steam?",
+      "risposta": "No: the films we use are designed for humid environments. Just clean them with a soft cloth and neutral detergents, avoiding abrasive sponges and harsh solvents."
+    }
+  ],
+  "servizioCorrelato": {
+    "testo": "Discover all our services",
+    "href": "/servizi"
+  }
+}

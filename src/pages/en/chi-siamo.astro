@@ -1,0 +1,335 @@
+---
+// ABOUT US (EN): the company's real story, animated timeline, suppliers, founder,
+// 4-step process, premises gallery, FAQ. Same layout as the IT page.
+import { readdirSync } from 'node:fs';
+import Base from '../../layouts/Base.astro';
+import RecensioniEleganti from '../../components/RecensioniEleganti.astro';
+import WhatsAppTondo from '../../components/WhatsAppTondo.astro';
+import Marquee from '../../components/Marquee.astro';
+import SezioneParliamo from '../../components/SezioneParliamo.astro';
+import { recensioniStandardEN } from '../../dati/recensioni';
+
+const galleriaSede = readdirSync('public/img/chi-siamo/galleria')
+  .filter((f: string) => /\.(jpe?g|png|webp)$/i.test(f))
+  .sort();
+
+const tappe = [
+  { anno: '2017', titolo: 'The spark', testo: 'VAM Deco was born almost by chance in a small garage, with the first plotter and the first jobs done right there in the yard.' },
+  { anno: '2018', titolo: 'The first premises', testo: 'In June we open our first premises in Giubiasco: 16 square metres of pure dedication. Six months later the second plotter arrives and space already starts to feel tight.' },
+  { anno: '2019', titolo: 'The new home', testo: 'In mid-November, after a month and a half of work between laughter and sleepless nights, we open our new premises. A day that will stay in our hearts forever.' },
+  { anno: '2020', titolo: 'The toughest test', testo: 'After just four months, COVID arrives. Our dedication and our determination not to give up carry us through even that period.' },
+  { anno: 'Today', titolo: '360-degree support', testo: 'Year after year we invest everything in printers, machinery and continuous training. With trusted partners we offer our clients a complete range of services.' },
+  { anno: 'Tomorrow', titolo: 'Still growing', testo: 'The goal: expand our machinery and printers, aim for larger premises and keep improving the customer experience, with innovation always at the centre.' },
+];
+
+const fornitori = [
+  { slug: 'arlon', nome: 'Arlon' }, { slug: 'mimaki', nome: 'Mimaki' }, { slug: '3m', nome: '3M' },
+  { slug: 'clique', nome: 'Clique' }, { slug: 'siser', nome: 'Siser' }, { slug: 'roland', nome: 'Roland' },
+  { slug: 'avery', nome: 'Avery' }, { slug: 'hexis', nome: 'Hexis' },
+];
+
+const qualita = ['Visionary', 'Collaborative', 'Results-driven', 'Problem solver', 'Integrity', 'Resilient'];
+
+const specializzato = [
+  'Vehicle graphics', 'Window graphics', 'Custom clothing', 'Signage',
+  'Stickers and labels', 'Window tinting & privacy', 'Print on paper', 'Websites',
+];
+
+const fasi = [
+  { t: 'Analysis and understanding', d: "We dive into your needs and goals: whether it's a vehicle, a shop window or a custom garment, we work closely with you to understand exactly what you want to achieve." },
+  { t: 'Custom design', d: 'We develop a tailored quote, choosing the technologies and materials best suited to the job. We create designs that reflect your brand and capture attention.' },
+  { t: 'Production and installation', d: 'After approval we move to the operational phase: we produce with cutting-edge equipment and install at our premises or yours, with precision and on schedule.' },
+  { t: 'Check and ongoing support', d: "Once the project is done we check every detail against our quality standards. And we stay available, because the job is only finished when you're satisfied." },
+];
+
+const faq = [
+  { domanda: 'How much does decorating a commercial vehicle cost in Ticino?', risposta: 'Costs vary depending on the size of the vehicle and the type of graphics, but a simple wrap can generally start from as little as CHF 250.' },
+  { domanda: 'How effective is vehicle graphics as moving advertising?', risposta: "It's a very effective form of advertising: visible everywhere, on the road, in car parks or when the car is moving, it offers constant, free promotion." },
+  { domanda: 'How long do window graphics last?', risposta: 'With the right care, decorative window films can last several years, depending on the type of material and exposure to the weather.' },
+  { domanda: 'What are the benefits of window graphics for shops?', risposta: "Decorated windows catch passers-by's attention, improve brand visibility and can act as an advertising medium." },
+  { domanda: 'What types of clothing can I customise for my business?', risposta: 'You can customise t-shirts, hoodies, caps and other promotional clothing, with either print or embroidery.' },
+  { domanda: 'How long does the print on custom clothing last?', risposta: 'With the right care, print on custom clothing can last for years, keeping colours and details intact.' },
+  { domanda: "What's the ideal size for an outdoor advertising banner?", risposta: 'The size depends on the location and viewing distance, but standard formats are 2x1 and 3x1 metres for optimal visibility.' },
+  { domanda: 'How long does it take to create an SEO-optimised website?', risposta: 'Creating an SEO-optimised website can take from a few weeks to a month, depending on the complexity of the project.' },
+];
+
+const faqJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.domanda,
+    acceptedAnswer: { '@type': 'Answer', text: f.risposta },
+  })),
+});
+---
+<Base
+  title="About us | VAM Deco, where creativity meets quality"
+  description="From a 2017 garage to today's workshop: the story of VAM Deco, the Ticino decoration and personalisation team. Mission, values, process and founder."
+  i18n
+>
+  <script type="application/ld+json" set:html={faqJsonLd} />
+
+  <!-- HERO -->
+  <section class="relative min-h-[78vh] md:min-h-[86vh] flex items-center justify-center overflow-hidden">
+    <img src="/img/chi-siamo/hero.jpg" alt="The VAM Deco workshop in Sementina" class="hero-sfondo absolute inset-0 w-full h-full object-cover" loading="eager" />
+    <div class="absolute inset-0 bg-gradient-to-b from-ink/68 via-ink/56 to-ink pointer-events-none"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-4 py-24 text-center [text-shadow:0_2px_18px_rgba(0,0,0,0.7)]" data-reveal-stagger>
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-4 uppercase">About us</div>
+      <h1 data-reveal class="text-3xl md:text-6xl font-bold leading-[1.05] tracking-tight" style="text-wrap: balance">
+        Where creativity <span class="text-brand">meets quality</span>
+      </h1>
+      <p data-reveal class="mt-8 text-carta/90 leading-relaxed max-w-2xl mx-auto">
+        We're more than just a decoration and personalisation company: we're a team passionate about
+        creativity, innovation and quality. Every day we turn ideas into reality with custom solutions
+        that capture attention and enhance every brand.
+      </p>
+      <p data-reveal class="mt-6 font-display text-xl md:text-2xl font-bold text-brand leading-snug">
+        With us, your image matters.
+      </p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="max-w-4xl mx-auto px-4 py-20">
+    <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Our story</div>
+    <h2 data-reveal class="text-2xl md:text-4xl font-bold mb-12">From a garage to a point of reference.</h2>
+    <div class="space-y-0">
+      {tappe.map((t, i) => (
+        <div class="tappa-riga grid grid-cols-[5.5rem_2rem_1fr] md:grid-cols-[8rem_2.5rem_1fr] gap-x-2 md:gap-x-4">
+          <div class="tappa-anno font-display text-xl md:text-3xl font-bold text-right pt-0.5 transition-colors duration-500">{t.anno}</div>
+          <div class="relative flex flex-col items-center">
+            <span class="tappa-punto mt-2 w-3 h-3 rounded-full bg-white/20 shrink-0 transition-colors duration-500"></span>
+            {i < tappe.length - 1 && (
+              <span class="relative w-px flex-1 bg-white/10 my-1 overflow-hidden">
+                <span class="tappa-linea-riempi absolute top-0 left-0 w-full bg-brand" style="height: 0%"></span>
+              </span>
+            )}
+          </div>
+          <div class="pb-10">
+            <h3 class="tappa-titolo font-display font-semibold text-lg transition-colors duration-500">{t.titolo}</h3>
+            <p class="tappa-testo mt-2 text-sm md:text-base leading-relaxed max-w-xl transition-colors duration-500">{t.testo}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- MISSION + VISION -->
+  <section class="max-w-6xl mx-auto px-4 pb-20 grid md:grid-cols-2 gap-6">
+    <div data-reveal class="rounded-3xl border border-white/10 bg-superficie p-8 md:p-10">
+      <div class="text-xs font-bold tracking-widest text-brand mb-3 uppercase">01. The mission</div>
+      <h2 class="text-xl md:text-2xl font-bold">Making you stand out.</h2>
+      <p class="mt-4 text-sm md:text-base text-carta/70 leading-relaxed">
+        We help companies stand out with creative, custom solutions that improve brand visibility and
+        recognition. We work to exceed expectations, from vehicle graphics to shop windows and beyond,
+        with concrete results that support our clients' growth.
+      </p>
+    </div>
+    <div data-reveal class="rounded-3xl bg-brand p-8 md:p-10 text-ink">
+      <div class="text-xs font-bold tracking-widest text-ink/60 mb-3 uppercase">02. The vision</div>
+      <h2 class="text-xl md:text-2xl font-bold">Becoming the reference.</h2>
+      <p class="mt-4 text-sm md:text-base text-ink/80 leading-relaxed">
+        We want to be the point of reference for decoration and personalisation in the Sopraceneri, in
+        Ticino and beyond: innovative, quality solutions at the right price, giving companies of every
+        size the tools to thrive and stand out in the market.
+      </p>
+    </div>
+  </section>
+
+  <!-- SUPPLIERS -->
+  <section class="border-y border-white/5 bg-white/[0.02] py-16 overflow-hidden">
+    <div data-reveal class="text-center text-xs font-bold tracking-widest text-carta/50 uppercase mb-10">Some of the suppliers we work with</div>
+    <div class="marquee select-none" aria-label="Suppliers: Arlon, Mimaki, 3M, Clique, Siser, Roland, Avery, Hexis">
+      <div class="marquee-track" style="animation-duration:38s">
+        {[...fornitori, ...fornitori].map((f) => (
+          <span class="shrink-0 flex items-center justify-center w-52 md:w-60 h-24 md:h-28 mx-2 rounded-2xl border border-white/10 bg-white/[0.03]">
+            <img src={`/img/chi-siamo/fornitori/${f.slug}.png`} alt={f.nome} class="max-h-9 md:max-h-11 w-auto max-w-[70%] object-contain opacity-85" loading="lazy" />
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-center">
+    <div data-reveal class="relative w-64 md:w-80 mx-auto">
+      <div class="assoluto-arco absolute left-1/2 -translate-x-1/2 bottom-0 w-[90%] h-[80%] bg-brand rounded-t-full" aria-hidden="true"></div>
+      <img src="/img/chi-siamo/michele.png" alt="Michele Scacco, founder of VAM Deco" class="relative z-10 w-full" loading="lazy" />
+      <div class="absolute z-20 bottom-3 left-0 right-0 text-center leading-[0.68]">
+        <div class="font-display text-4xl md:text-5xl font-black text-brand drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">Michele</div>
+        <div class="font-display text-4xl md:text-5xl font-black text-carta tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">SCACCO</div>
+      </div>
+    </div>
+    <div data-reveal-stagger>
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Meet the founder</div>
+      <h2 data-reveal class="text-2xl md:text-4xl font-bold">The heart of VAM Deco</h2>
+      <p data-reveal class="mt-5 text-carta/75 leading-relaxed">
+        Michele is the driving force behind VAM Deco. With years of experience in decoration and
+        personalisation, a passion for innovation and dedication to clients guide our journey: strategic
+        vision, a customer-focused approach and the ability to find creative solutions define our
+        commitment to excellence.
+      </p>
+      <p data-reveal class="mt-4 text-carta/75 leading-relaxed">
+        Built on values of transparency and integrity, he has grown the company into a benchmark in the
+        sector, consistently exceeding expectations.
+      </p>
+      <div data-reveal class="mt-6 flex flex-wrap gap-2">
+        {qualita.map((q) => (
+          <span class="rounded-full border border-brand/40 px-4 py-1.5 text-sm text-brand">{q}</span>
+        ))}
+      </div>
+
+      <div data-reveal class="mt-8">
+        <div class="text-xs font-bold tracking-widest text-carta/50 uppercase mb-3">Specialised in</div>
+        <div class="flex flex-wrap gap-2">
+          {specializzato.map((s) => (
+            <span class="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3.5 py-2 text-sm text-carta/85">
+              <span class="text-brand text-xs" aria-hidden="true">◆</span>{s}
+            </span>
+          ))}
+        </div>
+        <div class="mt-3 flex items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] pl-1.5 pr-3.5 py-1.5 text-sm text-carta/85">
+            <span class="grid place-items-center w-8 h-8 rounded-md text-sm font-display font-bold" style="background:#310e00;color:#ff9a00" aria-hidden="true">Ai</span>Illustrator
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] pl-1.5 pr-3.5 py-1.5 text-sm text-carta/85">
+            <span class="grid place-items-center w-8 h-8 rounded-md text-sm font-display font-bold" style="background:#001e36;color:#31a8ff" aria-hidden="true">Ps</span>Photoshop
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES marquee -->
+  <Marquee testo="Quality · Precision · Passion · Creativity · Reliability ·" durata={100} pieno classe="text-carta/35" />
+
+  <!-- PROCESS -->
+  <section class="max-w-3xl mx-auto px-4 py-20">
+    <div class="text-center mb-14" data-reveal-stagger>
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">How we work</div>
+      <h2 data-reveal class="text-2xl md:text-4xl font-bold">Our process in 4 steps.</h2>
+    </div>
+    <div>
+      {fasi.map((f, i) => (
+        <div class="fase-riga grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-x-4 md:gap-x-7">
+          <div class="flex flex-col items-center">
+            <div class="numero-fase font-display text-5xl md:text-6xl font-black leading-none shrink-0 tabular-nums">{i + 1}</div>
+            {i < fasi.length - 1 && (
+              <div class="fase-linea relative w-px flex-1 my-3 overflow-hidden">
+                <div class="fase-linea-riempi absolute top-0 left-0 w-full" style="height: 0%"></div>
+              </div>
+            )}
+          </div>
+          <div class="pb-12">
+            <h3 class="fase-titolo font-display font-semibold text-lg md:text-xl pt-1 transition-colors duration-500">{f.t}</h3>
+            <p class="fase-testo mt-2 text-sm md:text-base leading-relaxed transition-colors duration-500">{f.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- PREMISES GALLERY -->
+  <section class="pb-4">
+    <div class="max-w-3xl mx-auto px-4 text-center" data-reveal-stagger>
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Our workshop and technology</div>
+      <h2 data-reveal class="text-2xl md:text-4xl font-bold">Where your ideas come to life.</h2>
+      <p data-reveal class="mt-4 text-carta/70 leading-relaxed">
+        From cutting-edge machinery to spaces dedicated to creativity: every image reflects the care and
+        attention we put into our personalisation, decoration and print projects.
+      </p>
+    </div>
+    <div data-reveal class="galleria-espandi mt-10 flex gap-2 md:gap-3 px-4 max-w-6xl mx-auto overflow-x-auto md:overflow-visible" role="region" aria-label="VAM Deco's premises and machinery">
+      {galleriaSede.map((img, i) => (
+        <div class={`galleria-cella relative shrink-0 w-64 md:w-auto md:shrink md:flex-1 ${i === 0 ? 'md:flex-[3]' : ''} h-64 md:h-[26rem] rounded-2xl overflow-hidden border border-white/10`}>
+          <img src={`/img/chi-siamo/galleria/${img}`} alt={`VAM Deco's premises (photo ${i + 1})`} class="h-full w-full object-cover" loading={i < 3 ? 'eager' : 'lazy'} draggable="false" />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <RecensioniEleganti recensioni={recensioniStandardEN} />
+  <div class="text-center pb-16">
+    <a data-reveal href="/en/recensioni" class="btn-anim inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-ink hover:bg-brand-dark">See the reviews</a>
+  </div>
+
+  <!-- FAQ -->
+  <section class="border-y border-white/5 bg-white/[0.02] py-16">
+    <div class="max-w-3xl mx-auto px-4">
+      <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">Frequently asked questions</div>
+      <h2 data-reveal class="text-2xl md:text-3xl font-bold mb-8">Got questions? Here are our answers!</h2>
+      <div data-reveal-stagger class="space-y-4">
+        {faq.map((f) => (
+          <details class="faq-item faq-card group px-5" data-reveal>
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none py-4 font-semibold text-sm md:text-base">
+              {f.domanda}
+              <span class="faq-bottone" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="faq-risposta">
+              <div>
+                <p class="pb-5 text-sm text-carta/70 leading-relaxed">{f.risposta}</p>
+              </div>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SezioneParliamo oggetto="Richiesta dalla pagina Chi siamo (EN)" origine="Pagina Chi siamo EN" />
+
+  <WhatsAppTondo testo="Hi VAM Deco, I'd like some information." />
+
+  <script>
+    const gruppi: Array<{ righe: HTMLElement[]; punto: string; linea: string }> = [
+      { righe: Array.from(document.querySelectorAll<HTMLElement>('.tappa-riga')), punto: '.tappa-punto', linea: '.tappa-linea-riempi' },
+      { righe: Array.from(document.querySelectorAll<HTMLElement>('.fase-riga')), punto: '.numero-fase', linea: '.fase-linea-riempi' },
+    ];
+    const aggiorna = () => {
+      const centro = window.innerHeight * 0.55;
+      for (const g of gruppi) {
+        if (!g.righe.length) continue;
+        const centri = g.righe.map((r) => {
+          const b = r.querySelector<HTMLElement>(g.punto)!.getBoundingClientRect();
+          return b.top + b.height / 2;
+        });
+        g.righe.forEach((r, i) => {
+          r.classList.toggle('accesa', centri[i] <= centro);
+          const riempi = r.querySelector<HTMLElement>(g.linea);
+          if (riempi && i < centri.length - 1) {
+            const p = Math.min(1, Math.max(0, (centro - centri[i]) / (centri[i + 1] - centri[i])));
+            riempi.style.height = `${p * 100}%`;
+          }
+        });
+      }
+    };
+    window.addEventListener('scroll', aggiorna, { passive: true });
+    window.addEventListener('resize', aggiorna);
+    aggiorna();
+  </script>
+
+  <style>
+    .hero-sfondo { animation: hero-zoom 18s ease-out forwards; transform-origin: center; }
+    @keyframes hero-zoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+    .tappa-anno { color: rgba(250, 250, 248, 0.28); }
+    .tappa-titolo { color: rgba(250, 250, 248, 0.4); }
+    .tappa-testo { color: rgba(250, 250, 248, 0.22); }
+    .tappa-riga.accesa .tappa-anno { color: var(--color-brand); }
+    .tappa-riga.accesa .tappa-titolo { color: var(--color-carta); }
+    .tappa-riga.accesa .tappa-testo { color: rgba(250, 250, 248, 0.72); }
+    .tappa-riga.accesa .tappa-punto { background: var(--color-brand); box-shadow: 0 0 14px rgba(245, 131, 39, 0.65); }
+    .numero-fase { color: rgba(250, 250, 248, 0.14); transition: color 0.5s ease; }
+    .fase-riga.accesa .numero-fase { color: var(--color-brand); }
+    @media (min-width: 768px) and (hover: hover) {
+      .galleria-cella { transition: flex-grow 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+      .galleria-espandi:hover .galleria-cella { flex-grow: 0.6; }
+      .galleria-espandi .galleria-cella:hover { flex-grow: 4; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-sfondo { animation: none; transform: none; }
+      .galleria-cella { transition: none; }
+    }
+  </style>
+</Base>

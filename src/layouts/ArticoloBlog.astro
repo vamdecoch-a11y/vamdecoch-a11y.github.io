@@ -7,6 +7,7 @@ import GalleriaOrizzontale from '../components/GalleriaOrizzontale.astro';
 import FormContatti from '../components/FormContatti.astro';
 import WhatsAppTondo from '../components/WhatsAppTondo.astro';
 import PrimaDopo from '../components/PrimaDopo.astro';
+import { t, localePath, haTraduzioni, type Locale } from '../i18n';
 
 interface Sezione {
   heading?: string;
@@ -34,6 +35,8 @@ interface Articolo {
 }
 interface Props { articolo: Articolo; }
 const { articolo: a } = Astro.props;
+const locale = (Astro.currentLocale ?? 'it') as Locale;
+const conTraduzioni = haTraduzioni(Astro.url.pathname);
 
 const articleJsonLd = JSON.stringify({
   '@context': 'https://schema.org',
@@ -57,7 +60,7 @@ const faqJsonLd = a.faq?.length
     })
   : null;
 ---
-<Base title={a.title} description={a.description}>
+<Base title={a.title} description={a.description} i18n={conTraduzioni}>
   <script type="application/ld+json" set:html={articleJsonLd} />
   {faqJsonLd && <script type="application/ld+json" set:html={faqJsonLd} />}
 
@@ -67,7 +70,7 @@ const faqJsonLd = a.faq?.length
       <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
       <div class="relative max-w-3xl mx-auto px-4 pt-16 pb-10 text-center" data-reveal-stagger>
         <div data-reveal class="flex items-center justify-center gap-3 text-xs font-bold tracking-widest uppercase">
-          <a href="/articoli" class="text-carta/50 hover:text-brand transition-colors">Blog</a>
+          <a href={localePath(locale, '/articoli')} class="text-carta/50 hover:text-brand transition-colors">{t(locale, 'nav_blog')}</a>
           <span class="text-carta/30" aria-hidden="true">/</span>
           <span class="text-brand">{a.categoria}</span>
         </div>
@@ -117,7 +120,7 @@ const faqJsonLd = a.faq?.length
     {a.faq && a.faq.length > 0 && (
       <section class="border-y border-white/5 bg-white/[0.02] py-14 mt-6">
         <div class="max-w-3xl mx-auto px-4">
-          <h2 data-reveal class="text-2xl font-bold mb-8">Domande frequenti</h2>
+          <h2 data-reveal class="text-2xl font-bold mb-8">{t(locale, 'art_faq')}</h2>
           <div data-reveal-stagger class="space-y-4">
             {a.faq.map((f) => (
               <details class="faq-item faq-card group px-5" data-reveal>
@@ -140,15 +143,15 @@ const faqJsonLd = a.faq?.length
 
   <!-- CTA SERVIZIO CORRELATO + CONTATTO -->
   <section id="contattaci" class="max-w-2xl mx-auto px-4 py-16 text-center">
-    <h2 data-reveal class="font-display text-3xl md:text-4xl font-bold text-brand">Ti è venuta un'idea?</h2>
-    <p data-reveal class="mt-4 text-carta/70">Preventivo gratuito in 24/48h, senza impegno.</p>
+    <h2 data-reveal class="font-display text-3xl md:text-4xl font-bold text-brand">{t(locale, 'art_cta_t')}</h2>
+    <p data-reveal class="mt-4 text-carta/70">{t(locale, 'art_cta_p')}</p>
     {a.servizioCorrelato && (
-      <a data-reveal href={a.servizioCorrelato.href} class="btn-anim mt-6 inline-block rounded-full border-2 border-white/20 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand">
+      <a data-reveal href={localePath(locale, a.servizioCorrelato.href)} class="btn-anim mt-6 inline-block rounded-full border-2 border-white/20 px-7 py-3.5 font-semibold hover:border-brand hover:text-brand">
         {a.servizioCorrelato.testo}
       </a>
     )}
     <div class="mt-10">
-      <FormContatti oggetto={`Richiesta dall'articolo: ${a.h1}`} compatto />
+      <FormContatti oggetto={`Richiesta dall'articolo: ${a.h1}`} origine={`Articolo blog (${locale})`} compatto />
     </div>
   </section>
 
@@ -156,5 +159,5 @@ const faqJsonLd = a.faq?.length
     <p class="max-w-2xl mx-auto px-4 pb-10 text-center text-xs text-carta/35">{a.coverCredito}</p>
   )}
 
-  <WhatsAppTondo testo="Ciao VAM Deco, ho letto un vostro articolo e vorrei informazioni." />
+  <WhatsAppTondo testo={t(locale, 'art_wa')} />
 </Base>
