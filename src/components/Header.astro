@@ -20,7 +20,27 @@ const dest = (code: Locale) => (paginaTradotta ? localePath(code, base) : locale
 const lingue: { code: Locale; label: string }[] = [
   { code: 'it', label: 'IT' }, { code: 'en', label: 'EN' }, { code: 'de', label: 'DE' },
 ];
-const isIT = locale === 'it';
+// Ricerca nel sito: elenco pagine con titolo localizzato (t) e href nella lingua corrente.
+const serviziCerca = [
+  { k: 'sv_veicoli', href: '/decorazione-veicoli-ticino' },
+  { k: 'sv_vetrine', href: '/decorazione-vetrine-ticino' },
+  { k: 'sv_abbigliamento', href: '/abbigliamento-personalizzato-ticino' },
+  { k: 'sv_pellicole', href: '/pellicole-satinate-ticino' },
+  { k: 'sv_oscuramentouv', href: '/oscuramento-vetrate-uv' },
+  { k: 'sv_oscuramentoauto', href: '/oscuramento-vetri-auto-ticino' },
+  { k: 'sv_adesivi', href: '/adesivi-e-etichette' },
+  { k: 'sv_resinate', href: '/etichette-resinate' },
+  { k: 'sv_cartellonistica', href: '/cartellonistica' },
+  { k: 'sv_stampa', href: '/stampa-su-carta' },
+  { k: 'sv_siti', href: '/siti-web' },
+  { k: 'sv_festa', href: '/personalizza-la-tua-festa' },
+  { k: 'nav_servizi', href: '/servizi' },
+  { k: 'nav_chisiamo', href: '/chi-siamo' },
+  { k: 'nav_recensioni', href: '/recensioni' },
+  { k: 'nav_blog', href: '/articoli' },
+  { k: 'contattaci', href: '/contattaci' },
+];
+const pagineCerca = serviziCerca.map((s) => ({ titolo: t(locale, s.k), href: localePath(locale, s.href) }));
 ---
 <header class="sticky top-0 z-50 bg-ink/85 backdrop-blur border-b border-white/10">
   <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
@@ -39,21 +59,17 @@ const isIT = locale === 'it';
           <a href={dest(l.code)} hreflang={l.code} aria-label={t(locale, `lingua_${l.code}`)} aria-current={l.code === locale ? 'true' : undefined} class={`px-2.5 py-1.5 rounded-full text-[0.72rem] font-bold tracking-wide transition-colors ${l.code === locale ? 'bg-brand text-ink' : 'text-carta/70 hover:text-carta'}`}>{l.label}</a>
         ))}
       </div>
-      {isIT && (
-        <button type="button" id="apri-cerca" class="js-cerca-trigger hidden md:inline-flex p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer" aria-label={t(locale, 'cerca_sito')} aria-expanded="false">
-          <svg viewBox="0 0 24 24" class="w-5 h-5 fill-none stroke-carta stroke-2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5" stroke-linecap="round"/></svg>
-        </button>
-      )}
+      <button type="button" id="apri-cerca" class="js-cerca-trigger hidden md:inline-flex p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer" aria-label={t(locale, 'cerca_sito')} aria-expanded="false">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 fill-none stroke-carta stroke-2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5" stroke-linecap="round"/></svg>
+      </button>
       <a href={localePath(locale, '/contattaci')} class="btn-anim inline-flex items-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-ink hover:bg-brand-dark">{t(locale, 'contattaci')}</a>
-      {isIT && (
-        <div id="pannello-cerca" class="hidden absolute left-0 right-0 top-full border-b border-white/10 bg-ink/95 backdrop-blur">
-          <div class="max-w-2xl mx-auto px-4 py-4">
-            <input id="campo-cerca" type="search" placeholder={t(locale, 'cerca_placeholder')} autocomplete="off"
-              class="w-full rounded-full bg-white/5 border border-white/15 px-5 py-3 text-sm text-carta placeholder:text-carta/40 focus:border-brand outline-none" />
-            <ul id="risultati-cerca" class="mt-3 space-y-1 text-sm"></ul>
-          </div>
+      <div id="pannello-cerca" class="hidden absolute left-0 right-0 top-full border-b border-white/10 bg-ink/95 backdrop-blur" data-pagine={JSON.stringify(pagineCerca)} data-nessuno={t(locale, 'cerca_nessuno')}>
+        <div class="max-w-2xl mx-auto px-4 py-4">
+          <input id="campo-cerca" type="search" placeholder={t(locale, 'cerca_placeholder')} autocomplete="off"
+            class="w-full rounded-full bg-white/5 border border-white/15 px-5 py-3 text-sm text-carta placeholder:text-carta/40 focus:border-brand outline-none" />
+          <ul id="risultati-cerca" class="mt-3 space-y-1 text-sm"></ul>
         </div>
-      )}
+      </div>
       <details class="md:hidden relative" id="menu-mobile">
         <summary class="list-none cursor-pointer p-2 -mr-2" aria-label="Menu">
           <span class="block w-6 h-0.5 bg-carta mb-1.5"></span>
@@ -61,13 +77,11 @@ const isIT = locale === 'it';
           <span class="block w-6 h-0.5 bg-carta"></span>
         </summary>
         <nav class="absolute right-0 top-full mt-3 w-60 rounded-2xl bg-superficie shadow-xl border border-white/10 p-3 flex flex-col">
-          {isIT && (
-            <button type="button" class="js-cerca-trigger flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-white/10 text-left w-full cursor-pointer" aria-label={t(locale, 'cerca_sito')} aria-expanded="false">
-              <svg viewBox="0 0 24 24" class="w-4 h-4 fill-none stroke-carta stroke-2 shrink-0" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5" stroke-linecap="round"/></svg>
-              {t(locale, 'cerca_sito')}
-            </button>
-          )}
-          {isIT && <div class="my-1.5 border-t border-white/10"></div>}
+          <button type="button" class="js-cerca-trigger flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-white/10 text-left w-full cursor-pointer" aria-label={t(locale, 'cerca_sito')} aria-expanded="false">
+            <svg viewBox="0 0 24 24" class="w-4 h-4 fill-none stroke-carta stroke-2 shrink-0" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5" stroke-linecap="round"/></svg>
+            {t(locale, 'cerca_sito')}
+          </button>
+          <div class="my-1.5 border-t border-white/10"></div>
           {voci.map((v) => (
             <a href={localePath(locale, v.href)} class="px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-white/10">{t(locale, v.k)}</a>
           ))}
@@ -84,38 +98,23 @@ const isIT = locale === 'it';
 </header>
 
 <script>
-  // Ricerca (solo IT): filtra le pagine del sito mentre scrivi
-  const pagine = [
-    { titolo: 'Decorazione veicoli', href: '/decorazione-veicoli-ticino' },
-    { titolo: 'Decorazione vetrine', href: '/decorazione-vetrine-ticino' },
-    { titolo: 'Abbigliamento personalizzato (magliette, felpe, divise)', href: '/abbigliamento-personalizzato-ticino' },
-    { titolo: 'Pellicole satinate privacy', href: '/pellicole-satinate-ticino' },
-    { titolo: 'Oscuramento vetrate UV', href: '/oscuramento-vetrate-uv' },
-    { titolo: 'Oscuramento vetri auto', href: '/oscuramento-vetri-auto-ticino' },
-    { titolo: 'Adesivi e etichette', href: '/adesivi-e-etichette' },
-    { titolo: 'Etichette resinate (loghi 3D)', href: '/etichette-resinate' },
-    { titolo: 'Cartellonistica e insegne', href: '/cartellonistica' },
-    { titolo: 'Stampa su carta', href: '/stampa-su-carta' },
-    { titolo: 'Siti web', href: '/siti-web' },
-    { titolo: 'Personalizza la tua festa', href: '/personalizza-la-tua-festa' },
-    { titolo: 'Tutti i servizi', href: '/servizi' },
-    { titolo: 'Chi siamo', href: '/chi-siamo' },
-    { titolo: 'Recensioni', href: '/recensioni' },
-    { titolo: 'Blog', href: '/articoli' },
-    { titolo: 'Contattaci', href: '/contattaci' },
-  ];
-  const triggers = Array.from(document.querySelectorAll<HTMLElement>('.js-cerca-trigger'));
+  // Ricerca nel sito (tutte le lingue): l'elenco pagine (titoli localizzati + href nella
+  // lingua corrente) e il testo "nessun risultato" arrivano dal server via data-attribute.
   const pannello = document.getElementById('pannello-cerca');
   const campo = document.getElementById('campo-cerca') as HTMLInputElement | null;
   const lista = document.getElementById('risultati-cerca');
   const menuMobile = document.getElementById('menu-mobile');
+  const triggers = Array.from(document.querySelectorAll<HTMLElement>('.js-cerca-trigger'));
+  let pagine: { titolo: string; href: string }[] = [];
+  try { pagine = JSON.parse(pannello?.dataset.pagine || '[]'); } catch (e) {}
+  const testoNessuno = pannello?.dataset.nessuno || 'Nessun risultato.';
   if (triggers.length && pannello && campo && lista) {
     const mostra = (query: string) => {
       const q = query.trim().toLowerCase();
       const trovate = q ? pagine.filter((p) => p.titolo.toLowerCase().includes(q)) : pagine.slice(0, 6);
       lista.innerHTML = trovate.length
         ? trovate.map((p) => `<li><a class="block rounded-lg px-4 py-2.5 hover:bg-white/10 hover:text-brand transition-colors" href="${p.href}">${p.titolo}</a></li>`).join('')
-        : '<li class="px-4 py-2.5 text-carta/50">Nessun risultato. Prova con "vetrine", "magliette", "pellicole"...</li>';
+        : `<li class="px-4 py-2.5 text-carta/50">${testoNessuno}</li>`;
     };
     const setExp = (v: boolean) => triggers.forEach((t) => t.setAttribute('aria-expanded', String(v)));
     triggers.forEach((t) => t.addEventListener('click', () => {

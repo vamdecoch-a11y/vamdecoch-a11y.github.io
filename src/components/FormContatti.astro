@@ -1,5 +1,5 @@
 ---
-import { t, type Locale } from '../i18n';
+import { t, localePath, type Locale } from '../i18n';
 interface Props {
   oggetto: string;
   compatto?: boolean;
@@ -13,7 +13,7 @@ const campo = `rounded-xl bg-white/5 border border-white/15 text-sm font-normal 
 const TURNSTILE_SITEKEY = '0x4AAAAAAEObBnZNNOIiq0MD';
 ---
 <!-- Come l'originale: campi con segnaposto, niente etichette -->
-<form class={`form-contatti text-left grid grid-cols-1 ${compatto ? 'gap-2.5' : 'gap-4 card-scura rounded-2xl p-4 sm:p-6'}`} data-oggetto={oggetto} data-origine={origine} data-invio={t(locale, 'f_invio')}>
+<form class={`form-contatti text-left grid grid-cols-1 ${compatto ? 'gap-2.5' : 'gap-4 card-scura rounded-2xl p-4 sm:p-6'}`} data-oggetto={oggetto} data-origine={origine} data-invio={t(locale, 'f_invio')} data-grazie={localePath(locale, '/ringraziamenti')}>
   <input type="hidden" name="origine" value={origine} />
   <!-- honeypot anti-bot: invisibile agli umani, i bot lo compilano -->
   <input type="text" name="sito" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp-campo" />
@@ -111,7 +111,7 @@ const TURNSTILE_SITEKEY = '0x4AAAAAAEObBnZNNOIiq0MD';
         if (!r.ok || !dati.ok) throw new Error(dati.errore || `HTTP ${r.status}`);
         // successo: pagina di ringraziamento (come sul sito originale)
         try { sessionStorage.setItem('vd-lead-ok', '1'); } catch (e) {}  // flag per l'evento GA4 generate_lead su /ringraziamenti
-        location.href = '/ringraziamenti';
+        location.href = form.dataset.grazie || '/ringraziamenti';
       } catch {
         // ripiego email con gli stessi contenuti
         bottone.disabled = false;
