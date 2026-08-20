@@ -101,7 +101,7 @@ const nastro = servizi.map((s) => t(locale, s.k)).join(' · ') + ' · ';
           </a>
         </div>
         <div class="flex items-center gap-5">
-          <a href="/norme-sulla-privacy" class="act hover:text-brand">{t(locale, 'footer_privacy')}</a>
+          <a href={localePath(locale, '/norme-sulla-privacy')} class="act hover:text-brand">{t(locale, 'footer_privacy')}</a>
           <button type="button" id="impostazioni-cookie" class="act hover:text-brand cursor-pointer">{t(locale, 'footer_cookie')}</button>
           <button type="button" id="torna-su" class="act magnetico pillola-vetro rounded-full px-4 py-2 text-carta/80 cursor-pointer">{t(locale, 'footer_su')}</button>
         </div>

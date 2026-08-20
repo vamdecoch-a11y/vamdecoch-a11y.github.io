@@ -3,14 +3,14 @@
 // 4 categorie: Necessari (sempre), Preferenze, Statistiche, Marketing.
 // Google Analytics (G-PNS7X8SYV6) parte SOLO se "Statistiche" e' accettato
 // E solo sul dominio vero (vamdeco.ch), mai su anteprima/localhost.
-import { t, type Locale } from '../i18n';
+import { t, localePath, type Locale } from '../i18n';
 const locale = (Astro.currentLocale ?? 'it') as Locale;
 ---
 <div id="vam-cc-ov" aria-hidden="true">
   <div id="vam-cc-modal" role="dialog" aria-modal="true" aria-labelledby="vam-cc-titolo">
     <h2 id="vam-cc-titolo">{t(locale, 'cc_titolo')}</h2>
     <p class="d">
-      {t(locale, 'cc_desc')} <a href="/norme-sulla-privacy">{t(locale, 'cc_privacy_link')}</a>.
+      {t(locale, 'cc_desc')} <a href={localePath(locale, '/norme-sulla-privacy')}>{t(locale, 'cc_privacy_link')}</a>.
     </p>
 
     <div class="vam-cc-btns">

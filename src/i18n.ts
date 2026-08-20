@@ -172,17 +172,24 @@ export function t(locale: Locale | undefined, key: string): string {
 // (chi-siamo, recensioni, blog, privacy...) NON sono qui: su di esse non emettiamo
 // hreflang e il selettore lingua rimanda alla home EN/DE (mai un 404).
 export const PAGINE_TRADOTTE = new Set<string>([
-  '/', '/servizi', '/contattaci', '/chi-siamo', '/recensioni', '/articoli',
+  '/', '/servizi', '/contattaci', '/chi-siamo', '/recensioni', '/articoli', '/norme-sulla-privacy',
   '/decorazione-veicoli-ticino', '/decorazione-vetrine-ticino', '/abbigliamento-personalizzato-ticino',
   '/pellicole-satinate-ticino', '/oscuramento-vetrate-uv', '/oscuramento-vetri-auto-ticino',
   '/adesivi-e-etichette', '/etichette-resinate', '/cartellonistica', '/stampa-su-carta',
   '/siti-web', '/personalizza-la-tua-festa',
 ]);
 
+// Prefissi (sottopagine citta) tradotti in EN+DE: tutte le pagine dentro queste cartelle.
+const PREFISSI_TRADOTTI = [
+  '/articoli/',
+  '/abbigliamento-personalizzato-ticino/',
+  '/decorazione-veicoli-ticino/',
+  '/decorazione-vetrine-ticino/',
+];
+
 // True se il percorso corrente (in qualsiasi lingua) ha le tre versioni linguistiche.
-// Tutti i singoli articoli del blog (/articoli/<slug>) sono tradotti in EN e DE.
 export function haTraduzioni(pathname: string): boolean {
   const pulito = pathname.replace(/index\.html$/, '').replace(/\.html$/, '') || '/';
   const base = pulito.replace(/^\/(en|de)(?=\/|$)/, '') || '/';
-  return PAGINE_TRADOTTE.has(base) || base.startsWith('/articoli/');
+  return PAGINE_TRADOTTE.has(base) || PREFISSI_TRADOTTI.some((p) => base.startsWith(p));
 }
