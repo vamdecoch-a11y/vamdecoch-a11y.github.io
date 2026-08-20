@@ -9,7 +9,7 @@ import FormContatti from '../components/FormContatti.astro';
 import SezioneParliamo from '../components/SezioneParliamo.astro';
 import RecensioniEleganti from '../components/RecensioniEleganti.astro';
 import WhatsAppTondo from '../components/WhatsAppTondo.astro';
-import { recensioniStandard } from '../dati/recensioni';
+import { recensioniStandardPer } from '../dati/recensioni';
 import { anniEsperienza, ANNO_FONDAZIONE } from '../dati/statistiche';
 import { t, haTraduzioni, type Locale } from '../i18n';
 
@@ -218,7 +218,7 @@ const businessJsonLd = JSON.stringify({
   </section>
 
   <!-- RECENSIONI (componente condiviso in tutto il sito) -->
-  <RecensioniEleganti recensioni={recensioniStandard} />
+  <RecensioniEleganti recensioni={recensioniStandardPer(locale)} />
   <div class="text-center pb-16">
     <a data-reveal href="/recensioni" class="btn-anim inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-ink hover:bg-brand-dark">{t(locale, 'vedi_recensioni')}</a>
   </div>
