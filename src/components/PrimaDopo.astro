@@ -9,14 +9,16 @@ interface Props {
   altDopo?: string;
   didascalia?: string;  // riga sotto lo slider (opzionale)
 }
-const { prima, dopo, altPrima = 'Prima del lavoro', altDopo = 'Dopo il lavoro VAM Deco', didascalia } = Astro.props;
+import { t, type Locale } from '../i18n';
+const locale = (Astro.currentLocale ?? 'it') as Locale;
+const { prima, dopo, altPrima = t(locale, 'pd_alt_prima'), altDopo = t(locale, 'pd_alt_dopo'), didascalia } = Astro.props;
 ---
 <div class="pd-cornice" data-reveal>
   <div class="pd-quadro" style="--pos:50%">
     <img src={dopo} alt={altDopo} loading="lazy" />
     <img class="pd-strato-prima" src={prima} alt={altPrima} loading="lazy" />
-    <span class="pd-tag pd-tag-prima">Prima</span>
-    <span class="pd-tag pd-tag-dopo">Dopo</span>
+    <span class="pd-tag pd-tag-prima">{t(locale, 'pd_prima')}</span>
+    <span class="pd-tag pd-tag-dopo">{t(locale, 'pd_dopo')}</span>
     <div class="pd-linea" aria-hidden="true"></div>
     <div class="pd-maniglia" aria-hidden="true">⇄</div>
   </div>
