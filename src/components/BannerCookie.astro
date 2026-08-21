@@ -73,16 +73,37 @@ const locale = (Astro.currentLocale ?? 'it') as Locale;
     var KEY = 'vamdeco-cc', GA = 'G-PNS7X8SYV6';
     var SITO_VERO = ['vamdeco.ch', 'www.vamdeco.ch'].indexOf(location.hostname) !== -1;
 
-    function loadGA() {
-      if (!SITO_VERO || window.__vamGA) return;  // niente tracciamento su anteprima/localhost
-      window.__vamGA = 1;
+    // gtag sempre disponibile (accoda nel dataLayer); gtag.js caricato solo sul dominio vero.
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    // Traduce le scelte cookie negli stati Consent Mode v2 di Google.
+    function stati(c) {
+      var mkt = c && c.marketing ? 'granted' : 'denied';
+      return {
+        ad_storage: mkt, ad_user_data: mkt, ad_personalization: mkt,
+        analytics_storage: c && c.analytics ? 'granted' : 'denied'
+      };
+    }
+
+    // Scelta cookie salvata in una visita precedente (se presente).
+    var salvato = null;
+    try { salvato = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
+
+    // Consent Mode v2: default NEGATO prima di caricare GA. Su denied Google manda
+    // solo ping cookieless (nessun cookie), usati per la modellazione delle conversioni.
+    if (SITO_VERO) {
+      gtag('consent', 'default', {
+        ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+        analytics_storage: 'denied', wait_for_update: 500
+      });
+      if (salvato) gtag('consent', 'update', stati(salvato));  // rispetta subito una scelta gia' data
       var s = document.createElement('script');
       s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA;
       document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      window.gtag = gtag; gtag('js', new Date());
-      gtag('config', GA, { anonymize_ip: true });
+      gtag('js', new Date());
+      gtag('config', GA);
     }
 
     var ov = document.getElementById('vam-cc-ov');
@@ -95,18 +116,13 @@ const locale = (Astro.currentLocale ?? 'it') as Locale;
     function salva(c) {
       try { localStorage.setItem(KEY, JSON.stringify(c)); } catch (e) {}
       chiudi();
-      if (c.analytics) loadGA();
+      if (SITO_VERO) gtag('consent', 'update', stati(c));  // aggiorna il consenso (Consent Mode v2)
     }
     // reso disponibile al footer / pagina privacy per riaprire il pannello
     window.vamCookie = { apri: apri };
 
-    // consenso gia' dato in passato?
-    var raw = null; try { raw = localStorage.getItem(KEY); } catch (e) {}
-    if (raw) {
-      try { var c = JSON.parse(raw); if (c && c.analytics) loadGA(); } catch (e) {}
-    } else {
-      apri();  // prima visita: mostro il banner
-    }
+    // prima visita (nessuna scelta salvata): mostro il banner
+    if (!salvato) apri();
 
     document.getElementById('vam-cc-all').onclick = function () {
       salva({ necessary: true, preferences: true, analytics: true, marketing: true });
