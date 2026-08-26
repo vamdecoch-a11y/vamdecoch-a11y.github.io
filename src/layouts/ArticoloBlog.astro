@@ -31,7 +31,7 @@ interface Articolo {
   faq?: { domanda: string; risposta: string }[];
   servizioCorrelato?: { testo: string; href: string };
   /* Slider interattivo prima/dopo: se presente sostituisce la cover in testata */
-  primaDopo?: { prima: string; dopo: string; didascalia?: string };
+  primaDopo?: { prima: string; dopo: string; didascalia?: string; aspetto?: string; maxW?: string };
 }
 interface Props { articolo: Articolo; }
 const { articolo: a } = Astro.props;
@@ -79,7 +79,7 @@ const faqJsonLd = a.faq?.length
       </div>
       {a.primaDopo ? (
         <div class="relative max-w-4xl mx-auto px-4 pb-12">
-          <PrimaDopo prima={a.primaDopo.prima} dopo={a.primaDopo.dopo} didascalia={a.primaDopo.didascalia} />
+          <PrimaDopo prima={a.primaDopo.prima} dopo={a.primaDopo.dopo} didascalia={a.primaDopo.didascalia} aspetto={a.primaDopo.aspetto} maxW={a.primaDopo.maxW} />
         </div>
       ) : a.cover && (
         <div class="relative max-w-4xl mx-auto px-4 pb-12" data-reveal>

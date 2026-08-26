@@ -8,13 +8,15 @@ interface Props {
   altPrima?: string;
   altDopo?: string;
   didascalia?: string;  // riga sotto lo slider (opzionale)
+  aspetto?: string;     // aspect-ratio del quadro (default '3 / 2' orizzontale; es. '2 / 3' verticale)
+  maxW?: string;        // larghezza massima della cornice (utile per foto verticali, es. '30rem')
 }
 import { t, type Locale } from '../i18n';
 const locale = (Astro.currentLocale ?? 'it') as Locale;
-const { prima, dopo, altPrima = t(locale, 'pd_alt_prima'), altDopo = t(locale, 'pd_alt_dopo'), didascalia } = Astro.props;
+const { prima, dopo, altPrima = t(locale, 'pd_alt_prima'), altDopo = t(locale, 'pd_alt_dopo'), didascalia, aspetto = '3 / 2', maxW } = Astro.props;
 ---
-<div class="pd-cornice" data-reveal>
-  <div class="pd-quadro" style="--pos:50%">
+<div class="pd-cornice" data-reveal style={maxW ? `max-width:${maxW};margin-inline:auto` : undefined}>
+  <div class="pd-quadro" style={`--pos:50%;--pd-aspetto:${aspetto}`}>
     <img src={dopo} alt={altDopo} loading="lazy" />
     <img class="pd-strato-prima" src={prima} alt={altPrima} loading="lazy" />
     <span class="pd-tag pd-tag-prima">{t(locale, 'pd_prima')}</span>
@@ -36,7 +38,7 @@ const { prima, dopo, altPrima = t(locale, 'pd_alt_prima'), altDopo = t(locale, '
     position: relative;
     overflow: hidden;
     border-radius: 1.15rem;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: var(--pd-aspetto, 3 / 2);
     user-select: none;
     -webkit-user-select: none;
     touch-action: none;
