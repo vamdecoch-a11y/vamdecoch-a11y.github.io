@@ -15,8 +15,8 @@ const locale = (Astro.currentLocale ?? 'it') as Locale;
   <div class="absolute inset-0 glow-arancio pointer-events-none"></div>
   <div class="relative max-w-6xl mx-auto px-4 py-20">
     <div class="grid gap-6 md:grid-cols-2 md:gap-4 items-center">
-      <div data-reveal class="w-full text-center md:text-left">
-        <h2 class="font-display font-light leading-none md:leading-[0.72] text-[13.5vw] md:text-[11.5vw]">{t(locale, 'parliamo_pre')}<br class="hidden md:block" /><span class="text-brand font-medium">{t(locale, 'parliamo_post')}</span></h2>
+      <div data-reveal class="w-full text-center md:text-right">
+        <h2 class="font-display font-light leading-none md:leading-[0.72] text-[13.5vw] md:text-[clamp(3.5rem,9vw,8rem)]">{t(locale, 'parliamo_pre')}<br class="hidden md:block" /><span class="text-brand font-medium">{t(locale, 'parliamo_post')}</span></h2>
       </div>
       <div data-reveal class="md:max-w-md w-full">
         <FormContatti oggetto={oggetto} origine={origine} compatto />
