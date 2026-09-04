@@ -9,6 +9,7 @@ import FormContatti from '../components/FormContatti.astro';
 import SezioneParliamo from '../components/SezioneParliamo.astro';
 import RecensioniEleganti from '../components/RecensioniEleganti.astro';
 import WhatsAppTondo from '../components/WhatsAppTondo.astro';
+import PrimaDopo from '../components/PrimaDopo.astro';
 import { recensioniStandardPer } from '../dati/recensioni';
 import { anniEsperienza, ANNO_FONDAZIONE } from '../dati/statistiche';
 import { t, haTraduzioni, type Locale } from '../i18n';
@@ -36,6 +37,9 @@ interface Servizio {
   fasi: Fase[];
   faq: Faq[];
   oggettoForm: string;
+  // Slider prima/dopo opzionale (es. pellicole satinate): se presente, va subito dopo l'hero
+  // al posto della galleria, e la galleria viene spostata appena prima del 1° form.
+  primaDopo?: { prima: string; dopo: string; didascalia?: string; aspetto?: string; maxW?: string };
 }
 interface Props { servizio: Servizio; }
 const { servizio: s } = Astro.props;
@@ -130,12 +134,25 @@ const businessJsonLd = JSON.stringify({
     </div>
   </section>
 
-  <!-- GALLERIA (solo se il servizio ha foto) -->
-  {galleria.length > 0 && (
-    <GalleriaOrizzontale
-      immagini={galleria.map((img) => `/img/${s.slug}/galleria/${img}`)}
-      alt={`Lavoro di ${s.h1} realizzato da VAM Deco in Ticino`}
-    />
+  <!-- DOPO L'HERO: se il servizio ha uno slider prima/dopo, mostralo qui (orizzontale);
+       altrimenti la galleria fotografica, come prima. -->
+  {s.primaDopo ? (
+    <section class="max-w-5xl mx-auto px-4 py-14">
+      <div class="text-center mb-8" data-reveal-stagger>
+        <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">{t(locale, 'pd_titolo_label')}</div>
+        <h2 data-reveal class="text-2xl md:text-3xl font-bold">{t(locale, 'pd_titolo_h')}</h2>
+      </div>
+      <div data-reveal>
+        <PrimaDopo prima={s.primaDopo.prima} dopo={s.primaDopo.dopo} didascalia={s.primaDopo.didascalia} aspetto={s.primaDopo.aspetto} maxW={s.primaDopo.maxW} />
+      </div>
+    </section>
+  ) : (
+    galleria.length > 0 && (
+      <GalleriaOrizzontale
+        immagini={galleria.map((img) => `/img/${s.slug}/galleria/${img}`)}
+        alt={`Lavoro di ${s.h1} realizzato da VAM Deco in Ticino`}
+      />
+    )
   )}
 
   <!-- BENEFICI -->
@@ -178,6 +195,14 @@ const businessJsonLd = JSON.stringify({
       ))}
     </div>
   </section>
+
+  <!-- GALLERIA spostata qui (subito prima del 1° form) quando sopra c'e' lo slider prima/dopo -->
+  {s.primaDopo && galleria.length > 0 && (
+    <GalleriaOrizzontale
+      immagini={galleria.map((img) => `/img/${s.slug}/galleria/${img}`)}
+      alt={`Lavoro di ${s.h1} realizzato da VAM Deco in Ticino`}
+    />
+  )}
 
   <!-- CTA A META PAGINA: typewriter + form + freccia (primo form: target dei pulsanti principali) -->
   <section id="preventivo" class="max-w-6xl mx-auto px-4 pt-6 pb-16 text-center scroll-mt-20">

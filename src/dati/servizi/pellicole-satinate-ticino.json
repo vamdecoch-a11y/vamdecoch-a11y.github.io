@@ -13,27 +13,88 @@
   "beneficiTitolo": "Hai bisogno di privacy, comfort e sicurezza nei tuoi spazi in Ticino?",
   "beneficiIntro": "Con le nostre <strong>pellicole satinate e opache per vetri</strong> ottieni subito privacy ed eleganza, senza perdere luce naturale. Una soluzione semplice, veloce e duratura, ideale per uffici, studi, aziende e abitazioni.",
   "benefici": [
-    { "n": "01", "titolo": "Privacy immediata e elegante", "testo": "Le pellicole satinate rendono i vetri opachi agli sguardi esterni: privacy immediata per uffici, studi medici, sale riunioni, bagni e vetrine in Ticino." },
-    { "n": "02", "titolo": "Luce sempre presente", "testo": "La pellicola opaca blocca la vista ma lascia passare la luce naturale: gli ambienti restano luminosi e accoglienti, senza rinunciare alla riservatezza." },
-    { "n": "03", "titolo": "Nessuna tenda, solo luce naturale", "testo": "Elimina tende pesanti e veneziane: la pellicola satinata garantisce privacy sul vetro con uno stile moderno, minimalista e facile da pulire." },
-    { "n": "04", "titolo": "Personalizzazione su misura", "testo": "Personalizziamo le pellicole per vetri con loghi, scritte e pattern decorativi su misura, per valorizzare l'immagine della tua attività o della tua casa." },
-    { "n": "05", "titolo": "Nessun intervento strutturale", "testo": "L'installazione della pellicola avviene direttamente sul vetro esistente: niente opere murarie, niente polvere, applicazione rapida e risultato immediato, anche in ambienti già arredati." },
-    { "n": "06", "titolo": "Eleganza su ogni vetro", "testo": "L'effetto satinato o smerigliato uniforme dona ai vetri un aspetto raffinato e professionale, che si integra con ogni arredamento in ufficio, negozio o abitazione." }
+    {
+      "n": "01",
+      "titolo": "Privacy immediata e elegante",
+      "testo": "Le pellicole satinate rendono i vetri opachi agli sguardi esterni: privacy immediata per uffici, studi medici, sale riunioni, bagni e vetrine in Ticino."
+    },
+    {
+      "n": "02",
+      "titolo": "Luce sempre presente",
+      "testo": "La pellicola opaca blocca la vista ma lascia passare la luce naturale: gli ambienti restano luminosi e accoglienti, senza rinunciare alla riservatezza."
+    },
+    {
+      "n": "03",
+      "titolo": "Nessuna tenda, solo luce naturale",
+      "testo": "Elimina tende pesanti e veneziane: la pellicola satinata garantisce privacy sul vetro con uno stile moderno, minimalista e facile da pulire."
+    },
+    {
+      "n": "04",
+      "titolo": "Personalizzazione su misura",
+      "testo": "Personalizziamo le pellicole per vetri con loghi, scritte e pattern decorativi su misura, per valorizzare l'immagine della tua attività o della tua casa."
+    },
+    {
+      "n": "05",
+      "titolo": "Nessun intervento strutturale",
+      "testo": "L'installazione della pellicola avviene direttamente sul vetro esistente: niente opere murarie, niente polvere, applicazione rapida e risultato immediato, anche in ambienti già arredati."
+    },
+    {
+      "n": "06",
+      "titolo": "Eleganza su ogni vetro",
+      "testo": "L'effetto satinato o smerigliato uniforme dona ai vetri un aspetto raffinato e professionale, che si integra con ogni arredamento in ufficio, negozio o abitazione."
+    }
   ],
   "fasi": [
-    { "t": "Analisi delle tue esigenze", "d": "Capiremo insieme dove vuoi maggiore privacy (ufficio, bagno, vetrina) e, su richiesta, facciamo un sopralluogo gratuito senza impegno per consigliarti la soluzione più adatta." },
-    { "t": "Proposta su misura", "d": "Prepariamo un preventivo gratuito e ti mostriamo esempi e pellicole disponibili, anche con opzioni personalizzate." },
-    { "t": "Applicazione veloce e pulita", "d": "In pochi minuti la pellicola viene applicata senza polvere, rumori o lavori invasivi. Può essere rimossa in futuro senza danni." },
-    { "t": "Risultato immediato", "d": "Subito dopo l'applicazione avrai vetri opachi, eleganti e riservati. Più luce naturale, meno occhi indiscreti." }
+    {
+      "t": "Analisi delle tue esigenze",
+      "d": "Capiremo insieme dove vuoi maggiore privacy (ufficio, bagno, vetrina) e, su richiesta, facciamo un sopralluogo gratuito senza impegno per consigliarti la soluzione più adatta."
+    },
+    {
+      "t": "Proposta su misura",
+      "d": "Prepariamo un preventivo gratuito e ti mostriamo esempi e pellicole disponibili, anche con opzioni personalizzate."
+    },
+    {
+      "t": "Applicazione veloce e pulita",
+      "d": "In pochi minuti la pellicola viene applicata senza polvere, rumori o lavori invasivi. Può essere rimossa in futuro senza danni."
+    },
+    {
+      "t": "Risultato immediato",
+      "d": "Subito dopo l'applicazione avrai vetri opachi, eleganti e riservati. Più luce naturale, meno occhi indiscreti."
+    }
   ],
   "faq": [
-    { "domanda": "Cosa significa \"pellicola satinata opaca/ privacy\"?", "risposta": "È un tipo di pellicola applicata sul vetro che rende la superficie opaca ma lascia passare la luce naturale. Serve a proteggere gli ambienti da sguardi esterni, mantenendo luminosità e un aspetto elegante." },
-    { "domanda": "Quanto costa la pellicola satinata?", "risposta": "Ogni progetto è su misura: le dimensioni dei vetri, il tipo di ambiente e i dettagli come maniglie o cerniere cambiano il lavoro. Per questo il preventivo è gratuito e, su richiesta, facciamo un sopralluogo senza impegno." },
-    { "domanda": "Quanto dura la pellicola satinata? Si rovina con il tempo?", "risposta": "Se applicata correttamente da professionisti e mantenuta bene, può durare molti anni senza deteriorarsi. Evita graffi con oggetti appuntiti e pulizie aggressive." },
-    { "domanda": "Si può rimuovere la pellicola senza danneggiare il vetro?", "risposta": "Sì. La pellicola satinata viene rimossa senza lasciare danni sul vetro se l'installazione è stata fatta bene. È una soluzione reversibile e flessibile." },
-    { "domanda": "Posso personalizzare la pellicola (logo, scritte, pattern)?", "risposta": "Sì! Offriamo opzioni di personalizzazione per ogni esigenza: logo aziendale, scritte decorative, pattern su vetro. Perfette per uffici, negozi e studi professionali." },
-    { "domanda": "Quali sono gli ambienti in cui è più utile applicare la pellicola opaca per privacy?", "risposta": "Uffici (sale riunioni, cabine privacy), case (bagni, porte interne, balconi/verande), negozi con vetrine, studi professionali e ambienti sanitari." }
+    {
+      "domanda": "Cosa significa \"pellicola satinata opaca/ privacy\"?",
+      "risposta": "È un tipo di pellicola applicata sul vetro che rende la superficie opaca ma lascia passare la luce naturale. Serve a proteggere gli ambienti da sguardi esterni, mantenendo luminosità e un aspetto elegante."
+    },
+    {
+      "domanda": "Quanto costa la pellicola satinata?",
+      "risposta": "Ogni progetto è su misura: le dimensioni dei vetri, il tipo di ambiente e i dettagli come maniglie o cerniere cambiano il lavoro. Per questo il preventivo è gratuito e, su richiesta, facciamo un sopralluogo senza impegno."
+    },
+    {
+      "domanda": "Quanto dura la pellicola satinata? Si rovina con il tempo?",
+      "risposta": "Se applicata correttamente da professionisti e mantenuta bene, può durare molti anni senza deteriorarsi. Evita graffi con oggetti appuntiti e pulizie aggressive."
+    },
+    {
+      "domanda": "Si può rimuovere la pellicola senza danneggiare il vetro?",
+      "risposta": "Sì. La pellicola satinata viene rimossa senza lasciare danni sul vetro se l'installazione è stata fatta bene. È una soluzione reversibile e flessibile."
+    },
+    {
+      "domanda": "Posso personalizzare la pellicola (logo, scritte, pattern)?",
+      "risposta": "Sì! Offriamo opzioni di personalizzazione per ogni esigenza: logo aziendale, scritte decorative, pattern su vetro. Perfette per uffici, negozi e studi professionali."
+    },
+    {
+      "domanda": "Quali sono gli ambienti in cui è più utile applicare la pellicola opaca per privacy?",
+      "risposta": "Uffici (sale riunioni, cabine privacy), case (bagni, porte interne, balconi/verande), negozi con vetrine, studi professionali e ambienti sanitari."
+    }
   ],
   "oggettoForm": "Richiesta preventivo pellicole satinate",
-  "perchePara": "Produzione interna a Sementina, un solo referente dall'idea alla consegna e la stessa cura dal singolo vetro del bagno alle vetrate di un intero ufficio."
+  "perchePara": "Produzione interna a Sementina, un solo referente dall'idea alla consegna e la stessa cura dal singolo vetro del bagno alle vetrate di un intero ufficio.",
+  "primaDopo": {
+    "prima": "/img/pellicole/primadopo/prima.jpg",
+    "dopo": "/img/pellicole/primadopo/dopo.jpg",
+    "didascalia": "Trascina il cursore: a sinistra il vetro trasparente, a destra la pellicola satinata applicata da VAM Deco.",
+    "aspetto": "1 / 1",
+    "maxW": "38rem"
+  }
 }
