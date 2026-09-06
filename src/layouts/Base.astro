@@ -24,6 +24,45 @@ const base = percorsoPulito.replace(/^\/(en|de)(?=\/|$)/, '') || '/';
 const altIt = new URL(base, Astro.site).href;
 const altEn = new URL(localePath('en', base), Astro.site).href;
 const altDe = new URL(localePath('de', base), Astro.site).href;
+
+// --- Provenienza contatti (rif. pagina + canale) ---------------------------
+// Codice pagina per il riferimento nei messaggi WhatsApp/email. Calcolato dal
+// percorso senza prefisso lingua (`base`), quindi vale identico per it/en/de.
+const codicePagina =
+  base.startsWith('/abbigliamento-personalizzato-ticino') ? 'AB'
+  : base.startsWith('/pellicole-satinate-ticino') ? 'SA'
+  : base.startsWith('/oscuramento-vetri-auto-ticino') ? 'OS'
+  : base.startsWith('/decorazione-veicoli-ticino') ? 'DV'
+  : base.startsWith('/adesivi-e-etichette') ? 'AD'
+  : 'GE';
+// Nome del servizio per esteso, nella lingua della pagina.
+const nomiServizio: Record<Locale, Record<string, string>> = {
+  it: { AB: 'abbigliamento personalizzato', SA: 'pellicole satinate', OS: 'oscuramento vetri auto', DV: 'decorazione veicoli', AD: 'adesivi e etichette' },
+  en: { AB: 'custom clothing', SA: 'frosted films', OS: 'car window tinting', DV: 'vehicle graphics', AD: 'stickers and labels' },
+  de: { AB: 'individuelle Bekleidung', SA: 'satinierte Folien', OS: 'Auto-Scheibentönung', DV: 'Fahrzeugbeschriftung', AD: 'Aufkleber und Etiketten' },
+};
+const nomeServ = nomiServizio[locale][codicePagina] || '';
+// Testi precompilati (senza il codice, che viene aggiunto a runtime con la fonte).
+// Il token "(rif. XX-N)" resta invariato in tutte le lingue: cosi' Michele lo
+// legge sempre allo stesso modo nella sua casella.
+const testiRif: Record<Locale, { wa: string; waGe: string; mail: string }> = {
+  it: {
+    wa: nomeServ ? `Buongiorno, ho visto la pagina ${nomeServ} sul vostro sito e vorrei informazioni.` : 'Buongiorno, ho visitato il vostro sito e vorrei informazioni.',
+    waGe: 'Buongiorno, ho visitato il vostro sito e vorrei informazioni.',
+    mail: nomeServ ? `Richiesta ${nomeServ}` : 'Richiesta informazioni',
+  },
+  en: {
+    wa: nomeServ ? `Hello, I saw your ${nomeServ} page on your website and would like some information.` : 'Hello, I visited your website and would like some information.',
+    waGe: 'Hello, I visited your website and would like some information.',
+    mail: nomeServ ? `Enquiry about ${nomeServ}` : 'General enquiry',
+  },
+  de: {
+    wa: nomeServ ? `Guten Tag, ich habe auf Ihrer Website die Seite „${nomeServ}“ gesehen und hätte gerne Informationen.` : 'Guten Tag, ich habe Ihre Website besucht und hätte gerne Informationen.',
+    waGe: 'Guten Tag, ich habe Ihre Website besucht und hätte gerne Informationen.',
+    mail: nomeServ ? `Anfrage: ${nomeServ}` : 'Allgemeine Anfrage',
+  },
+};
+const rifCfg = { code: codicePagina, wa: testiRif[locale].wa, waGe: testiRif[locale].waGe, mail: testiRif[locale].mail };
 ---
 <!doctype html>
 <html lang={langAttr}>
@@ -162,10 +201,81 @@ const altDe = new URL(localePath('de', base), Astro.site).href;
         });
       }
     </script>
+    <script define:vars={{ rifCfg }}>
+      // Provenienza nei contatti: precompila testo WhatsApp e oggetto email con
+      // il riferimento "(rif. CODICE-FONTE)" cosi' Michele capisce da quale pagina
+      // e da quale canale (annuncio Google vs organico) arriva la richiesta.
+      (function () {
+        // 1) Fonte di sessione: 1 = annuncio Google (gclid/cpc), 2 = tutto il resto.
+        //    Salvata una volta per sessione in sessionStorage (dato tecnico, non
+        //    profilazione). Un click su annuncio in corso di sessione aggiorna a 1.
+        //    Senza sessionStorage disponibile, si degrada con eleganza a fonte 2.
+        var fonte = '2';
+        try {
+          var salv = sessionStorage.getItem('vd_fonte');
+          var q = new URLSearchParams(location.search);
+          var m = (q.get('utm_medium') || '').toLowerCase();
+          var annuncio = q.has('gclid') || q.has('gbraid') || q.has('wbraid') ||
+                         ['cpc', 'ppc', 'paidsearch', 'paid'].indexOf(m) !== -1;
+          if (annuncio) fonte = '1';
+          else if (salv === '1' || salv === '2') fonte = salv;
+          else fonte = '2';
+          sessionStorage.setItem('vd_fonte', fonte);
+        } catch (e) { fonte = '2'; }
+
+        var rif = rifCfg.code + '-' + fonte;
+        window.vdRif = rif; // usato dal ripiego email del modulo di contatto
+        var suffisso = ' (rif. ' + rif + ')';
+
+        // 2) Imposta un parametro nell'href mantenendo gli altri (spazio = %20,
+        //    piu' compatibile di "+" per l'oggetto delle email).
+        function setParam(href, key, val) {
+          var hash = '', h = href.indexOf('#');
+          if (h >= 0) { hash = href.slice(h); href = href.slice(0, h); }
+          var qi = href.indexOf('?');
+          var basePart = qi >= 0 ? href.slice(0, qi) : href;
+          var qs = qi >= 0 ? href.slice(qi + 1) : '';
+          var parts = qs ? qs.split('&').filter(function (p) { return p && p.split('=')[0] !== key; }) : [];
+          parts.push(key + '=' + encodeURIComponent(val));
+          return basePart + '?' + parts.join('&') + hash;
+        }
+        function valoreParam(href, key) {
+          var qi = href.indexOf('?'); if (qi < 0) return '';
+          var qs = href.slice(qi + 1).split('#')[0], out = '';
+          qs.split('&').forEach(function (p) {
+            var i = p.indexOf('='); if (i > 0 && p.slice(0, i) === key) out = p.slice(i + 1);
+          });
+          try { return decodeURIComponent(out.replace(/\+/g, ' ')); } catch (e) { return out; }
+        }
+
+        // 3) Link WhatsApp: testo precompilato + rif. Sulle pagine servizio usa il
+        //    testo standard; sulle pagine generiche mantiene un testo gia' presente
+        //    (home, festa) e vi aggiunge solo il riferimento.
+        document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function (a) {
+          var href = a.getAttribute('href') || '';
+          var msg;
+          if (rifCfg.code !== 'GE') {
+            msg = rifCfg.wa;
+          } else {
+            var attuale = valoreParam(href, 'text');
+            msg = attuale || rifCfg.waGe;
+          }
+          a.setAttribute('href', setParam(href, 'text', msg + suffisso));
+        });
+
+        // 4) Link email: oggetto precompilato + rif. Salta i link con data-rif="off"
+        //    (es. contatti nella pagina privacy, che non sono richieste commerciali).
+        document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+          if (a.getAttribute('data-rif') === 'off') return;
+          var href = a.getAttribute('href') || '';
+          a.setAttribute('href', setParam(href, 'subject', rifCfg.mail + suffisso));
+        });
+      })();
+    </script>
     <script is:inline>
-      // GA4: click su WhatsApp e telefono. Un solo listener per tutto il sito (fase capture,
-      // così intercetta anche se un componente ferma la propagazione). Se gtag non esiste
-      // (cookie rifiutati) non parte nulla: comportamento corretto, nessun workaround.
+      // GA4: click su WhatsApp, telefono ed email. Un solo listener per tutto il sito
+      // (fase capture, così intercetta anche se un componente ferma la propagazione).
+      // Con Consent Mode v2 gli eventi entrano nelle statistiche solo col consenso.
       document.addEventListener('click', function (e) {
         var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
         if (!a || typeof window.gtag !== 'function') return;
@@ -174,6 +284,8 @@ const altDe = new URL(localePath('de', base), Astro.site).href;
           window.gtag('event', 'click_whatsapp', { pagina: location.pathname });
         } else if (h.indexOf('tel:') === 0) {
           window.gtag('event', 'click_telefono', { pagina: location.pathname });
+        } else if (h.indexOf('mailto:') === 0) {
+          window.gtag('event', 'click_email', { pagina: location.pathname });
         }
       }, true);
     </script>

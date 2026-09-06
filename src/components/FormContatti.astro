@@ -125,7 +125,9 @@ const TURNSTILE_SITEKEY = '0x4AAAAAAEObBnZNNOIiq0MD';
           `Richiesta inviata da: ${f.get('origine')}`,
           '', `${f.get('messaggio')}`,
         ].filter(Boolean).join('\n');
-        const oggetto = form.dataset.oggetto || 'Richiesta preventivo';
+        const oggettoBase = form.dataset.oggetto || 'Richiesta preventivo';
+        const rif = (window as any).vdRif;
+        const oggetto = rif ? `${oggettoBase} (rif. ${rif})` : oggettoBase;
         location.href = `mailto:info@vamdeco.ch?subject=${encodeURIComponent(oggetto)}&body=${encodeURIComponent(corpo)}`;
       }
     });
