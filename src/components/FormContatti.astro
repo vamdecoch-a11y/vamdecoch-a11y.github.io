@@ -101,6 +101,11 @@ const TURNSTILE_SITEKEY = '0x4AAAAAAEObBnZNNOIiq0MD';
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const f = new FormData(form);
+      // Provenienza automatica (es. "SA-1" = pagina satinate, da annuncio Google):
+      // la accodo al campo "origine" (che il pannello Richieste già mostra) così il
+      // lead porta la distinzione annuncio/organico SENZA modifiche al backend.
+      const rif = (window as any).vdRif;
+      if (rif) f.set('origine', (((f.get('origine') as string) || '') + ` [rif. ${rif}]`).trim());
       const bottone = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
       const testoBottone = bottone.textContent;
       bottone.disabled = true;
@@ -126,7 +131,6 @@ const TURNSTILE_SITEKEY = '0x4AAAAAAEObBnZNNOIiq0MD';
           '', `${f.get('messaggio')}`,
         ].filter(Boolean).join('\n');
         const oggettoBase = form.dataset.oggetto || 'Richiesta preventivo';
-        const rif = (window as any).vdRif;
         const oggetto = rif ? `${oggettoBase} (rif. ${rif})` : oggettoBase;
         location.href = `mailto:info@vamdeco.ch?subject=${encodeURIComponent(oggetto)}&body=${encodeURIComponent(corpo)}`;
       }
