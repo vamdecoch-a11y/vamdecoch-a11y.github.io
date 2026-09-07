@@ -38,5 +38,36 @@
     { "domanda": "How long does a custom clothing order take?", "risposta": "Production times depend on the order volume and the complexity of the design. Generally, for small orders, the turnaround is around a couple of days. Get in touch for an estimated delivery time for your project." },
     { "domanda": "Which personalisation techniques are most wash-resistant?", "risposta": "Embroidery is the most hard-wearing and long-lasting technique, ideal for garments that need to withstand frequent washing. DTF printing also offers good durability, especially when the garment is washed according to the instructions provided." }
   ],
-  "oggettoForm": "Custom clothing quote request"
+  "oggettoForm": "Custom clothing quote request",
+  "shopOnline": {
+    "etichetta": "Shop online",
+    "titolo": "Ready-to-personalise T-shirts, straight from our shop",
+    "intro": "No quote needed: our online shop has themed T-shirts ready to go. Pick the design, colour and size, and get it delivered or collect it for free in Sementina.",
+    "link": [
+      {
+        "testo": "All clothing",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento"
+      },
+      {
+        "testo": "Birthday T-shirts",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/compleanno"
+      },
+      {
+        "testo": "Stag and hen party",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/addio-al-celibato-e-nubilato"
+      },
+      {
+        "testo": "Cars and bikes",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/veicoli"
+      },
+      {
+        "testo": "Kids",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/bambini"
+      },
+      {
+        "testo": "Photo cushions and canvases",
+        "url": "https://shop.vamdeco.ch/catalogo/casa"
+      }
+    ]
+  }
 }

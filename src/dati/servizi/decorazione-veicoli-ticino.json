@@ -36,5 +36,20 @@
     { "domanda": "È necessario lavare il veicolo prima dell'applicazione della decorazione?", "risposta": "Sì, il veicolo deve essere pulito e privo di cere o sostanze che possano compromettere l'adesione delle pellicole. In caso contrario verrà fatturata la pulizia." },
     { "domanda": "Che tipo di veicoli possono essere decorati?", "risposta": "Possiamo decorare qualsiasi tipo di veicolo, dai furgoni aziendali alle auto private, fino a camion e autobus." }
   ],
-  "oggettoForm": "Richiesta preventivo decorazione veicoli"
+  "oggettoForm": "Richiesta preventivo decorazione veicoli",
+  "shopOnline": {
+    "etichetta": "Per chi ama i motori",
+    "titolo": "T-shirt auto e moto, sullo shop online",
+    "intro": "Oltre 150 grafiche dedicate ad auto e moto, stampate da noi a Sementina: il regalo giusto per chi ha la passione dei motori.",
+    "link": [
+      {
+        "testo": "T-shirt auto e moto",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/veicoli"
+      },
+      {
+        "testo": "Tutto lo shop",
+        "url": "https://shop.vamdeco.ch/catalogo"
+      }
+    ]
+  }
 }

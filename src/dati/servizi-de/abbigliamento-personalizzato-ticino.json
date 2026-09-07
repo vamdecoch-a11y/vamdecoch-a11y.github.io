@@ -38,5 +38,36 @@
     { "domanda": "Wie lange dauert die Realisierung einer Bestellung personalisierter Bekleidung?", "risposta": "Die Produktionszeit hängt vom Umfang der Bestellung und der Komplexität des Designs ab. In der Regel dauert die Bearbeitung bei kleineren Bestellungen etwa ein paar Tage. Kontaktieren Sie uns für eine geschätzte Lieferzeit für Ihr Projekt." },
     { "domanda": "Welche Personalisierungstechniken sind am waschbeständigsten?", "risposta": "Stickerei ist die widerstandsfähigste und langlebigste Technik, ideal für Kleidungsstücke, die häufigem Waschen standhalten müssen. Auch der DTF-Druck bietet gute Haltbarkeit, besonders wenn das Kleidungsstück gemäss den mitgelieferten Anweisungen gewaschen wird." }
   ],
-  "oggettoForm": "Offertanfrage personalisierte Bekleidung"
+  "oggettoForm": "Offertanfrage personalisierte Bekleidung",
+  "shopOnline": {
+    "etichetta": "Online kaufen",
+    "titolo": "Fertig personalisierbare T-Shirts, direkt in unserem Shop",
+    "intro": "Keine Offerte nötig: In unserem Onlineshop finden Sie fertige T-Shirts zu vielen Themen. Motiv, Farbe und Grösse wählen, nach Hause liefern lassen oder gratis in Sementina abholen.",
+    "link": [
+      {
+        "testo": "Gesamte Bekleidung",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento"
+      },
+      {
+        "testo": "Geburtstags-T-Shirts",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/compleanno"
+      },
+      {
+        "testo": "Polterabend",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/addio-al-celibato-e-nubilato"
+      },
+      {
+        "testo": "Autos und Motorräder",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/veicoli"
+      },
+      {
+        "testo": "Kinder",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/bambini"
+      },
+      {
+        "testo": "Kissen und Leinwände mit Foto",
+        "url": "https://shop.vamdeco.ch/catalogo/casa"
+      }
+    ]
+  }
 }

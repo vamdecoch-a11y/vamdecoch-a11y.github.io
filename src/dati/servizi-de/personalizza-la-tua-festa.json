@@ -38,5 +38,20 @@
     { "domanda": "Wo kann ich bestellen?", "risposta": "Direkt auf dieser Seite über das Formular oder per WhatsApp, online auf shop.vamdeco.ch im Bereich Lisa Details, oder per Nachricht auf Instagram an @lisaa_details." },
     { "domanda": "Liefern Sie auch ausserhalb des Tessins?", "risposta": "Ja, wir versenden in die ganze Schweiz. Die kostenlose Abholung ist an unserem Standort in Sementina möglich." }
   ],
-  "oggettoForm": "Anfrage Kostenvoranschlag Feier-Personalisierung"
+  "oggettoForm": "Anfrage Kostenvoranschlag Feier-Personalisierung",
+  "shopOnline": {
+    "etichetta": "Online bestellen",
+    "titolo": "Die Kreationen von Lisa Details gibt es auch im Onlineshop",
+    "intro": "Cake Topper, Dekorationen und Details für die Feier können Sie auch online bestellen: auswählen, personalisieren und nach Hause liefern lassen oder gratis in Sementina abholen.",
+    "link": [
+      {
+        "testo": "Zur Seite von Lisa Details",
+        "url": "https://shop.vamdeco.ch/exclusive/lisa"
+      },
+      {
+        "testo": "Geburtstags-T-Shirts",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/compleanno"
+      }
+    ]
+  }
 }

@@ -40,6 +40,10 @@ interface Servizio {
   // Slider prima/dopo opzionale (es. pellicole satinate): se presente, va subito dopo l'hero
   // al posto della galleria, e la galleria viene spostata appena prima del 1° form.
   primaDopo?: { prima: string; dopo: string; didascalia?: string; aspetto?: string; maxW?: string };
+  // Blocco "Compra online" opzionale: link diretti alle categorie dello shop
+  // (shop.vamdeco.ch). Serve ai clienti E a Google, che scopre le categorie
+  // dello shop seguendo i link da questo sito. Solo dove il JSON lo prevede.
+  shopOnline?: { etichetta: string; titolo: string; intro: string; link: { testo: string; url: string }[] };
 }
 interface Props { servizio: Servizio; }
 const { servizio: s } = Astro.props;
@@ -195,6 +199,26 @@ const businessJsonLd = JSON.stringify({
       ))}
     </div>
   </section>
+
+  <!-- COMPRA ONLINE: link alle categorie dello shop (solo se previsto dal JSON del servizio) -->
+  {s.shopOnline && (
+    <section class="max-w-5xl mx-auto px-4 pb-14">
+      <div class="card-scura rounded-2xl p-7 md:p-10" data-reveal-stagger>
+        <div data-reveal class="text-xs font-bold tracking-widest text-brand mb-2 uppercase">{s.shopOnline.etichetta}</div>
+        <h2 data-reveal class="text-2xl md:text-3xl font-bold">{s.shopOnline.titolo}</h2>
+        <p data-reveal class="mt-3 text-sm md:text-base leading-relaxed text-carta/80 max-w-3xl">{s.shopOnline.intro}</p>
+        <div data-reveal class="mt-6 flex flex-wrap gap-3">
+          {s.shopOnline.link.map((l, i) => (
+            <a href={l.url} class={i === 0
+              ? 'btn-anim rounded-full border-2 border-brand bg-brand px-5 py-2.5 text-sm md:px-6 md:py-3 md:text-base font-semibold text-ink hover:bg-brand-dark'
+              : 'btn-anim rounded-full border-2 border-white/20 px-5 py-2.5 text-sm md:px-6 md:py-3 md:text-base font-semibold hover:border-brand hover:text-brand'}>
+              {l.testo}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- GALLERIA spostata qui (subito prima del 1° form) quando sopra c'e' lo slider prima/dopo -->
   {s.primaDopo && galleria.length > 0 && (

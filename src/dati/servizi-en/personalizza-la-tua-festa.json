@@ -38,5 +38,20 @@
     { "domanda": "Where can I order?", "risposta": "Directly from this page using the form or on WhatsApp, online at shop.vamdeco.ch in the Lisa Details section, or by messaging @lisaa_details on Instagram." },
     { "domanda": "Do you deliver outside Ticino too?", "risposta": "Yes, we ship throughout Switzerland. Free collection is available at our premises in Sementina." }
   ],
-  "oggettoForm": "Party personalisation quote request"
+  "oggettoForm": "Party personalisation quote request",
+  "shopOnline": {
+    "etichetta": "Order online",
+    "titolo": "Lisa Details creations are in our online shop too",
+    "intro": "Cake toppers, decorations and party details can also be ordered online: choose, personalise and get them delivered or collect for free in Sementina.",
+    "link": [
+      {
+        "testo": "Go to the Lisa Details page",
+        "url": "https://shop.vamdeco.ch/exclusive/lisa"
+      },
+      {
+        "testo": "Birthday T-shirts",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/compleanno"
+      }
+    ]
+  }
 }

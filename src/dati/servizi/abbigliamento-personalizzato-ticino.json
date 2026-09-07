@@ -38,5 +38,36 @@
     { "domanda": "Quanto tempo richiede la realizzazione di un ordine di abbigliamento personalizzato?", "risposta": "I tempi di produzione dipendono dal volume dell'ordine e dalla complessità del design. Generalmente, per ordini di piccole dimensioni, il tempo di lavorazione è di circa un paio di giorni. Contattaci per un tempo di consegna stimato per il tuo progetto." },
     { "domanda": "Quali tecniche di personalizzazione sono più resistenti ai lavaggi?", "risposta": "Il ricamo è la tecnica più resistente e duratura, ideale per capi che devono resistere a lavaggi frequenti. Anche la stampa DTF offre buona durabilità, soprattutto se il capo è lavato secondo le istruzioni fornite." }
   ],
-  "oggettoForm": "Richiesta preventivo abbigliamento personalizzato"
+  "oggettoForm": "Richiesta preventivo abbigliamento personalizzato",
+  "shopOnline": {
+    "etichetta": "Compra online",
+    "titolo": "Magliette pronte da personalizzare, direttamente sullo shop",
+    "intro": "Non serve chiedere un preventivo: sul nostro shop trovi le t-shirt a tema già pronte. Scegli grafica, colore e taglia, e ricevi a casa o ritiri gratis a Sementina.",
+    "link": [
+      {
+        "testo": "Tutto l'abbigliamento",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento"
+      },
+      {
+        "testo": "T-shirt compleanno",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/compleanno"
+      },
+      {
+        "testo": "Addio al celibato e nubilato",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/addio-al-celibato-e-nubilato"
+      },
+      {
+        "testo": "Auto e moto",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/veicoli"
+      },
+      {
+        "testo": "Bambini",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/bambini"
+      },
+      {
+        "testo": "Cuscini e quadri con foto",
+        "url": "https://shop.vamdeco.ch/catalogo/casa"
+      }
+    ]
+  }
 }

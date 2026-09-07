@@ -36,5 +36,20 @@
     { "domanda": "Does the vehicle need to be washed before the wrap is applied?", "risposta": "Yes. The vehicle must be clean and free of waxes or substances that could compromise the adhesion of the films. Otherwise, cleaning will be charged." },
     { "domanda": "What types of vehicles can be wrapped?", "risposta": "We can wrap any type of vehicle, from company vans to private cars, right through to trucks and buses." }
   ],
-  "oggettoForm": "Vehicle wrapping quote request"
+  "oggettoForm": "Vehicle wrapping quote request",
+  "shopOnline": {
+    "etichetta": "For petrolheads",
+    "titolo": "Car and bike T-shirts in our online shop",
+    "intro": "Over 150 car and motorbike designs, printed by us in Sementina: the right gift for anyone who loves engines.",
+    "link": [
+      {
+        "testo": "Car and bike T-shirts",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/veicoli"
+      },
+      {
+        "testo": "Browse the shop",
+        "url": "https://shop.vamdeco.ch/catalogo"
+      }
+    ]
+  }
 }

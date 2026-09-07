@@ -38,5 +38,20 @@
     { "domanda": "Dove posso ordinare?", "risposta": "Direttamente da questa pagina con il modulo o su WhatsApp, online su shop.vamdeco.ch nella sezione Lisa Details, oppure scrivendo su Instagram a @lisaa_details." },
     { "domanda": "Consegnate anche fuori dal Ticino?", "risposta": "Sì, spediamo in tutta la Svizzera. Il ritiro gratuito è presso la nostra sede di Sementina." }
   ],
-  "oggettoForm": "Richiesta preventivo personalizzazione festa"
+  "oggettoForm": "Richiesta preventivo personalizzazione festa",
+  "shopOnline": {
+    "etichetta": "Ordina online",
+    "titolo": "Le creazioni di Lisa Details sono anche sullo shop",
+    "intro": "Cake topper, decorazioni e dettagli per la festa si ordinano anche online: scegli, personalizza e ricevi a casa o ritira gratis a Sementina.",
+    "link": [
+      {
+        "testo": "Vai alla pagina di Lisa Details",
+        "url": "https://shop.vamdeco.ch/exclusive/lisa"
+      },
+      {
+        "testo": "T-shirt compleanno",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/compleanno"
+      }
+    ]
+  }
 }

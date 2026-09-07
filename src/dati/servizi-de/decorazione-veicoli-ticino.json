@@ -36,5 +36,20 @@
     { "domanda": "Muss das Fahrzeug vor dem Anbringen der Beschriftung gewaschen werden?", "risposta": "Ja, das Fahrzeug muss sauber und frei von Wachsen oder Substanzen sein, welche die Haftung der Folien beeinträchtigen könnten. Andernfalls wird die Reinigung in Rechnung gestellt." },
     { "domanda": "Welche Arten von Fahrzeugen können beschriftet werden?", "risposta": "Wir können jede Art von Fahrzeug beschriften, von Firmentransportern über Privatautos bis hin zu Lastwagen und Bussen." }
   ],
-  "oggettoForm": "Angebotsanfrage Fahrzeugbeschriftung"
+  "oggettoForm": "Angebotsanfrage Fahrzeugbeschriftung",
+  "shopOnline": {
+    "etichetta": "Für Motorfans",
+    "titolo": "Auto- und Motorrad-T-Shirts im Onlineshop",
+    "intro": "Über 150 Motive rund um Autos und Motorräder, gedruckt bei uns in Sementina: das passende Geschenk für alle, die Motoren lieben.",
+    "link": [
+      {
+        "testo": "Auto- und Motorrad-T-Shirts",
+        "url": "https://shop.vamdeco.ch/catalogo/abbigliamento/veicoli"
+      },
+      {
+        "testo": "Zum Shop",
+        "url": "https://shop.vamdeco.ch/catalogo"
+      }
+    ]
+  }
 }
