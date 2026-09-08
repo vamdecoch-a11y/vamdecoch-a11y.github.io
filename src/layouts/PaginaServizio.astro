@@ -234,7 +234,7 @@ const businessJsonLd = JSON.stringify({
       <span class="tw-testo" data-frasi={JSON.stringify([t(locale, 'tw1'), t(locale, 'tw2')])}></span><span class="cursore">&nbsp;</span>
     </h2>
     <div class="max-w-2xl mx-auto mt-10">
-      <FormContatti oggetto={s.oggettoForm} origine={`Servizio: ${s.slug} (modulo 1, a metà pagina)`} />
+      <FormContatti oggetto={s.oggettoForm} origine={`Servizio: ${s.slug}`} modulo={1} />
     </div>
     <div class="freccia-giu mt-12 mx-auto w-12 h-12 rounded-full border border-white/20 grid place-items-center text-brand text-xl" aria-hidden="true">↓</div>
   </section>
@@ -298,7 +298,7 @@ const businessJsonLd = JSON.stringify({
   )}
 
   <!-- PARLIAMO + FORM (componente condiviso) -->
-  <SezioneParliamo oggetto={s.oggettoForm} origine={`Servizio: ${s.slug} (modulo 2, in fondo)`} />
+  <SezioneParliamo oggetto={s.oggettoForm} origine={`Servizio: ${s.slug}`} modulo={2} />
 
   <WhatsAppTondo testo={s.whatsappTesto} numero={numeroWhatsApp} />
 

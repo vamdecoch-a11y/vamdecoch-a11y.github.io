@@ -62,7 +62,10 @@ const testiRif: Record<Locale, { wa: string; waGe: string; mail: string }> = {
     mail: nomeServ ? `Anfrage: ${nomeServ}` : 'Allgemeine Anfrage',
   },
 };
-const rifCfg = { code: codicePagina, wa: testiRif[locale].wa, waGe: testiRif[locale].waGe, mail: testiRif[locale].mail };
+// Lettera lingua nel codice quando la pagina NON è italiana: e=inglese, d=tedesco
+// (italiano = nessuna lettera). Es. rif. SA-1e = satinate, annuncio, pagina inglese.
+const letteraLingua = locale === 'en' ? 'e' : locale === 'de' ? 'd' : '';
+const rifCfg = { code: codicePagina, lang: letteraLingua, wa: testiRif[locale].wa, waGe: testiRif[locale].waGe, mail: testiRif[locale].mail };
 ---
 <!doctype html>
 <html lang={langAttr}>
@@ -223,8 +226,12 @@ const rifCfg = { code: codicePagina, wa: testiRif[locale].wa, waGe: testiRif[loc
           sessionStorage.setItem('vd_fonte', fonte);
         } catch (e) { fonte = '2'; }
 
-        var rif = rifCfg.code + '-' + fonte;
-        window.vdRif = rif; // usato dal ripiego email del modulo di contatto
+        // rif dei link (WhatsApp/email): PAGINA-FONTE+LINGUA, es. SA-1, SA-2e, GE-1d.
+        var rif = rifCfg.code + '-' + fonte + rifCfg.lang;
+        window.vdRif = rif;
+        // parti esposte al modulo di contatto, che vi inserisce anche il numero
+        // del modulo (1=metà pagina, 2=fondo): PAGINA+MODULO-FONTE+LINGUA, es. SA1-1e.
+        window.vdRifParti = { code: rifCfg.code, fonte: fonte, lang: rifCfg.lang };
         var suffisso = ' (rif. ' + rif + ')';
 
         // 2) Imposta un parametro nell'href mantenendo gli altri (spazio = %20,

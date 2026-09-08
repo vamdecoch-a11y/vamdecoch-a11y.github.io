@@ -4,8 +4,9 @@ interface Props {
   oggetto: string;
   compatto?: boolean;
   origine?: string; // etichetta della pagina/posizione da cui parte la richiesta (visibile nell'admin)
+  modulo?: number; // posizione del form nella pagina (1=metà, 2=fondo): entra nel rif, es. SA1-1
 }
-const { oggetto, compatto = false, origine = oggetto } = Astro.props;
+const { oggetto, compatto = false, origine = oggetto, modulo } = Astro.props;
 const locale = (Astro.currentLocale ?? 'it') as Locale;
 const campo = `rounded-xl bg-white/5 border border-white/15 text-sm font-normal text-carta placeholder:text-carta/45 focus:border-brand outline-none ${compatto ? 'px-4 py-2.5' : 'px-4 py-3'}`;
 // Turnstile (Cloudflare) anti-spam: site key pubblica del sito vamdeco.ch.
@@ -13,7 +14,7 @@ const campo = `rounded-xl bg-white/5 border border-white/15 text-sm font-normal 
 const TURNSTILE_SITEKEY = '0x4AAAAAAEObBnZNNOIiq0MD';
 ---
 <!-- Come l'originale: campi con segnaposto, niente etichette -->
-<form class={`form-contatti text-left grid grid-cols-1 ${compatto ? 'gap-2.5' : 'gap-4 card-scura rounded-2xl p-4 sm:p-6'}`} data-oggetto={oggetto} data-origine={origine} data-invio={t(locale, 'f_invio')} data-grazie={localePath(locale, '/ringraziamenti')}>
+<form class={`form-contatti text-left grid grid-cols-1 ${compatto ? 'gap-2.5' : 'gap-4 card-scura rounded-2xl p-4 sm:p-6'}`} data-oggetto={oggetto} data-origine={origine} data-modulo={modulo} data-invio={t(locale, 'f_invio')} data-grazie={localePath(locale, '/ringraziamenti')}>
   <input type="hidden" name="origine" value={origine} />
   <!-- honeypot anti-bot: invisibile agli umani, i bot lo compilano -->
   <input type="text" name="sito" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp-campo" />
@@ -101,11 +102,13 @@ const TURNSTILE_SITEKEY = '0x4AAAAAAEObBnZNNOIiq0MD';
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const f = new FormData(form);
-      // Provenienza automatica (es. "SA-1" = pagina satinate, da annuncio Google):
-      // la accodo al campo "origine" (che il pannello Richieste già mostra) così il
-      // lead porta la distinzione annuncio/organico SENZA modifiche al backend.
-      const rif = (window as any).vdRif;
-      if (rif) f.set('origine', (((f.get('origine') as string) || '') + ` [rif. ${rif}]`).trim());
+      // Provenienza automatica nel campo "origine" (già mostrato dal pannello), SENZA
+      // toccare il backend. Codice = PAGINA + MODULO (1=metà, 2=fondo) + FONTE (1 annuncio,
+      // 2 organico) + LINGUA (e=EN, d=DE). Es. [rif. SA1-1e]. Messo all'inizio della riga.
+      const rifParti = (window as any).vdRifParti;
+      const modulo = form.dataset.modulo || '';
+      const rif = rifParti ? (rifParti.code + modulo + '-' + rifParti.fonte + rifParti.lang) : ((window as any).vdRif || '');
+      if (rif) f.set('origine', (`[rif. ${rif}] ` + ((f.get('origine') as string) || '')).trim());
       const bottone = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
       const testoBottone = bottone.textContent;
       bottone.disabled = true;
